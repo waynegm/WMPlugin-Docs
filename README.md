@@ -4,11 +4,11 @@ This is the source for the documentation of the plugins I have developed for the
 <a href="http://www.opendtect.org/" target="_blank">OpendTect</a>. The plugins are made available under the terms of the
 [GNU General Public License Version 3](docs/LICENSE).
 
-To read the documentation click [here](http://waynegm.github.io/WMPlugins-Docs/).
+To read the documentation click [here](http://waynegm.github.io/WMPlugin-Docs/).
 
 To build the documentation:
 
-1. Clone the documentation repository - ```git clone --recursive https://github.com/waynegm/WMPlugins-Docs.git ```
+1. Clone the documentation repository - ```git clone --recursive https://github.com/waynegm/WMPlugin-Docs.git ```
 
 2. Install a recent `extended` version of [Hugo](https://gohugo.io).
 
