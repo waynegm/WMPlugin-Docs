@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – modelling</title>
-    <link>/tags/modelling/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/modelling/</link>
     <description>Recent content in modelling on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/tags/modelling/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/modelling/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Add Noise</title>
-      <link>/docs/externalattributes/addnoise/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/addnoise/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/externalattributes/addnoise/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/addnoise/</guid>
       <description>
         
         
@@ -29,7 +29,7 @@
 &lt;p&gt;This example shows an input signal with different levels of added noise.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/addnoise/ex_add_noise_example.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/addnoise/ex_add_noise_example.jpg&#34;
          alt=&#34;Input with varying levels of added noise&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Input with varying levels of added noise&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -38,7 +38,7 @@
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/addnoise/ex_add_noise_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/addnoise/ex_add_noise_input.jpg&#34;
          alt=&#34;ex_add_noise.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;ex_add_noise.py input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -71,10 +71,10 @@
     
     <item>
       <title>Docs: PyLops Attributes</title>
-      <link>/docs/externalattributes/pylops/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/pylops/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/externalattributes/pylops/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/pylops/</guid>
       <description>
         
         
@@ -99,7 +99,7 @@ of the seismic wavelet must match the data.&lt;/p&gt;
 &lt;p&gt;The following figures show inversion input and output for a 1D model created by the PyLops/ex_make_1d_seismic.py script.&lt;/p&gt;
 &lt;p&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/ex_pylops_poststack_inversion-02.png&#34;
          alt=&#34;Impedance Model (red) and Background Model (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Background Model (blue)&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -107,7 +107,7 @@ of the seismic wavelet must match the data.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/ex_pylops_poststack_inversion-03.png&#34;
          alt=&#34;Impedance Model (red) and Seismic Model (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Seismic Model (blue)&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -115,7 +115,7 @@ of the seismic wavelet must match the data.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/ex_pylops_poststack_inversion-04.png&#34;
          alt=&#34;Impedance Model (red) and Inverted Impedance (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -124,7 +124,7 @@ of the seismic wavelet must match the data.&lt;/p&gt;
 &lt;p&gt;There is also a PyLops/ex_poststack_relative_inversion.py script that runs the inversion without a background model:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-05.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/ex_pylops_poststack_inversion-05.png&#34;
          alt=&#34;Impedance Model (red) and Inverted Relative Impedance (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Relative Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -132,7 +132,7 @@ of the seismic wavelet must match the data.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-07.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/ex_pylops_poststack_inversion-07.png&#34;
          alt=&#34;Inverted Relative Impedance Example&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Inverted Relative Impedance Example&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -141,7 +141,7 @@ of the seismic wavelet must match the data.&lt;/p&gt;
 &lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion_input.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/ex_pylops_poststack_inversion_input.png&#34;
          alt=&#34;ex_poststack_inversion.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;ex_poststack_inversion.py input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -187,7 +187,7 @@ can be created from well log data using the &amp;ldquo;Create Log Cube&amp;rdquo
 &lt;p&gt;The generated synthetics can be displayed in the 3D window and compared with real angle stack data through the well location.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_prestack_modelling-01.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/ex_pylops_prestack_modelling-01.jpg&#34;
          alt=&#34;Prestack modelling example&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Prestack modelling example&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -196,7 +196,7 @@ can be created from well log data using the &amp;ldquo;Create Log Cube&amp;rdquo
 &lt;h3 id=&#34;input-parameters-1&#34;&gt;Input Parameters&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_prestack_modelling_input.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/ex_pylops_prestack_modelling_input.png&#34;
          alt=&#34;ex_prestack_modelling.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;ex_prestack_modelling.py input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – MLVFilterAttrib</title>
-    <link>/tags/mlvfilterattrib/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/mlvfilterattrib/</link>
     <description>Recent content in MLVFilterAttrib on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/tags/mlvfilterattrib/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/mlvfilterattrib/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: MLVFilterAttrib</title>
-      <link>/docs/plugins/mlvfilter/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mlvfilter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/mlvfilter/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mlvfilter/</guid>
       <description>
         
         
@@ -32,7 +32,7 @@ is output for the element with the least variance.&lt;/p&gt;
 &lt;p&gt;The following figure shows the relationship between the geometry of the analysis elements and the element index.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_elements.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mlvfilter/MLVFilterAttrib_elements.jpg&#34;
          alt=&#34;MLV Filter analysis elements&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;MLV Filter analysis elements&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -51,7 +51,7 @@ is output for the element with the least variance.&lt;/p&gt;
 &lt;/br&gt;&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_MLV3_Elements.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mlvfilter/MLVFilterAttrib_MLV3_Elements.jpg&#34;
          alt=&#34;MLV 3 elements&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;MLV 3 elements&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -86,7 +86,7 @@ is output for the element with the least variance.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_par1.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mlvfilter/MLVFilterAttrib_par1.jpg&#34;
          alt=&#34;MLF Filter input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;MLF Filter input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

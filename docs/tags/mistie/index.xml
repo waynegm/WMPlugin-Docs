@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – Mistie</title>
-    <link>/tags/mistie/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/mistie/</link>
     <description>Recent content in Mistie on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="/tags/mistie/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/mistie/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,16 +16,16 @@
     
     <item>
       <title>Docs: Mistie</title>
-      <link>/docs/plugins/mistie/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mistie/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/mistie/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mistie/</guid>
       <description>
         
         
         
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_plugin.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_plugin.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [opendtect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.&lt;/p&gt;
@@ -47,7 +47,7 @@
 &lt;p&gt;The plugin adds a &amp;ldquo;Mistie Analysis&amp;rdquo; item to the Analysis main menu. Selecting the item opens the Mistie Analysis dialog:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_analysis.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_analysis.jpg&#34;
          alt=&#34;Mistie Analysis&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Analysis&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -108,7 +108,7 @@
 &lt;p&gt;In the case of estimation from the seismic data the dialog looks like:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_estimation_seismic.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_estimation_seismic.jpg&#34;
          alt=&#34;Mistie Estimation from Seismic&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Estimation from Seismic&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -127,7 +127,7 @@
 &lt;p&gt;In the case of estimation from horizon interpretation the dialog looks like:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_estimation_horizon.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_estimation_horizon.jpg&#34;
          alt=&#34;Mistie Estimation from Horizon Interpretation&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Estimation from Horizon Interpretation&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -145,7 +145,7 @@
 the misties displayed in the list, used for correction calculation and included in the mistie report:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_filter.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_filter.jpg&#34;
          alt=&#34;Mistie filtering&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie filtering&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -158,7 +158,7 @@ The tie quality can vary from 0.0 (no tie) to 1.0 (perfect tie). A cut-off of 0.
 compute mistie corrections that minimize the root mean square (RMS) mistie after correction:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_correction.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_correction.jpg&#34;
          alt=&#34;Mistie correction calculation&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie correction calculation&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -184,7 +184,7 @@ This tool can be used to manually create mistie correction files or modify files
 &lt;a href=&#34;#mistie-correction-calculation&#34;&gt;Mistie Correction Calculation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_editor.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_editor.jpg&#34;
          alt=&#34;Mistie correction editor&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie correction editor&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -245,7 +245,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
 &lt;p&gt;The plugin adds a &amp;ldquo;Mistie Application&amp;rdquo; attribute to the list of [opendtect] attributes.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistieapplication_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistieapplication_input.jpg&#34;
          alt=&#34;Mistie Application attribute input parameters&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Application attribute input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -262,7 +262,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
 &lt;p&gt;The plugin adds an &amp;ldquo;Apply Mistie Corrections&amp;rdquo; item to the &amp;ldquo;Processing | Create Horizon Output&amp;rdquo; main menu that opens a dialog box to apply mistie corrections to 2D and 3D horizon interpretation.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_horizon_2D_apply.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_horizon_2D_apply.jpg&#34;
          alt=&#34;Mistie Application to 2D Horizon&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Application to 2D Horizon&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -270,7 +270,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_horizon_3D_apply.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_horizon_3D_apply.jpg&#34;
          alt=&#34;Mistie Application to 3D Horizon&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Application to 3D Horizon&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -289,10 +289,10 @@ Application attribute is applied. A message (which can be safely ignored) is add
     
     <item>
       <title>Blog: WMPlugins 6.6.10 Release</title>
-      <link>/blog/2022/04/15/wmplugins-6.6.10-release/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
       <description>
         
         
@@ -308,7 +308,7 @@ akin to Empirical Mode Decomposition. A subsequent post will look at these new a
 decomposition option with the existing WMPlugin tools such as Recursive spectral decomposition and Spectral decomposition by local attribute.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
          alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -320,7 +320,7 @@ reports syntax errors from the script when building the UI via a UI message box.
 log file but the user did not get any direct feedback that an issue was encountered.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
          alt=&#34;Improved error reporting in the External Attribute plugin&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Improved error reporting in the External Attribute plugin&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – Jupyter</title>
-    <link>/tags/jupyter/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/jupyter/</link>
     <description>Recent content in Jupyter on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="/tags/jupyter/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/jupyter/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blog: Using Visual Studio Code with OpendTect</title>
-      <link>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
       <description>
         
         
@@ -47,7 +47,7 @@ on it from your file manager/explorer) and add the following extensions:&lt;/p&g
 &lt;p&gt;Open the OpendTect Python Settings dialog (Utilities|Installation|Python Settings menu)
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
          alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -66,7 +66,7 @@ VS Code from within OpendTect ensures environment settings are compatible with t
 Settings dialog.&lt;/p&gt;
 &lt;p&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
          alt=&#34;OpendTect After Adding VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect After Adding VS Code&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -79,7 +79,7 @@ the Jupyter: Create Blank New Jupyter Notebook command from the VS Code Command 
 the Python environment selected in the OpendTect Python Settings dialog.
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
          alt=&#34;New Jupyter Notebook in VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;New Jupyter Notebook in VS Code&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -92,7 +92,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
          alt=&#34;Exploring OpendTect Well Data in a VS Code Notebook&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Exploring OpendTect Well Data in a VS Code Notebook&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

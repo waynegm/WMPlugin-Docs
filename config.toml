@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://waynegm.github.io/WMPlugin-Docs/"
 title = "WMPlugins"
 publishDir = "docs"
 # Language settings

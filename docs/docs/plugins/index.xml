@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – Plugins</title>
-    <link>/docs/plugins/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/</link>
     <description>Recent content in Plugins on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/docs/plugins/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: AVOAttrib</title>
-      <link>/docs/plugins/avoattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/avoattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/avoattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/avoattrib/</guid>
       <description>
         
         
@@ -35,7 +35,7 @@ illustrates the ideal intercept-gradient crossplot response for a clastic sequen
 The Fluid Line or Background Trend is where reflections from shales and some wet sands that have little contrast in Vp/Vs plot.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_ideal_crossplot.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avoattrib/AVOAttrib_ideal_crossplot.jpg&#34;
          alt=&#34;Ideal AVO crossplot for a clastic sequence&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Ideal AVO crossplot for a clastic sequence&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -44,7 +44,7 @@ The Fluid Line or Background Trend is where reflections from shales and some wet
 &lt;p&gt;Another popular classification of AVO effects on the intercept-gradient crossplot is the 3 class AVO scheme of &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.1442696&#34; title=&#34;Amplitude‐versus‐offset variations in gas sands. Steven R. Rutherford and Robert H. Williams GEOPHYSICS 1989 54:6, 680-688&#34;&gt;Rutherford and Williams (1989)&lt;/a&gt; based on acoustic impedance contrasts with the addition of a 4th class for high porosity gas sands introduced by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.1437626&#34; title=&#34;Principles of AVO crossplotting. John P. Castagna and Herbert W. Swan. The Leading Edge 1997 16:4, 337-344&#34;&gt;Castagna and Swan (1997)&lt;/a&gt;. The position of these 4 AVO classes on the intercept-gradient crossplot is shown in the following figure.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_classes.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avoattrib/AVOAttrib_classes.jpg&#34;
          alt=&#34;AVO classes&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;AVO classes&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -145,7 +145,7 @@ The Fluid Line or Background Trend is where reflections from shales and some wet
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_input_parameters.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avoattrib/AVOAttrib_input_parameters.jpg&#34;
          alt=&#34;AVO Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;AVO Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -157,10 +157,10 @@ The Fluid Line or Background Trend is where reflections from shales and some wet
     
     <item>
       <title>Docs: AVOPolarAttrib</title>
-      <link>/docs/plugins/avopolarattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/avopolarattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/avopolarattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/avopolarattrib/</guid>
       <description>
         
         
@@ -176,7 +176,7 @@ reflection coefficients. &lt;a href=&#34;https://library.seg.org/doi/abs/10.1190
 subsequently extended the analysis with a number of other measures to describe the hodogram.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avopolarattrib/AVOStrengthAttrib_hodogram_example.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avopolarattrib/AVOStrengthAttrib_hodogram_example.png&#34;
          alt=&#34;Example AVO hodogram crossplot for a 36 millisec TWT window&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example AVO hodogram crossplot for a 36 millisec TWT window&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -269,7 +269,7 @@ subsequently extended the analysis with a number of other measures to describe t
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avopolarattrib/AVOPolarAttrib_input_parameters.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avopolarattrib/AVOPolarAttrib_input_parameters.jpg&#34;
          alt=&#34;AVO Polarization Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;AVO Polarization Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -281,10 +281,10 @@ subsequently extended the analysis with a number of other measures to describe t
     
     <item>
       <title>Docs: External(Python) Attributes</title>
-      <link>/docs/plugins/externalattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/externalattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/externalattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/externalattrib/</guid>
       <description>
         
         
@@ -329,7 +329,7 @@ which are distributed with the WMPlugins suite and can be found in the bin/pytho
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/externalattrib/ExternalAttrib_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/ExternalAttrib_input.jpg&#34;
          alt=&#34;External Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;External Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -349,7 +349,7 @@ Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;&gt;Pyth
 &lt;h3 id=&#34;the-imports&#34;&gt;The Imports&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_01.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_01.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;This is where external modules/libraries required by the script are loaded. At a minimum the script must load:&lt;/p&gt;
@@ -367,7 +367,7 @@ to the module search path.&lt;/p&gt;
 &lt;h3 id=&#34;the-parameters&#34;&gt;The Parameters&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_02.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_02.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by
@@ -375,7 +375,7 @@ the plugin to build an input dialog box. This attribute is very simple specifyin
 documentation. The plugin dynamically builds the following input dialog for this script:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_06.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_06.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;A variety of other input elements can be specified to build more complex input dialogs. See &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt;
@@ -383,7 +383,7 @@ for full details or look at other scripts to see what is possible.&lt;/p&gt;
 &lt;h3 id=&#34;the-compute-loop-initialisation&#34;&gt;The Compute Loop Initialisation&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_03.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_03.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the
@@ -394,7 +394,7 @@ constants purely as an example. This attribute is so simple that no initialisati
 &lt;h3 id=&#34;the-compute-loop&#34;&gt;The Compute Loop&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_04.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_04.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;This is where the attribute calculation takes place. The &lt;em&gt;xa.doInput()&lt;/em&gt; and &lt;em&gt;xa.doOutput()&lt;/em&gt; function calls control the input and output
@@ -413,7 +413,7 @@ array, ie at index &lt;em&gt;[xa.SI[&amp;rsquo;nrinl&amp;rsquo;]//2, xa.SI[&amp;
 &lt;h3 id=&#34;the-postamble&#34;&gt;The Postamble&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_05.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_05.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;This section is just boilerplate code that appears in every attribute script which should never be changed.&lt;/p&gt;
@@ -910,10 +910,10 @@ implements the attribute calculation.&lt;/p&gt;
     
     <item>
       <title>Docs: GeopackageDisplay</title>
-      <link>/docs/plugins/geopackagedisplay/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/geopackagedisplay/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</guid>
       <description>
         
         
@@ -922,7 +922,7 @@ implements the attribute calculation.&lt;/p&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Display&amp;rdquo; item to the &amp;ldquo;Add&amp;rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackagedisplay/geopackage_display_menu.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackagedisplay/geopackage_display_menu.jpg&#34;
          alt=&#34;Geopackage Display menu item&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Geopackage Display menu item&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -935,7 +935,7 @@ implements the attribute calculation.&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackagedisplay/geopackage_display_example.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackagedisplay/geopackage_display_example.jpg&#34;
          alt=&#34;GIS data draped on an OpendTect 3D horizon&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;GIS data draped on an OpendTect 3D horizon&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -947,10 +947,10 @@ implements the attribute calculation.&lt;/p&gt;
     
     <item>
       <title>Docs: GeopackageExport</title>
-      <link>/docs/plugins/geopackageexport/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/geopackageexport/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</guid>
       <description>
         
         
@@ -1050,7 +1050,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_qgis.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_qgis.jpg&#34;
          alt=&#34;OpendTect data displayed in QGIS&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect data displayed in QGIS&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1061,37 +1061,37 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;h3 id=&#34;survey-tab&#34;&gt;Survey tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_survey_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_survey_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;2d-lines-tab&#34;&gt;2D Lines tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;random-lines-tab&#34;&gt;Random Lines tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;wells-tab&#34;&gt;Wells tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_wells_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_wells_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;polylines-tab&#34;&gt;Polylines tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;horizon-tab&#34;&gt;Horizon tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 
@@ -1100,10 +1100,10 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
     
     <item>
       <title>Docs: GeotiffExport</title>
-      <link>/docs/plugins/geotiffexport/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/geotiffexport/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</guid>
       <description>
         
         
@@ -1117,7 +1117,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geotiffexport/geotiff_qgis.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_qgis.jpg&#34;
          alt=&#34;OpendTect 3D horizon data displayed in a QGIS print layout&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect 3D horizon data displayed in a QGIS print layout&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1126,7 +1126,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 
@@ -1135,10 +1135,10 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
     
     <item>
       <title>Docs: GradientAttrib</title>
-      <link>/docs/plugins/gradientattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/gradientattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</guid>
       <description>
         
         
@@ -1148,7 +1148,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;p&gt;The attribute offers a choice of Kroon&amp;rsquo;s 3x3x3, Farid and Simoncelli&amp;rsquo;s 5x5x5 or Farid and Simoncelli&amp;rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/gradientattrib/gradient_attrib.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/gradient_attrib.jpg&#34;
          alt=&#34;Accuracy of the gradient attribute operators&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Accuracy of the gradient attribute operators&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1187,7 +1187,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/gradientattrib/GradientAttrib_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/GradientAttrib_input.jpg&#34;
          alt=&#34;Gradient attribute input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Gradient attribute input parameter dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1199,10 +1199,10 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
     
     <item>
       <title>Docs: Grid 2D-3D Horizon</title>
-      <link>/docs/plugins/grid2d-3d/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/grid2d-3d/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</guid>
       <description>
         
         
@@ -1227,7 +1227,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid2d-3d_data_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid2d-3d_data_input.jpg&#34;
          alt=&#34;Grid 2D-3D horizon plugin input data selection dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input data selection dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1235,7 +1235,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid2d-3d_grid_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid2d-3d_grid_input.jpg&#34;
          alt=&#34;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1264,7 +1264,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;p&gt;Controls are the maximum search radius and the maximum points used from each sector. This algorithm can use fault constraints.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_ltps_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_ltps_ex.jpg&#34;
          alt=&#34;Example of Local Thin Plate Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of Local Thin Plate Spline gridding&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1275,7 +1275,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;p&gt;This method does not use fault contraints.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_mba_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_mba_ex.jpg&#34;
          alt=&#34;Example of Multilevel B-Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of Multilevel B-Spline gridding&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1292,7 +1292,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;p&gt;The method can use fault constraints but will be very slow unless appropriate distance and point count limits are set.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_ex.jpg&#34;
          alt=&#34;Example of IDW gridding&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of IDW gridding&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1300,7 +1300,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_radius_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_radius_ex.jpg&#34;
          alt=&#34;Example of IDW gridding using only a distance limit&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a distance limit&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1308,7 +1308,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_points_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_points_ex.jpg&#34;
          alt=&#34;Example of IDW gridding using only a point count limit&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a point count limit&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1316,7 +1316,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_both_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_both_ex.jpg&#34;
          alt=&#34;Example of IDW gridding using both distance and point count limits&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of IDW gridding using both distance and point count limits&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1326,7 +1326,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;p&gt;This uses a simple weighted average method to assign grid values to the 4 nodes around each input data point.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_nrn_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_nrn_ex.jpg&#34;
          alt=&#34;Example of Nearest Neighbour gridding&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of Nearest Neighbour gridding&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1338,10 +1338,10 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
     
     <item>
       <title>Docs: LocalAttrib</title>
-      <link>/docs/plugins/localattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/localattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</guid>
       <description>
         
         
@@ -1362,7 +1362,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 The output of the LTF attribute (ltf30) is visually identical and also highly correlated to the OpendTect FFT spectral decomposition (sdfreq30) as shown in the following crossplot of the two attributes.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/localattrib/LTFAttrib_2.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/localattrib/LTFAttrib_2.jpg&#34;
          alt=&#34;Crossplot of LTFAttrib vs FFT Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Crossplot of LTFAttrib vs FFT Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1405,7 +1405,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/localattrib/LTFAttrib_input_parameters.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/localattrib/LTFAttrib_input_parameters.jpg&#34;
          alt=&#34;LTF Attributes input parameters&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;LTF Attributes input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1417,16 +1417,16 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
     
     <item>
       <title>Docs: Mistie</title>
-      <link>/docs/plugins/mistie/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mistie/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/mistie/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mistie/</guid>
       <description>
         
         
         
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_plugin.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_plugin.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [opendtect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.&lt;/p&gt;
@@ -1448,7 +1448,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
 &lt;p&gt;The plugin adds a &amp;ldquo;Mistie Analysis&amp;rdquo; item to the Analysis main menu. Selecting the item opens the Mistie Analysis dialog:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_analysis.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_analysis.jpg&#34;
          alt=&#34;Mistie Analysis&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Analysis&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1509,7 +1509,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
 &lt;p&gt;In the case of estimation from the seismic data the dialog looks like:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_estimation_seismic.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_estimation_seismic.jpg&#34;
          alt=&#34;Mistie Estimation from Seismic&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Estimation from Seismic&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1528,7 +1528,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
 &lt;p&gt;In the case of estimation from horizon interpretation the dialog looks like:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_estimation_horizon.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_estimation_horizon.jpg&#34;
          alt=&#34;Mistie Estimation from Horizon Interpretation&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Estimation from Horizon Interpretation&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1546,7 +1546,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
 the misties displayed in the list, used for correction calculation and included in the mistie report:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_filter.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_filter.jpg&#34;
          alt=&#34;Mistie filtering&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie filtering&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1559,7 +1559,7 @@ The tie quality can vary from 0.0 (no tie) to 1.0 (perfect tie). A cut-off of 0.
 compute mistie corrections that minimize the root mean square (RMS) mistie after correction:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_correction.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_correction.jpg&#34;
          alt=&#34;Mistie correction calculation&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie correction calculation&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1585,7 +1585,7 @@ This tool can be used to manually create mistie correction files or modify files
 &lt;a href=&#34;#mistie-correction-calculation&#34;&gt;Mistie Correction Calculation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_editor.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_editor.jpg&#34;
          alt=&#34;Mistie correction editor&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie correction editor&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1646,7 +1646,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
 &lt;p&gt;The plugin adds a &amp;ldquo;Mistie Application&amp;rdquo; attribute to the list of [opendtect] attributes.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistieapplication_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistieapplication_input.jpg&#34;
          alt=&#34;Mistie Application attribute input parameters&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Application attribute input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1663,7 +1663,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
 &lt;p&gt;The plugin adds an &amp;ldquo;Apply Mistie Corrections&amp;rdquo; item to the &amp;ldquo;Processing | Create Horizon Output&amp;rdquo; main menu that opens a dialog box to apply mistie corrections to 2D and 3D horizon interpretation.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_horizon_2D_apply.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_horizon_2D_apply.jpg&#34;
          alt=&#34;Mistie Application to 2D Horizon&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Application to 2D Horizon&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1671,7 +1671,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mistie/mistie_horizon_3D_apply.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_horizon_3D_apply.jpg&#34;
          alt=&#34;Mistie Application to 3D Horizon&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Mistie Application to 3D Horizon&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1690,10 +1690,10 @@ Application attribute is applied. A message (which can be safely ignored) is add
     
     <item>
       <title>Docs: MLVFilterAttrib</title>
-      <link>/docs/plugins/mlvfilter/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mlvfilter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/mlvfilter/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mlvfilter/</guid>
       <description>
         
         
@@ -1707,7 +1707,7 @@ is output for the element with the least variance.&lt;/p&gt;
 &lt;p&gt;The following figure shows the relationship between the geometry of the analysis elements and the element index.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_elements.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mlvfilter/MLVFilterAttrib_elements.jpg&#34;
          alt=&#34;MLV Filter analysis elements&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;MLV Filter analysis elements&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1726,7 +1726,7 @@ is output for the element with the least variance.&lt;/p&gt;
 &lt;/br&gt;&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_MLV3_Elements.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mlvfilter/MLVFilterAttrib_MLV3_Elements.jpg&#34;
          alt=&#34;MLV 3 elements&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;MLV 3 elements&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1761,7 +1761,7 @@ is output for the element with the least variance.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_par1.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mlvfilter/MLVFilterAttrib_par1.jpg&#34;
          alt=&#34;MLF Filter input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;MLF Filter input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1773,10 +1773,10 @@ is output for the element with the least variance.&lt;/p&gt;
     
     <item>
       <title>Docs: RSpecAttrib</title>
-      <link>/docs/plugins/rspecattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/rspecattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/rspecattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/rspecattrib/</guid>
       <description>
         
         
@@ -1809,7 +1809,7 @@ The output of the RSpec attribute (rfreq30) is visually identical and also highl
 (sdfreq30) as shown in the following crossplot of the two attributes.
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/rspecattrib/RSpecAttrib_2.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/rspecattrib/RSpecAttrib_2.jpg&#34;
          alt=&#34;Crossplot of RSpecAttrib vs FFT Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Crossplot of RSpecAttrib vs FFT Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1877,7 +1877,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/rspecattrib/RSpecAttrib_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/rspecattrib/RSpecAttrib_input.jpg&#34;
          alt=&#34;RSpecAttrib input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;RSpecAttrib input parameter dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1889,10 +1889,10 @@ appearance due to its sharpness in time and frequency but the significance of th
     
     <item>
       <title>Docs: WMTools</title>
-      <link>/docs/plugins/wmtools/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/wmtools/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/wmtools/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/wmtools/</guid>
       <description>
         
         
@@ -1903,7 +1903,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/wmtools/convexhull_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/wmtools/convexhull_ex.jpg&#34;
          alt=&#34;Example of polygons created by tool&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of polygons created by tool&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1912,7 +1912,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;h3 id=&#34;input&#34;&gt;Input&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/wmtools/convexhull_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/wmtools/convexhull_input.jpg&#34;
          alt=&#34;Convex Hull tool input dialog&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Convex Hull tool input dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1930,7 +1930,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu. After adding a contour polyline remember to use the Right-Click | Save menu to commit the item.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/wmtools/constantz_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/wmtools/constantz_ex.jpg&#34;
          alt=&#34;Example of some polylines drawn in a gap in the seismic coverage to guide subsequent gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of some polylines drawn in a gap in the seismic coverage to guide subsequent gridding&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1939,7 +1939,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;p&gt;###Input&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/wmtools/constantz_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/wmtools/constantz_input.jpg&#34;
          alt=&#34;Constant Z polyline tool input dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Constant Z polyline tool input dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1951,7 +1951,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/wmtools/faultpoly_ex.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/wmtools/faultpoly_ex.jpg&#34;
          alt=&#34;Example of polylines generated by this tool&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of polylines generated by this tool&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1961,7 +1961,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;p&gt;The UI specifies a poly-line name prefix to which the fault surface names will be appended.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/wmtools/faultpoly_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/wmtools/faultpoly_input.jpg&#34;
          alt=&#34;Fault polyline generation tool input dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Fault polyline generation tool input dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1973,7 +1973,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;p&gt;The tool is accessed either from the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; main menu item or from the New submenu of the 3D Horizon tree context menu.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/wmtools/dataextenthorizon.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/wmtools/dataextenthorizon.jpg&#34;
          alt=&#34;Example of an horizon created by the plugin and various polygons drawn across the extent of the 2D and 3D seismic data in the project&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of an horizon created by the plugin and various polygons drawn across the extent of the 2D and 3D seismic data in the project&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1982,7 +1982,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;h3 id=&#34;input-2&#34;&gt;Input&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/wmtools/dataextenthorizon_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/wmtools/dataextenthorizon_input.jpg&#34;
          alt=&#34;Data Extent Horizon tool input dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Data Extent Horizon tool input dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

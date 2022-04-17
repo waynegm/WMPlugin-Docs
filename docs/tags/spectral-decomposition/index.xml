@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – spectral-decomposition</title>
-    <link>/tags/spectral-decomposition/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/spectral-decomposition/</link>
     <description>Recent content in spectral-decomposition on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/tags/spectral-decomposition/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/spectral-decomposition/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: LocalAttrib</title>
-      <link>/docs/plugins/localattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/localattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</guid>
       <description>
         
         
@@ -39,7 +39,7 @@
 The output of the LTF attribute (ltf30) is visually identical and also highly correlated to the OpendTect FFT spectral decomposition (sdfreq30) as shown in the following crossplot of the two attributes.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/localattrib/LTFAttrib_2.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/localattrib/LTFAttrib_2.jpg&#34;
          alt=&#34;Crossplot of LTFAttrib vs FFT Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Crossplot of LTFAttrib vs FFT Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -82,7 +82,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/localattrib/LTFAttrib_input_parameters.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/localattrib/LTFAttrib_input_parameters.jpg&#34;
          alt=&#34;LTF Attributes input parameters&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;LTF Attributes input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -94,10 +94,10 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
     
     <item>
       <title>Docs: RSpecAttrib</title>
-      <link>/docs/plugins/rspecattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/rspecattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/rspecattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/rspecattrib/</guid>
       <description>
         
         
@@ -130,7 +130,7 @@ The output of the RSpec attribute (rfreq30) is visually identical and also highl
 (sdfreq30) as shown in the following crossplot of the two attributes.
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/rspecattrib/RSpecAttrib_2.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/rspecattrib/RSpecAttrib_2.jpg&#34;
          alt=&#34;Crossplot of RSpecAttrib vs FFT Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Crossplot of RSpecAttrib vs FFT Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -198,7 +198,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/rspecattrib/RSpecAttrib_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/rspecattrib/RSpecAttrib_input.jpg&#34;
          alt=&#34;RSpecAttrib input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;RSpecAttrib input parameter dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

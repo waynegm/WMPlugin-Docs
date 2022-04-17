@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – Getting Started</title>
-    <link>/docs/gettingstarted/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/</link>
     <description>Recent content in Getting Started on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/docs/gettingstarted/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Installation</title>
-      <link>/docs/gettingstarted/installation/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/installation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/gettingstarted/installation/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/installation/</guid>
       <description>
         
         
@@ -26,7 +26,7 @@
 option in the installer.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/gettingstarted/installation/od_install_mgr.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/gettingstarted/installation/od_install_mgr.jpg&#34;
          alt=&#34;OpendTect Installation Manager&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect Installation Manager&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -99,10 +99,10 @@ should work with all OpendTect 6.4 releases but won&amp;rsquo;t work with OpendT
     
     <item>
       <title>Docs: Building from Source</title>
-      <link>/docs/gettingstarted/building-from-source/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/building-from-source/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/gettingstarted/building-from-source/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/building-from-source/</guid>
       <description>
         
         

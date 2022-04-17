@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – release</title>
-    <link>/categories/release/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/categories/release/</link>
     <description>Recent content in release on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="/categories/release/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/categories/release/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blog: WMPlugins 6.6.10 Release</title>
-      <link>/blog/2022/04/15/wmplugins-6.6.10-release/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
       <description>
         
         
@@ -35,7 +35,7 @@ akin to Empirical Mode Decomposition. A subsequent post will look at these new a
 decomposition option with the existing WMPlugin tools such as Recursive spectral decomposition and Spectral decomposition by local attribute.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
          alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -47,7 +47,7 @@ reports syntax errors from the script when building the UI via a UI message box.
 log file but the user did not get any direct feedback that an issue was encountered.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
          alt=&#34;Improved error reporting in the External Attribute plugin&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Improved error reporting in the External Attribute plugin&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -66,10 +66,10 @@ called &amp;ldquo;odpybind&amp;rdquo;.&lt;/p&gt;
     
     <item>
       <title>Blog: First Release of Python Bindings to OpendTect</title>
-      <link>/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</link>
       <pubDate>Tue, 29 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</guid>
       <description>
         
         
@@ -89,7 +89,7 @@ You can either use the OpendTect Python Settings dialog (accessible from the Uti
 and add the location of the OpendTect executable files to the Custom Module Path or modify the PYTHONPATH within the script.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-02.png&#34;
          alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -144,7 +144,7 @@ an OpendTect data root folder for context.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;get_surveys_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/mnt/Data/seismic/ODData&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;F3_Demo_2020&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Penobscot&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;])&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-03.png&#34;
          alt=&#34;Displaying OpendTect survey info in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Displaying OpendTect survey info in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -152,7 +152,7 @@ an OpendTect data root folder for context.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-01.png&#34;
          alt=&#34;Displaying OpendTect survey locations on a Folium web map&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Displaying OpendTect survey locations on a Folium web map&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -201,7 +201,7 @@ returning a Pandas Dataframe have a suffix of &amp;ldquo;_df&amp;rdquo;.&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo_wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;info_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-04.png&#34;
          alt=&#34;Displaying OpendTect well info in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Displaying OpendTect well info in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -211,7 +211,7 @@ returning a Pandas Dataframe have a suffix of &amp;ldquo;_df&amp;rdquo;.&lt;/p&g
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo_wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;log_data_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;F02-1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Vp&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Sonic&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0.15&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SampleMode&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Upscale&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-05.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-05.png&#34;
          alt=&#34;Displaying OpendTect well logs in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Displaying OpendTect well logs in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

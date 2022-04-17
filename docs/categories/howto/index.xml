@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – howto</title>
-    <link>/categories/howto/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/categories/howto/</link>
     <description>Recent content in howto on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="/categories/howto/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/categories/howto/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blog: Using Visual Studio Code with OpendTect</title>
-      <link>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
       <description>
         
         
@@ -47,7 +47,7 @@ on it from your file manager/explorer) and add the following extensions:&lt;/p&g
 &lt;p&gt;Open the OpendTect Python Settings dialog (Utilities|Installation|Python Settings menu)
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
          alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -66,7 +66,7 @@ VS Code from within OpendTect ensures environment settings are compatible with t
 Settings dialog.&lt;/p&gt;
 &lt;p&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
          alt=&#34;OpendTect After Adding VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect After Adding VS Code&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -79,7 +79,7 @@ the Jupyter: Create Blank New Jupyter Notebook command from the VS Code Command 
 the Python environment selected in the OpendTect Python Settings dialog.
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
          alt=&#34;New Jupyter Notebook in VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;New Jupyter Notebook in VS Code&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -92,7 +92,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
          alt=&#34;Exploring OpendTect Well Data in a VS Code Notebook&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Exploring OpendTect Well Data in a VS Code Notebook&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -102,10 +102,10 @@ the Python environment selected in the OpendTect Python Settings dialog.
     
     <item>
       <title>Blog: Python External Attribute Tips &amp; Tricks - Debugging</title>
-      <link>/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</link>
       <pubDate>Fri, 08 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</guid>
       <description>
         
         
@@ -118,7 +118,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;h2 id=&#34;adding-web-pdb-to-a-script&#34;&gt;Adding Web-PDB to a Script&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_01.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_01.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;Adding &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; to a script is just a matter of importing the module as shown on line 5 and adding a call to  &lt;code&gt;web_pdb.set_trace()&lt;/code&gt; as shown on line 19. The &lt;code&gt;web_pdb.set_trace()&lt;/code&gt; call acts like a breakpoint and can be inserted as many times as required.&lt;/p&gt;
@@ -126,7 +126,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;h2 id=&#34;debugging-with-web-pdb&#34;&gt;Debugging with Web-PDB&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_02.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_02.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;After adding &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; to the [../plugins/ExternalAttrib] script it will run to the first breakpoint where execution will be suspended and a web-UI opened at the default port 5555. Pointing a web browser at &lt;code&gt;http://&amp;lt;your  machine hostname or IP&amp;gt;:5555&lt;/code&gt;, eg &lt;code&gt;http://127.0.0.1:5555&lt;/code&gt;, should show an interface for debugging as above.&lt;/p&gt;
@@ -150,10 +150,10 @@ the Python environment selected in the OpendTect Python Settings dialog.
     
     <item>
       <title>Blog: Python External Attribute Tips &amp; Tricks - Logging</title>
-      <link>/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</link>
       <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</guid>
       <description>
         
         
@@ -163,7 +163,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;h2 id=&#34;an-example&#34;&gt;An Example&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_01.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_01.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;On line 18 the Python logger is modified by adjusting the severity level of messages that will appear in the log file. By default only CRITICAL, ERROR and WARNING messages will be written.&lt;/p&gt;
@@ -172,7 +172,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;h2 id=&#34;the-result&#34;&gt;The Result&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_02.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_02.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 
@@ -181,10 +181,10 @@ the Python environment selected in the OpendTect Python Settings dialog.
     
     <item>
       <title>Blog: Anatomy of a Python External Attribute</title>
-      <link>/blog/2018/06/04/anatomy-of-a-python-external-attribute/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018/06/04/anatomy-of-a-python-external-attribute/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/</guid>
       <description>
         
         
@@ -197,7 +197,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-imports&#34;&gt;The Imports&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_01.png&#34;
          alt=&#34;Imports Section&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Imports Section&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -214,7 +214,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-parameters&#34;&gt;The Parameters&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_02.png&#34;
          alt=&#34;UI Parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;UI Parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -223,7 +223,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;p&gt;The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for documentation. The plugin dynamically builds the following input dialog for this script:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_06.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_06.png&#34;
          alt=&#34;UI Appearance&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;UI Appearance&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -233,7 +233,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-compute-loop-initialisation&#34;&gt;The Compute Loop Initialisation&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_03.png&#34;
          alt=&#34;Compute Initialisation&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Compute Initialisation&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -244,7 +244,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-compute-loop&#34;&gt;The Compute Loop&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_04.png&#34;
          alt=&#34;Compute Loop&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Compute Loop&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -257,7 +257,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-postamble&#34;&gt;The Postamble&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_05.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_05.png&#34;
          alt=&#34;Wrapping up&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Wrapping up&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – attribute</title>
-    <link>/tags/attribute/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/attribute/</link>
     <description>Recent content in attribute on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/tags/attribute/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/attribute/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Time Delay Estimation</title>
-      <link>/docs/externalattributes/zdelayest/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/zdelayest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/externalattributes/zdelayest/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/zdelayest/</guid>
       <description>
         
         
@@ -42,7 +42,7 @@ itself shifted up by 13 metres. The Match Delta attribute output is much noisier
 &lt;p&gt;This example shows the Correlation Quality output for the same data as above.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/zdelayest/ex_correlation_quality.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/zdelayest/ex_correlation_quality.jpg&#34;
          alt=&#34;Correlation quality**&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;Correlation quality**&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -51,7 +51,7 @@ itself shifted up by 13 metres. The Match Delta attribute output is much noisier
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/zdelayest/ex_correlation_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/zdelayest/ex_correlation_input.jpg&#34;
          alt=&#34;ex_correlation.py input parameters**&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;ex_correlation.py input parameters**&lt;/p&gt;
         &lt;/figcaption&gt;

@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – qgis</title>
-    <link>/tags/qgis/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/qgis/</link>
     <description>Recent content in qgis on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/tags/qgis/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/qgis/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: GeopackageExport</title>
-      <link>/docs/plugins/geopackageexport/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/geopackageexport/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</guid>
       <description>
         
         
@@ -118,7 +118,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_qgis.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_qgis.jpg&#34;
          alt=&#34;OpendTect data displayed in QGIS&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect data displayed in QGIS&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -129,37 +129,37 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;h3 id=&#34;survey-tab&#34;&gt;Survey tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_survey_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_survey_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;2d-lines-tab&#34;&gt;2D Lines tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;random-lines-tab&#34;&gt;Random Lines tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;wells-tab&#34;&gt;Wells tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_wells_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_wells_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;polylines-tab&#34;&gt;Polylines tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;h3 id=&#34;horizon-tab&#34;&gt;Horizon tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 
@@ -168,10 +168,10 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
     
     <item>
       <title>Docs: GeotiffExport</title>
-      <link>/docs/plugins/geotiffexport/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/geotiffexport/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</guid>
       <description>
         
         
@@ -185,7 +185,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geotiffexport/geotiff_qgis.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_qgis.jpg&#34;
          alt=&#34;OpendTect 3D horizon data displayed in a QGIS print layout&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect 3D horizon data displayed in a QGIS print layout&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -194,7 +194,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 

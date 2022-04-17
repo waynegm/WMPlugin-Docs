@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – EFDAttrib</title>
-    <link>/tags/efdattrib/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/efdattrib/</link>
     <description>Recent content in EFDAttrib on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="/tags/efdattrib/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/efdattrib/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blog: WMPlugins 6.6.10 Release</title>
-      <link>/blog/2022/04/15/wmplugins-6.6.10-release/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
       <description>
         
         
@@ -35,7 +35,7 @@ akin to Empirical Mode Decomposition. A subsequent post will look at these new a
 decomposition option with the existing WMPlugin tools such as Recursive spectral decomposition and Spectral decomposition by local attribute.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
          alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -47,7 +47,7 @@ reports syntax errors from the script when building the UI via a UI message box.
 log file but the user did not get any direct feedback that an issue was encountered.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
          alt=&#34;Improved error reporting in the External Attribute plugin&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Improved error reporting in the External Attribute plugin&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

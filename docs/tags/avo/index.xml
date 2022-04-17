@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – avo</title>
-    <link>/tags/avo/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/tags/avo/</link>
     <description>Recent content in avo on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/tags/avo/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/avo/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: AVOAttrib</title>
-      <link>/docs/plugins/avoattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/avoattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/avoattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/avoattrib/</guid>
       <description>
         
         
@@ -35,7 +35,7 @@ illustrates the ideal intercept-gradient crossplot response for a clastic sequen
 The Fluid Line or Background Trend is where reflections from shales and some wet sands that have little contrast in Vp/Vs plot.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_ideal_crossplot.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avoattrib/AVOAttrib_ideal_crossplot.jpg&#34;
          alt=&#34;Ideal AVO crossplot for a clastic sequence&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Ideal AVO crossplot for a clastic sequence&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -44,7 +44,7 @@ The Fluid Line or Background Trend is where reflections from shales and some wet
 &lt;p&gt;Another popular classification of AVO effects on the intercept-gradient crossplot is the 3 class AVO scheme of &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.1442696&#34; title=&#34;Amplitude‐versus‐offset variations in gas sands. Steven R. Rutherford and Robert H. Williams GEOPHYSICS 1989 54:6, 680-688&#34;&gt;Rutherford and Williams (1989)&lt;/a&gt; based on acoustic impedance contrasts with the addition of a 4th class for high porosity gas sands introduced by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.1437626&#34; title=&#34;Principles of AVO crossplotting. John P. Castagna and Herbert W. Swan. The Leading Edge 1997 16:4, 337-344&#34;&gt;Castagna and Swan (1997)&lt;/a&gt;. The position of these 4 AVO classes on the intercept-gradient crossplot is shown in the following figure.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_classes.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avoattrib/AVOAttrib_classes.jpg&#34;
          alt=&#34;AVO classes&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;AVO classes&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -145,7 +145,7 @@ The Fluid Line or Background Trend is where reflections from shales and some wet
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_input_parameters.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avoattrib/AVOAttrib_input_parameters.jpg&#34;
          alt=&#34;AVO Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;AVO Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -157,10 +157,10 @@ The Fluid Line or Background Trend is where reflections from shales and some wet
     
     <item>
       <title>Docs: AVO Intercept and Gradient</title>
-      <link>/docs/externalattributes/avo_ig/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/avo_ig/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/externalattributes/avo_ig/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/avo_ig/</guid>
       <description>
         
         
@@ -176,7 +176,7 @@ each sample point. Output includes the intercept, gradient and the correlation c
 &lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/externalattributes/avo_ig/ex_AVOIG_4_input.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/avo_ig/ex_AVOIG_4_input.jpg&#34;
          alt=&#34;ex_angle_stacks_4_to_AVOIG.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;ex_angle_stacks_4_to_AVOIG.py input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -189,10 +189,10 @@ each sample point. Output includes the intercept, gradient and the correlation c
     
     <item>
       <title>Docs: AVOPolarAttrib</title>
-      <link>/docs/plugins/avopolarattrib/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/avopolarattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/plugins/avopolarattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/avopolarattrib/</guid>
       <description>
         
         
@@ -208,7 +208,7 @@ reflection coefficients. &lt;a href=&#34;https://library.seg.org/doi/abs/10.1190
 subsequently extended the analysis with a number of other measures to describe the hodogram.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avopolarattrib/AVOStrengthAttrib_hodogram_example.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avopolarattrib/AVOStrengthAttrib_hodogram_example.png&#34;
          alt=&#34;Example AVO hodogram crossplot for a 36 millisec TWT window&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example AVO hodogram crossplot for a 36 millisec TWT window&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -301,7 +301,7 @@ subsequently extended the analysis with a number of other measures to describe t
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/docs/plugins/avopolarattrib/AVOPolarAttrib_input_parameters.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/avopolarattrib/AVOPolarAttrib_input_parameters.jpg&#34;
          alt=&#34;AVO Polarization Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;AVO Polarization Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

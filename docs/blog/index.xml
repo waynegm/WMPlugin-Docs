@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WMPlugins – WMPlugins Blog</title>
-    <link>/blog/</link>
+    <link>https://waynegm.github.io/WMPlugin-Docs/blog/</link>
     <description>Recent content in WMPlugins Blog on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Blog: WMPlugins 6.6.10 Release</title>
-      <link>/blog/2022/04/15/wmplugins-6.6.10-release/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</link>
       <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
       <description>
         
         
@@ -34,7 +34,7 @@ akin to Empirical Mode Decomposition. A subsequent post will look at these new a
 decomposition option with the existing WMPlugin tools such as Recursive spectral decomposition and Spectral decomposition by local attribute.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
          alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -46,7 +46,7 @@ reports syntax errors from the script when building the UI via a UI message box.
 log file but the user did not get any direct feedback that an issue was encountered.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
          alt=&#34;Improved error reporting in the External Attribute plugin&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Improved error reporting in the External Attribute plugin&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -65,10 +65,10 @@ called &amp;ldquo;odpybind&amp;rdquo;.&lt;/p&gt;
     
     <item>
       <title>Blog: First Release of Python Bindings to OpendTect</title>
-      <link>/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</link>
       <pubDate>Tue, 29 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</guid>
       <description>
         
         
@@ -88,7 +88,7 @@ You can either use the OpendTect Python Settings dialog (accessible from the Uti
 and add the location of the OpendTect executable files to the Custom Module Path or modify the PYTHONPATH within the script.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-02.png&#34;
          alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -143,7 +143,7 @@ an OpendTect data root folder for context.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;get_surveys_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/mnt/Data/seismic/ODData&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;F3_Demo_2020&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Penobscot&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;])&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-03.png&#34;
          alt=&#34;Displaying OpendTect survey info in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Displaying OpendTect survey info in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -151,7 +151,7 @@ an OpendTect data root folder for context.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-01.png&#34;
          alt=&#34;Displaying OpendTect survey locations on a Folium web map&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Displaying OpendTect survey locations on a Folium web map&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -200,7 +200,7 @@ returning a Pandas Dataframe have a suffix of &amp;ldquo;_df&amp;rdquo;.&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo_wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;info_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-04.png&#34;
          alt=&#34;Displaying OpendTect well info in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Displaying OpendTect well info in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -210,7 +210,7 @@ returning a Pandas Dataframe have a suffix of &amp;ldquo;_df&amp;rdquo;.&lt;/p&g
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo_wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;log_data_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;F02-1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Vp&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Sonic&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0.15&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SampleMode&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Upscale&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-05.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-05.png&#34;
          alt=&#34;Displaying OpendTect well logs in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Displaying OpendTect well logs in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -220,10 +220,10 @@ returning a Pandas Dataframe have a suffix of &amp;ldquo;_df&amp;rdquo;.&lt;/p&g
     
     <item>
       <title>Blog: Seismic Modelling and Inversion using PyLops based Python External Attributes</title>
-      <link>/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/</link>
       <pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/</guid>
       <description>
         
         
@@ -247,7 +247,7 @@ that a PyLops python environment includes all the modules required to run any at
 &lt;h2 id=&#34;post-stack--seismic-inversion&#34;&gt;Post-Stack  Seismic Inversion&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-01.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-01.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;The PyLops/ex_poststack_inversion.py script uses the pylops.avo.poststack.PoststackInversion operator to do
@@ -257,7 +257,7 @@ Note that the polarity of the seismic wavelet must match the data.&lt;/p&gt;
 &lt;p&gt;The following figures show inversion input and output for a 1D model created by the PyLops/ex_make_1d_seismic.py script.&lt;/p&gt;
 &lt;p&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-02.png&#34;
          alt=&#34;Impedance Model (red) and Background Model (blue)&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Background Model (blue)&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -265,7 +265,7 @@ Note that the polarity of the seismic wavelet must match the data.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-03.png&#34;
          alt=&#34;Impedance Model (red) and Seismic Model (blue)&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Seismic Model (blue)&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -273,7 +273,7 @@ Note that the polarity of the seismic wavelet must match the data.&lt;/p&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-04.png&#34;
          alt=&#34;Impedance Model (red) and Inverted Impedance (blue)&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -282,7 +282,7 @@ Note that the polarity of the seismic wavelet must match the data.&lt;/p&gt;
 &lt;p&gt;There is also a PyLops/ex_poststack_relative_inversion.py script that runs the inversion without a background model:
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-05.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-05.png&#34;
          alt=&#34;Impedance Model (red) and Inverted Relative Impedance (blue)&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Relative Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -290,7 +290,7 @@ Note that the polarity of the seismic wavelet must match the data.&lt;/p&gt;
 &lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-07.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-07.png&#34;
          alt=&#34;Inverted Relative Impedance Example&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Inverted Relative Impedance Example&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -299,7 +299,7 @@ Note that the polarity of the seismic wavelet must match the data.&lt;/p&gt;
 &lt;h2 id=&#34;prestack-modelling&#34;&gt;Prestack Modelling&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-06.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-06.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;The PyLops/ex_prestack_modelling.py script uses the pylops.avo.avo.AVOLinearModelling operator to create a
@@ -313,7 +313,7 @@ needed is a wavelet with the appropriate polarity for the data being modelled.&l
 well location.
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-02.jpg&#34; width=&#34;100%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-02.jpg&#34; width=&#34;100%&#34;/&gt; 
 &lt;/figure&gt;
 &lt;/p&gt;
 &lt;h2 id=&#34;installing-pylops&#34;&gt;Installing PyLops&lt;/h2&gt;
@@ -327,10 +327,10 @@ well location.
     
     <item>
       <title>Blog: Using Visual Studio Code with OpendTect</title>
-      <link>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
       <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
       <description>
         
         
@@ -358,7 +358,7 @@ on it from your file manager/explorer) and add the following extensions:&lt;/p&g
 &lt;p&gt;Open the OpendTect Python Settings dialog (Utilities|Installation|Python Settings menu)
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
          alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -377,7 +377,7 @@ VS Code from within OpendTect ensures environment settings are compatible with t
 Settings dialog.&lt;/p&gt;
 &lt;p&gt;
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
          alt=&#34;OpendTect After Adding VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;OpendTect After Adding VS Code&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -390,7 +390,7 @@ the Jupyter: Create Blank New Jupyter Notebook command from the VS Code Command 
 the Python environment selected in the OpendTect Python Settings dialog.
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
          alt=&#34;New Jupyter Notebook in VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;New Jupyter Notebook in VS Code&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -403,7 +403,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
          alt=&#34;Exploring OpendTect Well Data in a VS Code Notebook&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Exploring OpendTect Well Data in a VS Code Notebook&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -413,10 +413,10 @@ the Python environment selected in the OpendTect Python Settings dialog.
     
     <item>
       <title>Blog: GPU vs CPU Benchmarks for OpendTect Attribute Plugins</title>
-      <link>/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/</link>
       <pubDate>Mon, 07 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/</guid>
       <description>
         
         
@@ -430,7 +430,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;p&gt;The first 2 options only use the central processing unit (CPU). ArrayFire also supports CPU calculation but for this review only the GPU capabilities were evaluated. In all cases benchmarks were run with and without OpendTect&amp;rsquo;s multi-threaded processing support. Results are summarised in the following graph showing performance relative to the single threaded Normal method for a range of input data stepouts (higher performance numbers are better):&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/19_01_07_1.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/19_01_07_1.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;The primary observations are:&lt;/p&gt;
@@ -469,7 +469,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;p&gt;folders. The plugin user interface is shown in the following image:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/19_01_07_2.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/19_01_07_2.png&#34;
          alt=&#34;Imports Section&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Imports Section&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -549,10 +549,10 @@ the Python environment selected in the OpendTect Python Settings dialog.
     
     <item>
       <title>Blog: Python External Attribute Tips &amp; Tricks - Debugging</title>
-      <link>/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</link>
       <pubDate>Fri, 08 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</guid>
       <description>
         
         
@@ -565,7 +565,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;h2 id=&#34;adding-web-pdb-to-a-script&#34;&gt;Adding Web-PDB to a Script&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_01.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_01.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;Adding &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; to a script is just a matter of importing the module as shown on line 5 and adding a call to  &lt;code&gt;web_pdb.set_trace()&lt;/code&gt; as shown on line 19. The &lt;code&gt;web_pdb.set_trace()&lt;/code&gt; call acts like a breakpoint and can be inserted as many times as required.&lt;/p&gt;
@@ -573,7 +573,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;h2 id=&#34;debugging-with-web-pdb&#34;&gt;Debugging with Web-PDB&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_02.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_02.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;After adding &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; to the [../plugins/ExternalAttrib] script it will run to the first breakpoint where execution will be suspended and a web-UI opened at the default port 5555. Pointing a web browser at &lt;code&gt;http://&amp;lt;your  machine hostname or IP&amp;gt;:5555&lt;/code&gt;, eg &lt;code&gt;http://127.0.0.1:5555&lt;/code&gt;, should show an interface for debugging as above.&lt;/p&gt;
@@ -597,10 +597,10 @@ the Python environment selected in the OpendTect Python Settings dialog.
     
     <item>
       <title>Blog: Python External Attribute Tips &amp; Tricks - Logging</title>
-      <link>/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</link>
       <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</guid>
       <description>
         
         
@@ -610,7 +610,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;h2 id=&#34;an-example&#34;&gt;An Example&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_01.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_01.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 &lt;p&gt;On line 18 the Python logger is modified by adjusting the severity level of messages that will appear in the log file. By default only CRITICAL, ERROR and WARNING messages will be written.&lt;/p&gt;
@@ -619,7 +619,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
 &lt;h2 id=&#34;the-result&#34;&gt;The Result&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_02.png&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_02.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 
@@ -628,10 +628,10 @@ the Python environment selected in the OpendTect Python Settings dialog.
     
     <item>
       <title>Blog: Anatomy of a Python External Attribute</title>
-      <link>/blog/2018/06/04/anatomy-of-a-python-external-attribute/</link>
+      <link>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018/06/04/anatomy-of-a-python-external-attribute/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/</guid>
       <description>
         
         
@@ -644,7 +644,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-imports&#34;&gt;The Imports&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_01.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_01.png&#34;
          alt=&#34;Imports Section&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Imports Section&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -661,7 +661,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-parameters&#34;&gt;The Parameters&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_02.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_02.png&#34;
          alt=&#34;UI Parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;UI Parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -670,7 +670,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;p&gt;The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for documentation. The plugin dynamically builds the following input dialog for this script:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_06.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_06.png&#34;
          alt=&#34;UI Appearance&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;UI Appearance&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -680,7 +680,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-compute-loop-initialisation&#34;&gt;The Compute Loop Initialisation&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_03.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_03.png&#34;
          alt=&#34;Compute Initialisation&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Compute Initialisation&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -691,7 +691,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-compute-loop&#34;&gt;The Compute Loop&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_04.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_04.png&#34;
          alt=&#34;Compute Loop&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Compute Loop&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -704,7 +704,7 @@ output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;
 &lt;h2 id=&#34;the-postamble&#34;&gt;The Postamble&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_05.png&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_05.png&#34;
          alt=&#34;Wrapping up&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Wrapping up&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
