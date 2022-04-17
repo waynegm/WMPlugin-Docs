@@ -1,0 +1,1213 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – python</title>
+    <link>/tags/python/</link>
+    <description>Recent content in python on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: External(Python) Attributes</title>
+      <link>/docs/plugins/externalattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/externalattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] allows attributes to be developed in Python.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;With this plugin it is possible to calculate single and multitrace attributes using a Python script. The plugin supports multi-trace
+multi-attribute input and multi-attribute output as well as parallel execution.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; &lt;em&gt;Releases prior to 6.0.2 allowed multi-trace multi-attribute input only if all the attributes were in the same multi-attribute volume.
+In releases from 6.0.2 onward this limitation has been removed.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Instead of doing the attribute calculation within OpendTect this plugin starts up a Python interpreter and runs a user specified Python script.
+Trace data is read/written to/from the Python script using stdin/stdout pipes. As described below the Python script must import the &lt;em&gt;extattrib.py&lt;/em&gt;
+module that handles the stdin/stdout data IO and presents the trace data as a numpy array. The script must implement a &lt;em&gt;doCompute&lt;/em&gt; method and
+define a Python dictionary describing the User Interface. Details are described below. Tips and Tricks to assist can be found in various [../articles].
+There are also the [wmscripts] for everything from dip estimation to filtering described in the [../external_attributes] section of this documentation
+which are distributed with the WMPlugins suite and can be found in the bin/python/wmpy folder of the OpendTect installation.&lt;/p&gt;
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 3 required parameters and optional parameters determined by the &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt; provided by the Python attribute script:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Interpreter&lt;/td&gt;
+&lt;td&gt;The Python interpreter to be used to run the script, eg /usr/bin/python3. As of version 6.6.1 and 6.4.13 this field will default to the OpendTect Python settings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;External File&lt;/td&gt;
+&lt;td&gt;The external application to be used for attribute calculation. As of version 6.6.1 and 6.4.13 this field will default to the OpendTect/bin/python/wmpy folder.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/ExternalAttrib_input.jpg&#34;
+         alt=&#34;External Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;External Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The &lt;img src=&#34;reload.png&#34; alt=&#34;reset&#34;&gt; button beside the Interpreter entry will force an update of the Interpreter field to the current OpendTect Python
+setting. This can be useful if you use the Python Settings dialog to change the default interpreter and want to apply the change within
+the attribute definition.&lt;/p&gt;
+&lt;p&gt;The &lt;img src=&#34;reload.png&#34; alt=&#34;reload&#34;&gt; button beside the External File entry will force reloading the attribute script and rebuild the user interface.
+This can be useful if you are editing a script, save it and want to verify the changes.&lt;/p&gt;
+&lt;p&gt;The &lt;img src=&#34;contexthelp.png&#34; alt=&#34;help&#34;&gt; button beside the External File entry will open the system web browser with the url specified by the Help entry in
+the attribute scripts &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt;. The button is not displayed if this entry is absent.&lt;/p&gt;
+&lt;h2 id=&#34;python-script-structure&#34;&gt;Python Script Structure&lt;/h2&gt;
+&lt;p&gt;Every Python attribute script has 5 sections. As an example consider the &lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/blob/master/bin/python/wmpy/DipAndAzimuth/ex_dip.py&#34;&gt;ex_dip.py&lt;/a&gt;
+script which converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and output.
+Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; and &lt;a href=&#34;http://www.numpy.org/&#34;&gt;Numpy&lt;/a&gt; is assumed.&lt;/p&gt;
+&lt;h3 id=&#34;the-imports&#34;&gt;The Imports&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_01.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;This is where external modules/libraries required by the script are loaded. At a minimum the script must load:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the Python sys and os modules&lt;/li&gt;
+&lt;li&gt;the Numpy module (the fundamental package for scientific computing with Python)&lt;/li&gt;
+&lt;li&gt;the external attribute module (extattrib.py)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [wmscripts] package and its location
+is unknown to the Python installation unless we help out. The sys.path.insert call on line 11 provides this help by extending the default search
+path for Python modules to include the parent folder of the folder containing the script. This reflects the folder structure of the [wmscripts]
+package, so if you develop scripts outside this structure then you will need to change line 11 appropriately to append the location of extattrib.py
+to the module search path.&lt;/p&gt;
+&lt;p&gt;Of course if your script requires other Python modules (eg SciPy, Numba) then add the appropriate import statements in this section.&lt;/p&gt;
+&lt;h3 id=&#34;the-parameters&#34;&gt;The Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_02.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by
+the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for
+documentation. The plugin dynamically builds the following input dialog for this script:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_06.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;A variety of other input elements can be specified to build more complex input dialogs. See &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt;
+for full details or look at other scripts to see what is possible.&lt;/p&gt;
+&lt;h3 id=&#34;the-compute-loop-initialisation&#34;&gt;The Compute Loop Initialisation&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_03.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the
+&amp;ldquo;while True:&amp;rdquo; loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section
+will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.&lt;/p&gt;
+&lt;p&gt;This particular script shows how information stored in the &lt;a href=&#34;#seismicinfo-block&#34;&gt;SeismicInfo Block&lt;/a&gt; can be used to calculate some
+constants purely as an example. This attribute is so simple that no initialisation is actually required.&lt;/p&gt;
+&lt;h3 id=&#34;the-compute-loop&#34;&gt;The Compute Loop&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_04.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;This is where the attribute calculation takes place. The &lt;em&gt;xa.doInput()&lt;/em&gt; and &lt;em&gt;xa.doOutput()&lt;/em&gt; function calls control the input and output
+of seismic trace data between the script and OpendTect. Generally these should be the first and last statements within the compute loop.&lt;/p&gt;
+&lt;p&gt;Within the compute loop, some information about the current trace data such as the number of samples and the inline and crossline
+location are provided in the &lt;a href=&#34;#traceinfo-block&#34;&gt;TraceInfo Block&lt;/a&gt;. These can be accessed using constructs like &lt;em&gt;xa.TI[&amp;rsquo;nrsamp&amp;rsquo;]&lt;/em&gt;.
+This information is not required for this particular script.&lt;/p&gt;
+&lt;p&gt;The global Numpy array &lt;em&gt;xa.Input&lt;/em&gt; contains the input trace data. &lt;em&gt;xa.Input[&amp;rsquo;name of input attribute&amp;rsquo;]&lt;/em&gt; returns a Numpy array with the
+trace data for the current compute location. The shape of this Numpy array depends on the traces stepouts required by the attribute.
+As this particular script uses just single trace input (inline and crossline step out of 0) the Numpy array has a shape of
+&lt;em&gt;(1,1,xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt;. In the more general case of a multi-trace attribute the Numpy array shape would be
+&lt;em&gt;(xa.SI[&amp;rsquo;nrinl&amp;rsquo;], xa.SI[&amp;rsquo;nrcrl&amp;rsquo;], xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt; and the input trace at the current location would be at the centre of the
+array, ie at index &lt;em&gt;[xa.SI[&amp;rsquo;nrinl&amp;rsquo;]//2, xa.SI[&amp;rsquo;nrcrl&amp;rsquo;]//2,&amp;hellip;]&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Attribute ouput must be put into the &lt;em&gt;xa.Output&lt;/em&gt; global Numpy array before the &lt;em&gt;xa.doOutput()&lt;/em&gt; function call. Each element
+(eg &lt;em&gt;xa.Output[&amp;rsquo;name of output attribute&amp;rsquo;]&lt;/em&gt;) of the output array must have a shape of &lt;em&gt;(1,1,xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-postamble&#34;&gt;The Postamble&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_05.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;This section is just boilerplate code that appears in every attribute script which should never be changed.&lt;/p&gt;
+&lt;h2 id=&#34;json-parameter-string&#34;&gt;JSON Parameter String&lt;/h2&gt;
+&lt;p&gt;The Python script can specify a set of parameters as a JSON object string. As of Release 6.6.8 the format of the JSON object string has
+changed to better support more flexible UI&amp;rsquo;s. In particular the restriction on no whitespace in the keys and values in the JSON string
+have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) should continue to work. The following keywords are supported:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Input (depreciated)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;String&#39;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Specifies a label to appear beside the input attribute selection UI element. Superceded by the &amp;ldquo;Inputs&amp;rdquo; keyword but is supported for backward compatibility.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Input: Input Data&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Inputs&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Array of Strings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Each string is used as a label for an input attribute selection UI element. Currently limited to a maximum of 6 attribute inputs.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Inputs: [Input 1,Input 2,Input 3]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Output (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Array of Strings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Each string specifies the name of an output attribute. If this keyword is not supplied a single output attribute is assumed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Output: [Out 1,Out 2,Out 3]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;ZSampMargin (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Value&amp;rsquo; (array of 2 numbers)  and optional &amp;lsquo;Hidden&amp;rsquo; (boolean) and &amp;lsquo;Symmetric&amp;rsquo; (boolean) parameters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &#39;Value&#39; parameter is an array of 2 numbers specifying the desired minimum number of samples before and after the calculation point required for the calculation respectively. If not supplied only a single value will be provided when the attribute is computed on a timeslice or horizon. The optional &amp;lsquo;Hidden&amp;rsquo; parameter is a boolean which if set to true makes the ZSampMargin parameter read only.&lt;/br&gt;The optional &#39;Symmetric&#39; parameter is a boolean which if true causes only a single entry to be displayed in the UI.&lt;/br&gt;The optional &#39;Minimum&#39; parameter is an array of 2 numbers specifying a minimum required window size&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ZSampMargin: {Value: [-2,2]}&lt;/code&gt; &lt;/br&gt;&lt;code&gt;ZSampMargin: {Value: [-2,2], Symmetric: True}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;StepOut (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Value&amp;rsquo; (array of 2 numbers)  and optional &amp;lsquo;Hidden&amp;rsquo; (boolean) parameters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &amp;lsquo;Value&amp;rsquo; parameter is an array of 2 numbers specifying the inline and crossline stepout defining the block of traces to be used around the current calculation position. If not supplied only a single trace is provided. The optional &amp;lsquo;Hidden&amp;rsquo; parameter is a boolean which if set to true makes the StepOut parameter read only. The optional &amp;lsquo;Minimum&amp;rsquo; parameter is an array of 2 numbers specifying a minimum required stepout.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;StepOut: {Value: [2,2]}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;StepOut: {Value: [2,2], Hidden: True}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;UI Name String (Introduced in release 6.4.8 - optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Type&amp;rsquo; (string)  and &amp;lsquo;Value&amp;rsquo; (string or number depending on the &amp;lsquo;Type&amp;rsquo; key) parameters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;In this new entry the main key is the name that will appear in the UI. Note that this can now contain whitespace. The &#39;Type&#39; parameter describes the input field type. Currently Number, Select and File are supported. Number is for a numeric input box, equivalent to the legacy Par_0 to Par_5 entries but with the advantage that the number and order in the UI is more flexible. Select displays a combo-box, equivalent to the legacy Select entry but with the advantage that there is no restriction on the number and order in the UI. File is a file selection UI.&lt;/br&gt;The &#39;Value&#39; sets the default value displayed in the UI. For Number types it is a number, for the Select and File types it is a string.For the File type the Value determines the location where the file selection dialog opens and if a &#39;*&#39; is present the file filter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;A File UI Field: {Type: File, Value: Seismics/*.wvlt}&lt;/code&gt; &lt;/br&gt;&lt;code&gt;A Number UI Field: {Type: Number, Value: 20}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;A Select UI Field: {Type: Select, Options: [option 1,option 2,option 3],Value: option 2}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Help (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;URL pointing to documentation for the external attribute.&lt;/br&gt; Causes an icon help button to be displayed in the UI.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Help: http://waynegm.github.io/OpendTect-Plugin-Docs/External-Attributes/LPA-Attributes/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Parallel (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Default is True which allows parallel execution. If set to False then calculations only use a single thread.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Parallel: False&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Select (Legacy optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Name&amp;rsquo; (string), &amp;lsquo;Values&amp;rsquo; (array of strings) and &amp;lsquo;Select&amp;rsquo; (number) parameters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Displays a list box labeled &amp;lsquo;Name&amp;rsquo; with options specified in &amp;lsquo;Values&amp;rsquo; and default selection being item number &amp;lsquo;Select&amp;rsquo;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Select: {Name: Type, Values: [None, Median, Average], Selection: 0}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Par_0, Par_1, Par_2, Par_3, Par_4, Par_5 (Legacy all optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Name&amp;rsquo; (string) and &amp;lsquo;Value&amp;rsquo; (number) parameter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Displays an entry box labeled &amp;lsquo;Name&amp;rsquo; with default value &amp;lsquo;Value&amp;rsquo;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Par_0: {Name: First Parameter, Value: 100.0}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;Par_1: {Name: Second Parameter, Value: 200.0}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Here is an example parameter string:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+	&amp;#39;Inputs&amp;#39;: [&amp;#39;DT(us/m)&amp;#39;, &amp;#39;DTS(us/m)&amp;#39;, &amp;#39;RHOB(g/cc)&amp;#39;],
+	&amp;#39;Output&amp;#39;: [&amp;#39;Near&amp;#39;, &amp;#39;Mid&amp;#39;, &amp;#39;Far&amp;#39;],
+	&amp;#39;ZSampMargin&amp;#39; : {&amp;#39;Value&amp;#39;: [-10,10]},
+	&amp;#39;StepOut&amp;#39; : {&amp;#39;Value&amp;#39;: [1,1], &amp;#39;Hidden&amp;#39;: true},
+	&amp;#39;Near Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 6.0},
+	&amp;#39;Mid Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 20.0},
+	&amp;#39;Far Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 40.0},
+	&amp;#39;Wavelet&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;File&amp;#39;,&amp;#39;Value&amp;#39;: &amp;#39;Seismics/*.wvlt&amp;#39;},
+	&amp;#39;Method&amp;#39; : { &amp;#39;Type&amp;#39;: &amp;#39;Select&amp;#39;, &amp;#39;Options&amp;#39;: [&amp;#39;akirich&amp;#39;, &amp;#39;fatti&amp;#39;], &amp;#39;Value&amp;#39;: &amp;#39;fatti&amp;#39;},
+	&amp;#39;Help&amp;#39;  : &amp;#39;https://gist.github.com/waynegm/84f323ec4aab3961c23d&amp;#39;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;tips-and-tricks&#34;&gt;Tips and Tricks&lt;/h2&gt;
+&lt;h3 id=&#34;cross-platform-setup&#34;&gt;Cross Platform Setup&lt;/h3&gt;
+&lt;p&gt;Prior to release 5.10 and 6.0.0pre7-1 any attribute set containing external attributes could not be shared between Windows and Linux because the Interpeter and External File input fields contain platform specific file paths.&lt;/p&gt;
+&lt;p&gt;Release 5.10 and 6.0.0pre7-1 introduced an optional mechanism to support cross platform attribute sets containing external attributes by using environment variables. Consider the following script for starting OpendTect on Linux:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/csh -f
+setenv DTECT_SETTINGS &amp;#34;$HOME/.od6&amp;#34;
+setenv OD_USER_PLUGIN_DIR &amp;#34;$HOME/.od6&amp;#34;
+setenv EX_PYTHON &amp;#34;/opt/anaconda3/bin/python&amp;#34;
+setenv OD_EX_DIR &amp;#34;$HOME/Development/GIT_AREA/OpendTect-External-Attributes/&amp;#34;
+/opt/seismic/OpendTect_6/6.0.0/start_dtect
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And an equivalent Windows command file:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@set OD_USER_PLUGIN_DIR=%HOMEPATH%\od6
+@set EX_PYTHON=C:\Miniconda3\python.exe
+@set OD_EX_DIR=E:\Development\GIT_AREA\OpendTect-External-Attributes\
+start &amp;#34;&amp;#34; &amp;#34;C:\Program Files\OpendTect_6\6.0.0\bin\win64\Release\od_start_dtect.exe&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The environment variable EX_PYTHON points to the python interpreter for each platform and entering %EX_PYTHON% into the Interpreter input field ensures the platform appropriate interpreter is used. Any name can be used for the environment variable.&lt;/p&gt;
+&lt;p&gt;The  environment variable OD_EX_DIR points to a root folder below which the attribute script files can be found. The setting in the Linux startup script points to a Linux folder. The corresponding setting in the Windows command file points to the same location via a network share. This environment variable name is hard wired into the code so this variable name cannot be changed. Note that the script files cam be located in subfolders of the OD_EX_DIR folder.&lt;/p&gt;
+&lt;p&gt;Attribute sets created by release 5.0.10 and 6.0.0pre7-1 and later that use these environment variables will not work in earlier versions of the External Attribute plugin.&lt;/p&gt;
+&lt;h3 id=&#34;opendtect-linux-hangs-after-selecting-a-python-external-attribute-in-the-attribute-description-editor&#34;&gt;OpendTect (Linux) hangs after selecting a Python external attribute in the Attribute Description Editor&lt;/h3&gt;
+&lt;p&gt;This can happen if the Python file has Windows/DOS linebreaks. Use the dos2unix command on the Python file and all should be ok.&lt;/p&gt;
+&lt;h3 id=&#34;setting-up-a-pythonnumpyscipy-environment&#34;&gt;Setting up a Python/Numpy/Scipy environment&lt;/h3&gt;
+&lt;p&gt;The Python environments provided by the OpendTect Installation Manager, specifically the MKL and Cuda environments, will work with this plugin although some scripts may require installation of additional
+packages. Any additional dependencies will usually be described in a README.md file next to the script, in the comments/description at the top of the script file or in the documentation.&lt;/p&gt;
+&lt;p&gt;Alternatively you can install your own Python/Numpy/Scipy development stack for Python 3 from scratch. Continuum Analytics provide free Python installers for Linux and Windows in &lt;a href=&#34;http://continuum.io/downloads#all&#34;&gt;Anaconda&lt;/a&gt;. There is also a smaller DIY option called &lt;a href=&#34;http://conda.pydata.org/miniconda.html&#34;&gt;Miniconda&lt;/a&gt; which allows you to select just the packages you need.&lt;/p&gt;
+&lt;p&gt;In general you require Python 3 (&amp;gt;=3.7) and compatible Numpy and Scipy. Numba is also highly recommended and required by some of the supplied scripts.&lt;/p&gt;
+&lt;h2 id=&#34;how-it-works&#34;&gt;How it Works&lt;/h2&gt;
+&lt;p&gt;The following describes how the plugin works. Most of the details are handled by the extattrib.py module included in the plugin distribution. Python
+scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that
+implements the attribute calculation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-g&lt;/code&gt; the application should write out a  [#JSON Parameter String] to stdout describing the attribute parameters and exit.&lt;/li&gt;
+&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-c json-parameter-string&lt;/code&gt; the application
+&lt;ul&gt;
+&lt;li&gt;should read and parse the contents of &lt;code&gt;json-parameter-string&lt;/code&gt; to get the attribute parameters&lt;/li&gt;
+&lt;li&gt;read a 40 byte block of binary data from stdin called the SeismicInfo block (described below)&lt;/li&gt;
+&lt;li&gt;start an endless loop that:
+&lt;ul&gt;
+&lt;li&gt;reads a 16 byte block of binary data from stdin called the TraceInfo block (described below)&lt;/li&gt;
+&lt;li&gt;reads a data block of 4 byte binary floats from stdin that contains the seismic trace data. The size of the data block depends on the content of the SeismicInfo (number of traces and number of inputs) and TraceInfo ( number of samples) blocks
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;number_of_inputs * number_of_traces * number_of_samples * 4 bytes&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;calculates the attribute output&lt;/li&gt;
+&lt;li&gt;writes a data block of 4 byte binary floats to stdout that contains the attribute output. The size of the output data block depends on the content of the TraceInfo ( number of samples) block and the number of output attributes
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;number_of_samples * number_of_outputs * 4 bytes&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;seismicinfo-block&#34;&gt;SeismicInfo Block&lt;/h3&gt;
+&lt;p&gt;This block of binary data is written to the applications stdin immediately after it is started with the &lt;code&gt;-c&lt;/code&gt; argument. It consists of 40 bytes as follows:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;SIZE&lt;/th&gt;
+&lt;th&gt;FORMAT&lt;/th&gt;
+&lt;th&gt;INDEX&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrtraces&lt;/td&gt;
+&lt;td&gt;number of traces for each input attribute&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrinput&lt;/td&gt;
+&lt;td&gt;number of input attributes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nroutput&lt;/td&gt;
+&lt;td&gt;number of output atrributes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrinl&lt;/td&gt;
+&lt;td&gt;number of inline traces in the input data block&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrcrl&lt;/td&gt;
+&lt;td&gt;number of crossline traces in the input data block&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;zstep&lt;/td&gt;
+&lt;td&gt;trace sampling interval  (result of OpendTect API call &lt;em&gt;SI().zstep()&lt;/em&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;inldist&lt;/td&gt;
+&lt;td&gt;distance between inlines (result of OpendTect API call &lt;em&gt;SI().inlDistance()&amp;lt;/em.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;crldist&lt;/td&gt;
+&lt;td&gt;distance between crosslines (result of OpendTect API call &lt;em&gt;SI().crlDistance()&lt;/em&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;zFactor&lt;/td&gt;
+&lt;td&gt;(result of OpendTect API call &lt;em&gt;zFactor()&lt;/em&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;dipFactor&lt;/td&gt;
+&lt;td&gt;(result of OpendTect API call &lt;em&gt;dipFactor()&lt;/em&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h3 id=&#34;traceinfo-block&#34;&gt;TraceInfo Block&lt;/h3&gt;
+&lt;p&gt;This block of binary data is written to the application stdin immediately before each block of trace data. It consists of 16 bytes as follows:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;SIZE&lt;/th&gt;
+&lt;th&gt;FORMAT&lt;/th&gt;
+&lt;th&gt;INDEX&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrsamp&lt;/td&gt;
+&lt;td&gt;number of samples in each trace within the input data block (OpendTect &lt;em&gt;nrsamples&lt;/em&gt; parameter)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;z0&lt;/td&gt;
+&lt;td&gt;position of first sample in data trace within entire seismic trace ( OpendTect &lt;em&gt;z0&lt;/em&gt; parameter)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;inl&lt;/td&gt;
+&lt;td&gt;inline number of current calculation position&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;crl&lt;/td&gt;
+&lt;td&gt;crossline number of current calculation position&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: WMPlugins 6.6.10 Release</title>
+      <link>/blog/2022/04/15/wmplugins-6.6.10-release/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Announcing the release of version 6.6.10 of the WMPlugins a suite of opensource plugins that extend the opensource seismic interpretation
+system &lt;a href=&#34;https://dgbes.com/index.php/software#free&#34;&gt;OpendTect&lt;/a&gt;. This release is built against OpendTect 6.6.7.&lt;/p&gt;
+&lt;p&gt;The release includes the following changes:&lt;/p&gt;
+&lt;h2 id=&#34;avopolarattrib&#34;&gt;AVOPolarAttrib&lt;/h2&gt;
+&lt;p&gt;Nans and Infs generated during the calculation of the attributes are converted to OpendTect Undefined, fixing a crash.&lt;/p&gt;
+&lt;h2 id=&#34;efdattrib&#34;&gt;EFDAttrib&lt;/h2&gt;
+&lt;p&gt;Two new attributes have been added that use &lt;a href=&#34;https://arxiv.org/abs/1912.00414&#34;&gt;Empirical Fourier Decomposition (Zhou etal(2019)&lt;/a&gt;. The
+two attributes generate the mode decomposition and a spectral decomposition from the mode decomposition. These provide a signal analysis
+akin to Empirical Mode Decomposition. A subsequent post will look at these new attributes in detail and compare the new spectral
+decomposition option with the existing WMPlugin tools such as Recursive spectral decomposition and Spectral decomposition by local attribute.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
+         alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;external-attributes&#34;&gt;External attributes&lt;/h2&gt;
+&lt;p&gt;This release fixes a crash when loading an attribute set with either a non-existent python interpreter or attribute script and now
+reports syntax errors from the script when building the UI via a UI message box. Previously these errors were recorded in the OpendTect
+log file but the user did not get any direct feedback that an issue was encountered.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
+         alt=&#34;Improved error reporting in the External Attribute plugin&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Improved error reporting in the External Attribute plugin&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Also fixed various issues with the included wmpy scripts to make them compatible with the versions of Python modules installed by the OpendTect
+installation manager.&lt;/p&gt;
+&lt;h2 id=&#34;mistie-analysis&#34;&gt;Mistie Analysis&lt;/h2&gt;
+&lt;p&gt;Fixed a crash when estimating misties for depth surveys.&lt;/p&gt;
+&lt;h2 id=&#34;wmodpy---opendtect-python-bindings&#34;&gt;wmodpy - OpendTect Python Bindings&lt;/h2&gt;
+&lt;p&gt;A decision was made to discontinue development of these within WMPlugins in favour of moving the code
+into the dGB managed OpendTect open source code repository system on Github. The new repository will be
+called &amp;ldquo;odpybind&amp;rdquo;.&lt;/p&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: First Release of Python Bindings to OpendTect</title>
+      <link>/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</link>
+      <pubDate>Tue, 29 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The 6.6.8 release of the wmPlugins includes a Python module, &lt;strong&gt;wmodpy&lt;/strong&gt;, to access OpendTect survey and well information. Unlike
+OpendTect&amp;rsquo;s existing &lt;strong&gt;odpy&lt;/strong&gt; module, &lt;strong&gt;wmodpy&lt;/strong&gt; is a direct binding to the OpendTect C++ code.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;odpy&lt;/strong&gt; module, by comparison, uses a command line application to interact with the OpendTect data structures and transfers
+data to Python as an ascii data stream. This incurs the overhead of starting this application and the writing and reading of an
+ascii data stream on every request. The &lt;strong&gt;wmodpy&lt;/strong&gt; module, however, as a direct binding to the OpendTect C++ code allows Python
+to directly read from the in-memory representation of the data. Data access with the &lt;strong&gt;wmodpy&lt;/strong&gt; module should be much faster.&lt;/p&gt;
+&lt;h2 id=&#34;accessing-the-wmodpy-module&#34;&gt;Accessing the wmodpy Module&lt;/h2&gt;
+&lt;p&gt;Installing my &lt;strong&gt;wmPlugins&lt;/strong&gt; using the OpendTect installation manager will install the &lt;strong&gt;wmodpy&lt;/strong&gt; Python module into the &lt;em&gt;bin/win64/Release&lt;/em&gt;
+or &lt;em&gt;bin/lux64/Release&lt;/em&gt; subfolder of the OpendTect software. You also need a Python environment with at least Numpy but additional
+output options exist if the environment also has Pandas. The OpendTect machine learning Python environments already include Numpy
+and Pandas. For map display you may want to add a module like Folium to your working environment.&lt;/p&gt;
+&lt;p&gt;The folder containing the bindings library must be on the PYTHONPATH to be found by an import statement in a Python script or notebook.
+You can either use the OpendTect Python Settings dialog (accessible from the Utilities| Installation|Python Settings application menu)
+and add the location of the OpendTect executable files to the Custom Module Path or modify the PYTHONPATH within the script.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-02.png&#34;
+         alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The OpendTect Python Settings dialog also allows you to select a custom Python environment to use and also add an icon to the OpendTect
+toolbar to start your chosen IDE and console (only OpendTect 6.6.4) with the specified custom Python environment activated and the
+Custom Module Paths added to the PYTHONPATH.&lt;/p&gt;
+&lt;p&gt;The alternative script/notebook  based solution requires something like the following at the top of the script:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sys&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;sys&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;path&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;insert&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;C:/Program Files/OpendTect/6.6.0/bin/win64/Release&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;general-survey-information&#34;&gt;General Survey Information&lt;/h2&gt;
+&lt;p&gt;The module includes a number of functions for getting information about OpendTect surveys/projects. These all require
+an OpendTect data root folder for context.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;get_surveys(data_root:str)&lt;/td&gt;
+&lt;td&gt;Return list of survey names in the given data_root&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;get_survey_info(data_root:str, surveys:list)&lt;/td&gt;
+&lt;td&gt;Return a Python dictionary with basic information for the surveys in the given list or all surveys if no list is given&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;get_survey_info_df(data_root:str, surveys:list)&lt;/td&gt;
+&lt;td&gt;Return a Pandas Dataframe with basic information for the surveys in the given list or all surveys if no list is given&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;get_survey_features(data_root:str, surveys:list)&lt;/td&gt;
+&lt;td&gt;Return a GeoJSON Feature Collection with basic information for the surveys in the given list or all surveys if no list is given&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Some examples:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;get_surveys&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/mnt/Data/seismic/CooperBasin/ODData&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;13CP06_Dundinna&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Cooper2D&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;get_surveys_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/mnt/Data/seismic/ODData&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;F3_Demo_2020&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Penobscot&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-03.png&#34;
+         alt=&#34;Displaying OpendTect survey info in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Displaying OpendTect survey info in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-01.png&#34;
+         alt=&#34;Displaying OpendTect survey locations on a Folium web map&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Displaying OpendTect survey locations on a Folium web map&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;survey-class&#34;&gt;Survey Class&lt;/h2&gt;
+&lt;p&gt;The module adds a &lt;em&gt;Survey&lt;/em&gt; Python class. Create a &lt;em&gt;Survey&lt;/em&gt; object for a particular data_root and survey_name combination like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Survey&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/mnt/Data/seismic/ODData&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;F3_Demo_2020&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;em&gt;Survey&lt;/em&gt; object can then be used to get information about the survey:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;info&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;F3 Demo 2020&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Type&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;2D3D&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;crs&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;EPSG:23031&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To get a full list of methods provided by the &lt;em&gt;Survey&lt;/em&gt; class use :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Survey&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The other classes added by the module generally require a &lt;em&gt;Survey&lt;/em&gt; object for context.&lt;/p&gt;
+&lt;h2 id=&#34;wells-class&#34;&gt;Wells Class&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;Wells&lt;/em&gt; Python class provides methods to access OpendTect well data within a survey. Creating a &lt;em&gt;Wells&lt;/em&gt; object requires a
+&lt;em&gt;Survey&lt;/em&gt; object for context:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo_wells&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Wells&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Methods are provided to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;List the names of all wells in the project/survey&lt;/li&gt;
+&lt;li&gt;List summary information on all wells&lt;/li&gt;
+&lt;li&gt;List well log information in a well&lt;/li&gt;
+&lt;li&gt;List well log data&lt;/li&gt;
+&lt;li&gt;List markers in a well&lt;/li&gt;
+&lt;li&gt;List a well track&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is also a &amp;ldquo;features&amp;rdquo; method that returns a GeoJSON Feature Collection. To get a full list of methods provided by
+the &lt;em&gt;Wells&lt;/em&gt; class use:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;help&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Wells&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will notice that in many cases the same data can be obtained as either a Python dictionary or as a Pandas Dataframe. Methods
+returning a Pandas Dataframe have a suffix of &amp;ldquo;_df&amp;rdquo;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo_wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;info&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;F02-1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;F03-2&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;F03-4&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;F06-1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;UWID&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;State&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;County&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;WellType&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;X&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;606554.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;619101.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;623255.98&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;607903.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Y&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6080126.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6089491.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6082586.87&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;6077213.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;ReplacementVelocity&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2000.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2000.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2000.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2000.0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;GroundElevation&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0000000150474662e+30&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0000000150474662e+30&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0000000150474662e+30&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.0000000150474662e+30&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo_wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;info_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-04.png&#34;
+         alt=&#34;Displaying OpendTect well info in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Displaying OpendTect well info in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Getting well log data in a Pandas Dataframe is as easy as:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;f3demo_wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;log_data_df&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;F02-1&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,[&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Vp&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Sonic&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0.15&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;wmodpy&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Wells&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SampleMode&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Upscale&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/image-05.png&#34;
+         alt=&#34;Displaying OpendTect well logs in a Pandas Dataframe&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Displaying OpendTect well logs in a Pandas Dataframe&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Seismic Modelling and Inversion using PyLops based Python External Attributes</title>
+      <link>/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/</link>
+      <pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The 6.6.8 release of the wmPlugins includes a number of new Python external attribute scripts that use the
+&lt;a href=&#34;https://pylops.readthedocs.io/en/latest/&#34;&gt;PyLops&lt;/a&gt; linear operator library for seismic modelling and inversion.
+These scripts also demonstrate the use of the new user interface parameter elements introduced in the 6.6.8 release
+of the External Attribute plugin.&lt;/p&gt;
+&lt;p&gt;Assuming wmPlugins is installed using the OpendTect Installation Manager, the scripts will be in the
+&lt;em&gt;bin/python/wmpy/PyLops&lt;/em&gt; folder of the OpendTect software folder and include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyLops/ex_poststack_inversion.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_poststack_relative_inversion.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_poststack_modelling.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_prestack_modelling.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_make_1d_seismic.py&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Using these scripts requires a Python environment with the PyLops python module and it&amp;rsquo;s dependencies installed.
+The section &lt;a href=&#34;#installing-pylops&#34;&gt;Installing PyLops&lt;/a&gt; describes the PyLops installation process. Note
+that a PyLops python environment includes all the modules required to run any attribute script included with the
+&lt;strong&gt;wmPlugins&lt;/strong&gt; not just those in the PyLops folder.&lt;/p&gt;
+&lt;h2 id=&#34;post-stack--seismic-inversion&#34;&gt;Post-Stack  Seismic Inversion&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-01.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;The PyLops/ex_poststack_inversion.py script uses the pylops.avo.poststack.PoststackInversion operator to do
+post-stack seismic inversion. The output is either the log Acoustic Impedance (AI) volume or the residual error.&lt;/p&gt;
+&lt;p&gt;The inputs required are volumes of the seismic to be inverted, a background log AI model and the seismic wavelet.
+Note that the polarity of the seismic wavelet must match the data.&lt;/p&gt;
+&lt;p&gt;The following figures show inversion input and output for a 1D model created by the PyLops/ex_make_1d_seismic.py script.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-02.png&#34;
+         alt=&#34;Impedance Model (red) and Background Model (blue)&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Background Model (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-03.png&#34;
+         alt=&#34;Impedance Model (red) and Seismic Model (blue)&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Seismic Model (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-04.png&#34;
+         alt=&#34;Impedance Model (red) and Inverted Impedance (blue)&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;There is also a PyLops/ex_poststack_relative_inversion.py script that runs the inversion without a background model:
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-05.png&#34;
+         alt=&#34;Impedance Model (red) and Inverted Relative Impedance (blue)&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Relative Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-07.png&#34;
+         alt=&#34;Inverted Relative Impedance Example&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Inverted Relative Impedance Example&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;prestack-modelling&#34;&gt;Prestack Modelling&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-06.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;The PyLops/ex_prestack_modelling.py script uses the pylops.avo.avo.AVOLinearModelling operator to create a
+pre-stack angle volume from well data. The output is either an Aki-Richards or Fatti approximate reflectivity
+model filtered by a user specified wavelet.&lt;/p&gt;
+&lt;p&gt;The inputs required are 3 log data cubes with compressional sonic (DT in us/m), shear sonic (DTS in us/m) and
+density (RHOB in g/cc). These can be created from well log data using the &amp;ldquo;Create Log Cube&amp;rdquo; right mouse button
+context menu in the scene well tree or the &amp;ldquo;Processing|Create Seismic Output|From Well Logs&amp;rdquo; main menu. Also
+needed is a wavelet with the appropriate polarity for the data being modelled.&lt;/p&gt;
+&lt;p&gt;The generated synthetics can be displayed in the 3D window and compared with real angle stack data through the
+well location.
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/image-02.jpg&#34; width=&#34;100%&#34;/&gt; 
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;installing-pylops&#34;&gt;Installing PyLops&lt;/h2&gt;
+&lt;p&gt;The PyLops Python package and it&amp;rsquo;s dependencies can be installed in an active conda environment using:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda install -c conda-forge pylops
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pip install pylops
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;See the &lt;a href=&#34;https://pylops.readthedocs.io/en/latest/installation.html&#34;&gt;PyLops documentation&lt;/a&gt; for more information.&lt;/p&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Using Visual Studio Code with OpendTect</title>
+      <link>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this post I show you how to set up and use the free &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; editor with OpendTect for interactive
+computation using Python Jupyter Notebooks. If you have installed the OpendTect Machine Learning Python environments you can
+create and edit Python Jupyter Notebooks using Visual Studio Code without modifying the installed environment provided VS Code is run from within
+OpendTect. The approach described in this post might assist users in strictly controlled IT settings get up and running using Jupyter Notebooks.&lt;/p&gt;
+&lt;h2 id=&#34;installing-visual-studio-code&#34;&gt;Installing Visual Studio Code&lt;/h2&gt;
+&lt;p&gt;VS Code should be available in the package repositories of all the major Linux distributions so just install it like you would
+any other application. Alternatively the &lt;a href=&#34;https://code.visualstudio.com/Download&#34;&gt;VS Code Download&lt;/a&gt; page provides a tar.gz download
+for 64 bit Linux that can be copied into a users home folder for those situations where IT settings prevent a global software install.&lt;/p&gt;
+&lt;p&gt;For Windows go to the &lt;a href=&#34;https://code.visualstudio.com/Download&#34;&gt;VS Code Download&lt;/a&gt; page and download the package of choice. There are 3 options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;User installer (software ends up in &amp;ldquo;C:\users{username}\AppData\Local\Programs\Microsoft VS Code&amp;rdquo;, recommended way)&lt;/li&gt;
+&lt;li&gt;System installer (software ends up in &amp;ldquo;C:\Program Files&amp;rdquo;, requires Administrator privileges)&lt;/li&gt;
+&lt;li&gt;.zip (you unpack the zip file anywhere even on a usb stick)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once installed, start it up (find the executable file call &amp;ldquo;code&amp;rdquo; in the application folder and run it from a console or click/double click
+on it from your file manager/explorer) and add the following extensions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python extension for Visual Studio Code&lt;/li&gt;
+&lt;li&gt;Jupyter Extension for Visual Studio Code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;selecting-visual-studio-code-as-the-opendtect-ide&#34;&gt;Selecting Visual Studio Code as the OpendTect IDE&lt;/h2&gt;
+&lt;p&gt;Open the OpendTect Python Settings dialog (Utilities|Installation|Python Settings menu)
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
+         alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For the Python IDE select &amp;ldquo;Other&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Use the File Selector to locate the executable file called &amp;ldquo;code&amp;rdquo; in the VS Code application folder&lt;/li&gt;
+&lt;li&gt;Use the icon button to set the location of an icon for the application (normally in the resources/app/resources/(linux|win32) subfolder
+of the VS Code installation)&lt;/li&gt;
+&lt;li&gt;Set a tooltip message, eg &amp;ldquo;VS Code&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Press OK&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This will add an icon to the OpendTect toolbar and a new menu item to the &amp;ldquo;Utilities|User Commands&amp;rdquo; menu to start Visual Studio Code. Starting
+VS Code from within OpendTect ensures environment settings are compatible with the Python environment selected in the OpendTect Python
+Settings dialog.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
+         alt=&#34;OpendTect After Adding VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect After Adding VS Code&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+Click the icon or use the &amp;ldquo;Utilities|User Commands&amp;rdquo; menu to start a Visual Studio Code instance.&lt;/p&gt;
+&lt;h2 id=&#34;using-visual-studio-code&#34;&gt;Using Visual Studio Code&lt;/h2&gt;
+&lt;p&gt;With these steps completed it should be possible to start VS Code from OpendTect and open a new blank Jupyter notebook by running
+the Jupyter: Create Blank New Jupyter Notebook command from the VS Code Command Palette (Ctrl+Shift+P). This notebook will use
+the Python environment selected in the OpendTect Python Settings dialog.
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
+         alt=&#34;New Jupyter Notebook in VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;New Jupyter Notebook in VS Code&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;To find out more about using VS Code with Jupyter Notebooks check out the documentation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/python/jupyter-support&#34;&gt;Working with Jupyter Notebooks in Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/python/jupyter-support-py&#34;&gt;Working with the Python Interactive window&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
+         alt=&#34;Exploring OpendTect Well Data in a VS Code Notebook&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Exploring OpendTect Well Data in a VS Code Notebook&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Python External Attribute Tips &amp; Tricks - Debugging</title>
+      <link>/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</link>
+      <pubDate>Fri, 08 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Because the Python [../plugins/ExternalAttrib] script is running in a process started by the OpendTect application most standard methods to examine the script as it runs, eg using the standard Python debugger &lt;a href=&#34;https://docs.python.org/3/library/pdb.html&#34;&gt;pdb&lt;/a&gt;, are not available.&lt;/p&gt;
+&lt;p&gt;A solution is to use the &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; Python module which allows the Python script to be debugged remotely in a web-browser.&lt;/p&gt;
+&lt;h2 id=&#34;web-pdb-installation&#34;&gt;Web-PDB Installation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; is not included by default in most Python installations but it can be easily added using &lt;em&gt;pip&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install web-pdb&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;adding-web-pdb-to-a-script&#34;&gt;Adding Web-PDB to a Script&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_01.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;Adding &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; to a script is just a matter of importing the module as shown on line 5 and adding a call to  &lt;code&gt;web_pdb.set_trace()&lt;/code&gt; as shown on line 19. The &lt;code&gt;web_pdb.set_trace()&lt;/code&gt; call acts like a breakpoint and can be inserted as many times as required.&lt;/p&gt;
+&lt;p&gt;For simplicity it is best to disable multi-threaded processing (add a &lt;em&gt;Parallel: False&lt;/em&gt; line to the &lt;em&gt;xa.params&lt;/em&gt; object) while debugging.&lt;/p&gt;
+&lt;h2 id=&#34;debugging-with-web-pdb&#34;&gt;Debugging with Web-PDB&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_02.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;After adding &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; to the [../plugins/ExternalAttrib] script it will run to the first breakpoint where execution will be suspended and a web-UI opened at the default port 5555. Pointing a web browser at &lt;code&gt;http://&amp;lt;your  machine hostname or IP&amp;gt;:5555&lt;/code&gt;, eg &lt;code&gt;http://127.0.0.1:5555&lt;/code&gt;, should show an interface for debugging as above.&lt;/p&gt;
+&lt;p&gt;The buttons provide control on the script execution, hover the mouse pointer over them to see tooltips for each. More complex &lt;a href=&#34;https://docs.python.org/3/library/pdb.html&#34;&gt;pdb&lt;/a&gt; commands can be inserted in the entry at the bottom of the screen. Click the ? button for a list of useful &lt;a href=&#34;https://docs.python.org/3/library/pdb.html&#34;&gt;pdb&lt;/a&gt; commands.&lt;/p&gt;
+&lt;h2 id=&#34;web-pdb-and-multi-threaded-processing&#34;&gt;Web-PDB and Multi-threaded Processing&lt;/h2&gt;
+&lt;p&gt;It is possible to use &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; with a script that has multi-threaded processing enabled by replacing the initial &lt;code&gt;web_pdb.set_trace&lt;/code&gt; call with:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;web_pdb.set_trace( port=-1 )&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will cause each Python process to select a random port between 32768 and 65536. Operating System specific commands can then be used to determine the ports opened, eg:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;On Linux: &lt;code&gt;ss -lntu&lt;/code&gt; in a console window.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On Windows: &lt;code&gt;netstat -an&lt;/code&gt; in a command window.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A web-UI will need to be opened for each port and each process will need to be stepped through all breakpoints for attribute execution to progress.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Python External Attribute Tips &amp; Tricks - Logging</title>
+      <link>/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.&lt;/p&gt;
+&lt;p&gt;The global variable &lt;em&gt;xa.logH&lt;/em&gt; (assuming the extattrib module has been imported using &lt;em&gt;import extattrib as xa&lt;/em&gt;) is a &lt;a href=&#34;https://docs.python.org/3/library/logging.html&#34;&gt;Python logger object&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;an-example&#34;&gt;An Example&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_01.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;On line 18 the Python logger is modified by adjusting the severity level of messages that will appear in the log file. By default only CRITICAL, ERROR and WARNING messages will be written.&lt;/p&gt;
+&lt;p&gt;On line 22 a message is written to the logfile showing the full path to the Python interpreter executing the script. As this line is in the Compute Loop Initialisation section it is only written at each invocation of the script.&lt;/p&gt;
+&lt;p&gt;On line 32 a message is written that identifies the location, minimum and maximum of the trace being processed. As this line is in the Compute Loop a message is output for every trace processed.&lt;/p&gt;
+&lt;h2 id=&#34;the-result&#34;&gt;The Result&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_02.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Anatomy of a Python External Attribute</title>
+      <link>/blog/2018/06/04/anatomy-of-a-python-external-attribute/</link>
+      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/04/anatomy-of-a-python-external-attribute/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This article will review the structure of a simple Python [../plugins/ExternalAttrib] script,
+&lt;a href=&#34;https://github.com/waynegm/OpendTect-External-Attributes/blob/master/Python_3/DipAndAzimuth/ex_dip.py&#34;&gt;ex_dip.py&lt;/a&gt;, which
+converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and
+output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; and &lt;a href=&#34;http://www.numpy.org/&#34;&gt;Numpy&lt;/a&gt; is assumed.&lt;/p&gt;
+&lt;p&gt;Every Python attribute script has 5 sections.&lt;/p&gt;
+&lt;h2 id=&#34;the-imports&#34;&gt;The Imports&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_01.png&#34;
+         alt=&#34;Imports Section&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Imports Section&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is where external modules/libraries required by the script are loaded. At a minimum the script must load:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the Python sys and os modules&lt;/li&gt;
+&lt;li&gt;the Numpy module (the fundamental package for scientific computing with Python)&lt;/li&gt;
+&lt;li&gt;the external attribute module (extattrib.py)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [wmscripts] package and its location is unknown to the Python installation unless we help out. The sys.path.insert call on line 11 provides this help by extending the default search path for Python modules to include the parent folder of the folder containing the script. This reflects the folder structure of the [wmscripts] package, so if you develop scripts outside this structure then you will need to change line 11 appropriately to append the location of extattrib.py to the module search path.&lt;/p&gt;
+&lt;p&gt;Of course if your script requires other Python modules (eg SciPy, Numba) then add the appropriate import statements in this section.&lt;/p&gt;
+&lt;h2 id=&#34;the-parameters&#34;&gt;The Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_02.png&#34;
+         alt=&#34;UI Parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;UI Parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for documentation. The plugin dynamically builds the following input dialog for this script:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_06.png&#34;
+         alt=&#34;UI Appearance&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;UI Appearance&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A variety of other input elements can be specified to build more complex input dialogs. See the [../plugins/ExternalAttrib#JSON Parameter String] section of the plugin documentation for full details or look at other scripts to see what is possible.&lt;/p&gt;
+&lt;h2 id=&#34;the-compute-loop-initialisation&#34;&gt;The Compute Loop Initialisation&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_03.png&#34;
+         alt=&#34;Compute Initialisation&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Compute Initialisation&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the &amp;ldquo;while True:&amp;rdquo; loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.&lt;/p&gt;
+&lt;p&gt;This particular script shows how information stored in the [../plugins/ExternalAttrib#SeismicInfo Block] can be used to calculate some constants purely as an example. This attribute is so simple that no initialisation is actually required.&lt;/p&gt;
+&lt;h2 id=&#34;the-compute-loop&#34;&gt;The Compute Loop&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_04.png&#34;
+         alt=&#34;Compute Loop&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Compute Loop&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is where the attribute calculation takes place. The &lt;em&gt;xa.doInput()&lt;/em&gt; and &lt;em&gt;xa.doOutput()&lt;/em&gt; function calls control the input and output of seismic trace data between the script and OpendTect. Generally these should be the first and last statements within the compute loop.&lt;/p&gt;
+&lt;p&gt;Within the compute loop, some information about the current trace data such as the number of samples and the inline and crossline location are provided in the [../plugins/ExternalAttrib#TraceInfo Block]. These can be accessed using constructs like &lt;em&gt;xa.TI[&amp;rsquo;nrsamp&amp;rsquo;]&lt;/em&gt;. This information is not required for this particular script.&lt;/p&gt;
+&lt;p&gt;The global Numpy array &lt;em&gt;xa.Input&lt;/em&gt; contains the input trace data. &lt;em&gt;xa.Input[&amp;rsquo;name of input attribute&amp;rsquo;]&lt;/em&gt; returns a Numpy array with the trace data for the current compute location. The shape of this Numpy array depends on the traces stepouts required by the attribute. As this particular script uses just single trace input (inline and crossline step out of 0) the Numpy array has a shape of &lt;em&gt;(1,1,xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt;. In the more general case of a multi-trace attribute the Numpy array shape would be &lt;em&gt;(xa.SI[&amp;rsquo;nrinl&amp;rsquo;], xa.SI[&amp;rsquo;nrcrl&amp;rsquo;], xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt; and the input trace at the current location would be at the centre of the array, ie at index &lt;em&gt;[xa.SI[&amp;rsquo;nrinl&amp;rsquo;]//2, xa.SI[&amp;rsquo;nrcrl&amp;rsquo;]//2,&amp;hellip;]&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Attribute ouput must be put into the &lt;em&gt;xa.Output&lt;/em&gt; global Numpy array before the &lt;em&gt;xa.doOutput()&lt;/em&gt; function call. Each element (eg &lt;em&gt;xa.Output[&amp;rsquo;name of output attribute&amp;rsquo;]&lt;/em&gt;) of the output array must have a shape of &lt;em&gt;(1,1,xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-postamble&#34;&gt;The Postamble&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_05.png&#34;
+         alt=&#34;Wrapping up&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Wrapping up&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This section is just boilerplate code that apprears in every attribute script which should never be changed.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

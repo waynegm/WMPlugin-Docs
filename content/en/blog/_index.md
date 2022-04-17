@@ -1,5 +1,5 @@
 ---
-title: "Docsy Blog"
+title: "WMPlugins Blog"
 linkTitle: "Blog"
 menu:
   main:

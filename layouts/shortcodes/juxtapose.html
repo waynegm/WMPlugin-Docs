@@ -1,0 +1,11 @@
+<div class="juxtapose">
+{{  if .IsNamedParams }}
+    <img src="{{ .Get "img1" }}" data-label="{{ .Get "lbl1" }}" alt="{{ .Get "lbl1" }}" />
+    <img src="{{ .Get "img2" }}" data-label="{{ .Get "lbl2" }}" alt="{{ .Get "lbl2" }}" />
+{{ else }}
+    <img src="{{ .Get 0 }}" />
+    <img src="{{ .Get 1 }}" />
+{{ end }}
+</div>
+
+

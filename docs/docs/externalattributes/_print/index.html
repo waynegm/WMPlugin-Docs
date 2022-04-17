@@ -1,0 +1,1531 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.96.0" />
+<link rel="canonical" type="text/html" href="/docs/externalattributes/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/externalattributes/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>External Attributes | WMPlugins</title>
+<meta name="description" content="">
+<meta property="og:title" content="External Attributes" />
+<meta property="og:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/docs/externalattributes/" /><meta property="og:site_name" content="WMPlugins" />
+
+<meta itemprop="name" content="External Attributes">
+<meta itemprop="description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="External Attributes"/>
+<meta name="twitter:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"/>
+
+
+
+
+<link rel="preload" href="/scss/main.scss" as="style">
+<link href="/scss/main.scss" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+<script
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/juxtapose.css">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62607269-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="font-weight-bold">WMPlugins</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.6e1d700ea7b012d8249438ff0d76d2a6.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/externalattributes/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">External Attributes</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-d2bfe1e7a87e7509ba0947e6332b0036">Add Noise</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-d2c206172dcffe1e29f2520c4b50c656">AVO Intercept and Gradient</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-3d4b3983a71a9c911c64afb4f459cd5c">Dip and Azimuth</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-14b684fb5a039eb5a6d83b575091729b">LPA Smoothing</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-6339e016e546cceb00824d6c05b86ba9">PyLops Attributes</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-7620b32bbbc8a8e4506e9152225ada74">Spatial Filter - Circular</a></li>
+
+
+    
+  
+    
+    
+	
+<li>7: <a href="#pg-74177a1ba4b2b32107ee6625c357dbf0">Spatial Filter - Rectangular</a></li>
+
+
+    
+  
+    
+    
+	
+<li>8: <a href="#pg-bb20e9884ad12460dce0dba23654d323">Vector Filter</a></li>
+
+
+    
+  
+    
+    
+	
+<li>9: <a href="#pg-9834c339e4430f5c90b058dd1e3b0f77">Time Delay Estimation</a></li>
+
+
+    
+  
+    
+    
+	
+<li>10: <a href="#pg-9263895aadfe62f3ba6db24d9f3eb8f9">ZC Block</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-d2bfe1e7a87e7509ba0947e6332b0036">1 - Add Noise</h1>
+    <div class="lead">add gaussian distributed noise to an input</div>
+	<p><strong>Script: Miscellaneous/ex_add_noise.py</strong></p>
+<h2 id="description">Description</h2>
+<p>This Python <a href="../../plugins/externalattrib/">External Attribute</a> script adds gaussian distributed noise to an input signal.</p>
+<h2 id="examples">Examples</h2>
+<p>This example shows an input signal with different levels of added noise.</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/addnoise/ex_add_noise_example.jpg"
+         alt="Input with varying levels of added noise" width="90%"/> <figcaption>
+            <p><strong>Input with varying levels of added noise</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/addnoise/ex_add_noise_input.jpg"
+         alt="ex_add_noise.py input parameters" width="90%"/> <figcaption>
+            <p><strong>ex_add_noise.py input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S/N Ratio</td>
+<td>Desired signal to noise ratio.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-d2c206172dcffe1e29f2520c4b50c656">2 - AVO Intercept and Gradient</h1>
+    <div class="lead">estimate AVO intercept and gradient from angle stacks</div>
+	<h2 id="description">Description</h2>
+<p>These <a href="../../plugins/externalattrib">External Attribute</a> scripts estimate AVO intercept and gradient based on Shuey&rsquo;s 2 term approximation
+to the Zoeppritz equation. Scripts are provided for 3, 4 and 5 angle stacks.</p>
+<h2 id="intercept-and-gradient-from-angle-stacks">Intercept and Gradient from Angle Stacks</h2>
+<p><strong>Script: Miscellaneous/ex_angle_stacks_3_to_AVOIG.py</strong>
+<strong>Script: Miscellaneous/ex_angle_stacks_4_to_AVOIG.py</strong>
+<strong>Script: Miscellaneous/ex_angle_stacks_5_to_AVOIG.py</strong></p>
+<p>Takes as input angle stacks and the corresponding angles and fits a least squares line to the \(amplitude\) and \(sin^2(angle)\) at
+each sample point. Output includes the intercept, gradient and the correlation coefficient of the line fit.</p>
+<h3 id="input-parameters">Input Parameters</h3>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/avo_ig/ex_AVOIG_4_input.jpg"
+         alt="ex_angle_stacks_4_to_AVOIG.py input parameters" width="90%"/> <figcaption>
+            <p><strong>ex_angle_stacks_4_to_AVOIG.py input parameters</strong></p>
+        </figcaption>
+</figure>
+
+<p>For each input volume the corresponding incident angle must be provided.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3d4b3983a71a9c911c64afb4f459cd5c">3 - Dip and Azimuth</h1>
+    <div class="lead">various scripts to estimate orientation</div>
+	<h2 id="description">Description</h2>
+<p>These Python <a href="../../plugins/externalattrib">External Attribute</a> scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.</p>
+<p>All scripts will estimate at least the following attributes:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>OUTPUT</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inline Dip</td>
+<td>Event dip observed on a crossline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger inline numbers producing positive dips.</td>
+</tr>
+<tr>
+<td>Crossline Dip</td>
+<td>Event dip observed on an inline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger crossline numbers producing positive dips.</td>
+</tr>
+<tr>
+<td>True Dip</td>
+<td>Event dip in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output is always positive.</td>
+</tr>
+<tr>
+<td>Dip Azimuth</td>
+<td>Azimuth of the True Dip direction relative to the survey orientation. Output ranges from -180 to 180 degrees. Positive azimuth is defined from the inline in the direction of increasing crossline numbers. Azimuth = 0 indicates that the dip is dipping in the direction of increasing crossline numbers. Azimuth = 90 indicates that the dip is dipping in the direction of increasing inline numbers.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<p>Some scripts may offer additional outputs such as a measure of event coherency or planarity.</p>
+<p>All of the scripts require the numba Python package.</p>
+<h2 id="orientation-from-gradients">Orientation from gradients</h2>
+<p><strong>Script: ex_gradient_dip.py</strong></p>
+<p>Calculates orientation from inline, crossline and Z gradients. No filtering is applied
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/dipazimuth/ex_gradient_dip.jpg"
+         alt="Unfiltered gradient dip - crossline dip on an inline" width="90%"/> <figcaption>
+            <p><strong>Unfiltered gradient dip - crossline dip on an inline</strong></p>
+        </figcaption>
+</figure>
+</p>
+<h2 id="orientation-from-vector-filtered-gradients">Orientation from vector filtered gradients</h2>
+<p><strong>Script: ex_vf_gradient3_dip.py</strong></p>
+<p>Uses <a href="http://www.k-zone.nl/Kroon_DerivativePaper.pdf" title="NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede">Kroon&rsquo;s (2009)</a> 3 point derivative filter to estimate data gradients. Next gradient normal unit vectors are determined and smoothed using a vector filter.
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.</td>
+</tr>
+<tr>
+<td>Z window (+/-samples)</td>
+<td>Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).</td>
+</tr>
+<tr>
+<td>Stepout</td>
+<td>Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>Choice of Mean Dip, L1 Vector Median or L2 Vector Median.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+</p>
+<p>The aperture of the vector filtering is \((2*ZStepOut-1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline
+direction. For example for a 5x5x5 analysis cube \((Zwindow=2, Stepout=2)\) the gradients and associated normal unit vectors are generated
+on a 3x3x3 cube and vector filtered. The outer samples are only used in the gradient calculation.</p>
+
+<figure class="img-centered">
+    <img src="ex_vfmean_gradient_dip.jpg"
+         alt="Vector filtered gradient dip - crossline dip on an inline - 5x5x5 input" width="90%"/> <figcaption>
+            <p><strong>Vector filtered gradient dip - crossline dip on an inline - 5x5x5 input</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="orientation-by-the-gradient-structure-tensor">Orientation by the gradient structure tensor</h2>
+<p><strong>Scripts: ex_gradient3_st_dip.py &amp; ex_gradient5_st_dip.py</strong></p>
+<p>Uses either <a href="http://www.k-zone.nl/Kroon_DerivativePaper.pdf" title="NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede">Kroon&rsquo;s (2009)</a> 3 point or the <a href="http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf" title="Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004">Farid and Simoncelli (2004)</a> 5 point derivative filter to estimate data gradients which are then used to form the gradient structure tensor.</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.</td>
+</tr>
+<tr>
+<td>Z window (+/-samples)</td>
+<td>Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).</td>
+</tr>
+<tr>
+<td>Stepout</td>
+<td>Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<p>For the ex_gradient3 script the structure tensor is formed from an aperture of \((2*ZStepOut-1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.</p>
+<p>For the ex_gradient5 script the structure tensor is formed from an aperture of \((2*ZStepOut-2)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/dipazimuth/ex_gst3_dip.jpg"
+         alt="Gradient3 structure tensor dip - crossline dip on an inline - 5x5x5 input" width="90%"/> <figcaption>
+            <p><strong>Gradient3 structure tensor dip - crossline dip on an inline - 5x5x5 input</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="orientation-from-the-3d-complex-trace-phase">Orientation from the 3D complex trace phase</h2>
+<p><strong>Script: ex_phase3_dip.py</strong></p>
+<p>Calculates orientation from the 3D complex trace phase gradients as per <a href="http://library.seg.org/doi/abs/10.1190/1.2785048" title="A tutorial on complex seismic trace analysis. Arthur E. Barnes. GEOPHYSICS 2007 72:6, W33-W43">Barnes (2007)</a>. <a href="http://www.k-zone.nl/Kroon_DerivativePaper.pdf" title="NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede">Kroon&rsquo;s (2009)</a> 3 point derivative filter is used to compute gradients.
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.</td>
+</tr>
+<tr>
+<td>Z window (+/-samples)</td>
+<td>Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &gt;= 15)</td>
+</tr>
+<tr>
+<td>Band</td>
+<td>Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).</td>
+</tr>
+</tbody>
+</table>
+ </div>
+</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/dipazimuth/ex_phase3_dip.jpg"
+         alt="Unfiltered phase dip - crossline dip on an inline" width="90%"/> <figcaption>
+            <p><strong>Unfiltered phase dip - crossline dip on an inline</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="orientation-from-vector-filtered-3d-complex-trace-phase">Orientation from vector filtered 3D complex trace phase</h2>
+<p><strong>Script: ex_vf_phase3_dip.py</strong></p>
+<p>Calculate orientation unit normal vectors using the 3D complex trace phase gradient and apply a vector filter. <a href="http://www.k-zone.nl/Kroon_DerivativePaper.pdf" title="NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede">Kroon&rsquo;s (2009)</a> 3 point filter used to compute gradients.
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.</td>
+</tr>
+<tr>
+<td>Z window (+/-samples)</td>
+<td>Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &gt;= 15)</td>
+</tr>
+<tr>
+<td>Stepout</td>
+<td>Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>Choice of Mean Dip, L1 Vector Median or L2 Vector Median.</td>
+</tr>
+<tr>
+<td>Vector Filter ZStepOut</td>
+<td>Specifies the extent of the analysis cube for vector filtering in the Z direction. Number of Z samples in cube will be \((2*ZStepOut+1)\).</td>
+</tr>
+<tr>
+<td>Band</td>
+<td>Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).</td>
+</tr>
+</tbody>
+</table>
+ </div>
+</p>
+<p>The aperture of the vector filter is \((2*ZStepOut+1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/dipazimuth/ex_vfmean_phase3_dip.jpg"
+         alt="Mean Vector Filtered phase dip - crossline dip on an inline - 3x3x3" width="90%"/> <figcaption>
+            <p><strong>Mean Vector Filtered phase dip - crossline dip on an inline - 3x3x3</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="orientation-using-the-envelope-weighted-3d-complex-trace-phase-structure-tensor">Orientation using the envelope weighted 3D complex trace phase structure tensor</h2>
+<p><strong>Script: ex_weighted_phase3_st_dip.py</strong></p>
+<p>Forms a structure tensor from the 3D complex trace phase gradients. Tensor elements are weighted by the trace envelope as per <a href="http://library.seg.org/doi/abs/10.1190/1.2235591?journalCode=gpysa7" title="Computation of dips and azimuths with weighted structural tensor approach. Yi Luo, Yuchun Eugene Wang, Nasher M. AlBinHassan and Mohammed N. Alfaraj, GEOPHYSICS 2006 71:5, V119-V121">Luo etal (2006)</a>. <a href="http://www.k-zone.nl/Kroon_DerivativePaper.pdf" title="NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede">Kroon&rsquo;s (2009)</a> 3 point filter is used to compute gradients.
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.</td>
+</tr>
+<tr>
+<td>Z window (+/-samples)</td>
+<td>Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &gt;= 15)</td>
+</tr>
+<tr>
+<td>Stepout</td>
+<td>Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).</td>
+</tr>
+<tr>
+<td>Tensor ZStepOut</td>
+<td>Specifies the extent of the analysis cube for vector filtering in the Z direction. Number of Z samples in cube will be \((2*ZStepOut+1)\).</td>
+</tr>
+<tr>
+<td>Band</td>
+<td>Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).</td>
+</tr>
+</tbody>
+</table>
+ </div>
+</p>
+<p>The aperture of the structure tensor is \((2*ZStepOut+1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/dipazimuth/ex_phasest_dip.jpg"
+         alt="Structure tensor phase dip - crossline dip on an inline - 3x3x3 tensor input" width="90%"/> <figcaption>
+            <p><strong>Structure tensor phase dip - crossline dip on an inline - 3x3x3 tensor input</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-14b684fb5a039eb5a6d83b575091729b">4 - LPA Smoothing</h1>
+    <div class="lead">structure preserving spatial filter by local polynomial approximation</div>
+	<p><strong>Script: ex_lpa_smooth.py</strong></p>
+<h2 id="description">Description</h2>
+<p>This Python <a href="../../plugins/externalattrib">External Attribute</a> script can be used to filter noise while preserving steep dips. A region of
+data around each sample location is approximated by a second order 3D polynomial using gaussian weighted least squares.</p>
+<p>The approximation has the following form:</p>
+<p>$$ r_0+ r_1 * x + r_2 * y + r_3 * z + r_4 * x^2 + r_5 * y^2 + r_6 * z^2 +r_7 * x * y + r_8 * x * z + r_9 * y * z $$</p>
+<p>where x (inline), y (crossline) and z (time/depth) are relative to the analysis location, ie the analysis location has x=y=z=0.</p>
+<p>This attribute calculates and outputs only the \(r_0\) term of the local polynomial approximation. This provides a smoother version of
+the input with relatively minor smearing of steep dips and fault cuts. Increasing either the Weight Factor or size of the analysis volume
+(StepOut or Z window) increases the amount of smoothing.</p>
+<h2 id="examples">Examples</h2>
+<div class="juxtapose">
+
+    <img src="lpa_input.jpg" data-label="Input" alt="Input" />
+    <img src="lpa_2x2x2.jpg" data-label="lpa 2x2x2 WF: 0.5" alt="lpa 2x2x2 WF: 0.5" />
+
+</div>
+
+
+
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/lpasmooth/lpa_smooth_inputpar.jpg"
+         alt="LPA Smoothing external attribute input parameters" width="90%"/> <figcaption>
+            <p><strong>LPA Smoothing external attribute input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Z window (+/-samples)</td>
+<td>Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \(2 * Zwindow + 1\).</td>
+</tr>
+<tr>
+<td>Stepout</td>
+<td>Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \(2 * Stepout + 1\).</td>
+</tr>
+<tr>
+<td>Weight Factor</td>
+<td>Determines the extent of the gaussian weight function used in the weighted least squares approximation. The standard deviation of the gaussian weight function \((\sigma)\) is related to this value by:</br> \(\sigma = min(2*Stepout, 2*Zwindow)*WeightFactor\). </br>A value of 0.15 gives near zero weight for points at the smallest extent of the analysis cube.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<h1 id="references">References</h1>
+<p><a href="http://www.doc.ic.ac.uk/research/technicalreports/2006/DTR06-8.pdf">Anisotropic Multidimensional Savitzky Golay kernels for Smoothing, Differentiation and Reconstruction</a></p>
+<p><a href="http://www.diva-portal.org/smash/get/diva2:302485/FULLTEXT01.pdf">Polynomial Expansion for Orientation and Motion Estimation</a></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-6339e016e546cceb00824d6c05b86ba9">5 - PyLops Attributes</h1>
+    <div class="lead">various external attributes that use the PyLops linear operator library</div>
+	<p>The 6.6.8 release of the wmPlugins includes a number of new Python external attribute scripts that use the <a href="https://pylops.readthedocs.io/en/latest/">PyLops</a>
+linear operator library for seismic modelling and inversion.</p>
+<p>Assuming wmPlugins is installed using the OpendTect Installation Manager, the scripts will be in the <em>bin/python/wmpy/PyLops</em> folder
+of the OpendTect software folder and include:</p>
+<ul>
+<li>PyLops/ex_poststack_inversion.py</li>
+<li>PyLops/ex_poststack_relative_inversion.py</li>
+<li>PyLops/ex_poststack_modelling.py</li>
+<li>PyLops/ex_prestack_modelling.py</li>
+<li>PyLops/ex_make_1d_seismic.py</li>
+</ul>
+<p>Using these scripts requires a Python environment with the PyLops module and it&rsquo;s dependencies installed. The section
+<a href="#installing-pylops">Installing PyLops</a> describes the PyLops installation process.</p>
+<h2 id="pylopsex_poststack_inversionpy">PyLops/ex_poststack_inversion.py</h2>
+<p>This Python <a href="../../plugins/externalattrib">External Attribute</a> script uses the pylops.avo.poststack.PoststackInversion operator to do
+post-stack seismic inversion. The output is either the log Acoustic Impedance (AI) volume or the residual error.</p>
+<p>The inputs required are volumes of the seismic to be inverted, a background log AI model and the seismic wavelet. Note that the polarity
+of the seismic wavelet must match the data.</p>
+<p>The following figures show inversion input and output for a 1D model created by the PyLops/ex_make_1d_seismic.py script.</p>
+<p>
+<figure class="img-centered">
+    <img src="/docs/externalattributes/pylops/ex_pylops_poststack_inversion-02.png"
+         alt="Impedance Model (red) and Background Model (blue)" width="90%"/> <figcaption>
+            <p><strong>Impedance Model (red) and Background Model (blue)</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/pylops/ex_pylops_poststack_inversion-03.png"
+         alt="Impedance Model (red) and Seismic Model (blue)" width="90%"/> <figcaption>
+            <p><strong>Impedance Model (red) and Seismic Model (blue)</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/pylops/ex_pylops_poststack_inversion-04.png"
+         alt="Impedance Model (red) and Inverted Impedance (blue)" width="90%"/> <figcaption>
+            <p><strong>Impedance Model (red) and Inverted Impedance (blue)</strong></p>
+        </figcaption>
+</figure>
+</p>
+<p>There is also a PyLops/ex_poststack_relative_inversion.py script that runs the inversion without a background model:</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/pylops/ex_pylops_poststack_inversion-05.png"
+         alt="Impedance Model (red) and Inverted Relative Impedance (blue)" width="90%"/> <figcaption>
+            <p><strong>Impedance Model (red) and Inverted Relative Impedance (blue)</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/pylops/ex_pylops_poststack_inversion-07.png"
+         alt="Inverted Relative Impedance Example" width="90%"/> <figcaption>
+            <p><strong>Inverted Relative Impedance Example</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="input-parameters">Input Parameters</h3>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/pylops/ex_pylops_poststack_inversion_input.png"
+         alt="ex_poststack_inversion.py input parameters" width="90%"/> <figcaption>
+            <p><strong>ex_poststack_inversion.py input parameters</strong></p>
+        </figcaption>
+</figure>
+
+<p>
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordere">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>What to calculate - choice of Acoustic Impedance or the Residual Error.</td>
+</tr>
+<tr>
+<td>Regularization (%)</td>
+<td>A small amount of noise to add to stabilize the inversion.</td>
+</tr>
+<tr>
+<td>Wavelet</td>
+<td>An OpendTect wavelet file.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+</br>
+Note the wavelet polarity must be consistent with the polarity of the data being inverted.</p>
+<h2 id="pylopsex_prestack_modellingpy">PyLops/ex_prestack_modelling.py</h2>
+<p>The PyLops/ex_prestack_modelling.py script uses the pylops.avo.avo.AVOLinearModelling operator to create a pre-stack angle volume
+from well data. The output is either an Aki-Richards or Fatti approximate reflectivity model filtered by a user specified wavelet.</p>
+<p>The inputs required are 3 log data cubes with compressional sonic (DT in us/m), shear sonic (DTS in us/m) and density (RHOB in g/cc). These
+can be created from well log data using the &ldquo;Create Log Cube&rdquo; right mouse button context menu in the scene well tree or the
+&ldquo;Processing|Create Seismic Output|From Well Logs&rdquo; main menu. Also needed is a wavelet with the appropriate polarity for the data being modelled.</p>
+<p>The generated synthetics can be displayed in the 3D window and compared with real angle stack data through the well location.</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/pylops/ex_pylops_prestack_modelling-01.jpg"
+         alt="Prestack modelling example" width="90%"/> <figcaption>
+            <p><strong>Prestack modelling example</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="input-parameters-1">Input Parameters</h3>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/pylops/ex_pylops_prestack_modelling_input.png"
+         alt="ex_prestack_modelling.py input parameters" width="90%"/> <figcaption>
+            <p><strong>ex_prestack_modelling.py input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Angle (deg)</td>
+<td>The desired output angle volume.</td>
+</tr>
+<tr>
+<td>Method</td>
+<td>What approximation to use, Aki RIchards or Fatti.</td>
+</tr>
+<tr>
+<td>Wavelet</td>
+<td>An OpendTect wavelet file.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<h2 id="installing-pylops">Installing PyLops</h2>
+<p>The PyLops Python package and it&rsquo;s dependencies can be installed in an active conda environment using:</p>
+<pre tabindex="0"><code>conda install -c conda-forge pylops
+</code></pre><p>or</p>
+<pre tabindex="0"><code>pip install pylops
+</code></pre><p>See the <a href="https://pylops.readthedocs.io/en/latest/installation.html">PyLops documentation</a> for more information.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7620b32bbbc8a8e4506e9152225ada74">6 - Spatial Filter - Circular</h1>
+    <div class="lead">lowpass, highpass, bandpass or band reject circularly symmetric spatial filters</div>
+	<p><strong>Script: Filtering/ex_spatial_filter_circular.py</strong></p>
+<h2 id="description">Description</h2>
+<p>This Python <a href="../../plugins/externalattrib">External Attribute</a> script applies lowpass, highpass, bandpass or band reject circularly symmetric
+spatial filters. The filters are applied by direct spatial convolution using the MAXFLAT operators described by
+<a href="https://www.researchgate.net/publication/3384111_Explicit_formulae_for_coefficients_of_2D_circular_symmetric_MAXFLATFIR_lowhigh_pass_digital_filters" title="Explicit formulae for coefficients of 2D circular symmetric MAXFLAT FIR low/high pass digital filters.  Electronics Letters Volume: 37, Issue: 24, 22 Nov 2001">Khan and Ohba (2001)</a>.</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_resp.jpg"
+         alt="Filter responses" width="90%"/> <figcaption>
+            <p><strong>Filter responses</strong></p>
+        </figcaption>
+</figure>
+
+<p>Note that the filter cutoff or band pass/reject frequency is specified in Normalised Spatial Frequency. Normalised Frequency ranges
+from 0 to 1 at the spatial nyquist. Converting a spatial frequency in cycles/metre to the equivalent Normalised Spatial Frequency
+is as simple as dividing it by the spatial nyquist frequency.</p>
+<p>As written the filter does not take into account differences in spatial sampling in the inline and crossline directions.</p>
+<h2 id="examples">Examples</h2>
+<p>This example uses a Low Pass filter to remove acquisition footprint from the F3 Demo dataset.</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_fkinput.jpg"
+         alt="FK spectrum of inline 425" width="90%"/> <figcaption>
+            <p><strong>FK spectrum of inline 425</strong></p>
+        </figcaption>
+</figure>
+
+<p>Note the noise at 0.0133 cycles/metre or 0.67 normalised frequency (i.e. 0.0133/0.02).</p>
+<p>A spatial low pass filter with a normalised frequency cutoff of 0.5 is very effective at attenuating this acquisition footprint.</p>
+<div class="juxtapose">
+
+    <img src="ex_spatial_filter_inline_input.jpg" data-label="Input Iln425" alt="Input Iln425" />
+    <img src="ex_spatial_filter_inline_filtered.jpg" data-label="Lowpass Filtered Iln425" alt="Lowpass Filtered Iln425" />
+
+</div>
+
+
+
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_fkoutput.jpg"
+         alt="FK spectrum of inline 425 after filter" width="90%"/> <figcaption>
+            <p><strong>FK spectrum of inline 425 after filter</strong></p>
+        </figcaption>
+</figure>
+
+<div class="juxtapose">
+
+    <img src="ex_spatial_filter_slice_input.jpg" data-label="Input Slice300ms" alt="Input Slice300ms" />
+    <img src="ex_spatial_filter_slice_filtered.jpg" data-label="Lowpass Filtered Slice300ms" alt="Lowpass Filtered Slice300ms" />
+
+</div>
+
+
+
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_input.jpg"
+         alt="ex_spatial_filter.py input parameters" width="90%"/> <figcaption>
+            <p><strong>ex_spatial_filter.py input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stepout</td>
+<td>Determines the size of the convolution operator. Minimum of 9 (filter kernel size of 19) recommended.</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Filter type - Low Pass, High Pass, Band Pass or Band Reject.</td>
+</tr>
+<tr>
+<td>Normalised Spatial Frequency</td>
+<td>For Low Pass and High Pass filters this specifies the filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-74177a1ba4b2b32107ee6625c357dbf0">7 - Spatial Filter - Rectangular</h1>
+    <div class="lead">lowpass, highpass, bandpass or band reject rectangular spatial filters</div>
+	<p><strong>Script: Filtering/ex_spatial_filter_rectangular.py</strong></p>
+<h2 id="description">Description</h2>
+<p>This Python <a href="../../plugins/externalattrib">External Attribute</a> script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
+symmetry. The filters are applied by direct spatial convolution of a kernel formed by cascading two 1D Hamming Window FIR filters
+computed using scipy.signal.firwin (<a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)">https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)</a>.</p>
+<p>By setting the stepout in one direction to 0 the filter will be applied as a 1D spatial filter in the other direction.</p>
+<p>Note that the filter cutoff or band pass/reject frequency is specified in Normalised Spatial Frequency. Normalised Frequency ranges
+from 0 to 1 at the spatial nyquist. Converting a spatial frequency in cycles/metre to the equivalent Normalised Spatial Frequency is
+as simple as dividing it by the spatial nyquist frequency.</p>
+<h2 id="examples">Examples</h2>
+<p>This example shows inline and crossline FK spectra after applying a 2D lowpass rectangular filter with inline and crossline normalised
+frequency cutoffs of 0.6 and 0.3 respectively.</p>
+<div class="juxtapose">
+
+    <img src="ex_spatial_filter_rect_inlinefk.jpg" data-label="Input Inline FK Spectrum" alt="Input Inline FK Spectrum" />
+    <img src="ex_spatial_filter_rect_inlinefiltfk.jpg" data-label="After lowpass filter" alt="After lowpass filter" />
+
+</div>
+
+
+
+<div class="juxtapose">
+
+    <img src="ex_spatial_filter_rect_xlinefk.jpg" data-label="Input crossline FK Spectrum" alt="Input crossline FK Spectrum" />
+    <img src="ex_spatial_filter_rect_xlinefiltfk.jpg" data-label="After lowpass filter" alt="After lowpass filter" />
+
+</div>
+
+
+
+<p>This example shows a timeslice at 300ms TWT from the F3 Demo dataset after applying a 1D spatial filter along the inlines
+(stepout of 0,9) with a crossline normalised frequency cutoff of 0.5.</p>
+<div class="juxtapose">
+
+    <img src="ex_spatial_filter_slice_input.jpg" data-label="Input" alt="Input" />
+    <img src="ex_spatial_filter_slice_1Dlowpass.jpg" data-label="Xline Lowpass Filtered" alt="Xline Lowpass Filtered" />
+
+</div>
+
+
+
+<p>This example shows the timeslice at 300ms TWT from the F3 Demo dataset with the crossline lowpass filter above followed by
+a 1D bandreject spatial filter along the crosslines (stepout 9,0) with an inline normalised rejection frequency of 0.17.</p>
+<div class="juxtapose">
+
+    <img src="ex_spatial_filter_slice_1Dlowpass.jpg" data-label="Xline Lowpass Input" alt="Xline Lowpass Input" />
+    <img src="ex_spatial_filter_slice_1Dlowpass_1Dnotch.jpg" data-label="Inline Bandreject Filtered" alt="Inline Bandreject Filtered" />
+
+</div>
+
+
+
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/spatialfilterrectangular/ex_spatial_filter_rect_input.jpg"
+         alt="ex_spatial_filte_rectangular.py input parameters" width="90%"/> <figcaption>
+            <p><strong>ex_spatial_filte_rectangular.py input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stepout</td>
+<td>Determines the size of the convolution operator. Minimum of 9 (filter kernel size of 19) recommended. Setting the stepout to zero will apply a 1D filter, e.g. a stepout of 0,9 will apply a 1D crossline frequency filter.</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>Filter type - Low Pass, High Pass, Band Pass or Band Reject.</td>
+</tr>
+<tr>
+<td>Normalised Inline Spatial Frequency</td>
+<td>For Low Pass and High Pass filters this specifies the inline filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.</td>
+</tr>
+<tr>
+<td>Normalised Xline Spatial Frequency</td>
+<td>For Low Pass and High Pass filters this specifies the crosslineline filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-bb20e9884ad12460dce0dba23654d323">8 - Vector Filter</h1>
+    <div class="lead">vector filter orientation (inline and crossline dip) data</div>
+	<p><strong>Script: ex_vector_filter_dip.py</strong></p>
+<h2 id="description">Description</h2>
+<p>This <a href="../../plugins/externalattrib">External Attribute</a> script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
+The script offers a choice of mean vector, L1 vector median and L2 vector median filters.</p>
+<p>Initially the inline and crossline dip data are converted to a normal vector to the local orientation: \([x_i, y_i, z_i]\).</p>
+<p>The Mean Vector Filter averages each of the vector components of the orientation normal vectors in the analysis cube:
+$$
+\Big[x_f, y_f, z_f\Big]  = \frac{1}{N} \Big[\sum\limits_{i}^N x_i, \sum\limits_{i}^N y_i, \sum\limits_{i}^N z_i\Big]
+$$</p>
+<p>The L1 vector filter finds the normal vector in the analysis cube whose sum of absolute distance from all the others is a minimum:
+$$
+\Big[x_f, y_f, z_f\Big] = argmin \sum\limits_{i}^N \Big[|x_f-x_i| + |y_f-y_i| + |z_f-z_i|\Big]
+$$</p>
+<p>The L2 vector filter finds the normal vector in the analysis cube whose sum of squared distance from all the others is a minimum:
+$$
+\Big[x_f, y_f, z_f\Big] = argmin \sum\limits_{i}^N \Big[(x_f-x_i)^2 + (y_f-y_i)^2 + (z_f-z_i)^2\Big]
+$$</p>
+<p>The filtered orientation can be output as any of the following:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>OUTPUT</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inline Dip</td>
+<td>Event dip observed on a crossline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger inline numbers producing positive dips.</td>
+</tr>
+<tr>
+<td>Crossline Dip</td>
+<td>Event dip observed on an inline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger crossline numbers producing positive dips.</td>
+</tr>
+<tr>
+<td>True Dip</td>
+<td>Event dip in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output is always positive.</td>
+</tr>
+<tr>
+<td>Dip Azimuth</td>
+<td>Azimuth of the True Dip direction relative to the survey orientation. Output ranges from -180 to 180 degrees. Positive azimuth is defined from the inline in the direction of increasing crossline numbers. Azimuth = 0 indicates that the dip is dipping in the direction of increasing crossline numbers. Azimuth = 90 indicates that the dip is dipping in the direction of increasing inline numbers.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+</br>
+The script requires the Numba Python package.
+<h2 id="examples">Examples</h2>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/vectorfilter/ex_phase_dip.jpg"
+         alt="Unfiltered phase dip - crossline dip on an inline" width="90%"/> <figcaption>
+            <p><strong>Unfiltered phase dip - crossline dip on an inline</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/vectorfilter/ex_vfmean_phase_dip.jpg"
+         alt="Mean vector filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)" width="90%"/> <figcaption>
+            <p><strong>Mean vector filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/vectorfilter/ex_vfl1_phase_dip.jpg"
+         alt="L1 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)" width="90%"/> <figcaption>
+            <p><strong>L1 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/vectorfilter/ex_vfl2_phase_dip.jpg"
+         alt="L2 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)" width="90%"/> <figcaption>
+            <p><strong>L2 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/vectorfilter/ex_vector_filter_dip_input.jpg"
+         alt="ex_vector_filter_dip.py input parameters" width="90%"/> <figcaption>
+            <p><strong>ex_vector_filter_dip.py input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.</td>
+</tr>
+<tr>
+<td>Z window (+/-samples)</td>
+<td>Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).</td>
+</tr>
+<tr>
+<td>Stepout</td>
+<td>Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>Choice of Mean Dip, L1 Vector Median or L2 Vector Median.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9834c339e4430f5c90b058dd1e3b0f77">9 - Time Delay Estimation</h1>
+    <div class="lead">measure time shifts between volumes using correlation</div>
+	<p><strong>Script: Miscellaneous/ex_correlation.py</strong></p>
+<h2 id="description">Description</h2>
+<p>This Python <a href="../../plugins/externalattrib">External Attribute</a> script provides an alternative to the builtin OpendTect
+<a href="http://doc.opendtect.org/6.0.0/doc/od_userdoc/Default.htm#appendix_a-attributes_and_filters/match_delta.htm%3FTocPath%3D11%2520Appendix%2520A%2520-%2520Attributes%2520and%2520Filters%7C_____13">Match Delta</a> attribute to measure time shifts between similar events in different seismic volumes. This script uses local normalised cross correlation to determine the relative Z shift between 2 data volumes. Aside from the estimate of relative Z shift the attribute can also output the correlation value. The correlation value which ranges from 0 (low correlation) to 1 (high correlation) provides a quantitative assessment of the reliability of the Z shift estimate.</p>
+<p>The script requires the Numba Python package.</p>
+<h2 id="examples">Examples</h2>
+<p>This example provides a comparison of this external attribute script (left) with the Match Delta attribute (right) for a depth section and
+itself shifted up by 13 metres. The Match Delta attribute output is much noisier albiet it can be calculated much quicker.</p>
+<div class="juxtapose">
+
+    <img src="ex_correlation_example.jpg" data-label="External Attribute" alt="External Attribute" />
+    <img src="match_delta.jpg" data-label="Match Delta" alt="Match Delta" />
+
+</div>
+
+
+
+<p>This example shows the Correlation Quality output for the same data as above.</p>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/zdelayest/ex_correlation_quality.jpg"
+         alt="Correlation quality**" width="90%"/> <figcaption>
+            <p>Correlation quality**</p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/zdelayest/ex_correlation_input.jpg"
+         alt="ex_correlation.py input parameters**" width="90%"/> <figcaption>
+            <p>ex_correlation.py input parameters**</p>
+        </figcaption>
+</figure>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output</td>
+<td>What to calculate - choice of the Z shift in millisecs or metres or the corresponding correlation coefficient.</td>
+</tr>
+<tr>
+<td>Z window (+/-samples)</td>
+<td>This in conjunction with the Max Lag parameter determines the length of the segments cross correlated. \(SegmentLength = 2*(Zwindow - MaxLag)+1\).</td>
+</tr>
+<tr>
+<td>Max Lag (samples)</td>
+<td>Specifies maximum number of samples to search for the maximum correlation.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<p>Note the user has to ensure that Z window is greater than Max Lag otherwise the script will exit with errors.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9263895aadfe62f3ba6db24d9f3eb8f9">10 - ZC Block</h1>
+    <div class="lead">blocks a seismic trace between zero crossings</div>
+	<p><strong>Script: Miscellaneous/ex_zc_block.py</strong></p>
+<h2 id="description">Description</h2>
+<p>This Python <a href="../../plugins/externalattrib">External Attribute</a> script blocks a seismic trace between zero crossings. The block amplitude is
+determined by the min/max of the interval blocked.</p>
+<p>The script requires the Numba Python package.</p>
+<h2 id="examples">Examples</h2>
+<p>This example shows the attribute output (black wiggle) over the input (variable density). To get a blocky wiggle display interpolation has to be turned off in the 2D viewer properties.
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/zcblock/ex_zc_block_example.jpg"
+         alt="Zero crossing block" width="90%"/> <figcaption>
+            <p><strong>Zero crossing block</strong></p>
+        </figcaption>
+</figure>
+</p>
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/externalattributes/zcblock/ex_zc_block_input.jpg"
+         alt="ex_zc_block.py input parameters" width="90%"/> <figcaption>
+            <p><strong>ex_zc_block.py input parameters</strong></p>
+        </figcaption>
+</figure>
+
+<p>There are no input parameters other than selection of the input volume.</p>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" rel="noopener" href="https://groups.google.com/a/opendtect.org/g/users" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="LinkedIn" aria-label="LinkedIn">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.linkedin.com/in/waynemogg/" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/waynegm/OpendTect-Plugins" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 Wayne Mogg All Rights Reserved</small>
+        
+	
+		<p class="mt-2"><a href="/about/">About WMPlugins</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    integrity="sha512-vJqxkZ+Sugf/6WRlpcxN01qVfX/29hF6qc33eHF1va3NgoV+U+wCi+uTAsQ10sDoGyBxHLdaHvGwDlV3yVYboA==" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+    integrity="sha512-5ufNcHqOYgilGEHPfuRIQ5B/vDS1M8+UC+DESZ5CwVgGTg+b2Ol/15rYL/GiCWJ/Sx8oVo0FPFok1dPk8U9INQ=="
+    crossorigin="anonymous"></script>
+
+
+
+<script defer src='https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js'
+    integrity='sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==' crossorigin='anonymous' 
+    onload='renderMathInElement(document.body, null);'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.fc1551b8c1b40a6eaa08f3cb9c76f12ccd9aebc436cecdaf2341c890206d024a.js" integrity="sha256-/BVRuMG0Cm6qCPPLnHbxLM2a68Q2zs2vI0HIkCBtAko=" crossorigin="anonymous"></script>
+
+
+
+
+<script src='/js/juxtapose.js'></script>
+
+
+  </body>
+</html>

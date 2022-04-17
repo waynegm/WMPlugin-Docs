@@ -1,0 +1,156 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – gridding</title>
+    <link>/tags/gridding/</link>
+    <description>Recent content in gridding on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/tags/gridding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Grid 2D-3D Horizon</title>
+      <link>/docs/plugins/grid2d-3d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/grid2d-3d/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [opendtect] survey/project.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Grid 2D-3D Horizon&amp;hellip;&amp;rdquo; item to the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; menu which opens a dialog box for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Selecting 2D and 3D seismic interpretation and contour poly-lines to grid&lt;/li&gt;
+&lt;li&gt;Specifying the output horizon name, extent and inline /crossline interval&lt;/li&gt;
+&lt;li&gt;Specifying a cropping polygon&lt;/li&gt;
+&lt;li&gt;Specifying a set of fault polygon constraints&lt;/li&gt;
+&lt;li&gt;Selecting the interpolation algorithm to use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the current release the plugin includes 4 gridding/interolation algorithms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Local Thin Plate Splines (LTPS)&lt;/li&gt;
+&lt;li&gt;Multilevel B-Splines (MBA)&lt;/li&gt;
+&lt;li&gt;Inverse distance squared weighted averages (IDW)&lt;/li&gt;
+&lt;li&gt;Nearest neighbour (NRN)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The LTPS and IDW methods can apply fault constraints (heave polygons) to ensure the input data used to interpolate a grid node is from the same side of any faults.&lt;/p&gt;
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid2d-3d_data_input.jpg&#34;
+         alt=&#34;Grid 2D-3D horizon plugin input data selection dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input data selection dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid2d-3d_grid_input.jpg&#34;
+         alt=&#34;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Grid Extent: Four options available:
+&lt;ul&gt;
+&lt;li&gt;Range - explicitly set the Inl/Crl range and steps for the output surface&lt;/li&gt;
+&lt;li&gt;Bounding Box - set the output horizon extent from the extent of the input data, adjusted to snap to the specified Inl/Crl steps&lt;/li&gt;
+&lt;li&gt;Convex Hull - sets the gridding scope to the convex hull of the input data, adjusted to snap to the specified Inl/Crl steps&lt;/li&gt;
+&lt;li&gt;Horizon - set the output horizon extent to match an existing horizon in the survey/project&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cropping Polygon - select a polygon to crop the grid output&lt;/li&gt;
+&lt;li&gt;Fault Polygons - select  polygons to use as fault constraints during gridding. Suggest fault naming scheme that prefixes the polygons with &amp;ldquo;f_horizon name&amp;rdquo; to make them easy to select&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;algorithms&#34;&gt;Algorithms&lt;/h2&gt;
+&lt;h3 id=&#34;local-thin-plate-spline&#34;&gt;Local Thin Plate Spline&lt;/h3&gt;
+&lt;p&gt;This is a multi-stage algorithm with the following steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interpolate the data to the corners of the surrounding grid nodes (ie nearest neighbour)&lt;/li&gt;
+&lt;li&gt;Fit a Multilevel B-Spline (MBA) surface (no fault constraints applied) and compute residuals from the input&lt;/li&gt;
+&lt;li&gt;Grid the MBA residuals using a radial basis function algorithm using a thin plate spline basis. The points used in the basis fit are determined using distance and azimuth from the grid point. The data around each grid point is sorted based on distance and binned into one of eight azimuth sectors. Only the nearest points in each sector are used in the interpolation. No interpolation is done if there are less than 5 sectors with data. Fault constraints are used in this stage. The residuals are added to the MBA stage output to produce the final surface.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Controls are the maximum search radius and the maximum points used from each sector. This algorithm can use fault constraints.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_ltps_ex.jpg&#34;
+         alt=&#34;Example of Local Thin Plate Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Local Thin Plate Spline gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;multilevel-b-spline&#34;&gt;Multilevel B-Spline&lt;/h3&gt;
+&lt;p&gt;This is the adaptive Multi-level B-Spline algorithm published by &lt;a href=&#34;https://ieeexplore.ieee.org/document/620490&#34; title=&#34;Scattered Data Interpolation with Multilevel B-Splines. Seungyong Lee, George Wolberg, and Sung Yong Shin,  IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS, VOL. 3, NO. 3, JULY–SEPTEMBER 1997&#34;&gt;Lee, Wolberg and Shin (1997)&lt;/a&gt; as implemented by &lt;a href=&#34;https://github.com/ddemidov/mba&#34;&gt;Denis Demidov&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This method does not use fault contraints.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_mba_ex.jpg&#34;
+         alt=&#34;Example of Multilevel B-Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Multilevel B-Spline gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;inverse-distance-weighted&#34;&gt;Inverse Distance Weighted&lt;/h3&gt;
+&lt;p&gt;This is basic Inverse Distance Squared Weighted gridding. By tweaking the parameters it is possible to control the input data used for each grid point. Options are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No distance or point count limit (global)&lt;/li&gt;
+&lt;li&gt;Use all points within a specified distance&lt;/li&gt;
+&lt;li&gt;Use nearest number of points&lt;/li&gt;
+&lt;li&gt;Limit by both the distance and the nearest number of points&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The method can use fault constraints but will be very slow unless appropriate distance and point count limits are set.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_radius_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using only a distance limit&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a distance limit&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_points_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using only a point count limit&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a point count limit&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_both_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using both distance and point count limits&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using both distance and point count limits&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;nearest-neighbour&#34;&gt;Nearest Neighbour&lt;/h3&gt;
+&lt;p&gt;This uses a simple weighted average method to assign grid values to the 4 nodes around each input data point.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_nrn_ex.jpg&#34;
+         alt=&#34;Example of Nearest Neighbour gridding&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Nearest Neighbour gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

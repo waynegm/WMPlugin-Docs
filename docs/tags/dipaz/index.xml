@@ -1,0 +1,310 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – dipaz</title>
+    <link>/tags/dipaz/</link>
+    <description>Recent content in dipaz on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/tags/dipaz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Dip and Azimuth</title>
+      <link>/docs/externalattributes/dipazimuth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/dipazimuth/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;These Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.&lt;/p&gt;
+&lt;p&gt;All scripts will estimate at least the following attributes:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OUTPUT&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Inline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on a crossline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger inline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crossline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on an inline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger crossline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;True Dip&lt;/td&gt;
+&lt;td&gt;Event dip in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output is always positive.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dip Azimuth&lt;/td&gt;
+&lt;td&gt;Azimuth of the True Dip direction relative to the survey orientation. Output ranges from -180 to 180 degrees. Positive azimuth is defined from the inline in the direction of increasing crossline numbers. Azimuth = 0 indicates that the dip is dipping in the direction of increasing crossline numbers. Azimuth = 90 indicates that the dip is dipping in the direction of increasing inline numbers.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Some scripts may offer additional outputs such as a measure of event coherency or planarity.&lt;/p&gt;
+&lt;p&gt;All of the scripts require the numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;orientation-from-gradients&#34;&gt;Orientation from gradients&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_gradient_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculates orientation from inline, crossline and Z gradients. No filtering is applied
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_gradient_dip.jpg&#34;
+         alt=&#34;Unfiltered gradient dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered gradient dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;orientation-from-vector-filtered-gradients&#34;&gt;Orientation from vector filtered gradients&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_vf_gradient3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Uses &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point derivative filter to estimate data gradients. Next gradient normal unit vectors are determined and smoothed using a vector filter.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the vector filtering is \((2*ZStepOut-1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline
+direction. For example for a 5x5x5 analysis cube \((Zwindow=2, Stepout=2)\) the gradients and associated normal unit vectors are generated
+on a 3x3x3 cube and vector filtered. The outer samples are only used in the gradient calculation.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;ex_vfmean_gradient_dip.jpg&#34;
+         alt=&#34;Vector filtered gradient dip - crossline dip on an inline - 5x5x5 input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Vector filtered gradient dip - crossline dip on an inline - 5x5x5 input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-by-the-gradient-structure-tensor&#34;&gt;Orientation by the gradient structure tensor&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Scripts: ex_gradient3_st_dip.py &amp;amp; ex_gradient5_st_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Uses either &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point or the &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli (2004)&lt;/a&gt; 5 point derivative filter to estimate data gradients which are then used to form the gradient structure tensor.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;For the ex_gradient3 script the structure tensor is formed from an aperture of \((2*ZStepOut-1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+&lt;p&gt;For the ex_gradient5 script the structure tensor is formed from an aperture of \((2*ZStepOut-2)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_gst3_dip.jpg&#34;
+         alt=&#34;Gradient3 structure tensor dip - crossline dip on an inline - 5x5x5 input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Gradient3 structure tensor dip - crossline dip on an inline - 5x5x5 input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-from-the-3d-complex-trace-phase&#34;&gt;Orientation from the 3D complex trace phase&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_phase3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculates orientation from the 3D complex trace phase gradients as per &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.2785048&#34; title=&#34;A tutorial on complex seismic trace analysis. Arthur E. Barnes. GEOPHYSICS 2007 72:6, W33-W43&#34;&gt;Barnes (2007)&lt;/a&gt;. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point derivative filter is used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_phase3_dip.jpg&#34;
+         alt=&#34;Unfiltered phase dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered phase dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-from-vector-filtered-3d-complex-trace-phase&#34;&gt;Orientation from vector filtered 3D complex trace phase&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_vf_phase3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculate orientation unit normal vectors using the 3D complex trace phase gradient and apply a vector filter. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point filter used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Vector Filter ZStepOut&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube for vector filtering in the Z direction. Number of Z samples in cube will be \((2*ZStepOut+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the vector filter is \((2*ZStepOut+1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_vfmean_phase3_dip.jpg&#34;
+         alt=&#34;Mean Vector Filtered phase dip - crossline dip on an inline - 3x3x3&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mean Vector Filtered phase dip - crossline dip on an inline - 3x3x3&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-using-the-envelope-weighted-3d-complex-trace-phase-structure-tensor&#34;&gt;Orientation using the envelope weighted 3D complex trace phase structure tensor&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_weighted_phase3_st_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Forms a structure tensor from the 3D complex trace phase gradients. Tensor elements are weighted by the trace envelope as per &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.2235591?journalCode=gpysa7&#34; title=&#34;Computation of dips and azimuths with weighted structural tensor approach. Yi Luo, Yuchun Eugene Wang, Nasher M. AlBinHassan and Mohammed N. Alfaraj, GEOPHYSICS 2006 71:5, V119-V121&#34;&gt;Luo etal (2006)&lt;/a&gt;. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point filter is used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tensor ZStepOut&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube for vector filtering in the Z direction. Number of Z samples in cube will be \((2*ZStepOut+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the structure tensor is \((2*ZStepOut+1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_phasest_dip.jpg&#34;
+         alt=&#34;Structure tensor phase dip - crossline dip on an inline - 3x3x3 tensor input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Structure tensor phase dip - crossline dip on an inline - 3x3x3 tensor input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

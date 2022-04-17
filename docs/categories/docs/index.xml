@@ -1,0 +1,3099 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – docs</title>
+    <link>/categories/docs/</link>
+    <description>Recent content in docs on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/categories/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Add Noise</title>
+      <link>/docs/externalattributes/addnoise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/addnoise/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_add_noise.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script adds gaussian distributed noise to an input signal.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example shows an input signal with different levels of added noise.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/addnoise/ex_add_noise_example.jpg&#34;
+         alt=&#34;Input with varying levels of added noise&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Input with varying levels of added noise&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/addnoise/ex_add_noise_input.jpg&#34;
+         alt=&#34;ex_add_noise.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_add_noise.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;S/N Ratio&lt;/td&gt;
+&lt;td&gt;Desired signal to noise ratio.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AVOAttrib</title>
+      <link>/docs/plugins/avoattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/avoattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes based on different
+parameterizations of reflection intercept and gradient.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The intercept-gradient crossplot is widely used for amplitude-variation-with-offset (AVO) analysis in hydrocarbon exploration.
+The intercept is the zero offset or normal incidence reflection amplitude/coefficient of an event while the gradient is the change
+in reflection amplitude/coefficient with offset or incidence angle. Some authors refer to intercept as A or P and gradient as B or
+G. Modelling studies show that changes in subsurface rock properties such as lithology, porosity and pore fluid content result in
+systematic changes in intercept-gradient space. The following figure, adapted from the very informative paper on AVO by
+&lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.3467825&#34; title=&#34;Interpretation of AVO anomalies. Douglas J. Foster, Robert G. Keys, and F. David Lane. GEOPHYSICS 2010 75:5, 75A3-75A13&#34;&gt;Foster etal (2010)&lt;/a&gt;,
+illustrates the ideal intercept-gradient crossplot response for a clastic sequence to changes in porosity and pore fluid.
+The Fluid Line or Background Trend is where reflections from shales and some wet sands that have little contrast in Vp/Vs plot.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_ideal_crossplot.jpg&#34;
+         alt=&#34;Ideal AVO crossplot for a clastic sequence&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Ideal AVO crossplot for a clastic sequence&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Another popular classification of AVO effects on the intercept-gradient crossplot is the 3 class AVO scheme of &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.1442696&#34; title=&#34;Amplitude‐versus‐offset variations in gas sands. Steven R. Rutherford and Robert H. Williams GEOPHYSICS 1989 54:6, 680-688&#34;&gt;Rutherford and Williams (1989)&lt;/a&gt; based on acoustic impedance contrasts with the addition of a 4th class for high porosity gas sands introduced by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.1437626&#34; title=&#34;Principles of AVO crossplotting. John P. Castagna and Herbert W. Swan. The Leading Edge 1997 16:4, 337-344&#34;&gt;Castagna and Swan (1997)&lt;/a&gt;. The position of these 4 AVO classes on the intercept-gradient crossplot is shown in the following figure.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_classes.jpg&#34;
+         alt=&#34;AVO classes&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;AVO classes&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This plugin calculates 6 attributes which are essentially just coordinate transformations of the intercept and gradient that aim to highlight changes of a particular rock property based on the expected behaviour of clastic reservoir sequences.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ATTRIBUTE&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Fluid Factor&#34; src=&#34;AVOAttrib_fluidfactor_crossplot.jpg&#34; title=&#34;Fluid Factor Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Fluid Factor&lt;/h4&gt; Fluid Factor is a reprojection of intercept/gradient coordinates that highlights deviation from the Fluid Line. As the name implies this attribute highlights changes related to fluid compressibility. The Fluid Factor was introduced by &lt;a href=&#34;http://gp.eage.org/publication/publicationdetails/?publication=32676&#34; title=&#34;Weighted stacking for rock property estimation and detection of gas. G. C. Smith and P. M. Gidlow. Geophysical Prospecting 1987, Vol. 35, No. 9, pp. 993 - 1014&#34;&gt;Smith and Gidlow (1987)&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Lithology Factor&#34; src=&#34;AVOAttrib_lithfactor_crossplot.jpg&#34; title=&#34;Lithology Factor Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Lithology Factor&lt;/h4&gt; Lithology Factor is the companion coordinate reprojection to Fluid Factor. It highlights changes parallel to the Fluid Line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Porosity Factor&#34; src=&#34;AVOAttrib_porofactor_crossplot.jpg&#34; title=&#34;Porosity Factor Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Porosity Factor&lt;/h4&gt; Porosity Factor is just Lithology Factor with the values above the fluid line reversed so the attribute magnitude always increases in the same sense as the effect of increasing porosity, i.e. the attribute magnitude increases to the upper left below the Fluid Line and to the lower right above the Fluid Line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Crossplot Angle&#34; src=&#34;AVOAttrib_angle_crossplot.jpg&#34; title=&#34;Crossplot Angle Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Crossplot Angle&lt;/h4&gt; Crossplot Angle is the angle between an intercept-gradient point and the Fluid Line. It runs from 0 to 180 below the Fluid Line measured counter-clockwise from the upper left projection of the Fluid Line. It runs from 0 to -180 above the Fluid Line measured counter-clockwise from the lower right projection of the Fluid Line. The Crossplot Angle and Deviation can be interpreted as the polar coordinates of a data point in the intercept-gradient crossplot space.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Crossplot Deviation&#34; src=&#34;AVOAttrib_deviation_crossplot.jpg&#34; title=&#34;Crossplot Deviation Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Crossplot Deviation&lt;/h4&gt;&lt;br/&gt; Crossplot Deviation is the distance from the crossplot origin. This attribute is most useful as a transparency mask to remove data close to the centre of the crossplot.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Crossplot Class&#34; src=&#34;AVOAttrib_class_crossplot.jpg&#34; title=&#34;AVO Class Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;AVO Class&lt;/h4&gt;&lt;br/&gt; AVO Class classifies intercept-gradient points according to the 4 class AVO scheme of Rutherford and Williams (1989) and Castagna and Swan (1997). Points below the Fluid Line have a positive class number and those above have a negative class number.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;These attributes have 4 required parameters and 4 extra parameters that may be required depending on the attribute being calculated:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Intercept Volume&lt;/td&gt;
+&lt;td&gt;The attribute volume to use as the zero offset or normal incidence reflection amplitude coefficient. If no intercept volume is available a near angle or offset stack can be used as an alternative.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gradient Volume&lt;/td&gt;
+&lt;td&gt;The attribute volume to use as the change in reflection amplitude/coefficient with offset at normal incidence. If no gradient volume is available, the difference between amplitudes on far and near angle or offset stacks can be used as an alternative.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;The attribute to calculate. There is a choice of Fluid Factor, Lithology Factor, Porosity Factor, Crossplot Angle, Crossplot Deviation or AVO Class.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crossplot Slope&lt;/td&gt;
+&lt;td&gt;The slope of the fluid line interpreted on the intercept-gradient crossplot. This can be read from the properties dialog of the crossplot tool.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Intercept Standard Deviation (Optional)&lt;/td&gt;
+&lt;td&gt;Standard deviation of the intercept volume. Only required for the Crossplot Angle and Crossplot Deviation attributes. This can be read from the 1D histogram tool in the crossplot table.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gradient Standard Deviation (Optional)&lt;/td&gt;
+&lt;td&gt;Standard deviation of the gradient volume. Only required for the Crossplot Angle and Crossplot Deviation attributes. This can be read from the 1D histogram tool in the crossplot table.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Correlation Coefficient (Optional)&lt;/td&gt;
+&lt;td&gt;Correlation coefficient between the intercept and gradient volumes. Only required for the Crossplot Deviation attribute. This can be read from the properties dialog of the crossplot tool.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Class 2 Intercept Offset&lt;/td&gt;
+&lt;td&gt;Half width in intercept coordinates of the Class 2 region on the AVO Class crossplot. Only required for the AVO Class attribute.&amp;rsquo;]]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_input_parameters.jpg&#34;
+         alt=&#34;AVO Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;AVO Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AVO Intercept and Gradient</title>
+      <link>/docs/externalattributes/avo_ig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/avo_ig/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;These &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts estimate AVO intercept and gradient based on Shuey&amp;rsquo;s 2 term approximation
+to the Zoeppritz equation. Scripts are provided for 3, 4 and 5 angle stacks.&lt;/p&gt;
+&lt;h2 id=&#34;intercept-and-gradient-from-angle-stacks&#34;&gt;Intercept and Gradient from Angle Stacks&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_3_to_AVOIG.py&lt;/strong&gt;
+&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_4_to_AVOIG.py&lt;/strong&gt;
+&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_5_to_AVOIG.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Takes as input angle stacks and the corresponding angles and fits a least squares line to the \(amplitude\) and \(sin^2(angle)\) at
+each sample point. Output includes the intercept, gradient and the correlation coefficient of the line fit.&lt;/p&gt;
+&lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/avo_ig/ex_AVOIG_4_input.jpg&#34;
+         alt=&#34;ex_angle_stacks_4_to_AVOIG.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_angle_stacks_4_to_AVOIG.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For each input volume the corresponding incident angle must be provided.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AVOPolarAttrib</title>
+      <link>/docs/plugins/avopolarattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/avopolarattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes derived from AVO Polarization
+in the AVO Intercept-Gradient crossplot as described by
+&lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1581037&#34; title=&#34;AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003&#34;&gt;Mahob and Castagna (2003)&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The intercept-gradient crossplot is widely used for amplitude-variation-with-offset (AVO) analysis in hydrocarbon exploration.
+The intercept is the zero offset or normal incidence reflection amplitude/coefficient of an event while the gradient is the
+change in reflection amplitude/coefficient with offset or incidence angle. Some authors refer to intercept as A or P and gradient
+as B or G. Traditional methods of AVO interpretation focus on individual sample points in isolation essentially treating them as
+reflection coefficients. &lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.1487253&#34; title=&#34;The AVO hodogram: Using polarization to identify anomalies. Tim Keho, Skip Lemanski, Robert Ripple, and Bahal Raja Tambunan The Leading Edge 2001 20:11, 1214-1224&#34;&gt;Keho etal (2001)&lt;/a&gt; observed that this approach ignores the seismic wavelet. Convolving a seismic reflection coefficient with a typical seismic wavelet produces a series of points spread across all 4 quadrants of the AVO crossplot. Further distortions are introduced by residual time shifts across offsets and NMO stretch. &lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.1487253&#34; title=&#34;The AVO hodogram: Using polarization to identify anomalies. Tim Keho, Skip Lemanski, Robert Ripple, and Bahal Raja Tambunan The Leading Edge 2001 20:11, 1214-1224&#34;&gt;Keho etal (2001)&lt;/a&gt; proposed analysing the AVO crossplot for small time windows of 0.5-1 times the wavelet wavelength as hodograms using the polarization angle as a key measure. &lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1581037&#34; title=&#34;AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003&#34;&gt;Mahob and Castagna (2003)&lt;/a&gt;
+subsequently extended the analysis with a number of other measures to describe the hodogram.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avopolarattrib/AVOStrengthAttrib_hodogram_example.png&#34;
+         alt=&#34;Example AVO hodogram crossplot for a 36 millisec TWT window&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example AVO hodogram crossplot for a 36 millisec TWT window&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This plugin calculates the 6 attributes (Background Polarization Angle, Event Polarization Angle, Polarization Angle Difference, Strength, Polarization Product and Quality) defined by &lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1581037&#34; title=&#34;AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003&#34;&gt;Mahob and Castagna (2003)&lt;/a&gt;. The parameters are estimated by eigendecomposition of the covariance matrix for the intercept-gradient crossplot.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;EXAMPLE&lt;/th&gt;
+&lt;th&gt;ATTRIBUTE&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Background Polarization Angle&#34; src=&#34;AVOPolarAttrib_bgangle.jpg&#34; title=&#34;Background Polarization Angle&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Background Polarization Angle&lt;/h4&gt; Polarization Angle for all AVO crossplot points over a user specified time/depth window and volume of traces. The polarization angle is the orientation of the largest eigenvector relative to the positive intercept axis and varies from -90 to 90 degrees.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Event Polarization Angle&#34; src=&#34;AVOPolarAttrib_angle.jpg&#34; title=&#34;Event Polarization Angle&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Event Polarization Angle&lt;/h4&gt; Polarization Angle for AVO crossplot points in the user specified event time/depth window. Recommend using 0.5-1 times the wavelength. The polarization angle is the orientation of the largest eigenvector relative to the positive intercept axis and varies from -90 to 90 degrees.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Polarization Angle Difference&#34; src=&#34;AVOPolarAttrib_anglediff.jpg&#34; title=&#34;Polarization Angle Difference&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Polarization Angle Difference&lt;/h4&gt; The difference between the event and background polarization angles.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Strength&#34; src=&#34;AVOPolarAttrib_strength.jpg&#34; title=&#34;AVO Strength&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Strength&lt;/h4&gt;The Mahob and Castagna measure of the distance of the hodogram points from the origin within the event time/depth window.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Polarization Product&#34; src=&#34;AVOPolarAttrib_product.jpg&#34; title=&#34;Polarization Product&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Polarization Product&lt;/h4&gt; The product of the Strength and Polarization Angle Difference attributes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Quality&#34; src=&#34;AVOPolarAttrib_quality.jpg&#34; title=&#34;Quality&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Quality&lt;/h4&gt; This is the ratio of the eigenvalue difference to the eigenvalue sum. It is a measure of the linearity of the points in the intercept-gradient crossplot. It ranges from 0 to 1 with higher values indicating the analysis points have a more linear hodogram and more reliable results.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;These attributes have 3 required parameters and 3 extra parameters that may be required depending on the attribute being calculated:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Intercept&lt;/td&gt;
+&lt;td&gt;The attribute volume to use as the zero offset or normal incidence reflection amplitude coefficient. If no intercept volume is available a near angle or offset stack can be used as an alternative.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gradient&lt;/td&gt;
+&lt;td&gt;The attribute volume to use as the change in reflection amplitude/coefficient with offset at normal incidence. If no gradient volume is available, the difference between amplitudes on far and near angle or offset stacks can be used as an alternative.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;The attribute to calculate. There is a choice of Background Polarization Angle, Event Polarization Angle, Polarization Angle Difference, Strength, Polarization Product or Quality.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Background time/depth gate (Optional)&lt;/td&gt;
+&lt;td&gt;The time/depth gate used to estimate the Background Polarization Angle. Only required for the Background Polarization Angle, Polarization Angle Difference and Polarization Product attributes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout (Optional)&lt;/td&gt;
+&lt;td&gt;The extent of the trace volume used to estimate the Background Polarization Angle. Only required for the Background Polarization Angle, Polarization Angle Difference and Polarization Product attributes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Event time/depth gate (Optional)&lt;/td&gt;
+&lt;td&gt;The time/depth gate used to estimate the Event Polarization Angle. Required for the Event Polarization, Polarization Angle Difference, Polarization Product and  Quality attributes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avopolarattrib/AVOPolarAttrib_input_parameters.jpg&#34;
+         alt=&#34;AVO Polarization Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;AVO Polarization Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Dip and Azimuth</title>
+      <link>/docs/externalattributes/dipazimuth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/dipazimuth/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;These Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.&lt;/p&gt;
+&lt;p&gt;All scripts will estimate at least the following attributes:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OUTPUT&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Inline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on a crossline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger inline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crossline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on an inline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger crossline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;True Dip&lt;/td&gt;
+&lt;td&gt;Event dip in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output is always positive.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dip Azimuth&lt;/td&gt;
+&lt;td&gt;Azimuth of the True Dip direction relative to the survey orientation. Output ranges from -180 to 180 degrees. Positive azimuth is defined from the inline in the direction of increasing crossline numbers. Azimuth = 0 indicates that the dip is dipping in the direction of increasing crossline numbers. Azimuth = 90 indicates that the dip is dipping in the direction of increasing inline numbers.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Some scripts may offer additional outputs such as a measure of event coherency or planarity.&lt;/p&gt;
+&lt;p&gt;All of the scripts require the numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;orientation-from-gradients&#34;&gt;Orientation from gradients&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_gradient_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculates orientation from inline, crossline and Z gradients. No filtering is applied
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_gradient_dip.jpg&#34;
+         alt=&#34;Unfiltered gradient dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered gradient dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;orientation-from-vector-filtered-gradients&#34;&gt;Orientation from vector filtered gradients&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_vf_gradient3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Uses &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point derivative filter to estimate data gradients. Next gradient normal unit vectors are determined and smoothed using a vector filter.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the vector filtering is \((2*ZStepOut-1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline
+direction. For example for a 5x5x5 analysis cube \((Zwindow=2, Stepout=2)\) the gradients and associated normal unit vectors are generated
+on a 3x3x3 cube and vector filtered. The outer samples are only used in the gradient calculation.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;ex_vfmean_gradient_dip.jpg&#34;
+         alt=&#34;Vector filtered gradient dip - crossline dip on an inline - 5x5x5 input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Vector filtered gradient dip - crossline dip on an inline - 5x5x5 input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-by-the-gradient-structure-tensor&#34;&gt;Orientation by the gradient structure tensor&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Scripts: ex_gradient3_st_dip.py &amp;amp; ex_gradient5_st_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Uses either &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point or the &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli (2004)&lt;/a&gt; 5 point derivative filter to estimate data gradients which are then used to form the gradient structure tensor.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;For the ex_gradient3 script the structure tensor is formed from an aperture of \((2*ZStepOut-1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+&lt;p&gt;For the ex_gradient5 script the structure tensor is formed from an aperture of \((2*ZStepOut-2)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_gst3_dip.jpg&#34;
+         alt=&#34;Gradient3 structure tensor dip - crossline dip on an inline - 5x5x5 input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Gradient3 structure tensor dip - crossline dip on an inline - 5x5x5 input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-from-the-3d-complex-trace-phase&#34;&gt;Orientation from the 3D complex trace phase&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_phase3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculates orientation from the 3D complex trace phase gradients as per &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.2785048&#34; title=&#34;A tutorial on complex seismic trace analysis. Arthur E. Barnes. GEOPHYSICS 2007 72:6, W33-W43&#34;&gt;Barnes (2007)&lt;/a&gt;. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point derivative filter is used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_phase3_dip.jpg&#34;
+         alt=&#34;Unfiltered phase dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered phase dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-from-vector-filtered-3d-complex-trace-phase&#34;&gt;Orientation from vector filtered 3D complex trace phase&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_vf_phase3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculate orientation unit normal vectors using the 3D complex trace phase gradient and apply a vector filter. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point filter used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Vector Filter ZStepOut&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube for vector filtering in the Z direction. Number of Z samples in cube will be \((2*ZStepOut+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the vector filter is \((2*ZStepOut+1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_vfmean_phase3_dip.jpg&#34;
+         alt=&#34;Mean Vector Filtered phase dip - crossline dip on an inline - 3x3x3&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mean Vector Filtered phase dip - crossline dip on an inline - 3x3x3&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-using-the-envelope-weighted-3d-complex-trace-phase-structure-tensor&#34;&gt;Orientation using the envelope weighted 3D complex trace phase structure tensor&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_weighted_phase3_st_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Forms a structure tensor from the 3D complex trace phase gradients. Tensor elements are weighted by the trace envelope as per &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.2235591?journalCode=gpysa7&#34; title=&#34;Computation of dips and azimuths with weighted structural tensor approach. Yi Luo, Yuchun Eugene Wang, Nasher M. AlBinHassan and Mohammed N. Alfaraj, GEOPHYSICS 2006 71:5, V119-V121&#34;&gt;Luo etal (2006)&lt;/a&gt;. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point filter is used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tensor ZStepOut&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube for vector filtering in the Z direction. Number of Z samples in cube will be \((2*ZStepOut+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the structure tensor is \((2*ZStepOut+1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_phasest_dip.jpg&#34;
+         alt=&#34;Structure tensor phase dip - crossline dip on an inline - 3x3x3 tensor input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Structure tensor phase dip - crossline dip on an inline - 3x3x3 tensor input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: External(Python) Attributes</title>
+      <link>/docs/plugins/externalattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/externalattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] allows attributes to be developed in Python.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;With this plugin it is possible to calculate single and multitrace attributes using a Python script. The plugin supports multi-trace
+multi-attribute input and multi-attribute output as well as parallel execution.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; &lt;em&gt;Releases prior to 6.0.2 allowed multi-trace multi-attribute input only if all the attributes were in the same multi-attribute volume.
+In releases from 6.0.2 onward this limitation has been removed.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Instead of doing the attribute calculation within OpendTect this plugin starts up a Python interpreter and runs a user specified Python script.
+Trace data is read/written to/from the Python script using stdin/stdout pipes. As described below the Python script must import the &lt;em&gt;extattrib.py&lt;/em&gt;
+module that handles the stdin/stdout data IO and presents the trace data as a numpy array. The script must implement a &lt;em&gt;doCompute&lt;/em&gt; method and
+define a Python dictionary describing the User Interface. Details are described below. Tips and Tricks to assist can be found in various [../articles].
+There are also the [wmscripts] for everything from dip estimation to filtering described in the [../external_attributes] section of this documentation
+which are distributed with the WMPlugins suite and can be found in the bin/python/wmpy folder of the OpendTect installation.&lt;/p&gt;
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 3 required parameters and optional parameters determined by the &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt; provided by the Python attribute script:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Interpreter&lt;/td&gt;
+&lt;td&gt;The Python interpreter to be used to run the script, eg /usr/bin/python3. As of version 6.6.1 and 6.4.13 this field will default to the OpendTect Python settings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;External File&lt;/td&gt;
+&lt;td&gt;The external application to be used for attribute calculation. As of version 6.6.1 and 6.4.13 this field will default to the OpendTect/bin/python/wmpy folder.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/ExternalAttrib_input.jpg&#34;
+         alt=&#34;External Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;External Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The &lt;img src=&#34;reload.png&#34; alt=&#34;reset&#34;&gt; button beside the Interpreter entry will force an update of the Interpreter field to the current OpendTect Python
+setting. This can be useful if you use the Python Settings dialog to change the default interpreter and want to apply the change within
+the attribute definition.&lt;/p&gt;
+&lt;p&gt;The &lt;img src=&#34;reload.png&#34; alt=&#34;reload&#34;&gt; button beside the External File entry will force reloading the attribute script and rebuild the user interface.
+This can be useful if you are editing a script, save it and want to verify the changes.&lt;/p&gt;
+&lt;p&gt;The &lt;img src=&#34;contexthelp.png&#34; alt=&#34;help&#34;&gt; button beside the External File entry will open the system web browser with the url specified by the Help entry in
+the attribute scripts &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt;. The button is not displayed if this entry is absent.&lt;/p&gt;
+&lt;h2 id=&#34;python-script-structure&#34;&gt;Python Script Structure&lt;/h2&gt;
+&lt;p&gt;Every Python attribute script has 5 sections. As an example consider the &lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/blob/master/bin/python/wmpy/DipAndAzimuth/ex_dip.py&#34;&gt;ex_dip.py&lt;/a&gt;
+script which converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and output.
+Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; and &lt;a href=&#34;http://www.numpy.org/&#34;&gt;Numpy&lt;/a&gt; is assumed.&lt;/p&gt;
+&lt;h3 id=&#34;the-imports&#34;&gt;The Imports&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_01.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;This is where external modules/libraries required by the script are loaded. At a minimum the script must load:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the Python sys and os modules&lt;/li&gt;
+&lt;li&gt;the Numpy module (the fundamental package for scientific computing with Python)&lt;/li&gt;
+&lt;li&gt;the external attribute module (extattrib.py)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [wmscripts] package and its location
+is unknown to the Python installation unless we help out. The sys.path.insert call on line 11 provides this help by extending the default search
+path for Python modules to include the parent folder of the folder containing the script. This reflects the folder structure of the [wmscripts]
+package, so if you develop scripts outside this structure then you will need to change line 11 appropriately to append the location of extattrib.py
+to the module search path.&lt;/p&gt;
+&lt;p&gt;Of course if your script requires other Python modules (eg SciPy, Numba) then add the appropriate import statements in this section.&lt;/p&gt;
+&lt;h3 id=&#34;the-parameters&#34;&gt;The Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_02.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by
+the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for
+documentation. The plugin dynamically builds the following input dialog for this script:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_06.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;A variety of other input elements can be specified to build more complex input dialogs. See &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt;
+for full details or look at other scripts to see what is possible.&lt;/p&gt;
+&lt;h3 id=&#34;the-compute-loop-initialisation&#34;&gt;The Compute Loop Initialisation&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_03.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the
+&amp;ldquo;while True:&amp;rdquo; loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section
+will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.&lt;/p&gt;
+&lt;p&gt;This particular script shows how information stored in the &lt;a href=&#34;#seismicinfo-block&#34;&gt;SeismicInfo Block&lt;/a&gt; can be used to calculate some
+constants purely as an example. This attribute is so simple that no initialisation is actually required.&lt;/p&gt;
+&lt;h3 id=&#34;the-compute-loop&#34;&gt;The Compute Loop&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_04.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;This is where the attribute calculation takes place. The &lt;em&gt;xa.doInput()&lt;/em&gt; and &lt;em&gt;xa.doOutput()&lt;/em&gt; function calls control the input and output
+of seismic trace data between the script and OpendTect. Generally these should be the first and last statements within the compute loop.&lt;/p&gt;
+&lt;p&gt;Within the compute loop, some information about the current trace data such as the number of samples and the inline and crossline
+location are provided in the &lt;a href=&#34;#traceinfo-block&#34;&gt;TraceInfo Block&lt;/a&gt;. These can be accessed using constructs like &lt;em&gt;xa.TI[&amp;rsquo;nrsamp&amp;rsquo;]&lt;/em&gt;.
+This information is not required for this particular script.&lt;/p&gt;
+&lt;p&gt;The global Numpy array &lt;em&gt;xa.Input&lt;/em&gt; contains the input trace data. &lt;em&gt;xa.Input[&amp;rsquo;name of input attribute&amp;rsquo;]&lt;/em&gt; returns a Numpy array with the
+trace data for the current compute location. The shape of this Numpy array depends on the traces stepouts required by the attribute.
+As this particular script uses just single trace input (inline and crossline step out of 0) the Numpy array has a shape of
+&lt;em&gt;(1,1,xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt;. In the more general case of a multi-trace attribute the Numpy array shape would be
+&lt;em&gt;(xa.SI[&amp;rsquo;nrinl&amp;rsquo;], xa.SI[&amp;rsquo;nrcrl&amp;rsquo;], xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt; and the input trace at the current location would be at the centre of the
+array, ie at index &lt;em&gt;[xa.SI[&amp;rsquo;nrinl&amp;rsquo;]//2, xa.SI[&amp;rsquo;nrcrl&amp;rsquo;]//2,&amp;hellip;]&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Attribute ouput must be put into the &lt;em&gt;xa.Output&lt;/em&gt; global Numpy array before the &lt;em&gt;xa.doOutput()&lt;/em&gt; function call. Each element
+(eg &lt;em&gt;xa.Output[&amp;rsquo;name of output attribute&amp;rsquo;]&lt;/em&gt;) of the output array must have a shape of &lt;em&gt;(1,1,xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;the-postamble&#34;&gt;The Postamble&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/externalattrib/18_06_04_05.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;This section is just boilerplate code that appears in every attribute script which should never be changed.&lt;/p&gt;
+&lt;h2 id=&#34;json-parameter-string&#34;&gt;JSON Parameter String&lt;/h2&gt;
+&lt;p&gt;The Python script can specify a set of parameters as a JSON object string. As of Release 6.6.8 the format of the JSON object string has
+changed to better support more flexible UI&amp;rsquo;s. In particular the restriction on no whitespace in the keys and values in the JSON string
+have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) should continue to work. The following keywords are supported:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Input (depreciated)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;String&#39;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Specifies a label to appear beside the input attribute selection UI element. Superceded by the &amp;ldquo;Inputs&amp;rdquo; keyword but is supported for backward compatibility.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Input: Input Data&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Inputs&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Array of Strings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Each string is used as a label for an input attribute selection UI element. Currently limited to a maximum of 6 attribute inputs.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Inputs: [Input 1,Input 2,Input 3]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Output (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Array of Strings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Each string specifies the name of an output attribute. If this keyword is not supplied a single output attribute is assumed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Output: [Out 1,Out 2,Out 3]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;ZSampMargin (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Value&amp;rsquo; (array of 2 numbers)  and optional &amp;lsquo;Hidden&amp;rsquo; (boolean) and &amp;lsquo;Symmetric&amp;rsquo; (boolean) parameters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &#39;Value&#39; parameter is an array of 2 numbers specifying the desired minimum number of samples before and after the calculation point required for the calculation respectively. If not supplied only a single value will be provided when the attribute is computed on a timeslice or horizon. The optional &amp;lsquo;Hidden&amp;rsquo; parameter is a boolean which if set to true makes the ZSampMargin parameter read only.&lt;/br&gt;The optional &#39;Symmetric&#39; parameter is a boolean which if true causes only a single entry to be displayed in the UI.&lt;/br&gt;The optional &#39;Minimum&#39; parameter is an array of 2 numbers specifying a minimum required window size&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ZSampMargin: {Value: [-2,2]}&lt;/code&gt; &lt;/br&gt;&lt;code&gt;ZSampMargin: {Value: [-2,2], Symmetric: True}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;StepOut (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Value&amp;rsquo; (array of 2 numbers)  and optional &amp;lsquo;Hidden&amp;rsquo; (boolean) parameters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;The &amp;lsquo;Value&amp;rsquo; parameter is an array of 2 numbers specifying the inline and crossline stepout defining the block of traces to be used around the current calculation position. If not supplied only a single trace is provided. The optional &amp;lsquo;Hidden&amp;rsquo; parameter is a boolean which if set to true makes the StepOut parameter read only. The optional &amp;lsquo;Minimum&amp;rsquo; parameter is an array of 2 numbers specifying a minimum required stepout.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;StepOut: {Value: [2,2]}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;StepOut: {Value: [2,2], Hidden: True}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;UI Name String (Introduced in release 6.4.8 - optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Type&amp;rsquo; (string)  and &amp;lsquo;Value&amp;rsquo; (string or number depending on the &amp;lsquo;Type&amp;rsquo; key) parameters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;In this new entry the main key is the name that will appear in the UI. Note that this can now contain whitespace. The &#39;Type&#39; parameter describes the input field type. Currently Number, Select and File are supported. Number is for a numeric input box, equivalent to the legacy Par_0 to Par_5 entries but with the advantage that the number and order in the UI is more flexible. Select displays a combo-box, equivalent to the legacy Select entry but with the advantage that there is no restriction on the number and order in the UI. File is a file selection UI.&lt;/br&gt;The &#39;Value&#39; sets the default value displayed in the UI. For Number types it is a number, for the Select and File types it is a string.For the File type the Value determines the location where the file selection dialog opens and if a &#39;*&#39; is present the file filter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;A File UI Field: {Type: File, Value: Seismics/*.wvlt}&lt;/code&gt; &lt;/br&gt;&lt;code&gt;A Number UI Field: {Type: Number, Value: 20}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;A Select UI Field: {Type: Select, Options: [option 1,option 2,option 3],Value: option 2}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Help (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;String&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;URL pointing to documentation for the external attribute.&lt;/br&gt; Causes an icon help button to be displayed in the UI.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Help: http://waynegm.github.io/OpendTect-Plugin-Docs/External-Attributes/LPA-Attributes/&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Parallel (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Default is True which allows parallel execution. If set to False then calculations only use a single thread.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Parallel: False&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Select (Legacy optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Name&amp;rsquo; (string), &amp;lsquo;Values&amp;rsquo; (array of strings) and &amp;lsquo;Select&amp;rsquo; (number) parameters.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Displays a list box labeled &amp;lsquo;Name&amp;rsquo; with options specified in &amp;lsquo;Values&amp;rsquo; and default selection being item number &amp;lsquo;Select&amp;rsquo;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Select: {Name: Type, Values: [None, Median, Average], Selection: 0}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;Par_0, Par_1, Par_2, Par_3, Par_4, Par_5 (Legacy all optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Object with a &amp;lsquo;Name&amp;rsquo; (string) and &amp;lsquo;Value&amp;rsquo; (number) parameter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Displays an entry box labeled &amp;lsquo;Name&amp;rsquo; with default value &amp;lsquo;Value&amp;rsquo;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Par_0: {Name: First Parameter, Value: 100.0}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;Par_1: {Name: Second Parameter, Value: 200.0}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Here is an example parameter string:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{
+	&amp;#39;Inputs&amp;#39;: [&amp;#39;DT(us/m)&amp;#39;, &amp;#39;DTS(us/m)&amp;#39;, &amp;#39;RHOB(g/cc)&amp;#39;],
+	&amp;#39;Output&amp;#39;: [&amp;#39;Near&amp;#39;, &amp;#39;Mid&amp;#39;, &amp;#39;Far&amp;#39;],
+	&amp;#39;ZSampMargin&amp;#39; : {&amp;#39;Value&amp;#39;: [-10,10]},
+	&amp;#39;StepOut&amp;#39; : {&amp;#39;Value&amp;#39;: [1,1], &amp;#39;Hidden&amp;#39;: true},
+	&amp;#39;Near Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 6.0},
+	&amp;#39;Mid Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 20.0},
+	&amp;#39;Far Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 40.0},
+	&amp;#39;Wavelet&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;File&amp;#39;,&amp;#39;Value&amp;#39;: &amp;#39;Seismics/*.wvlt&amp;#39;},
+	&amp;#39;Method&amp;#39; : { &amp;#39;Type&amp;#39;: &amp;#39;Select&amp;#39;, &amp;#39;Options&amp;#39;: [&amp;#39;akirich&amp;#39;, &amp;#39;fatti&amp;#39;], &amp;#39;Value&amp;#39;: &amp;#39;fatti&amp;#39;},
+	&amp;#39;Help&amp;#39;  : &amp;#39;https://gist.github.com/waynegm/84f323ec4aab3961c23d&amp;#39;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;tips-and-tricks&#34;&gt;Tips and Tricks&lt;/h2&gt;
+&lt;h3 id=&#34;cross-platform-setup&#34;&gt;Cross Platform Setup&lt;/h3&gt;
+&lt;p&gt;Prior to release 5.10 and 6.0.0pre7-1 any attribute set containing external attributes could not be shared between Windows and Linux because the Interpeter and External File input fields contain platform specific file paths.&lt;/p&gt;
+&lt;p&gt;Release 5.10 and 6.0.0pre7-1 introduced an optional mechanism to support cross platform attribute sets containing external attributes by using environment variables. Consider the following script for starting OpendTect on Linux:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#!/bin/csh -f
+setenv DTECT_SETTINGS &amp;#34;$HOME/.od6&amp;#34;
+setenv OD_USER_PLUGIN_DIR &amp;#34;$HOME/.od6&amp;#34;
+setenv EX_PYTHON &amp;#34;/opt/anaconda3/bin/python&amp;#34;
+setenv OD_EX_DIR &amp;#34;$HOME/Development/GIT_AREA/OpendTect-External-Attributes/&amp;#34;
+/opt/seismic/OpendTect_6/6.0.0/start_dtect
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And an equivalent Windows command file:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@set OD_USER_PLUGIN_DIR=%HOMEPATH%\od6
+@set EX_PYTHON=C:\Miniconda3\python.exe
+@set OD_EX_DIR=E:\Development\GIT_AREA\OpendTect-External-Attributes\
+start &amp;#34;&amp;#34; &amp;#34;C:\Program Files\OpendTect_6\6.0.0\bin\win64\Release\od_start_dtect.exe&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The environment variable EX_PYTHON points to the python interpreter for each platform and entering %EX_PYTHON% into the Interpreter input field ensures the platform appropriate interpreter is used. Any name can be used for the environment variable.&lt;/p&gt;
+&lt;p&gt;The  environment variable OD_EX_DIR points to a root folder below which the attribute script files can be found. The setting in the Linux startup script points to a Linux folder. The corresponding setting in the Windows command file points to the same location via a network share. This environment variable name is hard wired into the code so this variable name cannot be changed. Note that the script files cam be located in subfolders of the OD_EX_DIR folder.&lt;/p&gt;
+&lt;p&gt;Attribute sets created by release 5.0.10 and 6.0.0pre7-1 and later that use these environment variables will not work in earlier versions of the External Attribute plugin.&lt;/p&gt;
+&lt;h3 id=&#34;opendtect-linux-hangs-after-selecting-a-python-external-attribute-in-the-attribute-description-editor&#34;&gt;OpendTect (Linux) hangs after selecting a Python external attribute in the Attribute Description Editor&lt;/h3&gt;
+&lt;p&gt;This can happen if the Python file has Windows/DOS linebreaks. Use the dos2unix command on the Python file and all should be ok.&lt;/p&gt;
+&lt;h3 id=&#34;setting-up-a-pythonnumpyscipy-environment&#34;&gt;Setting up a Python/Numpy/Scipy environment&lt;/h3&gt;
+&lt;p&gt;The Python environments provided by the OpendTect Installation Manager, specifically the MKL and Cuda environments, will work with this plugin although some scripts may require installation of additional
+packages. Any additional dependencies will usually be described in a README.md file next to the script, in the comments/description at the top of the script file or in the documentation.&lt;/p&gt;
+&lt;p&gt;Alternatively you can install your own Python/Numpy/Scipy development stack for Python 3 from scratch. Continuum Analytics provide free Python installers for Linux and Windows in &lt;a href=&#34;http://continuum.io/downloads#all&#34;&gt;Anaconda&lt;/a&gt;. There is also a smaller DIY option called &lt;a href=&#34;http://conda.pydata.org/miniconda.html&#34;&gt;Miniconda&lt;/a&gt; which allows you to select just the packages you need.&lt;/p&gt;
+&lt;p&gt;In general you require Python 3 (&amp;gt;=3.7) and compatible Numpy and Scipy. Numba is also highly recommended and required by some of the supplied scripts.&lt;/p&gt;
+&lt;h2 id=&#34;how-it-works&#34;&gt;How it Works&lt;/h2&gt;
+&lt;p&gt;The following describes how the plugin works. Most of the details are handled by the extattrib.py module included in the plugin distribution. Python
+scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that
+implements the attribute calculation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-g&lt;/code&gt; the application should write out a  [#JSON Parameter String] to stdout describing the attribute parameters and exit.&lt;/li&gt;
+&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-c json-parameter-string&lt;/code&gt; the application
+&lt;ul&gt;
+&lt;li&gt;should read and parse the contents of &lt;code&gt;json-parameter-string&lt;/code&gt; to get the attribute parameters&lt;/li&gt;
+&lt;li&gt;read a 40 byte block of binary data from stdin called the SeismicInfo block (described below)&lt;/li&gt;
+&lt;li&gt;start an endless loop that:
+&lt;ul&gt;
+&lt;li&gt;reads a 16 byte block of binary data from stdin called the TraceInfo block (described below)&lt;/li&gt;
+&lt;li&gt;reads a data block of 4 byte binary floats from stdin that contains the seismic trace data. The size of the data block depends on the content of the SeismicInfo (number of traces and number of inputs) and TraceInfo ( number of samples) blocks
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;number_of_inputs * number_of_traces * number_of_samples * 4 bytes&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;calculates the attribute output&lt;/li&gt;
+&lt;li&gt;writes a data block of 4 byte binary floats to stdout that contains the attribute output. The size of the output data block depends on the content of the TraceInfo ( number of samples) block and the number of output attributes
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;number_of_samples * number_of_outputs * 4 bytes&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;seismicinfo-block&#34;&gt;SeismicInfo Block&lt;/h3&gt;
+&lt;p&gt;This block of binary data is written to the applications stdin immediately after it is started with the &lt;code&gt;-c&lt;/code&gt; argument. It consists of 40 bytes as follows:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;SIZE&lt;/th&gt;
+&lt;th&gt;FORMAT&lt;/th&gt;
+&lt;th&gt;INDEX&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrtraces&lt;/td&gt;
+&lt;td&gt;number of traces for each input attribute&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrinput&lt;/td&gt;
+&lt;td&gt;number of input attributes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nroutput&lt;/td&gt;
+&lt;td&gt;number of output atrributes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrinl&lt;/td&gt;
+&lt;td&gt;number of inline traces in the input data block&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrcrl&lt;/td&gt;
+&lt;td&gt;number of crossline traces in the input data block&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;zstep&lt;/td&gt;
+&lt;td&gt;trace sampling interval  (result of OpendTect API call &lt;em&gt;SI().zstep()&lt;/em&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;inldist&lt;/td&gt;
+&lt;td&gt;distance between inlines (result of OpendTect API call &lt;em&gt;SI().inlDistance()&amp;lt;/em.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;crldist&lt;/td&gt;
+&lt;td&gt;distance between crosslines (result of OpendTect API call &lt;em&gt;SI().crlDistance()&lt;/em&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;zFactor&lt;/td&gt;
+&lt;td&gt;(result of OpendTect API call &lt;em&gt;zFactor()&lt;/em&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;float&lt;/td&gt;
+&lt;td&gt;dipFactor&lt;/td&gt;
+&lt;td&gt;(result of OpendTect API call &lt;em&gt;dipFactor()&lt;/em&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h3 id=&#34;traceinfo-block&#34;&gt;TraceInfo Block&lt;/h3&gt;
+&lt;p&gt;This block of binary data is written to the application stdin immediately before each block of trace data. It consists of 16 bytes as follows:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;SIZE&lt;/th&gt;
+&lt;th&gt;FORMAT&lt;/th&gt;
+&lt;th&gt;INDEX&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;nrsamp&lt;/td&gt;
+&lt;td&gt;number of samples in each trace within the input data block (OpendTect &lt;em&gt;nrsamples&lt;/em&gt; parameter)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;z0&lt;/td&gt;
+&lt;td&gt;position of first sample in data trace within entire seismic trace ( OpendTect &lt;em&gt;z0&lt;/em&gt; parameter)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;inl&lt;/td&gt;
+&lt;td&gt;inline number of current calculation position&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4 bytes&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;td&gt;crl&lt;/td&gt;
+&lt;td&gt;crossline number of current calculation position&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GeopackageDisplay</title>
+      <link>/docs/plugins/geopackagedisplay/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/geopackagedisplay/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Display&amp;rdquo; item to the &amp;ldquo;Add&amp;rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackagedisplay/geopackage_display_menu.jpg&#34;
+         alt=&#34;Geopackage Display menu item&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Geopackage Display menu item&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
+&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackagedisplay/geopackage_display_example.jpg&#34;
+         alt=&#34;GIS data draped on an OpendTect 3D horizon&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;GIS data draped on an OpendTect 3D horizon&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: LPA Smoothing</title>
+      <link>/docs/externalattributes/lpasmooth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/lpasmooth/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: ex_lpa_smooth.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to filter noise while preserving steep dips. A region of
+data around each sample location is approximated by a second order 3D polynomial using gaussian weighted least squares.&lt;/p&gt;
+&lt;p&gt;The approximation has the following form:&lt;/p&gt;
+&lt;p&gt;$$ r_0+ r_1 * x + r_2 * y + r_3 * z + r_4 * x^2 + r_5 * y^2 + r_6 * z^2 +r_7 * x * y + r_8 * x * z + r_9 * y * z $$&lt;/p&gt;
+&lt;p&gt;where x (inline), y (crossline) and z (time/depth) are relative to the analysis location, ie the analysis location has x=y=z=0.&lt;/p&gt;
+&lt;p&gt;This attribute calculates and outputs only the \(r_0\) term of the local polynomial approximation. This provides a smoother version of
+the input with relatively minor smearing of steep dips and fault cuts. Increasing either the Weight Factor or size of the analysis volume
+(StepOut or Z window) increases the amount of smoothing.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;lpa_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;lpa_2x2x2.jpg&#34; data-label=&#34;lpa 2x2x2 WF: 0.5&#34; alt=&#34;lpa 2x2x2 WF: 0.5&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/lpasmooth/lpa_smooth_inputpar.jpg&#34;
+         alt=&#34;LPA Smoothing external attribute input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;LPA Smoothing external attribute input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \(2 * Zwindow + 1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \(2 * Stepout + 1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Weight Factor&lt;/td&gt;
+&lt;td&gt;Determines the extent of the gaussian weight function used in the weighted least squares approximation. The standard deviation of the gaussian weight function \((\sigma)\) is related to this value by:&lt;/br&gt; \(\sigma = min(2*Stepout, 2*Zwindow)*WeightFactor\). &lt;/br&gt;A value of 0.15 gives near zero weight for points at the smallest extent of the analysis cube.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.doc.ic.ac.uk/research/technicalreports/2006/DTR06-8.pdf&#34;&gt;Anisotropic Multidimensional Savitzky Golay kernels for Smoothing, Differentiation and Reconstruction&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.diva-portal.org/smash/get/diva2:302485/FULLTEXT01.pdf&#34;&gt;Polynomial Expansion for Orientation and Motion Estimation&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GeopackageExport</title>
+      <link>/docs/plugins/geopackageexport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/geopackageexport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] data to a
+&lt;a href=&#34;https://www.geopackage.org/&#34;&gt;GeoPackage&lt;/a&gt; database. GeoPackage is an open, non-proprietary, platform-independent, self describing
+standards-based data format for geospatial data.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a tabbed dialog box for selecting
+the various elements to export and the destination file name. The following table shows the [opendtect] data elements supported and
+the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OpendTect Item&lt;/th&gt;
+&lt;th&gt;GeoPackage Table Name&lt;/th&gt;
+&lt;th&gt;Geometry&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Survey Box&lt;/td&gt;
+&lt;td&gt;Survey&lt;/td&gt;
+&lt;td&gt;Polygon&lt;/td&gt;
+&lt;td&gt;Single attribute, the survey name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D Line Geometry&lt;/td&gt;
+&lt;td&gt;2DLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the line name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D Line Stations&lt;/td&gt;
+&lt;td&gt;2DStations&lt;/td&gt;
+&lt;td&gt;Points&lt;/td&gt;
+&lt;td&gt;Two attributes, the line name and station number&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Random Lines&lt;/td&gt;
+&lt;td&gt;RandomLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the random line name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wells&lt;/td&gt;
+&lt;td&gt;Wells&lt;/td&gt;
+&lt;td&gt;Points&lt;/td&gt;
+&lt;td&gt;Well surface location and 3 attributes, the well name, UWID and status (not currently set by OpendTect)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Well Tracks&lt;/td&gt;
+&lt;td&gt;WellTracks&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the well name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Well Markers&amp;rsquo;, &amp;lsquo;WellMarkers&amp;rsquo;, &amp;lsquo;Points&lt;/td&gt;
+&lt;td&gt;Four attributes, well name, marker name, MD and TVDSS&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Open Polygons&lt;/td&gt;
+&lt;td&gt;PolyLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the polyline name. The z values of the polyline are not exported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Closed Polygons&lt;/td&gt;
+&lt;td&gt;Polygons&lt;/td&gt;
+&lt;td&gt;Polygon&lt;/td&gt;
+&lt;td&gt;Single attribute, the polygon name. The z values of the polygon are not exported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D and 3D Horizons&lt;/td&gt;
+&lt;td&gt;Set by the user&lt;/td&gt;
+&lt;td&gt;Point&lt;/td&gt;
+&lt;td&gt;Single attribute, the horizon z value in millisecs or metres depending on the Z domain of the survey&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;It is possible to append to an existing database. This is primarily used for exporting multiple horizons/attributes to the same GeoPackage.&lt;/li&gt;
+&lt;li&gt;Appending does not overwrite items already in the GeoPackage it will just add another copy to the respective table.&lt;/li&gt;
+&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;On Windows the folder containing the plugin DLL&amp;rsquo;s must be added to the PATH environment variable either by editing the corresponding system variable (Control Panel&amp;gt;System and Security&amp;gt;System - Advanced system settings - Environment Variables) or adding a line like &amp;ldquo;@set PATH=%HOMEPATH%.od\bin\win64\Release;%PATH%&amp;rdquo; (adjust &amp;ldquo;%HOMEPATH%.od\bin\win64\Release&amp;rdquo; to reflect your installation) to the bat script used to start OpendTect.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The GeoPackage format is supported by major GIS software packages. The following figure shows display of data exported from OpendTect using the plugin in the open source GIS package, &lt;a href=&#34;https://www.qgis.org/en/site/&#34;&gt;QGIS&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_qgis.jpg&#34;
+         alt=&#34;OpendTect data displayed in QGIS&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect data displayed in QGIS&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;The dialog box associated with the plugin has a file entry control to select the output file, a check box to allow appending to the output file instead of overwriting and 8 tabs to select the content to export:&lt;/p&gt;
+&lt;h3 id=&#34;survey-tab&#34;&gt;Survey tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_survey_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;2d-lines-tab&#34;&gt;2D Lines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;random-lines-tab&#34;&gt;Random Lines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;wells-tab&#34;&gt;Wells tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_wells_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;polylines-tab&#34;&gt;Polylines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;horizon-tab&#34;&gt;Horizon tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PyLops Attributes</title>
+      <link>/docs/externalattributes/pylops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/pylops/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The 6.6.8 release of the wmPlugins includes a number of new Python external attribute scripts that use the &lt;a href=&#34;https://pylops.readthedocs.io/en/latest/&#34;&gt;PyLops&lt;/a&gt;
+linear operator library for seismic modelling and inversion.&lt;/p&gt;
+&lt;p&gt;Assuming wmPlugins is installed using the OpendTect Installation Manager, the scripts will be in the &lt;em&gt;bin/python/wmpy/PyLops&lt;/em&gt; folder
+of the OpendTect software folder and include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyLops/ex_poststack_inversion.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_poststack_relative_inversion.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_poststack_modelling.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_prestack_modelling.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_make_1d_seismic.py&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Using these scripts requires a Python environment with the PyLops module and it&amp;rsquo;s dependencies installed. The section
+&lt;a href=&#34;#installing-pylops&#34;&gt;Installing PyLops&lt;/a&gt; describes the PyLops installation process.&lt;/p&gt;
+&lt;h2 id=&#34;pylopsex_poststack_inversionpy&#34;&gt;PyLops/ex_poststack_inversion.py&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script uses the pylops.avo.poststack.PoststackInversion operator to do
+post-stack seismic inversion. The output is either the log Acoustic Impedance (AI) volume or the residual error.&lt;/p&gt;
+&lt;p&gt;The inputs required are volumes of the seismic to be inverted, a background log AI model and the seismic wavelet. Note that the polarity
+of the seismic wavelet must match the data.&lt;/p&gt;
+&lt;p&gt;The following figures show inversion input and output for a 1D model created by the PyLops/ex_make_1d_seismic.py script.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-02.png&#34;
+         alt=&#34;Impedance Model (red) and Background Model (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Background Model (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-03.png&#34;
+         alt=&#34;Impedance Model (red) and Seismic Model (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Seismic Model (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-04.png&#34;
+         alt=&#34;Impedance Model (red) and Inverted Impedance (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;There is also a PyLops/ex_poststack_relative_inversion.py script that runs the inversion without a background model:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-05.png&#34;
+         alt=&#34;Impedance Model (red) and Inverted Relative Impedance (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Relative Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-07.png&#34;
+         alt=&#34;Inverted Relative Impedance Example&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Inverted Relative Impedance Example&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion_input.png&#34;
+         alt=&#34;ex_poststack_inversion.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_poststack_inversion.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordere&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of Acoustic Impedance or the Residual Error.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Regularization (%)&lt;/td&gt;
+&lt;td&gt;A small amount of noise to add to stabilize the inversion.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wavelet&lt;/td&gt;
+&lt;td&gt;An OpendTect wavelet file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;/br&gt;
+Note the wavelet polarity must be consistent with the polarity of the data being inverted.&lt;/p&gt;
+&lt;h2 id=&#34;pylopsex_prestack_modellingpy&#34;&gt;PyLops/ex_prestack_modelling.py&lt;/h2&gt;
+&lt;p&gt;The PyLops/ex_prestack_modelling.py script uses the pylops.avo.avo.AVOLinearModelling operator to create a pre-stack angle volume
+from well data. The output is either an Aki-Richards or Fatti approximate reflectivity model filtered by a user specified wavelet.&lt;/p&gt;
+&lt;p&gt;The inputs required are 3 log data cubes with compressional sonic (DT in us/m), shear sonic (DTS in us/m) and density (RHOB in g/cc). These
+can be created from well log data using the &amp;ldquo;Create Log Cube&amp;rdquo; right mouse button context menu in the scene well tree or the
+&amp;ldquo;Processing|Create Seismic Output|From Well Logs&amp;rdquo; main menu. Also needed is a wavelet with the appropriate polarity for the data being modelled.&lt;/p&gt;
+&lt;p&gt;The generated synthetics can be displayed in the 3D window and compared with real angle stack data through the well location.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_prestack_modelling-01.jpg&#34;
+         alt=&#34;Prestack modelling example&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Prestack modelling example&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input-parameters-1&#34;&gt;Input Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_prestack_modelling_input.png&#34;
+         alt=&#34;ex_prestack_modelling.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_prestack_modelling.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Angle (deg)&lt;/td&gt;
+&lt;td&gt;The desired output angle volume.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Method&lt;/td&gt;
+&lt;td&gt;What approximation to use, Aki RIchards or Fatti.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wavelet&lt;/td&gt;
+&lt;td&gt;An OpendTect wavelet file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h2 id=&#34;installing-pylops&#34;&gt;Installing PyLops&lt;/h2&gt;
+&lt;p&gt;The PyLops Python package and it&amp;rsquo;s dependencies can be installed in an active conda environment using:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda install -c conda-forge pylops
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pip install pylops
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;See the &lt;a href=&#34;https://pylops.readthedocs.io/en/latest/installation.html&#34;&gt;PyLops documentation&lt;/a&gt; for more information.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GeotiffExport</title>
+      <link>/docs/plugins/geotiffexport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/geotiffexport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] 3D horizon and attribute data to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geotiff Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the 3D horizon and attributes to export and the destination file name. The horizon Z values and attributes values are exported to Float32 bands in the output image. The plugin supports exporting multiple attributes to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image (eg QGIS v3.6). If multiband images prove to be a problem the option exists to run the plugin multiple times and save each attribute to a separate GeoTIFF file.&lt;/p&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
+&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geotiffexport/geotiff_qgis.jpg&#34;
+         alt=&#34;OpendTect 3D horizon data displayed in a QGIS print layout&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect 3D horizon data displayed in a QGIS print layout&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Spatial Filter - Circular</title>
+      <link>/docs/externalattributes/spatialfiltercircular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/spatialfiltercircular/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_circular.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject circularly symmetric
+spatial filters. The filters are applied by direct spatial convolution using the MAXFLAT operators described by
+&lt;a href=&#34;https://www.researchgate.net/publication/3384111_Explicit_formulae_for_coefficients_of_2D_circular_symmetric_MAXFLATFIR_lowhigh_pass_digital_filters&#34; title=&#34;Explicit formulae for coefficients of 2D circular symmetric MAXFLAT FIR low/high pass digital filters.  Electronics Letters Volume: 37, Issue: 24, 22 Nov 2001&#34;&gt;Khan and Ohba (2001)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_resp.jpg&#34;
+         alt=&#34;Filter responses&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Filter responses&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Note that the filter cutoff or band pass/reject frequency is specified in Normalised Spatial Frequency. Normalised Frequency ranges
+from 0 to 1 at the spatial nyquist. Converting a spatial frequency in cycles/metre to the equivalent Normalised Spatial Frequency
+is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
+&lt;p&gt;As written the filter does not take into account differences in spatial sampling in the inline and crossline directions.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example uses a Low Pass filter to remove acquisition footprint from the F3 Demo dataset.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_fkinput.jpg&#34;
+         alt=&#34;FK spectrum of inline 425&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;FK spectrum of inline 425&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Note the noise at 0.0133 cycles/metre or 0.67 normalised frequency (i.e. 0.0133/0.02).&lt;/p&gt;
+&lt;p&gt;A spatial low pass filter with a normalised frequency cutoff of 0.5 is very effective at attenuating this acquisition footprint.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_inline_input.jpg&#34; data-label=&#34;Input Iln425&#34; alt=&#34;Input Iln425&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_inline_filtered.jpg&#34; data-label=&#34;Lowpass Filtered Iln425&#34; alt=&#34;Lowpass Filtered Iln425&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_fkoutput.jpg&#34;
+         alt=&#34;FK spectrum of inline 425 after filter&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;FK spectrum of inline 425 after filter&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_input.jpg&#34; data-label=&#34;Input Slice300ms&#34; alt=&#34;Input Slice300ms&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_filtered.jpg&#34; data-label=&#34;Lowpass Filtered Slice300ms&#34; alt=&#34;Lowpass Filtered Slice300ms&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_input.jpg&#34;
+         alt=&#34;ex_spatial_filter.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_spatial_filter.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Determines the size of the convolution operator. Minimum of 9 (filter kernel size of 19) recommended.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Type&lt;/td&gt;
+&lt;td&gt;Filter type - Low Pass, High Pass, Band Pass or Band Reject.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GradientAttrib</title>
+      <link>/docs/plugins/gradientattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/gradientattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin calculates the inline, crossline or time/depth gradient using operators optimised for rotation invariance, ie equal response in all directions, proposed  by &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon (2009)&lt;/a&gt; and &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli(2004)&lt;/a&gt;. These provide more accurate alternatives to the Prewitt filter option of the OpendTect Convolve attribute for computing gradients.&lt;/p&gt;
+&lt;p&gt;The attribute offers a choice of Kroon&amp;rsquo;s 3x3x3, Farid and Simoncelli&amp;rsquo;s 5x5x5 or Farid and Simoncelli&amp;rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/gradientattrib/gradient_attrib.jpg&#34;
+         alt=&#34;Accuracy of the gradient attribute operators&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Accuracy of the gradient attribute operators&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 3 parameters:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Volume&lt;/td&gt;
+&lt;td&gt;The input attribute volume.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Gradient&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of Inline, Crossline or Z gradient.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Operator&lt;/td&gt;
+&lt;td&gt;What operator to use - choice of Kroon&#39;s 3x3x3, Farid&#39;s 5x5x5 or Farid&#39;s 7x7x7.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/gradientattrib/GradientAttrib_input.jpg&#34;
+         alt=&#34;Gradient attribute input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Gradient attribute input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Spatial Filter - Rectangular</title>
+      <link>/docs/externalattributes/spatialfilterrectangular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/spatialfilterrectangular/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_rectangular.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
+symmetry. The filters are applied by direct spatial convolution of a kernel formed by cascading two 1D Hamming Window FIR filters
+computed using scipy.signal.firwin (&lt;a href=&#34;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&#34;&gt;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;By setting the stepout in one direction to 0 the filter will be applied as a 1D spatial filter in the other direction.&lt;/p&gt;
+&lt;p&gt;Note that the filter cutoff or band pass/reject frequency is specified in Normalised Spatial Frequency. Normalised Frequency ranges
+from 0 to 1 at the spatial nyquist. Converting a spatial frequency in cycles/metre to the equivalent Normalised Spatial Frequency is
+as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example shows inline and crossline FK spectra after applying a 2D lowpass rectangular filter with inline and crossline normalised
+frequency cutoffs of 0.6 and 0.3 respectively.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_rect_inlinefk.jpg&#34; data-label=&#34;Input Inline FK Spectrum&#34; alt=&#34;Input Inline FK Spectrum&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_rect_inlinefiltfk.jpg&#34; data-label=&#34;After lowpass filter&#34; alt=&#34;After lowpass filter&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_rect_xlinefk.jpg&#34; data-label=&#34;Input crossline FK Spectrum&#34; alt=&#34;Input crossline FK Spectrum&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_rect_xlinefiltfk.jpg&#34; data-label=&#34;After lowpass filter&#34; alt=&#34;After lowpass filter&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows a timeslice at 300ms TWT from the F3 Demo dataset after applying a 1D spatial filter along the inlines
+(stepout of 0,9) with a crossline normalised frequency cutoff of 0.5.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass.jpg&#34; data-label=&#34;Xline Lowpass Filtered&#34; alt=&#34;Xline Lowpass Filtered&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows the timeslice at 300ms TWT from the F3 Demo dataset with the crossline lowpass filter above followed by
+a 1D bandreject spatial filter along the crosslines (stepout 9,0) with an inline normalised rejection frequency of 0.17.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass.jpg&#34; data-label=&#34;Xline Lowpass Input&#34; alt=&#34;Xline Lowpass Input&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass_1Dnotch.jpg&#34; data-label=&#34;Inline Bandreject Filtered&#34; alt=&#34;Inline Bandreject Filtered&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfilterrectangular/ex_spatial_filter_rect_input.jpg&#34;
+         alt=&#34;ex_spatial_filte_rectangular.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_spatial_filte_rectangular.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Determines the size of the convolution operator. Minimum of 9 (filter kernel size of 19) recommended. Setting the stepout to zero will apply a 1D filter, e.g. a stepout of 0,9 will apply a 1D crossline frequency filter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Type&lt;/td&gt;
+&lt;td&gt;Filter type - Low Pass, High Pass, Band Pass or Band Reject.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Inline Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the inline filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Xline Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the crosslineline filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Grid 2D-3D Horizon</title>
+      <link>/docs/plugins/grid2d-3d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/grid2d-3d/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [opendtect] survey/project.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Grid 2D-3D Horizon&amp;hellip;&amp;rdquo; item to the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; menu which opens a dialog box for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Selecting 2D and 3D seismic interpretation and contour poly-lines to grid&lt;/li&gt;
+&lt;li&gt;Specifying the output horizon name, extent and inline /crossline interval&lt;/li&gt;
+&lt;li&gt;Specifying a cropping polygon&lt;/li&gt;
+&lt;li&gt;Specifying a set of fault polygon constraints&lt;/li&gt;
+&lt;li&gt;Selecting the interpolation algorithm to use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the current release the plugin includes 4 gridding/interolation algorithms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Local Thin Plate Splines (LTPS)&lt;/li&gt;
+&lt;li&gt;Multilevel B-Splines (MBA)&lt;/li&gt;
+&lt;li&gt;Inverse distance squared weighted averages (IDW)&lt;/li&gt;
+&lt;li&gt;Nearest neighbour (NRN)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The LTPS and IDW methods can apply fault constraints (heave polygons) to ensure the input data used to interpolate a grid node is from the same side of any faults.&lt;/p&gt;
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid2d-3d_data_input.jpg&#34;
+         alt=&#34;Grid 2D-3D horizon plugin input data selection dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input data selection dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid2d-3d_grid_input.jpg&#34;
+         alt=&#34;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Grid Extent: Four options available:
+&lt;ul&gt;
+&lt;li&gt;Range - explicitly set the Inl/Crl range and steps for the output surface&lt;/li&gt;
+&lt;li&gt;Bounding Box - set the output horizon extent from the extent of the input data, adjusted to snap to the specified Inl/Crl steps&lt;/li&gt;
+&lt;li&gt;Convex Hull - sets the gridding scope to the convex hull of the input data, adjusted to snap to the specified Inl/Crl steps&lt;/li&gt;
+&lt;li&gt;Horizon - set the output horizon extent to match an existing horizon in the survey/project&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cropping Polygon - select a polygon to crop the grid output&lt;/li&gt;
+&lt;li&gt;Fault Polygons - select  polygons to use as fault constraints during gridding. Suggest fault naming scheme that prefixes the polygons with &amp;ldquo;f_horizon name&amp;rdquo; to make them easy to select&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;algorithms&#34;&gt;Algorithms&lt;/h2&gt;
+&lt;h3 id=&#34;local-thin-plate-spline&#34;&gt;Local Thin Plate Spline&lt;/h3&gt;
+&lt;p&gt;This is a multi-stage algorithm with the following steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interpolate the data to the corners of the surrounding grid nodes (ie nearest neighbour)&lt;/li&gt;
+&lt;li&gt;Fit a Multilevel B-Spline (MBA) surface (no fault constraints applied) and compute residuals from the input&lt;/li&gt;
+&lt;li&gt;Grid the MBA residuals using a radial basis function algorithm using a thin plate spline basis. The points used in the basis fit are determined using distance and azimuth from the grid point. The data around each grid point is sorted based on distance and binned into one of eight azimuth sectors. Only the nearest points in each sector are used in the interpolation. No interpolation is done if there are less than 5 sectors with data. Fault constraints are used in this stage. The residuals are added to the MBA stage output to produce the final surface.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Controls are the maximum search radius and the maximum points used from each sector. This algorithm can use fault constraints.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_ltps_ex.jpg&#34;
+         alt=&#34;Example of Local Thin Plate Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Local Thin Plate Spline gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;multilevel-b-spline&#34;&gt;Multilevel B-Spline&lt;/h3&gt;
+&lt;p&gt;This is the adaptive Multi-level B-Spline algorithm published by &lt;a href=&#34;https://ieeexplore.ieee.org/document/620490&#34; title=&#34;Scattered Data Interpolation with Multilevel B-Splines. Seungyong Lee, George Wolberg, and Sung Yong Shin,  IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS, VOL. 3, NO. 3, JULY–SEPTEMBER 1997&#34;&gt;Lee, Wolberg and Shin (1997)&lt;/a&gt; as implemented by &lt;a href=&#34;https://github.com/ddemidov/mba&#34;&gt;Denis Demidov&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This method does not use fault contraints.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_mba_ex.jpg&#34;
+         alt=&#34;Example of Multilevel B-Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Multilevel B-Spline gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;inverse-distance-weighted&#34;&gt;Inverse Distance Weighted&lt;/h3&gt;
+&lt;p&gt;This is basic Inverse Distance Squared Weighted gridding. By tweaking the parameters it is possible to control the input data used for each grid point. Options are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No distance or point count limit (global)&lt;/li&gt;
+&lt;li&gt;Use all points within a specified distance&lt;/li&gt;
+&lt;li&gt;Use nearest number of points&lt;/li&gt;
+&lt;li&gt;Limit by both the distance and the nearest number of points&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The method can use fault constraints but will be very slow unless appropriate distance and point count limits are set.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_radius_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using only a distance limit&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a distance limit&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_points_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using only a point count limit&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a point count limit&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_idw_both_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using both distance and point count limits&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using both distance and point count limits&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;nearest-neighbour&#34;&gt;Nearest Neighbour&lt;/h3&gt;
+&lt;p&gt;This uses a simple weighted average method to assign grid values to the 4 nodes around each input data point.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/grid2d-3d/grid_nrn_ex.jpg&#34;
+         alt=&#34;Example of Nearest Neighbour gridding&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Nearest Neighbour gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: LocalAttrib</title>
+      <link>/docs/plugins/localattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/localattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin for the open source seismic interpretation platform [opendtect] Version 6.0 or later is a collection of &amp;ldquo;Local Attributes&amp;rdquo; based on the work of [Fomel (2007) and others](&lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.2437573%22Local&#34;&gt;https://library.seg.org/doi/abs/10.1190/1.2437573&amp;quot;Local&lt;/a&gt; seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3&amp;quot;) for the &lt;a href=&#34;http://www.ahay.org/&#34; target=&#34;_blank&#34;&gt;Madagascar&lt;/a&gt; package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.&lt;/p&gt;
+&lt;h2 id=&#34;spectral-time-frequency-decomposition-by-local-attributes&#34;&gt;Spectral (Time-frequency) Decomposition by Local Attributes&lt;/h2&gt;
+&lt;p&gt;Formerly called the LTFAttrib, this is an implementation of the method of local time-frequency analysis as described by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/geo2010-0185.1&#34; title=&#34;Time-frequency analysis of seismic data using local attributes. Guochang Liu, Sergey Fomel, and Xiaohong Chen. GEOPHYSICS 2011 76:6, P23-P34&#34;&gt;Liu, G etal (2011)&lt;/a&gt;. This decomposition uses least-squares inversion with shaping regularization to estimate the time-varying Fourier coefficients. Its principal advantages over the STFT (short time fourier transform) is it much quicker if only a few frequencies are required and it is generally more accurate for short window lengths.&lt;/p&gt;
+&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;LTFAttrib_sd.jpg&#34; data-label=&#34;FFT Spectral Decomposition (30Hz &amp;#43;/-28ms window)&#34; alt=&#34;FFT Spectral Decomposition (30Hz &amp;#43;/-28ms window)&#34; /&gt;
+    &lt;img src=&#34;LTFAttrib_1.jpg&#34; data-label=&#34;Local time-frequency attribute (30Hz 7 sample smoothing radius)&#34; alt=&#34;Local time-frequency attribute (30Hz 7 sample smoothing radius)&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;br/&gt;
+The output of the LTF attribute (ltf30) is visually identical and also highly correlated to the OpendTect FFT spectral decomposition (sdfreq30) as shown in the following crossplot of the two attributes.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/localattrib/LTFAttrib_2.jpg&#34;
+         alt=&#34;Crossplot of LTFAttrib vs FFT Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Crossplot of LTFAttrib vs FFT Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
+&lt;p&gt;This attribute has 4 parameters:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Volume&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Time Gate&lt;/td&gt;
+&lt;td&gt;Where the attribute is calulated. The time gate does not have to be symmetric. The time gate length is used as the smoothing radius for shaping regularization.The value from the gate centre is output - useful for analysing a zone offset from an horizon. Recommend setting the gate length equal to or less than the FFT window length you would used for the standard OpendTect FFT spectral decomposition.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Frequency&lt;/td&gt;
+&lt;td&gt;The frequency component(s) to estimate.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Iterations&lt;/td&gt;
+&lt;td&gt;The number of inversion iterations.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/localattrib/LTFAttrib_input_parameters.jpg&#34;
+         alt=&#34;LTF Attributes input parameters&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;LTF Attributes input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Vector Filter</title>
+      <link>/docs/externalattributes/vectorfilter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/vectorfilter/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: ex_vector_filter_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
+The script offers a choice of mean vector, L1 vector median and L2 vector median filters.&lt;/p&gt;
+&lt;p&gt;Initially the inline and crossline dip data are converted to a normal vector to the local orientation: \([x_i, y_i, z_i]\).&lt;/p&gt;
+&lt;p&gt;The Mean Vector Filter averages each of the vector components of the orientation normal vectors in the analysis cube:
+$$
+\Big[x_f, y_f, z_f\Big]  = \frac{1}{N} \Big[\sum\limits_{i}^N x_i, \sum\limits_{i}^N y_i, \sum\limits_{i}^N z_i\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The L1 vector filter finds the normal vector in the analysis cube whose sum of absolute distance from all the others is a minimum:
+$$
+\Big[x_f, y_f, z_f\Big] = argmin \sum\limits_{i}^N \Big[|x_f-x_i| + |y_f-y_i| + |z_f-z_i|\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The L2 vector filter finds the normal vector in the analysis cube whose sum of squared distance from all the others is a minimum:
+$$
+\Big[x_f, y_f, z_f\Big] = argmin \sum\limits_{i}^N \Big[(x_f-x_i)^2 + (y_f-y_i)^2 + (z_f-z_i)^2\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The filtered orientation can be output as any of the following:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OUTPUT&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Inline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on a crossline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger inline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crossline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on an inline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger crossline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;True Dip&lt;/td&gt;
+&lt;td&gt;Event dip in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output is always positive.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dip Azimuth&lt;/td&gt;
+&lt;td&gt;Azimuth of the True Dip direction relative to the survey orientation. Output ranges from -180 to 180 degrees. Positive azimuth is defined from the inline in the direction of increasing crossline numbers. Azimuth = 0 indicates that the dip is dipping in the direction of increasing crossline numbers. Azimuth = 90 indicates that the dip is dipping in the direction of increasing inline numbers.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;/br&gt;
+The script requires the Numba Python package.
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_phase_dip.jpg&#34;
+         alt=&#34;Unfiltered phase dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered phase dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfmean_phase_dip.jpg&#34;
+         alt=&#34;Mean vector filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mean vector filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfl1_phase_dip.jpg&#34;
+         alt=&#34;L1 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;L1 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfl2_phase_dip.jpg&#34;
+         alt=&#34;L2 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;L2 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vector_filter_dip_input.jpg&#34;
+         alt=&#34;ex_vector_filter_dip.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_vector_filter_dip.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Mistie</title>
+      <link>/docs/plugins/mistie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/mistie/</guid>
+      <description>
+        
+        
+        
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_plugin.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [opendtect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.&lt;/p&gt;
+&lt;p&gt;In an ideal world we would be given 2D seismic data that has consistent Z, phase and amplitude scales. In the real world this doesn&amp;rsquo;t always happen and 2D seismic interpretation projects accumulate inconsistencies as more data is added. The concept implemented by this plugin is the interpreter builds/maintains the correction table as they work through the data. The virtual corrected seismic from the Mistie Application attribute can be interpreted on the fly or the interpreter can generate a new adjusted dataset and interpret that.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin provides components to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Estimate misties from seismic data or horizon interpretation&lt;/li&gt;
+&lt;li&gt;Analyse the misties and estimate corrections to minimize the misties in a least squares sense&lt;/li&gt;
+&lt;li&gt;Edit/Maintain a set of mistie corrections&lt;/li&gt;
+&lt;li&gt;Attribute to apply the corrections to seismic data and tools to apply Z corrections to horizon interpretation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are two alternative workflows to build a mistie correction file:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Estimate the misties from the data and compute a mistie correction file in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog&lt;/li&gt;
+&lt;li&gt;Manually build the mistie correction file in the &lt;a href=&#34;#mistie-correction-editor&#34;&gt;Mistie Correction Editor&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mistie-analysis&#34;&gt;&lt;strong&gt;Mistie Analysis&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Analysis&amp;rdquo; item to the Analysis main menu. Selecting the item opens the Mistie Analysis dialog:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_analysis.jpg&#34;
+         alt=&#34;Mistie Analysis&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Analysis&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Actions associated with the toolbar buttons are:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ICON&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;New&#34; src=&#34;new.png&#34; title=&#34;New&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Open the Mistie Estimation dialog to estimate misties from the seismic data. Existing contents of the mistie table are erased.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Open&#34; src=&#34;open.png&#34; title=&#34;Open&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Load mistie estimates from a previously saved file. Existing contents of the mistie table are erased.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Save&#34; src=&#34;save.png&#34; title=&#34;Save&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Save the current mistie estimates. If the current misties were loaded from a file then that will be overwritten, otherwise user will be asked to provide a new file name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;SaveAs&#34; src=&#34;saveas.png&#34; title=&#34;SaveAs&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Prompts for a file and saves the current mistie estimates.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Merge&#34; src=&#34;plus.png&#34; title=&#34;Merge&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Prompts for another mistie file and merges the results with the mistie set currently active in the tool optionally keeping or replacing common items.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Filter&#34; src=&#34;minus.png&#34; title=&#34;Filter&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Opens a dialog to filter the misties listed in the table, used for correction calculation and displayed in the mistie report.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Calculate Corrections&#34; src=&#34;attributes.png&#34; title=&#34;Calculate Corrections&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Open the Correction Calculation dialog.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Mistie Report&#34; src=&#34;xplot.png&#34; title=&#34;Mistie Report&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Opens a web browser and displays an interactive dashboard report for the current misties and correction set active in the tool.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h3 id=&#34;mistie-estimation&#34;&gt;&lt;strong&gt;Mistie Estimation&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;img src=&#34;new.png&#34; alt=&#34;New&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens a dialog box where the user can specify whether misties should be estimated from the seismic data or from horizon interpretation.&lt;/p&gt;
+&lt;p&gt;In the case of estimation from the seismic data the dialog looks like:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_estimation_seismic.jpg&#34;
+         alt=&#34;Mistie Estimation from Seismic&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Estimation from Seismic&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The user can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select the data type (attribute) and which lines to include in the analysis&lt;/li&gt;
+&lt;li&gt;Include and select a 3D seismic volume to include in the analysis&lt;/li&gt;
+&lt;li&gt;Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie&lt;/li&gt;
+&lt;li&gt;Limit the maximum time-shift or mistie to consider&lt;/li&gt;
+&lt;li&gt;Specify a Z window for the cross correlation of traces at line interections&lt;/li&gt;
+&lt;li&gt;Indicate if only time corrections should be estimated (default is to simultaneously estimate Z, phase rotation and amplitude corrections)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The default estimation of Z phase rotation and amplitude misties is based on the method described by &lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1443654&#34; title=&#34;Correcting amplitude, time, and phase mis‐ties in seismic data. Thomas N. Bishop and Alan G. Nunns, GEOPHYSICS 1994 59:6, 946-953&#34;&gt;Bishop and Nunns (1994)&lt;/a&gt; using cross correlation of the amplitude envelope of the traces. This is the preferred method for seismic data with a reasonable bandwidth. For narrow bandwidth data (eg site survey data) the time corrections only estimation method which uses cross correlation of the raw seismic traces may generate better results.&lt;/p&gt;
+&lt;p&gt;In the case of estimation from horizon interpretation the dialog looks like:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_estimation_horizon.jpg&#34;
+         alt=&#34;Mistie Estimation from Horizon Interpretation&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Estimation from Horizon Interpretation&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The user can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select a 2D horizon and set of lines to use&lt;/li&gt;
+&lt;li&gt;Select a 3D horizon to use&lt;/li&gt;
+&lt;li&gt;Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Apply button will initiate the estimation of the misties, when complete results are displayed in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog. Clicking the &lt;img src=&#34;images/xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; icon will generate a [#Mistie Report] with histograms and scatterplot of the mistie estimates  for review.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-filter&#34;&gt;&lt;strong&gt;Mistie Filter&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;img src=&#34;minus.png&#34; alt=&#34;Filter&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog that allows filtering of
+the misties displayed in the list, used for correction calculation and included in the mistie report:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_filter.jpg&#34;
+         alt=&#34;Mistie filtering&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie filtering&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Activate the checkbox next to the filter to activate it. At this moment only filtering by the tie quality (correlation coefficient) is supported.
+The tie quality can vary from 0.0 (no tie) to 1.0 (perfect tie). A cut-off of 0.5-0.6 should filter unreliable mistie estimates.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-correction-calculation&#34;&gt;&lt;strong&gt;Mistie Correction Calculation&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;img src=&#34;attributes.png&#34; alt=&#34;Calculate Corrections&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog to
+compute mistie corrections that minimize the root mean square (RMS) mistie after correction:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_correction.jpg&#34;
+         alt=&#34;Mistie correction calculation&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie correction calculation&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The user can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Optionally select one or more line(s) to use as a reference. Reference lines will have Z, phase and amplitude corrections constrained to be 0, 0, 1 respectively and corrections will be computed only for  the non-reference lines. Selecting no lines will distribute corrections across all lines.&lt;/li&gt;
+&lt;li&gt;Control the maximum number of iterations used to calculate the corrections - the default value should be adequate in most circumstances.&lt;/li&gt;
+&lt;li&gt;Control the convergence criteria that stops the iteration used to calulate the corrections - iterations stop if the change in the RMS mistie (after applying corrections) between successive iterations is less than the threshhold. Thresholds exist for the Z, phase and amplitude corrections. The default values should be adquate in most circumstances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The calculated corrections will be displayed in a new table dialog:&lt;/p&gt;
+&lt;p&gt;{{ figure(&amp;lsquo;mistie_correction_viewer.jpg&amp;rsquo;, &amp;lsquo;Mistie correction viewer&amp;rsquo;) }}&lt;/p&gt;
+&lt;p&gt;The toolbar buttons can be used to save the corrrections to a disk file.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-report&#34;&gt;&lt;strong&gt;Mistie Report&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;img src=&#34;xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog generates and displays in the system web
+browser a graphical, html format dashboard of the mistie anaysis and correction calculation results. This includes tabulated data,
+histograms and a 3D scatterplot. Here is an example of a &lt;a href=&#34;mistie_report_example.html&#34;&gt;mistie report&lt;/a&gt;. The html file displayed in
+the browser can be saved for later display suing the browser&amp;rsquo;s save page functionality.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-correction-editor&#34;&gt;&lt;strong&gt;Mistie Correction Editor&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Corrections&amp;rdquo; item to the Survey-Manage main menu. Selecting the item opens the Mistie Correction Editor.
+This tool can be used to manually create mistie correction files or modify files generated by the
+&lt;a href=&#34;#mistie-correction-calculation&#34;&gt;Mistie Correction Calculation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_editor.jpg&#34;
+         alt=&#34;Mistie correction editor&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie correction editor&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The editor has toolbar buttons to:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ICON&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;New&#34; src=&#34;new.png&#34; title=&#34;New&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Create a mistie correction set with all the  2D lines in the project (with default corrections that make no change to the  data). Existing contents of the mistie table are erased.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Open&#34; src=&#34;open.png&#34; title=&#34;Open&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Load mistie corrections from a previously saved file. Existing contents of the mistie table are erased.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Save&#34; src=&#34;save.png&#34; title=&#34;Save&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Save the current mistie corrections. If the current corrections were loaded from a file then that will be overwritten, otherwise the user will be asked to provide a new file name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;SaveAs&#34; src=&#34;saveas.png&#34; title=&#34;SaveAs&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Prompts for a file and saves the current mistie corrections.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Merge&#34; src=&#34;plus.png&#34; title=&#34;Merge Corrections&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Merge another mistie correction set file with the current set, optionally keeping or replacing the existing corrections where there is duplicate line/dataset names.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Within the editor it is possible to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add new lines/datasets and associated corrections&lt;/li&gt;
+&lt;li&gt;Edit existing corrections&lt;/li&gt;
+&lt;li&gt;RightMouseButton click on a row brings up a menu to insert or delete selected row(s)&lt;/li&gt;
+&lt;li&gt;Limited clipboard copy and paste is available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can include corrections for a particular 3D seismic volume by using a line/dataset name of the form &amp;ldquo;3D_XXXX&amp;rdquo; where the &amp;ldquo;XXXX&amp;rdquo; is the
+volume name, eg note the &amp;ldquo;3D_pstm&amp;rdquo; in the above figure. Multiple unique &amp;ldquo;3D_XXXX&amp;rdquo; entries are allowed to specify corrections for different
+3D volumes in the project.&lt;/p&gt;
+&lt;p&gt;If a line doesn&amp;rsquo;t need a correction it can be omitted from the set and default (no change) corrections will be assumed when the Mistie
+Application attribute is applied. A message (which can be safely ignored) is added to the log file when this occurs.&lt;/p&gt;
+&lt;p&gt;The name in the line/dataset column must exactly match the project line name.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-application-attribute&#34;&gt;&lt;strong&gt;Mistie Application Attribute&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Application&amp;rdquo; attribute to the list of [opendtect] attributes.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistieapplication_input.jpg&#34;
+         alt=&#34;Mistie Application attribute input parameters&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Application attribute input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The attribute parameters include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The input seismic volume to be corrected&lt;/li&gt;
+&lt;li&gt;A file with the mistie correction set to apply&lt;/li&gt;
+&lt;li&gt;Which corrections to apply&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When the attribute is displayed the shift, phase rotation and amplitude scalar for the line is read from the correction file and applied.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-correction-of-horizon-interpretation&#34;&gt;&lt;strong&gt;Mistie Correction of Horizon Interpretation&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The plugin adds an &amp;ldquo;Apply Mistie Corrections&amp;rdquo; item to the &amp;ldquo;Processing | Create Horizon Output&amp;rdquo; main menu that opens a dialog box to apply mistie corrections to 2D and 3D horizon interpretation.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_horizon_2D_apply.jpg&#34;
+         alt=&#34;Mistie Application to 2D Horizon&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Application to 2D Horizon&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_horizon_3D_apply.jpg&#34;
+         alt=&#34;Mistie Application to 3D Horizon&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Application to 3D Horizon&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;general-notes&#34;&gt;General Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The default file extension for saved mistie estimates is &amp;ldquo;mistie&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;The default file extension for saved mistie corrections is &amp;ldquo;miscor&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;The default file location for all files is the &lt;strong&gt;Misc&lt;/strong&gt; folder in the OpendTect survey/project folder&lt;/li&gt;
+&lt;li&gt;All files are in a simple text format which can also be modified using a text editor&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Time Delay Estimation</title>
+      <link>/docs/externalattributes/zdelayest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/zdelayest/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_correlation.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script provides an alternative to the builtin OpendTect
+&lt;a href=&#34;http://doc.opendtect.org/6.0.0/doc/od_userdoc/Default.htm#appendix_a-attributes_and_filters/match_delta.htm%3FTocPath%3D11%2520Appendix%2520A%2520-%2520Attributes%2520and%2520Filters%7C_____13&#34;&gt;Match Delta&lt;/a&gt; attribute to measure time shifts between similar events in different seismic volumes. This script uses local normalised cross correlation to determine the relative Z shift between 2 data volumes. Aside from the estimate of relative Z shift the attribute can also output the correlation value. The correlation value which ranges from 0 (low correlation) to 1 (high correlation) provides a quantitative assessment of the reliability of the Z shift estimate.&lt;/p&gt;
+&lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example provides a comparison of this external attribute script (left) with the Match Delta attribute (right) for a depth section and
+itself shifted up by 13 metres. The Match Delta attribute output is much noisier albiet it can be calculated much quicker.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_correlation_example.jpg&#34; data-label=&#34;External Attribute&#34; alt=&#34;External Attribute&#34; /&gt;
+    &lt;img src=&#34;match_delta.jpg&#34; data-label=&#34;Match Delta&#34; alt=&#34;Match Delta&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows the Correlation Quality output for the same data as above.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zdelayest/ex_correlation_quality.jpg&#34;
+         alt=&#34;Correlation quality**&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Correlation quality**&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zdelayest/ex_correlation_input.jpg&#34;
+         alt=&#34;ex_correlation.py input parameters**&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;ex_correlation.py input parameters**&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of the Z shift in millisecs or metres or the corresponding correlation coefficient.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;This in conjunction with the Max Lag parameter determines the length of the segments cross correlated. \(SegmentLength = 2*(Zwindow - MaxLag)+1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Max Lag (samples)&lt;/td&gt;
+&lt;td&gt;Specifies maximum number of samples to search for the maximum correlation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Note the user has to ensure that Z window is greater than Max Lag otherwise the script will exit with errors.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ZC Block</title>
+      <link>/docs/externalattributes/zcblock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/zcblock/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_zc_block.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script blocks a seismic trace between zero crossings. The block amplitude is
+determined by the min/max of the interval blocked.&lt;/p&gt;
+&lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example shows the attribute output (black wiggle) over the input (variable density). To get a blocky wiggle display interpolation has to be turned off in the 2D viewer properties.
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zcblock/ex_zc_block_example.jpg&#34;
+         alt=&#34;Zero crossing block&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Zero crossing block&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zcblock/ex_zc_block_input.jpg&#34;
+         alt=&#34;ex_zc_block.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_zc_block.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;There are no input parameters other than selection of the input volume.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: MLVFilterAttrib</title>
+      <link>/docs/plugins/mlvfilter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/mlvfilter/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect]
+applies a structure preserving Mean of Least Variance filter.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This attribute is an implementation of a mean of least variance filter
+&lt;a href=&#34;http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1008684&#34; title=&#34;Value-and-criterion filters: a new filter structure based on morphological opening and closing. Mark A. Schulze and John A. Pearce. Proc. SPIE 1902, Nonlinear Image Processing IV, 106 (May 21, 1993)&#34;&gt;Schulze &amp;amp; Pearce (1993)&lt;/a&gt; where the analysis elements are all the possible planes through the sample points in the analysis block. This algorithm may be similar to that proposed by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.3627375&#34; title=&#34;Structure‐preserving smoothing for 3D seismic attributes. Saleh Al‐Dossary and Yuchun Eugene Wang. SEG Technical Program Expanded Abstracts 2011. January 2011, 1004-1008&#34;&gt;Al-Dossary &amp;amp; Wang (2011)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The sample variance for all samples on each analysis element is calculated and the output statistic (average, mean or element index)
+is output for the element with the least variance.&lt;/p&gt;
+&lt;p&gt;The following figure shows the relationship between the geometry of the analysis elements and the element index.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_elements.jpg&#34;
+         alt=&#34;MLV Filter analysis elements&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLV Filter analysis elements&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;MLVFilterAttrib_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;MLVFilterAttrib_MLV3_Mean.jpg&#34; data-label=&#34;MLV Size 3 Average - 1 pass&#34; alt=&#34;MLV Size 3 Average - 1 pass&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_MLV3_Elements.jpg&#34;
+         alt=&#34;MLV 3 elements&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLV 3 elements&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 2 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter size&lt;/td&gt;
+&lt;td&gt;Specifies a cube of samples centred  at the analysis location. Increasing the size will increase the degree of smoothing at the risk of smearing structural features. As the examples show it may be better to apply multiple passes of a small size filter than a single pass of a larger filter to reduce the risk of artifacts in the output. OpendTect makes it really easy to cascade multiple filter passes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output statistic&lt;/td&gt;
+&lt;td&gt;What the filter will output. The options are average, median or the element index. The element index is included for curiosity and quality control. Generally the default &lt;em&gt;Average&lt;/em&gt; provides the most pleasing output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_par1.jpg&#34;
+         alt=&#34;MLF Filter input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLF Filter input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: RSpecAttrib</title>
+      <link>/docs/plugins/rspecattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/rspecattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+(time-frequency) decomposition using a recursive filter.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin can be used as an alternative to the
+&lt;a href=&#34;http://opendtect.org/rel/doc/User/base/appendix_spectral-decomposition.htm&#34; target=&#34;_blank&#34;&gt;OpendTect FFT spectral decomposition attribute&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It does spectral decomposition using &lt;a href=&#34;https://bora.uib.no/bitstream/handle/1956/3036/42162315.pdf?sequence=1&#34; title=&#34;Recursive time-frequency reassignment. Geir Kjetil Nilsen. University of Bergen, Norway MSc Thesis&#34;&gt;Nilsen&amp;rsquo;s (2007)&lt;/a&gt; time-frequency analysis algorithm which is a recursive filter approximation to a special case of the short time fourier transform (STFT).&lt;/p&gt;
+&lt;p&gt;The primary advantage of this plugin over the standard OpendTect FFT spectral decomposition is that it can be evaluated significantly faster.
+As an example, under Linux on an Intel Core i5 for a 2000 sample per trace dataset, this attribute can generate a single frequency cube
+at 4000 traces per second. This is considerably faster than the 140-150 traces per second achieved when applying the OpendTect FFT
+spectral decomposition attribute. This processing speed advantage is reduced as the number of output frequencies increases but in this
+test case it still remains substantially faster even for output of up to 30 frequencies. This algorithm is also more accurate for
+shorter windows.&lt;/p&gt;
+&lt;p&gt;As of release 6.4.8 the plugin has been extended to optionally include time-frequency reassignment. In normal spectral decomposition a
+window/gate is slid along the trace and the amplitude of each frequency component is assigned to the middle of the gate. This blurs/smooths
+the decomposition along both the time and frequency axis. While shortening the gate can improve the apparent time resolution, it has the
+side effect of increased blurring/smoothing,i.e. lower resolution, in frequency. Reassignment uses information in the phase spectrum to
+relocate spectral energy to its origin in the time gate and on the frequency axis. This produces significantly sharper time-frequency spectra.
+However reassignment becomes ambiguous when more than one signal component is present and they are close or overlap in time or frequency.
+To perform the reassignment the decomposition must be done for a range of frequencies so execution time will be slower than without reassignment.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+    &lt;img src=&#34;RSpecAttrib_sd.jpg&#34; data-label=&#34;FFT Spectral Decomposition (30Hz +/-28ms window)&#34;/&gt;
+    &lt;img src=&#34;RSpecAttrib_1.jpg&#34;  data-label=&#34;Recursive time-frequency attribute (30Hz +/- 22ms window)&#34;/&gt;
+&lt;/div&gt;
+&lt;br/&gt;
+The output of the RSpec attribute (rfreq30) is visually identical and also highly correlated to the OpendTect FFT spectral decomposition
+(sdfreq30) as shown in the following crossplot of the two attributes.
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/rspecattrib/RSpecAttrib_2.jpg&#34;
+         alt=&#34;Crossplot of RSpecAttrib vs FFT Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Crossplot of RSpecAttrib vs FFT Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Here is an inline display from the F3 demo dataset comparing the 24Hz component for a +/-16ms gate for all 4 methods. The enhanced time
+resolution of the reassigned decomposition is obvious.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;spectral_decomp_inline.jpg&#34;
+         alt=&#34;Comparison of various decompositions on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Comparison of various decompositions on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Here is the 24Hz component on the MSF4 horizon for all 4 methods. Channels are better defined on the Recursive and Local Attribute
+decompositions relative to the OpendTect spectral decomposition attribute. The reassigned decomposition has a radically different
+appearance due to its sharpness in time and frequency but the significance of the variations is unknown.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;spectral_decomp_slice.jpg&#34;
+         alt=&#34;Comparison of various decompositions on an horizon slice&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Comparison of various decompositions on an horizon slice&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 4 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Volume&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Time/Depth Gate&lt;/td&gt;
+&lt;td&gt;This determines the position and time resolution of the analysis. The value from the gate centre is output - useful for analysing a zone offset from an horizon. Recommend setting the gate length equal to or less than the FFT window length you would used for the standard OpendTect FFT spectral decomposition.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output frequency&lt;/td&gt;
+&lt;td&gt;When displaying the attribute in the tree this is the frequency slice that will be generated.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Step&lt;/td&gt;
+&lt;td&gt;This determines the set of frequencies that can be chosen when generating a frequency volume.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;With Reassignment&lt;/td&gt;
+&lt;td&gt;Toggle on to compute the reassigned decomposition&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/rspecattrib/RSpecAttrib_input.jpg&#34;
+         alt=&#34;RSpecAttrib input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;RSpecAttrib input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: WMTools</title>
+      <link>/docs/plugins/wmtools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/wmtools/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin provides various tools to enhance the open source seismic interpretation platform [opendtect] Version 6.4.0 or later.&lt;/p&gt;
+&lt;h2 id=&#34;convex-hull-polygon&#34;&gt;Convex Hull Polygon&lt;/h2&gt;
+&lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
+&lt;p&gt;Generate a convex hull polygon covering either the extent of 2D/3D seismic coverage or 2D/3D horizon interpretation. The user has full control over the 2D and 3D data included. The polygon can be used as is or after editing as a clipping polygon in the  [grid2d-3d]  plugin. To edit the polygon in the 3D scene a 3D horizon of suitable extent must be displayed eg such as a DataExtentHorizon.&lt;/p&gt;
+&lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/wmtools/convexhull_ex.jpg&#34;
+         alt=&#34;Example of polygons created by tool&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of polygons created by tool&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input&#34;&gt;Input&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/wmtools/convexhull_input.jpg&#34;
+         alt=&#34;Convex Hull tool input dialog&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Convex Hull tool input dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The tool dialog allows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Specifying a constant Z value for the output polygon&lt;/li&gt;
+&lt;li&gt;Selecting 2D and 3D seismic data or horizon interpretation to use as the polygon scope&lt;/li&gt;
+&lt;li&gt;Specifying the name and display settings of the generated polygon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;constant-z-polyline&#34;&gt;Constant Z Polyline&lt;/h2&gt;
+&lt;h3 id=&#34;description-1&#34;&gt;Description&lt;/h3&gt;
+&lt;p&gt;This tool allows a series of points to be digitized in the 3D scene that can subsequently be used as additional surface control in the Grid 2D3D plugin.&lt;/p&gt;
+&lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu. After adding a contour polyline remember to use the Right-Click | Save menu to commit the item.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/wmtools/constantz_ex.jpg&#34;
+         alt=&#34;Example of some polylines drawn in a gap in the seismic coverage to guide subsequent gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of some polylines drawn in a gap in the seismic coverage to guide subsequent gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;###Input&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/wmtools/constantz_input.jpg&#34;
+         alt=&#34;Constant Z polyline tool input dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Constant Z polyline tool input dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;fault-surface-3d-horizon-intersection-polyline&#34;&gt;Fault Surface-3D Horizon Intersection Polyline&lt;/h2&gt;
+&lt;h3 id=&#34;description-2&#34;&gt;Description&lt;/h3&gt;
+&lt;p&gt;This tool generates 3D poly-lines at the intersection of 3D horizons and fault surfaces. The intersection line is made by joining the intersections of the fault sticks with the horizon. A potential use of the tool is to grid a 3D horizon without any fault constraint, use the tool to gererate fault lines at the intersection of the 3D horizon and existing fault surfaces and then regrid the horizon using the new fault lines as a fault constraint. (Note the performance of this tool was substantially improved as of version 6.4.13)&lt;/p&gt;
+&lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/wmtools/faultpoly_ex.jpg&#34;
+         alt=&#34;Example of polylines generated by this tool&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of polylines generated by this tool&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input-1&#34;&gt;Input&lt;/h3&gt;
+&lt;p&gt;The UI specifies a poly-line name prefix to which the fault surface names will be appended.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/wmtools/faultpoly_input.jpg&#34;
+         alt=&#34;Fault polyline generation tool input dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Fault polyline generation tool input dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;data-extent-horizon&#34;&gt;Data Extent Horizon&lt;/h2&gt;
+&lt;h3 id=&#34;description-3&#34;&gt;Description&lt;/h3&gt;
+&lt;p&gt;Generate a constant Z value 3D horizon which covers the extent of 2D and 3D seismic data in an [opendtect] survey/project. The user has full control over the 2D and 3D data included.  With the horizon displayed it is possible to draw fault polygons and grid clipping polygons that extend beyond the 3D survey definition. These can then be used in the [grid2d-3d] plugin to produce structure maps that extend across both 2D and 3D seismic interpretation in an [opendtect] survey/project.&lt;/p&gt;
+&lt;p&gt;The tool is accessed either from the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; main menu item or from the New submenu of the 3D Horizon tree context menu.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/wmtools/dataextenthorizon.jpg&#34;
+         alt=&#34;Example of an horizon created by the plugin and various polygons drawn across the extent of the 2D and 3D seismic data in the project&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of an horizon created by the plugin and various polygons drawn across the extent of the 2D and 3D seismic data in the project&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input-2&#34;&gt;Input&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/wmtools/dataextenthorizon_input.jpg&#34;
+         alt=&#34;Data Extent Horizon tool input dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Data Extent Horizon tool input dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The tool dialog allows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Specifying a constant Z value for the output horizon&lt;/li&gt;
+&lt;li&gt;Selecting 2D and 3D seismic data that the horizon should cover&lt;/li&gt;
+&lt;li&gt;Specifying the name of the generated horizon&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

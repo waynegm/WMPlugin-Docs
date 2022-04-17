@@ -1,0 +1,95 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – attribute</title>
+    <link>/tags/attribute/</link>
+    <description>Recent content in attribute on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/tags/attribute/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Time Delay Estimation</title>
+      <link>/docs/externalattributes/zdelayest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/zdelayest/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_correlation.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script provides an alternative to the builtin OpendTect
+&lt;a href=&#34;http://doc.opendtect.org/6.0.0/doc/od_userdoc/Default.htm#appendix_a-attributes_and_filters/match_delta.htm%3FTocPath%3D11%2520Appendix%2520A%2520-%2520Attributes%2520and%2520Filters%7C_____13&#34;&gt;Match Delta&lt;/a&gt; attribute to measure time shifts between similar events in different seismic volumes. This script uses local normalised cross correlation to determine the relative Z shift between 2 data volumes. Aside from the estimate of relative Z shift the attribute can also output the correlation value. The correlation value which ranges from 0 (low correlation) to 1 (high correlation) provides a quantitative assessment of the reliability of the Z shift estimate.&lt;/p&gt;
+&lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example provides a comparison of this external attribute script (left) with the Match Delta attribute (right) for a depth section and
+itself shifted up by 13 metres. The Match Delta attribute output is much noisier albiet it can be calculated much quicker.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_correlation_example.jpg&#34; data-label=&#34;External Attribute&#34; alt=&#34;External Attribute&#34; /&gt;
+    &lt;img src=&#34;match_delta.jpg&#34; data-label=&#34;Match Delta&#34; alt=&#34;Match Delta&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows the Correlation Quality output for the same data as above.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zdelayest/ex_correlation_quality.jpg&#34;
+         alt=&#34;Correlation quality**&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Correlation quality**&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zdelayest/ex_correlation_input.jpg&#34;
+         alt=&#34;ex_correlation.py input parameters**&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;ex_correlation.py input parameters**&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of the Z shift in millisecs or metres or the corresponding correlation coefficient.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;This in conjunction with the Max Lag parameter determines the length of the segments cross correlated. \(SegmentLength = 2*(Zwindow - MaxLag)+1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Max Lag (samples)&lt;/td&gt;
+&lt;td&gt;Specifies maximum number of samples to search for the maximum correlation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Note the user has to ensure that Z window is greater than Max Lag otherwise the script will exit with errors.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

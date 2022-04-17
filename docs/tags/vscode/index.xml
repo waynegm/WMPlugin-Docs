@@ -1,0 +1,104 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – VSCode</title>
+    <link>/tags/vscode/</link>
+    <description>Recent content in VSCode on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Using Visual Studio Code with OpendTect</title>
+      <link>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this post I show you how to set up and use the free &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; editor with OpendTect for interactive
+computation using Python Jupyter Notebooks. If you have installed the OpendTect Machine Learning Python environments you can
+create and edit Python Jupyter Notebooks using Visual Studio Code without modifying the installed environment provided VS Code is run from within
+OpendTect. The approach described in this post might assist users in strictly controlled IT settings get up and running using Jupyter Notebooks.&lt;/p&gt;
+&lt;h2 id=&#34;installing-visual-studio-code&#34;&gt;Installing Visual Studio Code&lt;/h2&gt;
+&lt;p&gt;VS Code should be available in the package repositories of all the major Linux distributions so just install it like you would
+any other application. Alternatively the &lt;a href=&#34;https://code.visualstudio.com/Download&#34;&gt;VS Code Download&lt;/a&gt; page provides a tar.gz download
+for 64 bit Linux that can be copied into a users home folder for those situations where IT settings prevent a global software install.&lt;/p&gt;
+&lt;p&gt;For Windows go to the &lt;a href=&#34;https://code.visualstudio.com/Download&#34;&gt;VS Code Download&lt;/a&gt; page and download the package of choice. There are 3 options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;User installer (software ends up in &amp;ldquo;C:\users{username}\AppData\Local\Programs\Microsoft VS Code&amp;rdquo;, recommended way)&lt;/li&gt;
+&lt;li&gt;System installer (software ends up in &amp;ldquo;C:\Program Files&amp;rdquo;, requires Administrator privileges)&lt;/li&gt;
+&lt;li&gt;.zip (you unpack the zip file anywhere even on a usb stick)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once installed, start it up (find the executable file call &amp;ldquo;code&amp;rdquo; in the application folder and run it from a console or click/double click
+on it from your file manager/explorer) and add the following extensions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python extension for Visual Studio Code&lt;/li&gt;
+&lt;li&gt;Jupyter Extension for Visual Studio Code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;selecting-visual-studio-code-as-the-opendtect-ide&#34;&gt;Selecting Visual Studio Code as the OpendTect IDE&lt;/h2&gt;
+&lt;p&gt;Open the OpendTect Python Settings dialog (Utilities|Installation|Python Settings menu)
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
+         alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For the Python IDE select &amp;ldquo;Other&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Use the File Selector to locate the executable file called &amp;ldquo;code&amp;rdquo; in the VS Code application folder&lt;/li&gt;
+&lt;li&gt;Use the icon button to set the location of an icon for the application (normally in the resources/app/resources/(linux|win32) subfolder
+of the VS Code installation)&lt;/li&gt;
+&lt;li&gt;Set a tooltip message, eg &amp;ldquo;VS Code&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Press OK&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This will add an icon to the OpendTect toolbar and a new menu item to the &amp;ldquo;Utilities|User Commands&amp;rdquo; menu to start Visual Studio Code. Starting
+VS Code from within OpendTect ensures environment settings are compatible with the Python environment selected in the OpendTect Python
+Settings dialog.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
+         alt=&#34;OpendTect After Adding VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect After Adding VS Code&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+Click the icon or use the &amp;ldquo;Utilities|User Commands&amp;rdquo; menu to start a Visual Studio Code instance.&lt;/p&gt;
+&lt;h2 id=&#34;using-visual-studio-code&#34;&gt;Using Visual Studio Code&lt;/h2&gt;
+&lt;p&gt;With these steps completed it should be possible to start VS Code from OpendTect and open a new blank Jupyter notebook by running
+the Jupyter: Create Blank New Jupyter Notebook command from the VS Code Command Palette (Ctrl+Shift+P). This notebook will use
+the Python environment selected in the OpendTect Python Settings dialog.
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
+         alt=&#34;New Jupyter Notebook in VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;New Jupyter Notebook in VS Code&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;To find out more about using VS Code with Jupyter Notebooks check out the documentation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/python/jupyter-support&#34;&gt;Working with Jupyter Notebooks in Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/python/jupyter-support-py&#34;&gt;Working with the Python Interactive window&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
+         alt=&#34;Exploring OpendTect Well Data in a VS Code Notebook&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Exploring OpendTect Well Data in a VS Code Notebook&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1114 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – External Attributes</title>
+    <link>/docs/externalattributes/</link>
+    <description>Recent content in External Attributes on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/externalattributes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Add Noise</title>
+      <link>/docs/externalattributes/addnoise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/addnoise/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_add_noise.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script adds gaussian distributed noise to an input signal.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example shows an input signal with different levels of added noise.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/addnoise/ex_add_noise_example.jpg&#34;
+         alt=&#34;Input with varying levels of added noise&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Input with varying levels of added noise&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/addnoise/ex_add_noise_input.jpg&#34;
+         alt=&#34;ex_add_noise.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_add_noise.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;S/N Ratio&lt;/td&gt;
+&lt;td&gt;Desired signal to noise ratio.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AVO Intercept and Gradient</title>
+      <link>/docs/externalattributes/avo_ig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/avo_ig/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;These &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts estimate AVO intercept and gradient based on Shuey&amp;rsquo;s 2 term approximation
+to the Zoeppritz equation. Scripts are provided for 3, 4 and 5 angle stacks.&lt;/p&gt;
+&lt;h2 id=&#34;intercept-and-gradient-from-angle-stacks&#34;&gt;Intercept and Gradient from Angle Stacks&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_3_to_AVOIG.py&lt;/strong&gt;
+&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_4_to_AVOIG.py&lt;/strong&gt;
+&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_5_to_AVOIG.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Takes as input angle stacks and the corresponding angles and fits a least squares line to the \(amplitude\) and \(sin^2(angle)\) at
+each sample point. Output includes the intercept, gradient and the correlation coefficient of the line fit.&lt;/p&gt;
+&lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/avo_ig/ex_AVOIG_4_input.jpg&#34;
+         alt=&#34;ex_angle_stacks_4_to_AVOIG.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_angle_stacks_4_to_AVOIG.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For each input volume the corresponding incident angle must be provided.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Dip and Azimuth</title>
+      <link>/docs/externalattributes/dipazimuth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/dipazimuth/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;These Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.&lt;/p&gt;
+&lt;p&gt;All scripts will estimate at least the following attributes:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OUTPUT&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Inline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on a crossline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger inline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crossline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on an inline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger crossline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;True Dip&lt;/td&gt;
+&lt;td&gt;Event dip in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output is always positive.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dip Azimuth&lt;/td&gt;
+&lt;td&gt;Azimuth of the True Dip direction relative to the survey orientation. Output ranges from -180 to 180 degrees. Positive azimuth is defined from the inline in the direction of increasing crossline numbers. Azimuth = 0 indicates that the dip is dipping in the direction of increasing crossline numbers. Azimuth = 90 indicates that the dip is dipping in the direction of increasing inline numbers.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Some scripts may offer additional outputs such as a measure of event coherency or planarity.&lt;/p&gt;
+&lt;p&gt;All of the scripts require the numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;orientation-from-gradients&#34;&gt;Orientation from gradients&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_gradient_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculates orientation from inline, crossline and Z gradients. No filtering is applied
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_gradient_dip.jpg&#34;
+         alt=&#34;Unfiltered gradient dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered gradient dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;orientation-from-vector-filtered-gradients&#34;&gt;Orientation from vector filtered gradients&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_vf_gradient3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Uses &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point derivative filter to estimate data gradients. Next gradient normal unit vectors are determined and smoothed using a vector filter.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the vector filtering is \((2*ZStepOut-1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline
+direction. For example for a 5x5x5 analysis cube \((Zwindow=2, Stepout=2)\) the gradients and associated normal unit vectors are generated
+on a 3x3x3 cube and vector filtered. The outer samples are only used in the gradient calculation.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;ex_vfmean_gradient_dip.jpg&#34;
+         alt=&#34;Vector filtered gradient dip - crossline dip on an inline - 5x5x5 input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Vector filtered gradient dip - crossline dip on an inline - 5x5x5 input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-by-the-gradient-structure-tensor&#34;&gt;Orientation by the gradient structure tensor&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Scripts: ex_gradient3_st_dip.py &amp;amp; ex_gradient5_st_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Uses either &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point or the &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli (2004)&lt;/a&gt; 5 point derivative filter to estimate data gradients which are then used to form the gradient structure tensor.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;For the ex_gradient3 script the structure tensor is formed from an aperture of \((2*ZStepOut-1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+&lt;p&gt;For the ex_gradient5 script the structure tensor is formed from an aperture of \((2*ZStepOut-2)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_gst3_dip.jpg&#34;
+         alt=&#34;Gradient3 structure tensor dip - crossline dip on an inline - 5x5x5 input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Gradient3 structure tensor dip - crossline dip on an inline - 5x5x5 input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-from-the-3d-complex-trace-phase&#34;&gt;Orientation from the 3D complex trace phase&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_phase3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculates orientation from the 3D complex trace phase gradients as per &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.2785048&#34; title=&#34;A tutorial on complex seismic trace analysis. Arthur E. Barnes. GEOPHYSICS 2007 72:6, W33-W43&#34;&gt;Barnes (2007)&lt;/a&gt;. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point derivative filter is used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_phase3_dip.jpg&#34;
+         alt=&#34;Unfiltered phase dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered phase dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-from-vector-filtered-3d-complex-trace-phase&#34;&gt;Orientation from vector filtered 3D complex trace phase&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_vf_phase3_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Calculate orientation unit normal vectors using the 3D complex trace phase gradient and apply a vector filter. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point filter used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Vector Filter ZStepOut&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube for vector filtering in the Z direction. Number of Z samples in cube will be \((2*ZStepOut+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the vector filter is \((2*ZStepOut+1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_vfmean_phase3_dip.jpg&#34;
+         alt=&#34;Mean Vector Filtered phase dip - crossline dip on an inline - 3x3x3&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mean Vector Filtered phase dip - crossline dip on an inline - 3x3x3&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;orientation-using-the-envelope-weighted-3d-complex-trace-phase-structure-tensor&#34;&gt;Orientation using the envelope weighted 3D complex trace phase structure tensor&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: ex_weighted_phase3_st_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Forms a structure tensor from the 3D complex trace phase gradients. Tensor elements are weighted by the trace envelope as per &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.2235591?journalCode=gpysa7&#34; title=&#34;Computation of dips and azimuths with weighted structural tensor approach. Yi Luo, Yuchun Eugene Wang, Nasher M. AlBinHassan and Mohammed N. Alfaraj, GEOPHYSICS 2006 71:5, V119-V121&#34;&gt;Luo etal (2006)&lt;/a&gt;. &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon&amp;rsquo;s (2009)&lt;/a&gt; 3 point filter is used to compute gradients.
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the length \((2*Zwindow+1)\) of the time domain operator used to generate the complex analytic signal (recommend &amp;gt;= 15)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tensor ZStepOut&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube for vector filtering in the Z direction. Number of Z samples in cube will be \((2*ZStepOut+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Band&lt;/td&gt;
+&lt;td&gt;Specifies the proportion of the frequency band to include when generating the complex analytic signal (recommend 0.9).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;The aperture of the structure tensor is \((2*ZStepOut+1)\) \(Z\) samples and \((2*Stepout-1)\) samples in the inline and crossline direction.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/dipazimuth/ex_phasest_dip.jpg&#34;
+         alt=&#34;Structure tensor phase dip - crossline dip on an inline - 3x3x3 tensor input&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Structure tensor phase dip - crossline dip on an inline - 3x3x3 tensor input&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: LPA Smoothing</title>
+      <link>/docs/externalattributes/lpasmooth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/lpasmooth/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: ex_lpa_smooth.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to filter noise while preserving steep dips. A region of
+data around each sample location is approximated by a second order 3D polynomial using gaussian weighted least squares.&lt;/p&gt;
+&lt;p&gt;The approximation has the following form:&lt;/p&gt;
+&lt;p&gt;$$ r_0+ r_1 * x + r_2 * y + r_3 * z + r_4 * x^2 + r_5 * y^2 + r_6 * z^2 +r_7 * x * y + r_8 * x * z + r_9 * y * z $$&lt;/p&gt;
+&lt;p&gt;where x (inline), y (crossline) and z (time/depth) are relative to the analysis location, ie the analysis location has x=y=z=0.&lt;/p&gt;
+&lt;p&gt;This attribute calculates and outputs only the \(r_0\) term of the local polynomial approximation. This provides a smoother version of
+the input with relatively minor smearing of steep dips and fault cuts. Increasing either the Weight Factor or size of the analysis volume
+(StepOut or Z window) increases the amount of smoothing.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;lpa_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;lpa_2x2x2.jpg&#34; data-label=&#34;lpa 2x2x2 WF: 0.5&#34; alt=&#34;lpa 2x2x2 WF: 0.5&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/lpasmooth/lpa_smooth_inputpar.jpg&#34;
+         alt=&#34;LPA Smoothing external attribute input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;LPA Smoothing external attribute input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \(2 * Zwindow + 1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \(2 * Stepout + 1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Weight Factor&lt;/td&gt;
+&lt;td&gt;Determines the extent of the gaussian weight function used in the weighted least squares approximation. The standard deviation of the gaussian weight function \((\sigma)\) is related to this value by:&lt;/br&gt; \(\sigma = min(2*Stepout, 2*Zwindow)*WeightFactor\). &lt;/br&gt;A value of 0.15 gives near zero weight for points at the smallest extent of the analysis cube.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.doc.ic.ac.uk/research/technicalreports/2006/DTR06-8.pdf&#34;&gt;Anisotropic Multidimensional Savitzky Golay kernels for Smoothing, Differentiation and Reconstruction&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.diva-portal.org/smash/get/diva2:302485/FULLTEXT01.pdf&#34;&gt;Polynomial Expansion for Orientation and Motion Estimation&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PyLops Attributes</title>
+      <link>/docs/externalattributes/pylops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/pylops/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The 6.6.8 release of the wmPlugins includes a number of new Python external attribute scripts that use the &lt;a href=&#34;https://pylops.readthedocs.io/en/latest/&#34;&gt;PyLops&lt;/a&gt;
+linear operator library for seismic modelling and inversion.&lt;/p&gt;
+&lt;p&gt;Assuming wmPlugins is installed using the OpendTect Installation Manager, the scripts will be in the &lt;em&gt;bin/python/wmpy/PyLops&lt;/em&gt; folder
+of the OpendTect software folder and include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyLops/ex_poststack_inversion.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_poststack_relative_inversion.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_poststack_modelling.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_prestack_modelling.py&lt;/li&gt;
+&lt;li&gt;PyLops/ex_make_1d_seismic.py&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Using these scripts requires a Python environment with the PyLops module and it&amp;rsquo;s dependencies installed. The section
+&lt;a href=&#34;#installing-pylops&#34;&gt;Installing PyLops&lt;/a&gt; describes the PyLops installation process.&lt;/p&gt;
+&lt;h2 id=&#34;pylopsex_poststack_inversionpy&#34;&gt;PyLops/ex_poststack_inversion.py&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script uses the pylops.avo.poststack.PoststackInversion operator to do
+post-stack seismic inversion. The output is either the log Acoustic Impedance (AI) volume or the residual error.&lt;/p&gt;
+&lt;p&gt;The inputs required are volumes of the seismic to be inverted, a background log AI model and the seismic wavelet. Note that the polarity
+of the seismic wavelet must match the data.&lt;/p&gt;
+&lt;p&gt;The following figures show inversion input and output for a 1D model created by the PyLops/ex_make_1d_seismic.py script.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-02.png&#34;
+         alt=&#34;Impedance Model (red) and Background Model (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Background Model (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-03.png&#34;
+         alt=&#34;Impedance Model (red) and Seismic Model (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Seismic Model (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-04.png&#34;
+         alt=&#34;Impedance Model (red) and Inverted Impedance (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;There is also a PyLops/ex_poststack_relative_inversion.py script that runs the inversion without a background model:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-05.png&#34;
+         alt=&#34;Impedance Model (red) and Inverted Relative Impedance (blue)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Impedance Model (red) and Inverted Relative Impedance (blue)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion-07.png&#34;
+         alt=&#34;Inverted Relative Impedance Example&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Inverted Relative Impedance Example&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_poststack_inversion_input.png&#34;
+         alt=&#34;ex_poststack_inversion.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_poststack_inversion.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordere&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of Acoustic Impedance or the Residual Error.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Regularization (%)&lt;/td&gt;
+&lt;td&gt;A small amount of noise to add to stabilize the inversion.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wavelet&lt;/td&gt;
+&lt;td&gt;An OpendTect wavelet file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;/br&gt;
+Note the wavelet polarity must be consistent with the polarity of the data being inverted.&lt;/p&gt;
+&lt;h2 id=&#34;pylopsex_prestack_modellingpy&#34;&gt;PyLops/ex_prestack_modelling.py&lt;/h2&gt;
+&lt;p&gt;The PyLops/ex_prestack_modelling.py script uses the pylops.avo.avo.AVOLinearModelling operator to create a pre-stack angle volume
+from well data. The output is either an Aki-Richards or Fatti approximate reflectivity model filtered by a user specified wavelet.&lt;/p&gt;
+&lt;p&gt;The inputs required are 3 log data cubes with compressional sonic (DT in us/m), shear sonic (DTS in us/m) and density (RHOB in g/cc). These
+can be created from well log data using the &amp;ldquo;Create Log Cube&amp;rdquo; right mouse button context menu in the scene well tree or the
+&amp;ldquo;Processing|Create Seismic Output|From Well Logs&amp;rdquo; main menu. Also needed is a wavelet with the appropriate polarity for the data being modelled.&lt;/p&gt;
+&lt;p&gt;The generated synthetics can be displayed in the 3D window and compared with real angle stack data through the well location.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_prestack_modelling-01.jpg&#34;
+         alt=&#34;Prestack modelling example&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Prestack modelling example&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input-parameters-1&#34;&gt;Input Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/pylops/ex_pylops_prestack_modelling_input.png&#34;
+         alt=&#34;ex_prestack_modelling.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_prestack_modelling.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Angle (deg)&lt;/td&gt;
+&lt;td&gt;The desired output angle volume.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Method&lt;/td&gt;
+&lt;td&gt;What approximation to use, Aki RIchards or Fatti.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wavelet&lt;/td&gt;
+&lt;td&gt;An OpendTect wavelet file.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h2 id=&#34;installing-pylops&#34;&gt;Installing PyLops&lt;/h2&gt;
+&lt;p&gt;The PyLops Python package and it&amp;rsquo;s dependencies can be installed in an active conda environment using:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;conda install -c conda-forge pylops
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;or&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pip install pylops
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;See the &lt;a href=&#34;https://pylops.readthedocs.io/en/latest/installation.html&#34;&gt;PyLops documentation&lt;/a&gt; for more information.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Spatial Filter - Circular</title>
+      <link>/docs/externalattributes/spatialfiltercircular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/spatialfiltercircular/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_circular.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject circularly symmetric
+spatial filters. The filters are applied by direct spatial convolution using the MAXFLAT operators described by
+&lt;a href=&#34;https://www.researchgate.net/publication/3384111_Explicit_formulae_for_coefficients_of_2D_circular_symmetric_MAXFLATFIR_lowhigh_pass_digital_filters&#34; title=&#34;Explicit formulae for coefficients of 2D circular symmetric MAXFLAT FIR low/high pass digital filters.  Electronics Letters Volume: 37, Issue: 24, 22 Nov 2001&#34;&gt;Khan and Ohba (2001)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_resp.jpg&#34;
+         alt=&#34;Filter responses&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Filter responses&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Note that the filter cutoff or band pass/reject frequency is specified in Normalised Spatial Frequency. Normalised Frequency ranges
+from 0 to 1 at the spatial nyquist. Converting a spatial frequency in cycles/metre to the equivalent Normalised Spatial Frequency
+is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
+&lt;p&gt;As written the filter does not take into account differences in spatial sampling in the inline and crossline directions.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example uses a Low Pass filter to remove acquisition footprint from the F3 Demo dataset.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_fkinput.jpg&#34;
+         alt=&#34;FK spectrum of inline 425&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;FK spectrum of inline 425&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Note the noise at 0.0133 cycles/metre or 0.67 normalised frequency (i.e. 0.0133/0.02).&lt;/p&gt;
+&lt;p&gt;A spatial low pass filter with a normalised frequency cutoff of 0.5 is very effective at attenuating this acquisition footprint.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_inline_input.jpg&#34; data-label=&#34;Input Iln425&#34; alt=&#34;Input Iln425&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_inline_filtered.jpg&#34; data-label=&#34;Lowpass Filtered Iln425&#34; alt=&#34;Lowpass Filtered Iln425&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_fkoutput.jpg&#34;
+         alt=&#34;FK spectrum of inline 425 after filter&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;FK spectrum of inline 425 after filter&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_input.jpg&#34; data-label=&#34;Input Slice300ms&#34; alt=&#34;Input Slice300ms&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_filtered.jpg&#34; data-label=&#34;Lowpass Filtered Slice300ms&#34; alt=&#34;Lowpass Filtered Slice300ms&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_input.jpg&#34;
+         alt=&#34;ex_spatial_filter.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_spatial_filter.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Determines the size of the convolution operator. Minimum of 9 (filter kernel size of 19) recommended.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Type&lt;/td&gt;
+&lt;td&gt;Filter type - Low Pass, High Pass, Band Pass or Band Reject.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Spatial Filter - Rectangular</title>
+      <link>/docs/externalattributes/spatialfilterrectangular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/spatialfilterrectangular/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_rectangular.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
+symmetry. The filters are applied by direct spatial convolution of a kernel formed by cascading two 1D Hamming Window FIR filters
+computed using scipy.signal.firwin (&lt;a href=&#34;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&#34;&gt;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;By setting the stepout in one direction to 0 the filter will be applied as a 1D spatial filter in the other direction.&lt;/p&gt;
+&lt;p&gt;Note that the filter cutoff or band pass/reject frequency is specified in Normalised Spatial Frequency. Normalised Frequency ranges
+from 0 to 1 at the spatial nyquist. Converting a spatial frequency in cycles/metre to the equivalent Normalised Spatial Frequency is
+as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example shows inline and crossline FK spectra after applying a 2D lowpass rectangular filter with inline and crossline normalised
+frequency cutoffs of 0.6 and 0.3 respectively.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_rect_inlinefk.jpg&#34; data-label=&#34;Input Inline FK Spectrum&#34; alt=&#34;Input Inline FK Spectrum&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_rect_inlinefiltfk.jpg&#34; data-label=&#34;After lowpass filter&#34; alt=&#34;After lowpass filter&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_rect_xlinefk.jpg&#34; data-label=&#34;Input crossline FK Spectrum&#34; alt=&#34;Input crossline FK Spectrum&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_rect_xlinefiltfk.jpg&#34; data-label=&#34;After lowpass filter&#34; alt=&#34;After lowpass filter&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows a timeslice at 300ms TWT from the F3 Demo dataset after applying a 1D spatial filter along the inlines
+(stepout of 0,9) with a crossline normalised frequency cutoff of 0.5.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass.jpg&#34; data-label=&#34;Xline Lowpass Filtered&#34; alt=&#34;Xline Lowpass Filtered&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows the timeslice at 300ms TWT from the F3 Demo dataset with the crossline lowpass filter above followed by
+a 1D bandreject spatial filter along the crosslines (stepout 9,0) with an inline normalised rejection frequency of 0.17.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass.jpg&#34; data-label=&#34;Xline Lowpass Input&#34; alt=&#34;Xline Lowpass Input&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass_1Dnotch.jpg&#34; data-label=&#34;Inline Bandreject Filtered&#34; alt=&#34;Inline Bandreject Filtered&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfilterrectangular/ex_spatial_filter_rect_input.jpg&#34;
+         alt=&#34;ex_spatial_filte_rectangular.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_spatial_filte_rectangular.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Determines the size of the convolution operator. Minimum of 9 (filter kernel size of 19) recommended. Setting the stepout to zero will apply a 1D filter, e.g. a stepout of 0,9 will apply a 1D crossline frequency filter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Type&lt;/td&gt;
+&lt;td&gt;Filter type - Low Pass, High Pass, Band Pass or Band Reject.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Inline Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the inline filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Xline Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the crosslineline filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Vector Filter</title>
+      <link>/docs/externalattributes/vectorfilter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/vectorfilter/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: ex_vector_filter_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
+The script offers a choice of mean vector, L1 vector median and L2 vector median filters.&lt;/p&gt;
+&lt;p&gt;Initially the inline and crossline dip data are converted to a normal vector to the local orientation: \([x_i, y_i, z_i]\).&lt;/p&gt;
+&lt;p&gt;The Mean Vector Filter averages each of the vector components of the orientation normal vectors in the analysis cube:
+$$
+\Big[x_f, y_f, z_f\Big]  = \frac{1}{N} \Big[\sum\limits_{i}^N x_i, \sum\limits_{i}^N y_i, \sum\limits_{i}^N z_i\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The L1 vector filter finds the normal vector in the analysis cube whose sum of absolute distance from all the others is a minimum:
+$$
+\Big[x_f, y_f, z_f\Big] = argmin \sum\limits_{i}^N \Big[|x_f-x_i| + |y_f-y_i| + |z_f-z_i|\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The L2 vector filter finds the normal vector in the analysis cube whose sum of squared distance from all the others is a minimum:
+$$
+\Big[x_f, y_f, z_f\Big] = argmin \sum\limits_{i}^N \Big[(x_f-x_i)^2 + (y_f-y_i)^2 + (z_f-z_i)^2\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The filtered orientation can be output as any of the following:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OUTPUT&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Inline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on a crossline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger inline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crossline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on an inline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger crossline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;True Dip&lt;/td&gt;
+&lt;td&gt;Event dip in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output is always positive.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dip Azimuth&lt;/td&gt;
+&lt;td&gt;Azimuth of the True Dip direction relative to the survey orientation. Output ranges from -180 to 180 degrees. Positive azimuth is defined from the inline in the direction of increasing crossline numbers. Azimuth = 0 indicates that the dip is dipping in the direction of increasing crossline numbers. Azimuth = 90 indicates that the dip is dipping in the direction of increasing inline numbers.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;/br&gt;
+The script requires the Numba Python package.
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_phase_dip.jpg&#34;
+         alt=&#34;Unfiltered phase dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered phase dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfmean_phase_dip.jpg&#34;
+         alt=&#34;Mean vector filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mean vector filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfl1_phase_dip.jpg&#34;
+         alt=&#34;L1 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;L1 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfl2_phase_dip.jpg&#34;
+         alt=&#34;L2 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;L2 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vector_filter_dip_input.jpg&#34;
+         alt=&#34;ex_vector_filter_dip.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_vector_filter_dip.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Time Delay Estimation</title>
+      <link>/docs/externalattributes/zdelayest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/zdelayest/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_correlation.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script provides an alternative to the builtin OpendTect
+&lt;a href=&#34;http://doc.opendtect.org/6.0.0/doc/od_userdoc/Default.htm#appendix_a-attributes_and_filters/match_delta.htm%3FTocPath%3D11%2520Appendix%2520A%2520-%2520Attributes%2520and%2520Filters%7C_____13&#34;&gt;Match Delta&lt;/a&gt; attribute to measure time shifts between similar events in different seismic volumes. This script uses local normalised cross correlation to determine the relative Z shift between 2 data volumes. Aside from the estimate of relative Z shift the attribute can also output the correlation value. The correlation value which ranges from 0 (low correlation) to 1 (high correlation) provides a quantitative assessment of the reliability of the Z shift estimate.&lt;/p&gt;
+&lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example provides a comparison of this external attribute script (left) with the Match Delta attribute (right) for a depth section and
+itself shifted up by 13 metres. The Match Delta attribute output is much noisier albiet it can be calculated much quicker.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_correlation_example.jpg&#34; data-label=&#34;External Attribute&#34; alt=&#34;External Attribute&#34; /&gt;
+    &lt;img src=&#34;match_delta.jpg&#34; data-label=&#34;Match Delta&#34; alt=&#34;Match Delta&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows the Correlation Quality output for the same data as above.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zdelayest/ex_correlation_quality.jpg&#34;
+         alt=&#34;Correlation quality**&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;Correlation quality**&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zdelayest/ex_correlation_input.jpg&#34;
+         alt=&#34;ex_correlation.py input parameters**&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;ex_correlation.py input parameters**&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of the Z shift in millisecs or metres or the corresponding correlation coefficient.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;This in conjunction with the Max Lag parameter determines the length of the segments cross correlated. \(SegmentLength = 2*(Zwindow - MaxLag)+1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Max Lag (samples)&lt;/td&gt;
+&lt;td&gt;Specifies maximum number of samples to search for the maximum correlation.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Note the user has to ensure that Z window is greater than Max Lag otherwise the script will exit with errors.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ZC Block</title>
+      <link>/docs/externalattributes/zcblock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/zcblock/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_zc_block.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script blocks a seismic trace between zero crossings. The block amplitude is
+determined by the min/max of the interval blocked.&lt;/p&gt;
+&lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example shows the attribute output (black wiggle) over the input (variable density). To get a blocky wiggle display interpolation has to be turned off in the 2D viewer properties.
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zcblock/ex_zc_block_example.jpg&#34;
+         alt=&#34;Zero crossing block&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Zero crossing block&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zcblock/ex_zc_block_input.jpg&#34;
+         alt=&#34;ex_zc_block.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_zc_block.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;There are no input parameters other than selection of the input volume.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

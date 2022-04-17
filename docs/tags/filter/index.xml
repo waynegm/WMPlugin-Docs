@@ -1,0 +1,630 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – filter</title>
+    <link>/tags/filter/</link>
+    <description>Recent content in filter on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/tags/filter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: LPA Smoothing</title>
+      <link>/docs/externalattributes/lpasmooth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/lpasmooth/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: ex_lpa_smooth.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to filter noise while preserving steep dips. A region of
+data around each sample location is approximated by a second order 3D polynomial using gaussian weighted least squares.&lt;/p&gt;
+&lt;p&gt;The approximation has the following form:&lt;/p&gt;
+&lt;p&gt;$$ r_0+ r_1 * x + r_2 * y + r_3 * z + r_4 * x^2 + r_5 * y^2 + r_6 * z^2 +r_7 * x * y + r_8 * x * z + r_9 * y * z $$&lt;/p&gt;
+&lt;p&gt;where x (inline), y (crossline) and z (time/depth) are relative to the analysis location, ie the analysis location has x=y=z=0.&lt;/p&gt;
+&lt;p&gt;This attribute calculates and outputs only the \(r_0\) term of the local polynomial approximation. This provides a smoother version of
+the input with relatively minor smearing of steep dips and fault cuts. Increasing either the Weight Factor or size of the analysis volume
+(StepOut or Z window) increases the amount of smoothing.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;lpa_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;lpa_2x2x2.jpg&#34; data-label=&#34;lpa 2x2x2 WF: 0.5&#34; alt=&#34;lpa 2x2x2 WF: 0.5&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/lpasmooth/lpa_smooth_inputpar.jpg&#34;
+         alt=&#34;LPA Smoothing external attribute input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;LPA Smoothing external attribute input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \(2 * Zwindow + 1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \(2 * Stepout + 1\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Weight Factor&lt;/td&gt;
+&lt;td&gt;Determines the extent of the gaussian weight function used in the weighted least squares approximation. The standard deviation of the gaussian weight function \((\sigma)\) is related to this value by:&lt;/br&gt; \(\sigma = min(2*Stepout, 2*Zwindow)*WeightFactor\). &lt;/br&gt;A value of 0.15 gives near zero weight for points at the smallest extent of the analysis cube.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.doc.ic.ac.uk/research/technicalreports/2006/DTR06-8.pdf&#34;&gt;Anisotropic Multidimensional Savitzky Golay kernels for Smoothing, Differentiation and Reconstruction&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.diva-portal.org/smash/get/diva2:302485/FULLTEXT01.pdf&#34;&gt;Polynomial Expansion for Orientation and Motion Estimation&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Spatial Filter - Circular</title>
+      <link>/docs/externalattributes/spatialfiltercircular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/spatialfiltercircular/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_circular.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject circularly symmetric
+spatial filters. The filters are applied by direct spatial convolution using the MAXFLAT operators described by
+&lt;a href=&#34;https://www.researchgate.net/publication/3384111_Explicit_formulae_for_coefficients_of_2D_circular_symmetric_MAXFLATFIR_lowhigh_pass_digital_filters&#34; title=&#34;Explicit formulae for coefficients of 2D circular symmetric MAXFLAT FIR low/high pass digital filters.  Electronics Letters Volume: 37, Issue: 24, 22 Nov 2001&#34;&gt;Khan and Ohba (2001)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_resp.jpg&#34;
+         alt=&#34;Filter responses&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Filter responses&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Note that the filter cutoff or band pass/reject frequency is specified in Normalised Spatial Frequency. Normalised Frequency ranges
+from 0 to 1 at the spatial nyquist. Converting a spatial frequency in cycles/metre to the equivalent Normalised Spatial Frequency
+is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
+&lt;p&gt;As written the filter does not take into account differences in spatial sampling in the inline and crossline directions.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example uses a Low Pass filter to remove acquisition footprint from the F3 Demo dataset.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_fkinput.jpg&#34;
+         alt=&#34;FK spectrum of inline 425&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;FK spectrum of inline 425&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Note the noise at 0.0133 cycles/metre or 0.67 normalised frequency (i.e. 0.0133/0.02).&lt;/p&gt;
+&lt;p&gt;A spatial low pass filter with a normalised frequency cutoff of 0.5 is very effective at attenuating this acquisition footprint.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_inline_input.jpg&#34; data-label=&#34;Input Iln425&#34; alt=&#34;Input Iln425&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_inline_filtered.jpg&#34; data-label=&#34;Lowpass Filtered Iln425&#34; alt=&#34;Lowpass Filtered Iln425&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_fkoutput.jpg&#34;
+         alt=&#34;FK spectrum of inline 425 after filter&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;FK spectrum of inline 425 after filter&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_input.jpg&#34; data-label=&#34;Input Slice300ms&#34; alt=&#34;Input Slice300ms&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_filtered.jpg&#34; data-label=&#34;Lowpass Filtered Slice300ms&#34; alt=&#34;Lowpass Filtered Slice300ms&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfiltercircular/ex_spatial_filter_input.jpg&#34;
+         alt=&#34;ex_spatial_filter.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_spatial_filter.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Determines the size of the convolution operator. Minimum of 9 (filter kernel size of 19) recommended.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Type&lt;/td&gt;
+&lt;td&gt;Filter type - Low Pass, High Pass, Band Pass or Band Reject.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GradientAttrib</title>
+      <link>/docs/plugins/gradientattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/gradientattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin calculates the inline, crossline or time/depth gradient using operators optimised for rotation invariance, ie equal response in all directions, proposed  by &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon (2009)&lt;/a&gt; and &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli(2004)&lt;/a&gt;. These provide more accurate alternatives to the Prewitt filter option of the OpendTect Convolve attribute for computing gradients.&lt;/p&gt;
+&lt;p&gt;The attribute offers a choice of Kroon&amp;rsquo;s 3x3x3, Farid and Simoncelli&amp;rsquo;s 5x5x5 or Farid and Simoncelli&amp;rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/gradientattrib/gradient_attrib.jpg&#34;
+         alt=&#34;Accuracy of the gradient attribute operators&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Accuracy of the gradient attribute operators&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 3 parameters:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Volume&lt;/td&gt;
+&lt;td&gt;The input attribute volume.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Gradient&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of Inline, Crossline or Z gradient.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Operator&lt;/td&gt;
+&lt;td&gt;What operator to use - choice of Kroon&#39;s 3x3x3, Farid&#39;s 5x5x5 or Farid&#39;s 7x7x7.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/gradientattrib/GradientAttrib_input.jpg&#34;
+         alt=&#34;Gradient attribute input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Gradient attribute input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Spatial Filter - Rectangular</title>
+      <link>/docs/externalattributes/spatialfilterrectangular/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/spatialfilterrectangular/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_rectangular.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
+symmetry. The filters are applied by direct spatial convolution of a kernel formed by cascading two 1D Hamming Window FIR filters
+computed using scipy.signal.firwin (&lt;a href=&#34;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&#34;&gt;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;By setting the stepout in one direction to 0 the filter will be applied as a 1D spatial filter in the other direction.&lt;/p&gt;
+&lt;p&gt;Note that the filter cutoff or band pass/reject frequency is specified in Normalised Spatial Frequency. Normalised Frequency ranges
+from 0 to 1 at the spatial nyquist. Converting a spatial frequency in cycles/metre to the equivalent Normalised Spatial Frequency is
+as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example shows inline and crossline FK spectra after applying a 2D lowpass rectangular filter with inline and crossline normalised
+frequency cutoffs of 0.6 and 0.3 respectively.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_rect_inlinefk.jpg&#34; data-label=&#34;Input Inline FK Spectrum&#34; alt=&#34;Input Inline FK Spectrum&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_rect_inlinefiltfk.jpg&#34; data-label=&#34;After lowpass filter&#34; alt=&#34;After lowpass filter&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_rect_xlinefk.jpg&#34; data-label=&#34;Input crossline FK Spectrum&#34; alt=&#34;Input crossline FK Spectrum&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_rect_xlinefiltfk.jpg&#34; data-label=&#34;After lowpass filter&#34; alt=&#34;After lowpass filter&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows a timeslice at 300ms TWT from the F3 Demo dataset after applying a 1D spatial filter along the inlines
+(stepout of 0,9) with a crossline normalised frequency cutoff of 0.5.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass.jpg&#34; data-label=&#34;Xline Lowpass Filtered&#34; alt=&#34;Xline Lowpass Filtered&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;p&gt;This example shows the timeslice at 300ms TWT from the F3 Demo dataset with the crossline lowpass filter above followed by
+a 1D bandreject spatial filter along the crosslines (stepout 9,0) with an inline normalised rejection frequency of 0.17.&lt;/p&gt;
+&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass.jpg&#34; data-label=&#34;Xline Lowpass Input&#34; alt=&#34;Xline Lowpass Input&#34; /&gt;
+    &lt;img src=&#34;ex_spatial_filter_slice_1Dlowpass_1Dnotch.jpg&#34; data-label=&#34;Inline Bandreject Filtered&#34; alt=&#34;Inline Bandreject Filtered&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/spatialfilterrectangular/ex_spatial_filter_rect_input.jpg&#34;
+         alt=&#34;ex_spatial_filte_rectangular.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_spatial_filte_rectangular.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Determines the size of the convolution operator. Minimum of 9 (filter kernel size of 19) recommended. Setting the stepout to zero will apply a 1D filter, e.g. a stepout of 0,9 will apply a 1D crossline frequency filter.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Type&lt;/td&gt;
+&lt;td&gt;Filter type - Low Pass, High Pass, Band Pass or Band Reject.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Inline Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the inline filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Normalised Xline Spatial Frequency&lt;/td&gt;
+&lt;td&gt;For Low Pass and High Pass filters this specifies the crosslineline filter cutoff. For Band Pass/Reject filters this is the centre of the pass/reject band. The width of the band is hardwired to +/- 0.1 in the script. The filter cutoff corresponds to the half amplitude point.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Vector Filter</title>
+      <link>/docs/externalattributes/vectorfilter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/vectorfilter/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: ex_vector_filter_dip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
+The script offers a choice of mean vector, L1 vector median and L2 vector median filters.&lt;/p&gt;
+&lt;p&gt;Initially the inline and crossline dip data are converted to a normal vector to the local orientation: \([x_i, y_i, z_i]\).&lt;/p&gt;
+&lt;p&gt;The Mean Vector Filter averages each of the vector components of the orientation normal vectors in the analysis cube:
+$$
+\Big[x_f, y_f, z_f\Big]  = \frac{1}{N} \Big[\sum\limits_{i}^N x_i, \sum\limits_{i}^N y_i, \sum\limits_{i}^N z_i\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The L1 vector filter finds the normal vector in the analysis cube whose sum of absolute distance from all the others is a minimum:
+$$
+\Big[x_f, y_f, z_f\Big] = argmin \sum\limits_{i}^N \Big[|x_f-x_i| + |y_f-y_i| + |z_f-z_i|\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The L2 vector filter finds the normal vector in the analysis cube whose sum of squared distance from all the others is a minimum:
+$$
+\Big[x_f, y_f, z_f\Big] = argmin \sum\limits_{i}^N \Big[(x_f-x_i)^2 + (y_f-y_i)^2 + (z_f-z_i)^2\Big]
+$$&lt;/p&gt;
+&lt;p&gt;The filtered orientation can be output as any of the following:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OUTPUT&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Inline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on a crossline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger inline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crossline Dip&lt;/td&gt;
+&lt;td&gt;Event dip observed on an inline in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output can be positive or negative with the convention that events dipping towards larger crossline numbers producing positive dips.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;True Dip&lt;/td&gt;
+&lt;td&gt;Event dip in microseconds per metre for time surveys and millimetres per metre for depth surveys. Output is always positive.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dip Azimuth&lt;/td&gt;
+&lt;td&gt;Azimuth of the True Dip direction relative to the survey orientation. Output ranges from -180 to 180 degrees. Positive azimuth is defined from the inline in the direction of increasing crossline numbers. Azimuth = 0 indicates that the dip is dipping in the direction of increasing crossline numbers. Azimuth = 90 indicates that the dip is dipping in the direction of increasing inline numbers.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;/br&gt;
+The script requires the Numba Python package.
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_phase_dip.jpg&#34;
+         alt=&#34;Unfiltered phase dip - crossline dip on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Unfiltered phase dip - crossline dip on an inline&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfmean_phase_dip.jpg&#34;
+         alt=&#34;Mean vector filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mean vector filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfl1_phase_dip.jpg&#34;
+         alt=&#34;L1 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;L1 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vfl2_phase_dip.jpg&#34;
+         alt=&#34;L2 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;L2 vector median filtered phase dip - 3x3x3 (Stepout and ZWindow of 1)&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/vectorfilter/ex_vector_filter_dip_input.jpg&#34;
+         alt=&#34;ex_vector_filter_dip.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_vector_filter_dip.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of inline dip, crossline dip, true dip or dip azimuth.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Z window (+/-samples)&lt;/td&gt;
+&lt;td&gt;Specifies the extent of the analysis cube in the Z direction. Number of Z samples in cube will be \((2*Zwindow+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout&lt;/td&gt;
+&lt;td&gt;Specifies the inline and crossline extent of the analysis cube. Number of samples in each direction will be \((2*Stepout+1)\).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter&lt;/td&gt;
+&lt;td&gt;Choice of Mean Dip, L1 Vector Median or L2 Vector Median.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ZC Block</title>
+      <link>/docs/externalattributes/zcblock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/zcblock/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_zc_block.py&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script blocks a seismic trace between zero crossings. The block amplitude is
+determined by the min/max of the interval blocked.&lt;/p&gt;
+&lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;This example shows the attribute output (black wiggle) over the input (variable density). To get a blocky wiggle display interpolation has to be turned off in the 2D viewer properties.
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zcblock/ex_zc_block_example.jpg&#34;
+         alt=&#34;Zero crossing block&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Zero crossing block&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/zcblock/ex_zc_block_input.jpg&#34;
+         alt=&#34;ex_zc_block.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_zc_block.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;There are no input parameters other than selection of the input volume.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: MLVFilterAttrib</title>
+      <link>/docs/plugins/mlvfilter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/mlvfilter/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect]
+applies a structure preserving Mean of Least Variance filter.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This attribute is an implementation of a mean of least variance filter
+&lt;a href=&#34;http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1008684&#34; title=&#34;Value-and-criterion filters: a new filter structure based on morphological opening and closing. Mark A. Schulze and John A. Pearce. Proc. SPIE 1902, Nonlinear Image Processing IV, 106 (May 21, 1993)&#34;&gt;Schulze &amp;amp; Pearce (1993)&lt;/a&gt; where the analysis elements are all the possible planes through the sample points in the analysis block. This algorithm may be similar to that proposed by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.3627375&#34; title=&#34;Structure‐preserving smoothing for 3D seismic attributes. Saleh Al‐Dossary and Yuchun Eugene Wang. SEG Technical Program Expanded Abstracts 2011. January 2011, 1004-1008&#34;&gt;Al-Dossary &amp;amp; Wang (2011)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The sample variance for all samples on each analysis element is calculated and the output statistic (average, mean or element index)
+is output for the element with the least variance.&lt;/p&gt;
+&lt;p&gt;The following figure shows the relationship between the geometry of the analysis elements and the element index.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_elements.jpg&#34;
+         alt=&#34;MLV Filter analysis elements&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLV Filter analysis elements&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;MLVFilterAttrib_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;MLVFilterAttrib_MLV3_Mean.jpg&#34; data-label=&#34;MLV Size 3 Average - 1 pass&#34; alt=&#34;MLV Size 3 Average - 1 pass&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_MLV3_Elements.jpg&#34;
+         alt=&#34;MLV 3 elements&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLV 3 elements&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 2 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter size&lt;/td&gt;
+&lt;td&gt;Specifies a cube of samples centred  at the analysis location. Increasing the size will increase the degree of smoothing at the risk of smearing structural features. As the examples show it may be better to apply multiple passes of a small size filter than a single pass of a larger filter to reduce the risk of artifacts in the output. OpendTect makes it really easy to cascade multiple filter passes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output statistic&lt;/td&gt;
+&lt;td&gt;What the filter will output. The options are average, median or the element index. The element index is included for curiosity and quality control. Generally the default &lt;em&gt;Average&lt;/em&gt; provides the most pleasing output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_par1.jpg&#34;
+         alt=&#34;MLF Filter input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLF Filter input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

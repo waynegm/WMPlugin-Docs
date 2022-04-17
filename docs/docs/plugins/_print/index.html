@@ -1,0 +1,2455 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.96.0" />
+<link rel="canonical" type="text/html" href="/docs/plugins/">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/plugins/index.xml">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Plugins | WMPlugins</title>
+<meta name="description" content="">
+<meta property="og:title" content="Plugins" />
+<meta property="og:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/docs/plugins/" /><meta property="og:site_name" content="WMPlugins" />
+
+<meta itemprop="name" content="Plugins">
+<meta itemprop="description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Plugins"/>
+<meta name="twitter:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"/>
+
+
+
+
+<link rel="preload" href="/scss/main.scss" as="style">
+<link href="/scss/main.scss" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+<script
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/juxtapose.css">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62607269-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="font-weight-bold">WMPlugins</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.6e1d700ea7b012d8249438ff0d76d2a6.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/docs/plugins/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Plugins</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-6a370b760204f9f6ee7ecb08e71df11d">AVOAttrib</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-d43916dc5037c6d88a05163cb3f4aa14">AVOPolarAttrib</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-a4ad4f2cde310dbecd4518e7f25a4a32">External(Python) Attributes</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-5897b286a95bf0d62a8700d66e3bbe55">GeopackageDisplay</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-a3ecf8dc5473e82351fc39606e839e32">GeopackageExport</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-2f7fde7a98164b2b8657e1e0735e1508">GeotiffExport</a></li>
+
+
+    
+  
+    
+    
+	
+<li>7: <a href="#pg-13247959b021448360adbdccd661f2c1">GradientAttrib</a></li>
+
+
+    
+  
+    
+    
+	
+<li>8: <a href="#pg-8f973517f7c3fadb33480cde4d820068">Grid 2D-3D Horizon</a></li>
+
+
+    
+  
+    
+    
+	
+<li>9: <a href="#pg-9d616078b523fe5a0cab8c448353e4c0">LocalAttrib</a></li>
+
+
+    
+  
+    
+    
+	
+<li>10: <a href="#pg-3ac19b3f710ab3b090e96247f537ac0a">Mistie</a></li>
+
+
+    
+  
+    
+    
+	
+<li>11: <a href="#pg-d615adfd5cee4c109fa0c0009f305cbe">MLVFilterAttrib</a></li>
+
+
+    
+  
+    
+    
+	
+<li>12: <a href="#pg-479d198cfbb22498fc758bfccd0f69ed">RSpecAttrib</a></li>
+
+
+    
+  
+    
+    
+	
+<li>13: <a href="#pg-28afd44acf647435b1af1601011e9187">WMTools</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-6a370b760204f9f6ee7ecb08e71df11d">1 - AVOAttrib</h1>
+    <div class="lead">6 attributes based on different parameterizations of reflection intercept and gradient</div>
+	<p>This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes based on different
+parameterizations of reflection intercept and gradient.</p>
+<h2 id="description">Description</h2>
+<p>The intercept-gradient crossplot is widely used for amplitude-variation-with-offset (AVO) analysis in hydrocarbon exploration.
+The intercept is the zero offset or normal incidence reflection amplitude/coefficient of an event while the gradient is the change
+in reflection amplitude/coefficient with offset or incidence angle. Some authors refer to intercept as A or P and gradient as B or
+G. Modelling studies show that changes in subsurface rock properties such as lithology, porosity and pore fluid content result in
+systematic changes in intercept-gradient space. The following figure, adapted from the very informative paper on AVO by
+<a href="http://library.seg.org/doi/abs/10.1190/1.3467825" title="Interpretation of AVO anomalies. Douglas J. Foster, Robert G. Keys, and F. David Lane. GEOPHYSICS 2010 75:5, 75A3-75A13">Foster etal (2010)</a>,
+illustrates the ideal intercept-gradient crossplot response for a clastic sequence to changes in porosity and pore fluid.
+The Fluid Line or Background Trend is where reflections from shales and some wet sands that have little contrast in Vp/Vs plot.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/avoattrib/AVOAttrib_ideal_crossplot.jpg"
+         alt="Ideal AVO crossplot for a clastic sequence" width="90%"/> <figcaption>
+            <p><strong>Ideal AVO crossplot for a clastic sequence</strong></p>
+        </figcaption>
+</figure>
+
+<p>Another popular classification of AVO effects on the intercept-gradient crossplot is the 3 class AVO scheme of <a href="http://library.seg.org/doi/abs/10.1190/1.1442696" title="Amplitude‐versus‐offset variations in gas sands. Steven R. Rutherford and Robert H. Williams GEOPHYSICS 1989 54:6, 680-688">Rutherford and Williams (1989)</a> based on acoustic impedance contrasts with the addition of a 4th class for high porosity gas sands introduced by <a href="http://library.seg.org/doi/abs/10.1190/1.1437626" title="Principles of AVO crossplotting. John P. Castagna and Herbert W. Swan. The Leading Edge 1997 16:4, 337-344">Castagna and Swan (1997)</a>. The position of these 4 AVO classes on the intercept-gradient crossplot is shown in the following figure.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/avoattrib/AVOAttrib_classes.jpg"
+         alt="AVO classes" width="90%"/> <figcaption>
+            <p><strong>AVO classes</strong></p>
+        </figcaption>
+</figure>
+
+<p>This plugin calculates 6 attributes which are essentially just coordinate transformations of the intercept and gradient that aim to highlight changes of a particular rock property based on the expected behaviour of clastic reservoir sequences.</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>ATTRIBUTE</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img class="img-responsive" alt="Fluid Factor" src="AVOAttrib_fluidfactor_crossplot.jpg" title="Fluid Factor Crossplot"/></td>
+<td><h4 class="text-center">Fluid Factor</h4> Fluid Factor is a reprojection of intercept/gradient coordinates that highlights deviation from the Fluid Line. As the name implies this attribute highlights changes related to fluid compressibility. The Fluid Factor was introduced by <a href="http://gp.eage.org/publication/publicationdetails/?publication=32676" title="Weighted stacking for rock property estimation and detection of gas. G. C. Smith and P. M. Gidlow. Geophysical Prospecting 1987, Vol. 35, No. 9, pp. 993 - 1014">Smith and Gidlow (1987)</a>.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Lithology Factor" src="AVOAttrib_lithfactor_crossplot.jpg" title="Lithology Factor Crossplot"/></td>
+<td><h4 class="text-center">Lithology Factor</h4> Lithology Factor is the companion coordinate reprojection to Fluid Factor. It highlights changes parallel to the Fluid Line.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Porosity Factor" src="AVOAttrib_porofactor_crossplot.jpg" title="Porosity Factor Crossplot"/></td>
+<td><h4 class="text-center">Porosity Factor</h4> Porosity Factor is just Lithology Factor with the values above the fluid line reversed so the attribute magnitude always increases in the same sense as the effect of increasing porosity, i.e. the attribute magnitude increases to the upper left below the Fluid Line and to the lower right above the Fluid Line.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Crossplot Angle" src="AVOAttrib_angle_crossplot.jpg" title="Crossplot Angle Crossplot"/></td>
+<td><h4 class="text-center">Crossplot Angle</h4> Crossplot Angle is the angle between an intercept-gradient point and the Fluid Line. It runs from 0 to 180 below the Fluid Line measured counter-clockwise from the upper left projection of the Fluid Line. It runs from 0 to -180 above the Fluid Line measured counter-clockwise from the lower right projection of the Fluid Line. The Crossplot Angle and Deviation can be interpreted as the polar coordinates of a data point in the intercept-gradient crossplot space.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Crossplot Deviation" src="AVOAttrib_deviation_crossplot.jpg" title="Crossplot Deviation Crossplot"/></td>
+<td><h4 class="text-center">Crossplot Deviation</h4><br/> Crossplot Deviation is the distance from the crossplot origin. This attribute is most useful as a transparency mask to remove data close to the centre of the crossplot.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Crossplot Class" src="AVOAttrib_class_crossplot.jpg" title="AVO Class Crossplot"/></td>
+<td><h4 class="text-center">AVO Class</h4><br/> AVO Class classifies intercept-gradient points according to the 4 class AVO scheme of Rutherford and Williams (1989) and Castagna and Swan (1997). Points below the Fluid Line have a positive class number and those above have a negative class number.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<h2 id="input-parameters">Input Parameters</h2>
+<p>These attributes have 4 required parameters and 4 extra parameters that may be required depending on the attribute being calculated:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intercept Volume</td>
+<td>The attribute volume to use as the zero offset or normal incidence reflection amplitude coefficient. If no intercept volume is available a near angle or offset stack can be used as an alternative.</td>
+</tr>
+<tr>
+<td>Gradient Volume</td>
+<td>The attribute volume to use as the change in reflection amplitude/coefficient with offset at normal incidence. If no gradient volume is available, the difference between amplitudes on far and near angle or offset stacks can be used as an alternative.</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>The attribute to calculate. There is a choice of Fluid Factor, Lithology Factor, Porosity Factor, Crossplot Angle, Crossplot Deviation or AVO Class.</td>
+</tr>
+<tr>
+<td>Crossplot Slope</td>
+<td>The slope of the fluid line interpreted on the intercept-gradient crossplot. This can be read from the properties dialog of the crossplot tool.</td>
+</tr>
+<tr>
+<td>Intercept Standard Deviation (Optional)</td>
+<td>Standard deviation of the intercept volume. Only required for the Crossplot Angle and Crossplot Deviation attributes. This can be read from the 1D histogram tool in the crossplot table.</td>
+</tr>
+<tr>
+<td>Gradient Standard Deviation (Optional)</td>
+<td>Standard deviation of the gradient volume. Only required for the Crossplot Angle and Crossplot Deviation attributes. This can be read from the 1D histogram tool in the crossplot table.</td>
+</tr>
+<tr>
+<td>Correlation Coefficient (Optional)</td>
+<td>Correlation coefficient between the intercept and gradient volumes. Only required for the Crossplot Deviation attribute. This can be read from the properties dialog of the crossplot tool.</td>
+</tr>
+<tr>
+<td>Class 2 Intercept Offset</td>
+<td>Half width in intercept coordinates of the Class 2 region on the AVO Class crossplot. Only required for the AVO Class attribute.&rsquo;]]</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/avoattrib/AVOAttrib_input_parameters.jpg"
+         alt="AVO Attribute Plugin input parameters" width="90%"/> <figcaption>
+            <p><strong>AVO Attribute Plugin input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-d43916dc5037c6d88a05163cb3f4aa14">2 - AVOPolarAttrib</h1>
+    <div class="lead">6 attributes derived from AVO Polarization in the AVO Intercept-Gradient crossplot</div>
+	<p>This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes derived from AVO Polarization
+in the AVO Intercept-Gradient crossplot as described by
+<a href="https://library.seg.org/doi/10.1190/1.1581037" title="AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003">Mahob and Castagna (2003)</a>.</p>
+<h2 id="description">Description</h2>
+<p>The intercept-gradient crossplot is widely used for amplitude-variation-with-offset (AVO) analysis in hydrocarbon exploration.
+The intercept is the zero offset or normal incidence reflection amplitude/coefficient of an event while the gradient is the
+change in reflection amplitude/coefficient with offset or incidence angle. Some authors refer to intercept as A or P and gradient
+as B or G. Traditional methods of AVO interpretation focus on individual sample points in isolation essentially treating them as
+reflection coefficients. <a href="https://library.seg.org/doi/abs/10.1190/1.1487253" title="The AVO hodogram: Using polarization to identify anomalies. Tim Keho, Skip Lemanski, Robert Ripple, and Bahal Raja Tambunan The Leading Edge 2001 20:11, 1214-1224">Keho etal (2001)</a> observed that this approach ignores the seismic wavelet. Convolving a seismic reflection coefficient with a typical seismic wavelet produces a series of points spread across all 4 quadrants of the AVO crossplot. Further distortions are introduced by residual time shifts across offsets and NMO stretch. <a href="https://library.seg.org/doi/abs/10.1190/1.1487253" title="The AVO hodogram: Using polarization to identify anomalies. Tim Keho, Skip Lemanski, Robert Ripple, and Bahal Raja Tambunan The Leading Edge 2001 20:11, 1214-1224">Keho etal (2001)</a> proposed analysing the AVO crossplot for small time windows of 0.5-1 times the wavelet wavelength as hodograms using the polarization angle as a key measure. <a href="https://library.seg.org/doi/10.1190/1.1581037" title="AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003">Mahob and Castagna (2003)</a>
+subsequently extended the analysis with a number of other measures to describe the hodogram.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/avopolarattrib/AVOStrengthAttrib_hodogram_example.png"
+         alt="Example AVO hodogram crossplot for a 36 millisec TWT window" width="90%"/> <figcaption>
+            <p><strong>Example AVO hodogram crossplot for a 36 millisec TWT window</strong></p>
+        </figcaption>
+</figure>
+
+<p>This plugin calculates the 6 attributes (Background Polarization Angle, Event Polarization Angle, Polarization Angle Difference, Strength, Polarization Product and Quality) defined by <a href="https://library.seg.org/doi/10.1190/1.1581037" title="AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003">Mahob and Castagna (2003)</a>. The parameters are estimated by eigendecomposition of the covariance matrix for the intercept-gradient crossplot.</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>EXAMPLE</th>
+<th>ATTRIBUTE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img class="img-responsive" alt="Background Polarization Angle" src="AVOPolarAttrib_bgangle.jpg" title="Background Polarization Angle"/></td>
+<td><h4 class="text-center">Background Polarization Angle</h4> Polarization Angle for all AVO crossplot points over a user specified time/depth window and volume of traces. The polarization angle is the orientation of the largest eigenvector relative to the positive intercept axis and varies from -90 to 90 degrees.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Event Polarization Angle" src="AVOPolarAttrib_angle.jpg" title="Event Polarization Angle"/></td>
+<td><h4 class="text-center">Event Polarization Angle</h4> Polarization Angle for AVO crossplot points in the user specified event time/depth window. Recommend using 0.5-1 times the wavelength. The polarization angle is the orientation of the largest eigenvector relative to the positive intercept axis and varies from -90 to 90 degrees.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Polarization Angle Difference" src="AVOPolarAttrib_anglediff.jpg" title="Polarization Angle Difference"/></td>
+<td><h4 class="text-center">Polarization Angle Difference</h4> The difference between the event and background polarization angles.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Strength" src="AVOPolarAttrib_strength.jpg" title="AVO Strength"/></td>
+<td><h4 class="text-center">Strength</h4>The Mahob and Castagna measure of the distance of the hodogram points from the origin within the event time/depth window.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Polarization Product" src="AVOPolarAttrib_product.jpg" title="Polarization Product"/></td>
+<td><h4 class="text-center">Polarization Product</h4> The product of the Strength and Polarization Angle Difference attributes.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Quality" src="AVOPolarAttrib_quality.jpg" title="Quality"/></td>
+<td><h4 class="text-center">Quality</h4> This is the ratio of the eigenvalue difference to the eigenvalue sum. It is a measure of the linearity of the points in the intercept-gradient crossplot. It ranges from 0 to 1 with higher values indicating the analysis points have a more linear hodogram and more reliable results.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<h2 id="input-parameters">Input Parameters</h2>
+<p>These attributes have 3 required parameters and 3 extra parameters that may be required depending on the attribute being calculated:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intercept</td>
+<td>The attribute volume to use as the zero offset or normal incidence reflection amplitude coefficient. If no intercept volume is available a near angle or offset stack can be used as an alternative.</td>
+</tr>
+<tr>
+<td>Gradient</td>
+<td>The attribute volume to use as the change in reflection amplitude/coefficient with offset at normal incidence. If no gradient volume is available, the difference between amplitudes on far and near angle or offset stacks can be used as an alternative.</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>The attribute to calculate. There is a choice of Background Polarization Angle, Event Polarization Angle, Polarization Angle Difference, Strength, Polarization Product or Quality.</td>
+</tr>
+<tr>
+<td>Background time/depth gate (Optional)</td>
+<td>The time/depth gate used to estimate the Background Polarization Angle. Only required for the Background Polarization Angle, Polarization Angle Difference and Polarization Product attributes.</td>
+</tr>
+<tr>
+<td>Stepout (Optional)</td>
+<td>The extent of the trace volume used to estimate the Background Polarization Angle. Only required for the Background Polarization Angle, Polarization Angle Difference and Polarization Product attributes.</td>
+</tr>
+<tr>
+<td>Event time/depth gate (Optional)</td>
+<td>The time/depth gate used to estimate the Event Polarization Angle. Required for the Event Polarization, Polarization Angle Difference, Polarization Product and  Quality attributes.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/avopolarattrib/AVOPolarAttrib_input_parameters.jpg"
+         alt="AVO Polarization Attribute Plugin input parameters" width="90%"/> <figcaption>
+            <p><strong>AVO Polarization Attribute Plugin input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a4ad4f2cde310dbecd4518e7f25a4a32">3 - External(Python) Attributes</h1>
+    <div class="lead">seismic attributes in Python</div>
+	<p>This attribute plugin for the open source seismic interpretation platform [opendtect] allows attributes to be developed in Python.</p>
+<h2 id="description">Description</h2>
+<p>With this plugin it is possible to calculate single and multitrace attributes using a Python script. The plugin supports multi-trace
+multi-attribute input and multi-attribute output as well as parallel execution.</p>
+<p><strong>NOTE:</strong> <em>Releases prior to 6.0.2 allowed multi-trace multi-attribute input only if all the attributes were in the same multi-attribute volume.
+In releases from 6.0.2 onward this limitation has been removed.</em></p>
+<p>Instead of doing the attribute calculation within OpendTect this plugin starts up a Python interpreter and runs a user specified Python script.
+Trace data is read/written to/from the Python script using stdin/stdout pipes. As described below the Python script must import the <em>extattrib.py</em>
+module that handles the stdin/stdout data IO and presents the trace data as a numpy array. The script must implement a <em>doCompute</em> method and
+define a Python dictionary describing the User Interface. Details are described below. Tips and Tricks to assist can be found in various [../articles].
+There are also the [wmscripts] for everything from dip estimation to filtering described in the [../external_attributes] section of this documentation
+which are distributed with the WMPlugins suite and can be found in the bin/python/wmpy folder of the OpendTect installation.</p>
+<h2 id="input-parameters">Input Parameters</h2>
+<p>This attribute has 3 required parameters and optional parameters determined by the <a href="#json-parameter-string">JSON parameter string</a> provided by the Python attribute script:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interpreter</td>
+<td>The Python interpreter to be used to run the script, eg /usr/bin/python3. As of version 6.6.1 and 6.4.13 this field will default to the OpendTect Python settings</td>
+</tr>
+<tr>
+<td>External File</td>
+<td>The external application to be used for attribute calculation. As of version 6.6.1 and 6.4.13 this field will default to the OpendTect/bin/python/wmpy folder.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/externalattrib/ExternalAttrib_input.jpg"
+         alt="External Attribute Plugin input parameters" width="90%"/> <figcaption>
+            <p><strong>External Attribute Plugin input parameters</strong></p>
+        </figcaption>
+</figure>
+
+<p>The <img src="reload.png" alt="reset"> button beside the Interpreter entry will force an update of the Interpreter field to the current OpendTect Python
+setting. This can be useful if you use the Python Settings dialog to change the default interpreter and want to apply the change within
+the attribute definition.</p>
+<p>The <img src="reload.png" alt="reload"> button beside the External File entry will force reloading the attribute script and rebuild the user interface.
+This can be useful if you are editing a script, save it and want to verify the changes.</p>
+<p>The <img src="contexthelp.png" alt="help"> button beside the External File entry will open the system web browser with the url specified by the Help entry in
+the attribute scripts <a href="#json-parameter-string">JSON parameter string</a>. The button is not displayed if this entry is absent.</p>
+<h2 id="python-script-structure">Python Script Structure</h2>
+<p>Every Python attribute script has 5 sections. As an example consider the <a href="https://github.com/waynegm/OpendTect-Plugins/blob/master/bin/python/wmpy/DipAndAzimuth/ex_dip.py">ex_dip.py</a>
+script which converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and output.
+Some basic understanding of <a href="https://www.python.org/">Python</a> and <a href="http://www.numpy.org/">Numpy</a> is assumed.</p>
+<h3 id="the-imports">The Imports</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/externalattrib/18_06_04_01.png" width="90%"/> 
+</figure>
+
+<p>This is where external modules/libraries required by the script are loaded. At a minimum the script must load:</p>
+<ul>
+<li>the Python sys and os modules</li>
+<li>the Numpy module (the fundamental package for scientific computing with Python)</li>
+<li>the external attribute module (extattrib.py)</li>
+</ul>
+<p>Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [wmscripts] package and its location
+is unknown to the Python installation unless we help out. The sys.path.insert call on line 11 provides this help by extending the default search
+path for Python modules to include the parent folder of the folder containing the script. This reflects the folder structure of the [wmscripts]
+package, so if you develop scripts outside this structure then you will need to change line 11 appropriately to append the location of extattrib.py
+to the module search path.</p>
+<p>Of course if your script requires other Python modules (eg SciPy, Numba) then add the appropriate import statements in this section.</p>
+<h3 id="the-parameters">The Parameters</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/externalattrib/18_06_04_02.png" width="90%"/> 
+</figure>
+
+<p>The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by
+the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for
+documentation. The plugin dynamically builds the following input dialog for this script:</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/externalattrib/18_06_04_06.png" width="90%"/> 
+</figure>
+
+<p>A variety of other input elements can be specified to build more complex input dialogs. See <a href="#json-parameter-string">JSON parameter string</a>
+for full details or look at other scripts to see what is possible.</p>
+<h3 id="the-compute-loop-initialisation">The Compute Loop Initialisation</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/externalattrib/18_06_04_03.png" width="90%"/> 
+</figure>
+
+<p>The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the
+&ldquo;while True:&rdquo; loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section
+will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.</p>
+<p>This particular script shows how information stored in the <a href="#seismicinfo-block">SeismicInfo Block</a> can be used to calculate some
+constants purely as an example. This attribute is so simple that no initialisation is actually required.</p>
+<h3 id="the-compute-loop">The Compute Loop</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/externalattrib/18_06_04_04.png" width="90%"/> 
+</figure>
+
+<p>This is where the attribute calculation takes place. The <em>xa.doInput()</em> and <em>xa.doOutput()</em> function calls control the input and output
+of seismic trace data between the script and OpendTect. Generally these should be the first and last statements within the compute loop.</p>
+<p>Within the compute loop, some information about the current trace data such as the number of samples and the inline and crossline
+location are provided in the <a href="#traceinfo-block">TraceInfo Block</a>. These can be accessed using constructs like <em>xa.TI[&rsquo;nrsamp&rsquo;]</em>.
+This information is not required for this particular script.</p>
+<p>The global Numpy array <em>xa.Input</em> contains the input trace data. <em>xa.Input[&rsquo;name of input attribute&rsquo;]</em> returns a Numpy array with the
+trace data for the current compute location. The shape of this Numpy array depends on the traces stepouts required by the attribute.
+As this particular script uses just single trace input (inline and crossline step out of 0) the Numpy array has a shape of
+<em>(1,1,xa.TI[&rsquo;nrsamp&rsquo;])</em>. In the more general case of a multi-trace attribute the Numpy array shape would be
+<em>(xa.SI[&rsquo;nrinl&rsquo;], xa.SI[&rsquo;nrcrl&rsquo;], xa.TI[&rsquo;nrsamp&rsquo;])</em> and the input trace at the current location would be at the centre of the
+array, ie at index <em>[xa.SI[&rsquo;nrinl&rsquo;]//2, xa.SI[&rsquo;nrcrl&rsquo;]//2,&hellip;]</em>.</p>
+<p>Attribute ouput must be put into the <em>xa.Output</em> global Numpy array before the <em>xa.doOutput()</em> function call. Each element
+(eg <em>xa.Output[&rsquo;name of output attribute&rsquo;]</em>) of the output array must have a shape of <em>(1,1,xa.TI[&rsquo;nrsamp&rsquo;])</em></p>
+<h3 id="the-postamble">The Postamble</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/externalattrib/18_06_04_05.png" width="90%"/> 
+</figure>
+
+<p>This section is just boilerplate code that appears in every attribute script which should never be changed.</p>
+<h2 id="json-parameter-string">JSON Parameter String</h2>
+<p>The Python script can specify a set of parameters as a JSON object string. As of Release 6.6.8 the format of the JSON object string has
+changed to better support more flexible UI&rsquo;s. In particular the restriction on no whitespace in the keys and values in the JSON string
+have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) should continue to work. The following keywords are supported:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>Input (depreciated)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>String'</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>Specifies a label to appear beside the input attribute selection UI element. Superceded by the &ldquo;Inputs&rdquo; keyword but is supported for backward compatibility.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>Input: Input Data</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>Inputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>Array of Strings</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>Each string is used as a label for an input attribute selection UI element. Currently limited to a maximum of 6 attribute inputs.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>Inputs: [Input 1,Input 2,Input 3]</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>Output (optional)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>Array of Strings</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>Each string specifies the name of an output attribute. If this keyword is not supplied a single output attribute is assumed.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>Output: [Out 1,Out 2,Out 3]</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>ZSampMargin (optional)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>Object with a &lsquo;Value&rsquo; (array of 2 numbers)  and optional &lsquo;Hidden&rsquo; (boolean) and &lsquo;Symmetric&rsquo; (boolean) parameters.</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>The 'Value' parameter is an array of 2 numbers specifying the desired minimum number of samples before and after the calculation point required for the calculation respectively. If not supplied only a single value will be provided when the attribute is computed on a timeslice or horizon. The optional &lsquo;Hidden&rsquo; parameter is a boolean which if set to true makes the ZSampMargin parameter read only.</br>The optional 'Symmetric' parameter is a boolean which if true causes only a single entry to be displayed in the UI.</br>The optional 'Minimum' parameter is an array of 2 numbers specifying a minimum required window size</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>ZSampMargin: {Value: [-2,2]}</code> </br><code>ZSampMargin: {Value: [-2,2], Symmetric: True}</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>StepOut (optional)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>Object with a &lsquo;Value&rsquo; (array of 2 numbers)  and optional &lsquo;Hidden&rsquo; (boolean) parameters.</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>The &lsquo;Value&rsquo; parameter is an array of 2 numbers specifying the inline and crossline stepout defining the block of traces to be used around the current calculation position. If not supplied only a single trace is provided. The optional &lsquo;Hidden&rsquo; parameter is a boolean which if set to true makes the StepOut parameter read only. The optional &lsquo;Minimum&rsquo; parameter is an array of 2 numbers specifying a minimum required stepout.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>StepOut: {Value: [2,2]}</code></br><code>StepOut: {Value: [2,2], Hidden: True}</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>UI Name String (Introduced in release 6.4.8 - optional)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>Object with a &lsquo;Type&rsquo; (string)  and &lsquo;Value&rsquo; (string or number depending on the &lsquo;Type&rsquo; key) parameters.</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>In this new entry the main key is the name that will appear in the UI. Note that this can now contain whitespace. The 'Type' parameter describes the input field type. Currently Number, Select and File are supported. Number is for a numeric input box, equivalent to the legacy Par_0 to Par_5 entries but with the advantage that the number and order in the UI is more flexible. Select displays a combo-box, equivalent to the legacy Select entry but with the advantage that there is no restriction on the number and order in the UI. File is a file selection UI.</br>The 'Value' sets the default value displayed in the UI. For Number types it is a number, for the Select and File types it is a string.For the File type the Value determines the location where the file selection dialog opens and if a '*' is present the file filter.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>A File UI Field: {Type: File, Value: Seismics/*.wvlt}</code> </br><code>A Number UI Field: {Type: Number, Value: 20}</code></br><code>A Select UI Field: {Type: Select, Options: [option 1,option 2,option 3],Value: option 2}</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>Help (optional)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>String</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>URL pointing to documentation for the external attribute.</br> Causes an icon help button to be displayed in the UI.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>Help: http://waynegm.github.io/OpendTect-Plugin-Docs/External-Attributes/LPA-Attributes/</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>Parallel (optional)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>Default is True which allows parallel execution. If set to False then calculations only use a single thread.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>Parallel: False</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>Select (Legacy optional)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>Object with a &lsquo;Name&rsquo; (string), &lsquo;Values&rsquo; (array of strings) and &lsquo;Select&rsquo; (number) parameters.</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>Displays a list box labeled &lsquo;Name&rsquo; with options specified in &lsquo;Values&rsquo; and default selection being item number &lsquo;Select&rsquo;.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>Select: {Name: Type, Values: [None, Median, Average], Selection: 0}</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>JSON KEYWORD</th>
+<th>Par_0, Par_1, Par_2, Par_3, Par_4, Par_5 (Legacy all optional)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><b>TYPE</b></td>
+<td>Object with a &lsquo;Name&rsquo; (string) and &lsquo;Value&rsquo; (number) parameter.</td>
+</tr>
+<tr>
+<td><b>DESCRIPTION</b></td>
+<td>Displays an entry box labeled &lsquo;Name&rsquo; with default value &lsquo;Value&rsquo;.</td>
+</tr>
+<tr>
+<td><b>EXAMPLE</b></td>
+<td><code>Par_0: {Name: First Parameter, Value: 100.0}</code></br><code>Par_1: {Name: Second Parameter, Value: 200.0}</code></td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<p>Here is an example parameter string:</p>
+<pre tabindex="0"><code>{
+	&#39;Inputs&#39;: [&#39;DT(us/m)&#39;, &#39;DTS(us/m)&#39;, &#39;RHOB(g/cc)&#39;],
+	&#39;Output&#39;: [&#39;Near&#39;, &#39;Mid&#39;, &#39;Far&#39;],
+	&#39;ZSampMargin&#39; : {&#39;Value&#39;: [-10,10]},
+	&#39;StepOut&#39; : {&#39;Value&#39;: [1,1], &#39;Hidden&#39;: true},
+	&#39;Near Angle (deg)&#39; : {&#39;Type&#39;: &#39;Number&#39;, &#39;Value&#39; : 6.0},
+	&#39;Mid Angle (deg)&#39; : {&#39;Type&#39;: &#39;Number&#39;, &#39;Value&#39; : 20.0},
+	&#39;Far Angle (deg)&#39; : {&#39;Type&#39;: &#39;Number&#39;, &#39;Value&#39; : 40.0},
+	&#39;Wavelet&#39; : {&#39;Type&#39;: &#39;File&#39;,&#39;Value&#39;: &#39;Seismics/*.wvlt&#39;},
+	&#39;Method&#39; : { &#39;Type&#39;: &#39;Select&#39;, &#39;Options&#39;: [&#39;akirich&#39;, &#39;fatti&#39;], &#39;Value&#39;: &#39;fatti&#39;},
+	&#39;Help&#39;  : &#39;https://gist.github.com/waynegm/84f323ec4aab3961c23d&#39;
+}
+</code></pre><h2 id="tips-and-tricks">Tips and Tricks</h2>
+<h3 id="cross-platform-setup">Cross Platform Setup</h3>
+<p>Prior to release 5.10 and 6.0.0pre7-1 any attribute set containing external attributes could not be shared between Windows and Linux because the Interpeter and External File input fields contain platform specific file paths.</p>
+<p>Release 5.10 and 6.0.0pre7-1 introduced an optional mechanism to support cross platform attribute sets containing external attributes by using environment variables. Consider the following script for starting OpendTect on Linux:</p>
+<pre tabindex="0"><code>#!/bin/csh -f
+setenv DTECT_SETTINGS &#34;$HOME/.od6&#34;
+setenv OD_USER_PLUGIN_DIR &#34;$HOME/.od6&#34;
+setenv EX_PYTHON &#34;/opt/anaconda3/bin/python&#34;
+setenv OD_EX_DIR &#34;$HOME/Development/GIT_AREA/OpendTect-External-Attributes/&#34;
+/opt/seismic/OpendTect_6/6.0.0/start_dtect
+</code></pre><p>And an equivalent Windows command file:</p>
+<pre tabindex="0"><code>@set OD_USER_PLUGIN_DIR=%HOMEPATH%\od6
+@set EX_PYTHON=C:\Miniconda3\python.exe
+@set OD_EX_DIR=E:\Development\GIT_AREA\OpendTect-External-Attributes\
+start &#34;&#34; &#34;C:\Program Files\OpendTect_6\6.0.0\bin\win64\Release\od_start_dtect.exe&#34;
+</code></pre><p>The environment variable EX_PYTHON points to the python interpreter for each platform and entering %EX_PYTHON% into the Interpreter input field ensures the platform appropriate interpreter is used. Any name can be used for the environment variable.</p>
+<p>The  environment variable OD_EX_DIR points to a root folder below which the attribute script files can be found. The setting in the Linux startup script points to a Linux folder. The corresponding setting in the Windows command file points to the same location via a network share. This environment variable name is hard wired into the code so this variable name cannot be changed. Note that the script files cam be located in subfolders of the OD_EX_DIR folder.</p>
+<p>Attribute sets created by release 5.0.10 and 6.0.0pre7-1 and later that use these environment variables will not work in earlier versions of the External Attribute plugin.</p>
+<h3 id="opendtect-linux-hangs-after-selecting-a-python-external-attribute-in-the-attribute-description-editor">OpendTect (Linux) hangs after selecting a Python external attribute in the Attribute Description Editor</h3>
+<p>This can happen if the Python file has Windows/DOS linebreaks. Use the dos2unix command on the Python file and all should be ok.</p>
+<h3 id="setting-up-a-pythonnumpyscipy-environment">Setting up a Python/Numpy/Scipy environment</h3>
+<p>The Python environments provided by the OpendTect Installation Manager, specifically the MKL and Cuda environments, will work with this plugin although some scripts may require installation of additional
+packages. Any additional dependencies will usually be described in a README.md file next to the script, in the comments/description at the top of the script file or in the documentation.</p>
+<p>Alternatively you can install your own Python/Numpy/Scipy development stack for Python 3 from scratch. Continuum Analytics provide free Python installers for Linux and Windows in <a href="http://continuum.io/downloads#all">Anaconda</a>. There is also a smaller DIY option called <a href="http://conda.pydata.org/miniconda.html">Miniconda</a> which allows you to select just the packages you need.</p>
+<p>In general you require Python 3 (&gt;=3.7) and compatible Numpy and Scipy. Numba is also highly recommended and required by some of the supplied scripts.</p>
+<h2 id="how-it-works">How it Works</h2>
+<p>The following describes how the plugin works. Most of the details are handled by the extattrib.py module included in the plugin distribution. Python
+scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that
+implements the attribute calculation.</p>
+<ul>
+<li>When invoked with a commandline argument of <code>-g</code> the application should write out a  [#JSON Parameter String] to stdout describing the attribute parameters and exit.</li>
+<li>When invoked with a commandline argument of <code>-c json-parameter-string</code> the application
+<ul>
+<li>should read and parse the contents of <code>json-parameter-string</code> to get the attribute parameters</li>
+<li>read a 40 byte block of binary data from stdin called the SeismicInfo block (described below)</li>
+<li>start an endless loop that:
+<ul>
+<li>reads a 16 byte block of binary data from stdin called the TraceInfo block (described below)</li>
+<li>reads a data block of 4 byte binary floats from stdin that contains the seismic trace data. The size of the data block depends on the content of the SeismicInfo (number of traces and number of inputs) and TraceInfo ( number of samples) blocks
+<ul>
+<li><code>number_of_inputs * number_of_traces * number_of_samples * 4 bytes</code>.</li>
+</ul>
+</li>
+<li>calculates the attribute output</li>
+<li>writes a data block of 4 byte binary floats to stdout that contains the attribute output. The size of the output data block depends on the content of the TraceInfo ( number of samples) block and the number of output attributes
+<ul>
+<li><code>number_of_samples * number_of_outputs * 4 bytes</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="seismicinfo-block">SeismicInfo Block</h3>
+<p>This block of binary data is written to the applications stdin immediately after it is started with the <code>-c</code> argument. It consists of 40 bytes as follows:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>SIZE</th>
+<th>FORMAT</th>
+<th>INDEX</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>nrtraces</td>
+<td>number of traces for each input attribute</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>nrinput</td>
+<td>number of input attributes</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>nroutput</td>
+<td>number of output atrributes</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>nrinl</td>
+<td>number of inline traces in the input data block</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>nrcrl</td>
+<td>number of crossline traces in the input data block</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>float</td>
+<td>zstep</td>
+<td>trace sampling interval  (result of OpendTect API call <em>SI().zstep()</em>)</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>float</td>
+<td>inldist</td>
+<td>distance between inlines (result of OpendTect API call <em>SI().inlDistance()&lt;/em.)</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>float</td>
+<td>crldist</td>
+<td>distance between crosslines (result of OpendTect API call <em>SI().crlDistance()</em>)</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>float</td>
+<td>zFactor</td>
+<td>(result of OpendTect API call <em>zFactor()</em>)</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>float</td>
+<td>dipFactor</td>
+<td>(result of OpendTect API call <em>dipFactor()</em>)</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<h3 id="traceinfo-block">TraceInfo Block</h3>
+<p>This block of binary data is written to the application stdin immediately before each block of trace data. It consists of 16 bytes as follows:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>SIZE</th>
+<th>FORMAT</th>
+<th>INDEX</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>nrsamp</td>
+<td>number of samples in each trace within the input data block (OpendTect <em>nrsamples</em> parameter)</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>z0</td>
+<td>position of first sample in data trace within entire seismic trace ( OpendTect <em>z0</em> parameter)</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>inl</td>
+<td>inline number of current calculation position</td>
+</tr>
+<tr>
+<td>4 bytes</td>
+<td>integer</td>
+<td>crl</td>
+<td>crossline number of current calculation position</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5897b286a95bf0d62a8700d66e3bbe55">4 - GeopackageDisplay</h1>
+    <div class="lead">display lines and polylines in a Geopackage database on an OpendTect 3D horizon</div>
+	<p>This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.</p>
+<h2 id="description">Description</h2>
+<p>The plugin adds a &ldquo;Geopackage Display&rdquo; item to the &ldquo;Add&rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackagedisplay/geopackage_display_menu.jpg"
+         alt="Geopackage Display menu item" width="90%"/> <figcaption>
+            <p><strong>Geopackage Display menu item</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="notes">Notes</h3>
+<ul>
+<li>The plugin requires the survey to have a projection based CRS defined.</li>
+<li>This plugin is actually part of the [geopackageexport] plugin - see notes there as well</li>
+</ul>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackagedisplay/geopackage_display_example.jpg"
+         alt="GIS data draped on an OpendTect 3D horizon" width="90%"/> <figcaption>
+            <p><strong>GIS data draped on an OpendTect 3D horizon</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a3ecf8dc5473e82351fc39606e839e32">5 - GeopackageExport</h1>
+    <div class="lead">export OpendTect data to a GeoPackage database</div>
+	<p>This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] data to a
+<a href="https://www.geopackage.org/">GeoPackage</a> database. GeoPackage is an open, non-proprietary, platform-independent, self describing
+standards-based data format for geospatial data.</p>
+<h2 id="description">Description</h2>
+<p>The plugin adds a &ldquo;Geopackage Export&rdquo; item to the Survey-Export main menu. Selecting the item opens a tabbed dialog box for selecting
+the various elements to export and the destination file name. The following table shows the [opendtect] data elements supported and
+the corresponding tables created in the exported GeoPackage database.</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>OpendTect Item</th>
+<th>GeoPackage Table Name</th>
+<th>Geometry</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Survey Box</td>
+<td>Survey</td>
+<td>Polygon</td>
+<td>Single attribute, the survey name</td>
+</tr>
+<tr>
+<td>2D Line Geometry</td>
+<td>2DLines</td>
+<td>LineString</td>
+<td>Single attribute, the line name</td>
+</tr>
+<tr>
+<td>2D Line Stations</td>
+<td>2DStations</td>
+<td>Points</td>
+<td>Two attributes, the line name and station number</td>
+</tr>
+<tr>
+<td>Random Lines</td>
+<td>RandomLines</td>
+<td>LineString</td>
+<td>Single attribute, the random line name</td>
+</tr>
+<tr>
+<td>Wells</td>
+<td>Wells</td>
+<td>Points</td>
+<td>Well surface location and 3 attributes, the well name, UWID and status (not currently set by OpendTect)</td>
+</tr>
+<tr>
+<td>Well Tracks</td>
+<td>WellTracks</td>
+<td>LineString</td>
+<td>Single attribute, the well name</td>
+</tr>
+<tr>
+<td>Well Markers&rsquo;, &lsquo;WellMarkers&rsquo;, &lsquo;Points</td>
+<td>Four attributes, well name, marker name, MD and TVDSS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Open Polygons</td>
+<td>PolyLines</td>
+<td>LineString</td>
+<td>Single attribute, the polyline name. The z values of the polyline are not exported</td>
+</tr>
+<tr>
+<td>Closed Polygons</td>
+<td>Polygons</td>
+<td>Polygon</td>
+<td>Single attribute, the polygon name. The z values of the polygon are not exported</td>
+</tr>
+<tr>
+<td>2D and 3D Horizons</td>
+<td>Set by the user</td>
+<td>Point</td>
+<td>Single attribute, the horizon z value in millisecs or metres depending on the Z domain of the survey</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<h3 id="notes">Notes</h3>
+<ul>
+<li>It is possible to append to an existing database. This is primarily used for exporting multiple horizons/attributes to the same GeoPackage.</li>
+<li>Appending does not overwrite items already in the GeoPackage it will just add another copy to the respective table.</li>
+<li>The plugin requires the survey to have a projection based CRS defined.</li>
+<li><strong>On Windows the folder containing the plugin DLL&rsquo;s must be added to the PATH environment variable either by editing the corresponding system variable (Control Panel&gt;System and Security&gt;System - Advanced system settings - Environment Variables) or adding a line like &ldquo;@set PATH=%HOMEPATH%.od\bin\win64\Release;%PATH%&rdquo; (adjust &ldquo;%HOMEPATH%.od\bin\win64\Release&rdquo; to reflect your installation) to the bat script used to start OpendTect.</strong></li>
+<li>The GeoPackage format is supported by major GIS software packages. The following figure shows display of data exported from OpendTect using the plugin in the open source GIS package, <a href="https://www.qgis.org/en/site/">QGIS</a>.</li>
+</ul>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackageexport/geopackage_qgis.jpg"
+         alt="OpendTect data displayed in QGIS" width="90%"/> <figcaption>
+            <p><strong>OpendTect data displayed in QGIS</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+<p>The dialog box associated with the plugin has a file entry control to select the output file, a check box to allow appending to the output file instead of overwriting and 8 tabs to select the content to export:</p>
+<h3 id="survey-tab">Survey tab</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackageexport/geopackage_survey_tab.jpg" width="90%"/> 
+</figure>
+
+<h3 id="2d-lines-tab">2D Lines tab</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg" width="90%"/> 
+</figure>
+
+<h3 id="random-lines-tab">Random Lines tab</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg" width="90%"/> 
+</figure>
+
+<h3 id="wells-tab">Wells tab</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackageexport/geopackage_wells_tab.jpg" width="90%"/> 
+</figure>
+
+<h3 id="polylines-tab">Polylines tab</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg" width="90%"/> 
+</figure>
+
+<h3 id="horizon-tab">Horizon tab</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg" width="90%"/> 
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-2f7fde7a98164b2b8657e1e0735e1508">6 - GeotiffExport</h1>
+    <div class="lead">export OpendTect 3D horizon and attribute data to a GeoTIFF image</div>
+	<p>This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] 3D horizon and attribute data to a  <a href="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</a> image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.</p>
+<h2 id="description">Description</h2>
+<p>The plugin adds a &ldquo;Geotiff Export&rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the 3D horizon and attributes to export and the destination file name. The horizon Z values and attributes values are exported to Float32 bands in the output image. The plugin supports exporting multiple attributes to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image (eg QGIS v3.6). If multiband images prove to be a problem the option exists to run the plugin multiple times and save each attribute to a separate GeoTIFF file.</p>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>The plugin requires the survey to have a projection based CRS defined.</li>
+<li>This plugin is actually part of the [geopackageexport] plugin - see notes there as well</li>
+</ul>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geotiffexport/geotiff_qgis.jpg"
+         alt="OpendTect 3D horizon data displayed in a QGIS print layout" width="90%"/> <figcaption>
+            <p><strong>OpendTect 3D horizon data displayed in a QGIS print layout</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/geotiffexport/geotiff_input.jpg" width="90%"/> 
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-13247959b021448360adbdccd661f2c1">7 - GradientAttrib</h1>
+    <div class="lead">calculate inline, crossline and time/depth gradients</div>
+	<p>This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.</p>
+<h2 id="description">Description</h2>
+<p>This plugin calculates the inline, crossline or time/depth gradient using operators optimised for rotation invariance, ie equal response in all directions, proposed  by <a href="http://www.k-zone.nl/Kroon_DerivativePaper.pdf" title="NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede">Kroon (2009)</a> and <a href="http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf" title="Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004">Farid and Simoncelli(2004)</a>. These provide more accurate alternatives to the Prewitt filter option of the OpendTect Convolve attribute for computing gradients.</p>
+<p>The attribute offers a choice of Kroon&rsquo;s 3x3x3, Farid and Simoncelli&rsquo;s 5x5x5 or Farid and Simoncelli&rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/gradientattrib/gradient_attrib.jpg"
+         alt="Accuracy of the gradient attribute operators" width="90%"/> <figcaption>
+            <p><strong>Accuracy of the gradient attribute operators</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+<p>This attribute has 3 parameters:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Volume</td>
+<td>The input attribute volume.</td>
+</tr>
+<tr>
+<td>Output Gradient</td>
+<td>What to calculate - choice of Inline, Crossline or Z gradient.</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>What operator to use - choice of Kroon's 3x3x3, Farid's 5x5x5 or Farid's 7x7x7.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/gradientattrib/GradientAttrib_input.jpg"
+         alt="Gradient attribute input parameter dialog" width="90%"/> <figcaption>
+            <p><strong>Gradient attribute input parameter dialog</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-8f973517f7c3fadb33480cde4d820068">8 - Grid 2D-3D Horizon</h1>
+    <div class="lead">creates a 3D horizon/grid from 2D and 3D horizon interpretation</div>
+	<p>This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [opendtect] survey/project.</p>
+<h2 id="description">Description</h2>
+<p>The plugin adds a &ldquo;Grid 2D-3D Horizon&hellip;&rdquo; item to the &ldquo;Processing|Create Horizon Output&rdquo; menu which opens a dialog box for:</p>
+<ul>
+<li>Selecting 2D and 3D seismic interpretation and contour poly-lines to grid</li>
+<li>Specifying the output horizon name, extent and inline /crossline interval</li>
+<li>Specifying a cropping polygon</li>
+<li>Specifying a set of fault polygon constraints</li>
+<li>Selecting the interpolation algorithm to use</li>
+</ul>
+<p>In the current release the plugin includes 4 gridding/interolation algorithms:</p>
+<ul>
+<li>Local Thin Plate Splines (LTPS)</li>
+<li>Multilevel B-Splines (MBA)</li>
+<li>Inverse distance squared weighted averages (IDW)</li>
+<li>Nearest neighbour (NRN)</li>
+</ul>
+<p>The LTPS and IDW methods can apply fault constraints (heave polygons) to ensure the input data used to interpolate a grid node is from the same side of any faults.</p>
+<h2 id="input-parameters">Input Parameters</h2>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid2d-3d_data_input.jpg"
+         alt="Grid 2D-3D horizon plugin input data selection dialog" width="90%"/> <figcaption>
+            <p><strong>Grid 2D-3D horizon plugin input data selection dialog</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid2d-3d_grid_input.jpg"
+         alt="Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings" width="90%"/> <figcaption>
+            <p><strong>Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings</strong></p>
+        </figcaption>
+</figure>
+
+<ul>
+<li>Grid Extent: Four options available:
+<ul>
+<li>Range - explicitly set the Inl/Crl range and steps for the output surface</li>
+<li>Bounding Box - set the output horizon extent from the extent of the input data, adjusted to snap to the specified Inl/Crl steps</li>
+<li>Convex Hull - sets the gridding scope to the convex hull of the input data, adjusted to snap to the specified Inl/Crl steps</li>
+<li>Horizon - set the output horizon extent to match an existing horizon in the survey/project</li>
+</ul>
+</li>
+<li>Cropping Polygon - select a polygon to crop the grid output</li>
+<li>Fault Polygons - select  polygons to use as fault constraints during gridding. Suggest fault naming scheme that prefixes the polygons with &ldquo;f_horizon name&rdquo; to make them easy to select</li>
+</ul>
+<h2 id="algorithms">Algorithms</h2>
+<h3 id="local-thin-plate-spline">Local Thin Plate Spline</h3>
+<p>This is a multi-stage algorithm with the following steps:</p>
+<ul>
+<li>Interpolate the data to the corners of the surrounding grid nodes (ie nearest neighbour)</li>
+<li>Fit a Multilevel B-Spline (MBA) surface (no fault constraints applied) and compute residuals from the input</li>
+<li>Grid the MBA residuals using a radial basis function algorithm using a thin plate spline basis. The points used in the basis fit are determined using distance and azimuth from the grid point. The data around each grid point is sorted based on distance and binned into one of eight azimuth sectors. Only the nearest points in each sector are used in the interpolation. No interpolation is done if there are less than 5 sectors with data. Fault constraints are used in this stage. The residuals are added to the MBA stage output to produce the final surface.</li>
+</ul>
+<p>Controls are the maximum search radius and the maximum points used from each sector. This algorithm can use fault constraints.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid_ltps_ex.jpg"
+         alt="Example of Local Thin Plate Spline gridding" width="90%"/> <figcaption>
+            <p><strong>Example of Local Thin Plate Spline gridding</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="multilevel-b-spline">Multilevel B-Spline</h3>
+<p>This is the adaptive Multi-level B-Spline algorithm published by <a href="https://ieeexplore.ieee.org/document/620490" title="Scattered Data Interpolation with Multilevel B-Splines. Seungyong Lee, George Wolberg, and Sung Yong Shin,  IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS, VOL. 3, NO. 3, JULY–SEPTEMBER 1997">Lee, Wolberg and Shin (1997)</a> as implemented by <a href="https://github.com/ddemidov/mba">Denis Demidov</a>.</p>
+<p>This method does not use fault contraints.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid_mba_ex.jpg"
+         alt="Example of Multilevel B-Spline gridding" width="90%"/> <figcaption>
+            <p><strong>Example of Multilevel B-Spline gridding</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="inverse-distance-weighted">Inverse Distance Weighted</h3>
+<p>This is basic Inverse Distance Squared Weighted gridding. By tweaking the parameters it is possible to control the input data used for each grid point. Options are:</p>
+<ul>
+<li>No distance or point count limit (global)</li>
+<li>Use all points within a specified distance</li>
+<li>Use nearest number of points</li>
+<li>Limit by both the distance and the nearest number of points</li>
+</ul>
+<p>The method can use fault constraints but will be very slow unless appropriate distance and point count limits are set.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid_idw_ex.jpg"
+         alt="Example of IDW gridding"/> <figcaption>
+            <p><strong>Example of IDW gridding</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid_idw_radius_ex.jpg"
+         alt="Example of IDW gridding using only a distance limit"/> <figcaption>
+            <p><strong>Example of IDW gridding using only a distance limit</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid_idw_points_ex.jpg"
+         alt="Example of IDW gridding using only a point count limit"/> <figcaption>
+            <p><strong>Example of IDW gridding using only a point count limit</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid_idw_both_ex.jpg"
+         alt="Example of IDW gridding using both distance and point count limits"/> <figcaption>
+            <p><strong>Example of IDW gridding using both distance and point count limits</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="nearest-neighbour">Nearest Neighbour</h3>
+<p>This uses a simple weighted average method to assign grid values to the 4 nodes around each input data point.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/grid2d-3d/grid_nrn_ex.jpg"
+         alt="Example of Nearest Neighbour gridding"/> <figcaption>
+            <p><strong>Example of Nearest Neighbour gridding</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9d616078b523fe5a0cab8c448353e4c0">9 - LocalAttrib</h1>
+    <div class="lead">various attributes based on Fomel&rsquo;s local attribute algorithm from the Madagascar package</div>
+	<p>This plugin for the open source seismic interpretation platform [opendtect] Version 6.0 or later is a collection of &ldquo;Local Attributes&rdquo; based on the work of [Fomel (2007) and others](<a href="https://library.seg.org/doi/abs/10.1190/1.2437573%22Local">https://library.seg.org/doi/abs/10.1190/1.2437573&quot;Local</a> seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3&quot;) for the <a href="http://www.ahay.org/" target="_blank">Madagascar</a> package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.</p>
+<h2 id="spectral-time-frequency-decomposition-by-local-attributes">Spectral (Time-frequency) Decomposition by Local Attributes</h2>
+<p>Formerly called the LTFAttrib, this is an implementation of the method of local time-frequency analysis as described by <a href="http://library.seg.org/doi/abs/10.1190/geo2010-0185.1" title="Time-frequency analysis of seismic data using local attributes. Guochang Liu, Sergey Fomel, and Xiaohong Chen. GEOPHYSICS 2011 76:6, P23-P34">Liu, G etal (2011)</a>. This decomposition uses least-squares inversion with shaping regularization to estimate the time-varying Fourier coefficients. Its principal advantages over the STFT (short time fourier transform) is it much quicker if only a few frequencies are required and it is generally more accurate for short window lengths.</p>
+<h3 id="examples">Examples</h3>
+<p><div class="juxtapose">
+
+    <img src="LTFAttrib_sd.jpg" data-label="FFT Spectral Decomposition (30Hz &#43;/-28ms window)" alt="FFT Spectral Decomposition (30Hz &#43;/-28ms window)" />
+    <img src="LTFAttrib_1.jpg" data-label="Local time-frequency attribute (30Hz 7 sample smoothing radius)" alt="Local time-frequency attribute (30Hz 7 sample smoothing radius)" />
+
+</div>
+
+
+
+<br/>
+The output of the LTF attribute (ltf30) is visually identical and also highly correlated to the OpendTect FFT spectral decomposition (sdfreq30) as shown in the following crossplot of the two attributes.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/localattrib/LTFAttrib_2.jpg"
+         alt="Crossplot of LTFAttrib vs FFT Spectral Decomposition" width="90%"/> <figcaption>
+            <p><strong>Crossplot of LTFAttrib vs FFT Spectral Decomposition</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="input-parameters">Input Parameters</h3>
+<p>This attribute has 4 parameters:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Volume</td>
+<td>The attribute volume to be analysed.</td>
+</tr>
+<tr>
+<td>Time Gate</td>
+<td>Where the attribute is calulated. The time gate does not have to be symmetric. The time gate length is used as the smoothing radius for shaping regularization.The value from the gate centre is output - useful for analysing a zone offset from an horizon. Recommend setting the gate length equal to or less than the FFT window length you would used for the standard OpendTect FFT spectral decomposition.</td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td>The frequency component(s) to estimate.</td>
+</tr>
+<tr>
+<td>Iterations</td>
+<td>The number of inversion iterations.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/localattrib/LTFAttrib_input_parameters.jpg"
+         alt="LTF Attributes input parameters"/> <figcaption>
+            <p><strong>LTF Attributes input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-3ac19b3f710ab3b090e96247f537ac0a">10 - Mistie</h1>
+    <div class="lead">edit/apply Z shifts, phase rotations and amplitude corrections to seismic data</div>
+	
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_plugin.jpg" width="90%"/> 
+</figure>
+
+<p>This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [opendtect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.</p>
+<p>In an ideal world we would be given 2D seismic data that has consistent Z, phase and amplitude scales. In the real world this doesn&rsquo;t always happen and 2D seismic interpretation projects accumulate inconsistencies as more data is added. The concept implemented by this plugin is the interpreter builds/maintains the correction table as they work through the data. The virtual corrected seismic from the Mistie Application attribute can be interpreted on the fly or the interpreter can generate a new adjusted dataset and interpret that.</p>
+<h2 id="description">Description</h2>
+<p>The plugin provides components to:</p>
+<ol>
+<li>Estimate misties from seismic data or horizon interpretation</li>
+<li>Analyse the misties and estimate corrections to minimize the misties in a least squares sense</li>
+<li>Edit/Maintain a set of mistie corrections</li>
+<li>Attribute to apply the corrections to seismic data and tools to apply Z corrections to horizon interpretation.</li>
+</ol>
+<p>There are two alternative workflows to build a mistie correction file:</p>
+<ol>
+<li>Estimate the misties from the data and compute a mistie correction file in the <a href="#mistie-analysis">Mistie Analysis</a> dialog</li>
+<li>Manually build the mistie correction file in the <a href="#mistie-correction-editor">Mistie Correction Editor</a></li>
+</ol>
+<h3 id="mistie-analysis"><strong>Mistie Analysis</strong></h3>
+<p>The plugin adds a &ldquo;Mistie Analysis&rdquo; item to the Analysis main menu. Selecting the item opens the Mistie Analysis dialog:</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_analysis.jpg"
+         alt="Mistie Analysis" width="90%"/> <figcaption>
+            <p><strong>Mistie Analysis</strong></p>
+        </figcaption>
+</figure>
+
+<p>Actions associated with the toolbar buttons are:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>ICON</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img class="img-responsive" alt="New" src="new.png" title="New"/></td>
+<td>Open the Mistie Estimation dialog to estimate misties from the seismic data. Existing contents of the mistie table are erased.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Open" src="open.png" title="Open"/></td>
+<td>Load mistie estimates from a previously saved file. Existing contents of the mistie table are erased.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Save" src="save.png" title="Save"/></td>
+<td>Save the current mistie estimates. If the current misties were loaded from a file then that will be overwritten, otherwise user will be asked to provide a new file name.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="SaveAs" src="saveas.png" title="SaveAs"/></td>
+<td>Prompts for a file and saves the current mistie estimates.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Merge" src="plus.png" title="Merge"/></td>
+<td>Prompts for another mistie file and merges the results with the mistie set currently active in the tool optionally keeping or replacing common items.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Filter" src="minus.png" title="Filter"/></td>
+<td>Opens a dialog to filter the misties listed in the table, used for correction calculation and displayed in the mistie report.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Calculate Corrections" src="attributes.png" title="Calculate Corrections"/></td>
+<td>Open the Correction Calculation dialog.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Mistie Report" src="xplot.png" title="Mistie Report"/></td>
+<td>Opens a web browser and displays an interactive dashboard report for the current misties and correction set active in the tool.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<h3 id="mistie-estimation"><strong>Mistie Estimation</strong></h3>
+<p>The <img src="new.png" alt="New"> toolbar item in the <a href="#mistie-analysis">Mistie Analysis</a> dialog opens a dialog box where the user can specify whether misties should be estimated from the seismic data or from horizon interpretation.</p>
+<p>In the case of estimation from the seismic data the dialog looks like:</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_estimation_seismic.jpg"
+         alt="Mistie Estimation from Seismic" width="90%"/> <figcaption>
+            <p><strong>Mistie Estimation from Seismic</strong></p>
+        </figcaption>
+</figure>
+
+<p>The user can:</p>
+<ul>
+<li>Select the data type (attribute) and which lines to include in the analysis</li>
+<li>Include and select a 3D seismic volume to include in the analysis</li>
+<li>Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie</li>
+<li>Limit the maximum time-shift or mistie to consider</li>
+<li>Specify a Z window for the cross correlation of traces at line interections</li>
+<li>Indicate if only time corrections should be estimated (default is to simultaneously estimate Z, phase rotation and amplitude corrections)</li>
+</ul>
+<p>The default estimation of Z phase rotation and amplitude misties is based on the method described by <a href="https://library.seg.org/doi/10.1190/1.1443654" title="Correcting amplitude, time, and phase mis‐ties in seismic data. Thomas N. Bishop and Alan G. Nunns, GEOPHYSICS 1994 59:6, 946-953">Bishop and Nunns (1994)</a> using cross correlation of the amplitude envelope of the traces. This is the preferred method for seismic data with a reasonable bandwidth. For narrow bandwidth data (eg site survey data) the time corrections only estimation method which uses cross correlation of the raw seismic traces may generate better results.</p>
+<p>In the case of estimation from horizon interpretation the dialog looks like:</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_estimation_horizon.jpg"
+         alt="Mistie Estimation from Horizon Interpretation" width="90%"/> <figcaption>
+            <p><strong>Mistie Estimation from Horizon Interpretation</strong></p>
+        </figcaption>
+</figure>
+
+<p>The user can:</p>
+<ul>
+<li>Select a 2D horizon and set of lines to use</li>
+<li>Select a 3D horizon to use</li>
+<li>Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie</li>
+</ul>
+<p>The Apply button will initiate the estimation of the misties, when complete results are displayed in the <a href="#mistie-analysis">Mistie Analysis</a> dialog. Clicking the <img src="images/xplot.png" alt="Mistie Report"> icon will generate a [#Mistie Report] with histograms and scatterplot of the mistie estimates  for review.</p>
+<h3 id="mistie-filter"><strong>Mistie Filter</strong></h3>
+<p>The <img src="minus.png" alt="Filter"> toolbar item in the <a href="#mistie-analysis">Mistie Analysis</a> dialog opens the following dialog that allows filtering of
+the misties displayed in the list, used for correction calculation and included in the mistie report:</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_filter.jpg"
+         alt="Mistie filtering"/> <figcaption>
+            <p><strong>Mistie filtering</strong></p>
+        </figcaption>
+</figure>
+
+<p>Activate the checkbox next to the filter to activate it. At this moment only filtering by the tie quality (correlation coefficient) is supported.
+The tie quality can vary from 0.0 (no tie) to 1.0 (perfect tie). A cut-off of 0.5-0.6 should filter unreliable mistie estimates.</p>
+<h3 id="mistie-correction-calculation"><strong>Mistie Correction Calculation</strong></h3>
+<p>The <img src="attributes.png" alt="Calculate Corrections"> toolbar item in the <a href="#mistie-analysis">Mistie Analysis</a> dialog opens the following dialog to
+compute mistie corrections that minimize the root mean square (RMS) mistie after correction:</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_correction.jpg"
+         alt="Mistie correction calculation"/> <figcaption>
+            <p><strong>Mistie correction calculation</strong></p>
+        </figcaption>
+</figure>
+
+<p>The user can:</p>
+<ul>
+<li>Optionally select one or more line(s) to use as a reference. Reference lines will have Z, phase and amplitude corrections constrained to be 0, 0, 1 respectively and corrections will be computed only for  the non-reference lines. Selecting no lines will distribute corrections across all lines.</li>
+<li>Control the maximum number of iterations used to calculate the corrections - the default value should be adequate in most circumstances.</li>
+<li>Control the convergence criteria that stops the iteration used to calulate the corrections - iterations stop if the change in the RMS mistie (after applying corrections) between successive iterations is less than the threshhold. Thresholds exist for the Z, phase and amplitude corrections. The default values should be adquate in most circumstances.</li>
+</ul>
+<p>The calculated corrections will be displayed in a new table dialog:</p>
+<p>{{ figure(&lsquo;mistie_correction_viewer.jpg&rsquo;, &lsquo;Mistie correction viewer&rsquo;) }}</p>
+<p>The toolbar buttons can be used to save the corrrections to a disk file.</p>
+<h3 id="mistie-report"><strong>Mistie Report</strong></h3>
+<p>The <img src="xplot.png" alt="Mistie Report"> toolbar item in the <a href="#mistie-analysis">Mistie Analysis</a> dialog generates and displays in the system web
+browser a graphical, html format dashboard of the mistie anaysis and correction calculation results. This includes tabulated data,
+histograms and a 3D scatterplot. Here is an example of a <a href="mistie_report_example.html">mistie report</a>. The html file displayed in
+the browser can be saved for later display suing the browser&rsquo;s save page functionality.</p>
+<h3 id="mistie-correction-editor"><strong>Mistie Correction Editor</strong></h3>
+<p>The plugin adds a &ldquo;Mistie Corrections&rdquo; item to the Survey-Manage main menu. Selecting the item opens the Mistie Correction Editor.
+This tool can be used to manually create mistie correction files or modify files generated by the
+<a href="#mistie-correction-calculation">Mistie Correction Calculation</a>.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_editor.jpg"
+         alt="Mistie correction editor"/> <figcaption>
+            <p><strong>Mistie correction editor</strong></p>
+        </figcaption>
+</figure>
+
+<p>The editor has toolbar buttons to:</p>
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>ICON</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img class="img-responsive" alt="New" src="new.png" title="New"/></td>
+<td>Create a mistie correction set with all the  2D lines in the project (with default corrections that make no change to the  data). Existing contents of the mistie table are erased.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Open" src="open.png" title="Open"/></td>
+<td>Load mistie corrections from a previously saved file. Existing contents of the mistie table are erased.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Save" src="save.png" title="Save"/></td>
+<td>Save the current mistie corrections. If the current corrections were loaded from a file then that will be overwritten, otherwise the user will be asked to provide a new file name.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="SaveAs" src="saveas.png" title="SaveAs"/></td>
+<td>Prompts for a file and saves the current mistie corrections.</td>
+</tr>
+<tr>
+<td><img class="img-responsive" alt="Merge" src="plus.png" title="Merge Corrections"/></td>
+<td>Merge another mistie correction set file with the current set, optionally keeping or replacing the existing corrections where there is duplicate line/dataset names.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+
+<p>Within the editor it is possible to:</p>
+<ul>
+<li>Add new lines/datasets and associated corrections</li>
+<li>Edit existing corrections</li>
+<li>RightMouseButton click on a row brings up a menu to insert or delete selected row(s)</li>
+<li>Limited clipboard copy and paste is available</li>
+</ul>
+<p>You can include corrections for a particular 3D seismic volume by using a line/dataset name of the form &ldquo;3D_XXXX&rdquo; where the &ldquo;XXXX&rdquo; is the
+volume name, eg note the &ldquo;3D_pstm&rdquo; in the above figure. Multiple unique &ldquo;3D_XXXX&rdquo; entries are allowed to specify corrections for different
+3D volumes in the project.</p>
+<p>If a line doesn&rsquo;t need a correction it can be omitted from the set and default (no change) corrections will be assumed when the Mistie
+Application attribute is applied. A message (which can be safely ignored) is added to the log file when this occurs.</p>
+<p>The name in the line/dataset column must exactly match the project line name.</p>
+<h3 id="mistie-application-attribute"><strong>Mistie Application Attribute</strong></h3>
+<p>The plugin adds a &ldquo;Mistie Application&rdquo; attribute to the list of [opendtect] attributes.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistieapplication_input.jpg"
+         alt="Mistie Application attribute input parameters"/> <figcaption>
+            <p><strong>Mistie Application attribute input parameters</strong></p>
+        </figcaption>
+</figure>
+
+<p>The attribute parameters include:</p>
+<ul>
+<li>The input seismic volume to be corrected</li>
+<li>A file with the mistie correction set to apply</li>
+<li>Which corrections to apply</li>
+</ul>
+<p>When the attribute is displayed the shift, phase rotation and amplitude scalar for the line is read from the correction file and applied.</p>
+<h3 id="mistie-correction-of-horizon-interpretation"><strong>Mistie Correction of Horizon Interpretation</strong></h3>
+<p>The plugin adds an &ldquo;Apply Mistie Corrections&rdquo; item to the &ldquo;Processing | Create Horizon Output&rdquo; main menu that opens a dialog box to apply mistie corrections to 2D and 3D horizon interpretation.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_horizon_2D_apply.jpg"
+         alt="Mistie Application to 2D Horizon"/> <figcaption>
+            <p><strong>Mistie Application to 2D Horizon</strong></p>
+        </figcaption>
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mistie/mistie_horizon_3D_apply.jpg"
+         alt="Mistie Application to 3D Horizon"/> <figcaption>
+            <p><strong>Mistie Application to 3D Horizon</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="general-notes">General Notes</h3>
+<ul>
+<li>The default file extension for saved mistie estimates is &ldquo;mistie&rdquo;</li>
+<li>The default file extension for saved mistie corrections is &ldquo;miscor&rdquo;</li>
+<li>The default file location for all files is the <strong>Misc</strong> folder in the OpendTect survey/project folder</li>
+<li>All files are in a simple text format which can also be modified using a text editor</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-d615adfd5cee4c109fa0c0009f305cbe">11 - MLVFilterAttrib</h1>
+    <div class="lead">structure preserving spatial filter by mean of least variance filter</div>
+	<p>This attribute plugin for the open source seismic interpretation platform [opendtect]
+applies a structure preserving Mean of Least Variance filter.</p>
+<h2 id="description">Description</h2>
+<p>This attribute is an implementation of a mean of least variance filter
+<a href="http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1008684" title="Value-and-criterion filters: a new filter structure based on morphological opening and closing. Mark A. Schulze and John A. Pearce. Proc. SPIE 1902, Nonlinear Image Processing IV, 106 (May 21, 1993)">Schulze &amp; Pearce (1993)</a> where the analysis elements are all the possible planes through the sample points in the analysis block. This algorithm may be similar to that proposed by <a href="http://library.seg.org/doi/abs/10.1190/1.3627375" title="Structure‐preserving smoothing for 3D seismic attributes. Saleh Al‐Dossary and Yuchun Eugene Wang. SEG Technical Program Expanded Abstracts 2011. January 2011, 1004-1008">Al-Dossary &amp; Wang (2011)</a>.</p>
+<p>The sample variance for all samples on each analysis element is calculated and the output statistic (average, mean or element index)
+is output for the element with the least variance.</p>
+<p>The following figure shows the relationship between the geometry of the analysis elements and the element index.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mlvfilter/MLVFilterAttrib_elements.jpg"
+         alt="MLV Filter analysis elements" width="90%"/> <figcaption>
+            <p><strong>MLV Filter analysis elements</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="examples">Examples</h2>
+<p><div class="juxtapose">
+
+    <img src="MLVFilterAttrib_input.jpg" data-label="Input" alt="Input" />
+    <img src="MLVFilterAttrib_MLV3_Mean.jpg" data-label="MLV Size 3 Average - 1 pass" alt="MLV Size 3 Average - 1 pass" />
+
+</div>
+
+
+
+</br></p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mlvfilter/MLVFilterAttrib_MLV3_Elements.jpg"
+         alt="MLV 3 elements" width="100%"/> <figcaption>
+            <p><strong>MLV 3 elements</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+<p>This attribute has 2 parameters:
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filter size</td>
+<td>Specifies a cube of samples centred  at the analysis location. Increasing the size will increase the degree of smoothing at the risk of smearing structural features. As the examples show it may be better to apply multiple passes of a small size filter than a single pass of a larger filter to reduce the risk of artifacts in the output. OpendTect makes it really easy to cascade multiple filter passes.</td>
+</tr>
+<tr>
+<td>Output statistic</td>
+<td>What the filter will output. The options are average, median or the element index. The element index is included for curiosity and quality control. Generally the default <em>Average</em> provides the most pleasing output.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/mlvfilter/MLVFilterAttrib_par1.jpg"
+         alt="MLF Filter input parameters" width="90%"/> <figcaption>
+            <p><strong>MLF Filter input parameters</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-479d198cfbb22498fc758bfccd0f69ed">12 - RSpecAttrib</h1>
+    <div class="lead">spectral (time-frequency) decomposition using recursive filters</div>
+	<p>This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+(time-frequency) decomposition using a recursive filter.</p>
+<h2 id="description">Description</h2>
+<p>This plugin can be used as an alternative to the
+<a href="http://opendtect.org/rel/doc/User/base/appendix_spectral-decomposition.htm" target="_blank">OpendTect FFT spectral decomposition attribute</a>.</p>
+<p>It does spectral decomposition using <a href="https://bora.uib.no/bitstream/handle/1956/3036/42162315.pdf?sequence=1" title="Recursive time-frequency reassignment. Geir Kjetil Nilsen. University of Bergen, Norway MSc Thesis">Nilsen&rsquo;s (2007)</a> time-frequency analysis algorithm which is a recursive filter approximation to a special case of the short time fourier transform (STFT).</p>
+<p>The primary advantage of this plugin over the standard OpendTect FFT spectral decomposition is that it can be evaluated significantly faster.
+As an example, under Linux on an Intel Core i5 for a 2000 sample per trace dataset, this attribute can generate a single frequency cube
+at 4000 traces per second. This is considerably faster than the 140-150 traces per second achieved when applying the OpendTect FFT
+spectral decomposition attribute. This processing speed advantage is reduced as the number of output frequencies increases but in this
+test case it still remains substantially faster even for output of up to 30 frequencies. This algorithm is also more accurate for
+shorter windows.</p>
+<p>As of release 6.4.8 the plugin has been extended to optionally include time-frequency reassignment. In normal spectral decomposition a
+window/gate is slid along the trace and the amplitude of each frequency component is assigned to the middle of the gate. This blurs/smooths
+the decomposition along both the time and frequency axis. While shortening the gate can improve the apparent time resolution, it has the
+side effect of increased blurring/smoothing,i.e. lower resolution, in frequency. Reassignment uses information in the phase spectrum to
+relocate spectral energy to its origin in the time gate and on the frequency axis. This produces significantly sharper time-frequency spectra.
+However reassignment becomes ambiguous when more than one signal component is present and they are close or overlap in time or frequency.
+To perform the reassignment the decomposition must be done for a range of frequencies so execution time will be slower than without reassignment.</p>
+<h2 id="examples">Examples</h2>
+<div class="juxtapose">
+    <img src="RSpecAttrib_sd.jpg" data-label="FFT Spectral Decomposition (30Hz +/-28ms window)"/>
+    <img src="RSpecAttrib_1.jpg"  data-label="Recursive time-frequency attribute (30Hz +/- 22ms window)"/>
+</div>
+<br/>
+The output of the RSpec attribute (rfreq30) is visually identical and also highly correlated to the OpendTect FFT spectral decomposition
+(sdfreq30) as shown in the following crossplot of the two attributes.
+
+<figure class="img-centered">
+    <img src="/docs/plugins/rspecattrib/RSpecAttrib_2.jpg"
+         alt="Crossplot of RSpecAttrib vs FFT Spectral Decomposition" width="90%"/> <figcaption>
+            <p><strong>Crossplot of RSpecAttrib vs FFT Spectral Decomposition</strong></p>
+        </figcaption>
+</figure>
+
+<p>Here is an inline display from the F3 demo dataset comparing the 24Hz component for a +/-16ms gate for all 4 methods. The enhanced time
+resolution of the reassigned decomposition is obvious.</p>
+
+<figure class="img-centered">
+    <img src="spectral_decomp_inline.jpg"
+         alt="Comparison of various decompositions on an inline" width="90%"/> <figcaption>
+            <p><strong>Comparison of various decompositions on an inline</strong></p>
+        </figcaption>
+</figure>
+
+<p>Here is the 24Hz component on the MSF4 horizon for all 4 methods. Channels are better defined on the Recursive and Local Attribute
+decompositions relative to the OpendTect spectral decomposition attribute. The reassigned decomposition has a radically different
+appearance due to its sharpness in time and frequency but the significance of the variations is unknown.</p>
+
+<figure class="img-centered">
+    <img src="spectral_decomp_slice.jpg"
+         alt="Comparison of various decompositions on an horizon slice" width="90%"/> <figcaption>
+            <p><strong>Comparison of various decompositions on an horizon slice</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+<p>This attribute has 4 parameters:
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Volume</td>
+<td>The attribute volume to be analysed.</td>
+</tr>
+<tr>
+<td>Time/Depth Gate</td>
+<td>This determines the position and time resolution of the analysis. The value from the gate centre is output - useful for analysing a zone offset from an horizon. Recommend setting the gate length equal to or less than the FFT window length you would used for the standard OpendTect FFT spectral decomposition.</td>
+</tr>
+<tr>
+<td>Output frequency</td>
+<td>When displaying the attribute in the tree this is the frequency slice that will be generated.</td>
+</tr>
+<tr>
+<td>Step</td>
+<td>This determines the set of frequencies that can be chosen when generating a frequency volume.</td>
+</tr>
+<tr>
+<td>With Reassignment</td>
+<td>Toggle on to compute the reassigned decomposition</td>
+</tr>
+</tbody>
+</table>
+ </div>
+</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/rspecattrib/RSpecAttrib_input.jpg"
+         alt="RSpecAttrib input parameter dialog" width="90%"/> <figcaption>
+            <p><strong>RSpecAttrib input parameter dialog</strong></p>
+        </figcaption>
+</figure>
+
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-28afd44acf647435b1af1601011e9187">13 - WMTools</h1>
+    <div class="lead">miscellaneous tools for OpendTect</div>
+	<p>This plugin provides various tools to enhance the open source seismic interpretation platform [opendtect] Version 6.4.0 or later.</p>
+<h2 id="convex-hull-polygon">Convex Hull Polygon</h2>
+<h3 id="description">Description</h3>
+<p>Generate a convex hull polygon covering either the extent of 2D/3D seismic coverage or 2D/3D horizon interpretation. The user has full control over the 2D and 3D data included. The polygon can be used as is or after editing as a clipping polygon in the  [grid2d-3d]  plugin. To edit the polygon in the 3D scene a 3D horizon of suitable extent must be displayed eg such as a DataExtentHorizon.</p>
+<p>The tool is accessed from the Tools submenu of the Polygon tree context menu.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/wmtools/convexhull_ex.jpg"
+         alt="Example of polygons created by tool" width="90%"/> <figcaption>
+            <p><strong>Example of polygons created by tool</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="input">Input</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/wmtools/convexhull_input.jpg"
+         alt="Convex Hull tool input dialog"/> <figcaption>
+            <p><strong>Convex Hull tool input dialog</strong></p>
+        </figcaption>
+</figure>
+
+<p>The tool dialog allows:</p>
+<ul>
+<li>Specifying a constant Z value for the output polygon</li>
+<li>Selecting 2D and 3D seismic data or horizon interpretation to use as the polygon scope</li>
+<li>Specifying the name and display settings of the generated polygon.</li>
+</ul>
+<h2 id="constant-z-polyline">Constant Z Polyline</h2>
+<h3 id="description-1">Description</h3>
+<p>This tool allows a series of points to be digitized in the 3D scene that can subsequently be used as additional surface control in the Grid 2D3D plugin.</p>
+<p>The tool is accessed from the Tools submenu of the Polygon tree context menu. After adding a contour polyline remember to use the Right-Click | Save menu to commit the item.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/wmtools/constantz_ex.jpg"
+         alt="Example of some polylines drawn in a gap in the seismic coverage to guide subsequent gridding" width="90%"/> <figcaption>
+            <p><strong>Example of some polylines drawn in a gap in the seismic coverage to guide subsequent gridding</strong></p>
+        </figcaption>
+</figure>
+
+<p>###Input</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/wmtools/constantz_input.jpg"
+         alt="Constant Z polyline tool input dialog" width="90%"/> <figcaption>
+            <p><strong>Constant Z polyline tool input dialog</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="fault-surface-3d-horizon-intersection-polyline">Fault Surface-3D Horizon Intersection Polyline</h2>
+<h3 id="description-2">Description</h3>
+<p>This tool generates 3D poly-lines at the intersection of 3D horizons and fault surfaces. The intersection line is made by joining the intersections of the fault sticks with the horizon. A potential use of the tool is to grid a 3D horizon without any fault constraint, use the tool to gererate fault lines at the intersection of the 3D horizon and existing fault surfaces and then regrid the horizon using the new fault lines as a fault constraint. (Note the performance of this tool was substantially improved as of version 6.4.13)</p>
+<p>The tool is accessed from the Tools submenu of the Polygon tree context menu.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/wmtools/faultpoly_ex.jpg"
+         alt="Example of polylines generated by this tool" width="90%"/> <figcaption>
+            <p><strong>Example of polylines generated by this tool</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="input-1">Input</h3>
+<p>The UI specifies a poly-line name prefix to which the fault surface names will be appended.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/wmtools/faultpoly_input.jpg"
+         alt="Fault polyline generation tool input dialog" width="90%"/> <figcaption>
+            <p><strong>Fault polyline generation tool input dialog</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="data-extent-horizon">Data Extent Horizon</h2>
+<h3 id="description-3">Description</h3>
+<p>Generate a constant Z value 3D horizon which covers the extent of 2D and 3D seismic data in an [opendtect] survey/project. The user has full control over the 2D and 3D data included.  With the horizon displayed it is possible to draw fault polygons and grid clipping polygons that extend beyond the 3D survey definition. These can then be used in the [grid2d-3d] plugin to produce structure maps that extend across both 2D and 3D seismic interpretation in an [opendtect] survey/project.</p>
+<p>The tool is accessed either from the &ldquo;Processing|Create Horizon Output&rdquo; main menu item or from the New submenu of the 3D Horizon tree context menu.</p>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/wmtools/dataextenthorizon.jpg"
+         alt="Example of an horizon created by the plugin and various polygons drawn across the extent of the 2D and 3D seismic data in the project"/> <figcaption>
+            <p><strong>Example of an horizon created by the plugin and various polygons drawn across the extent of the 2D and 3D seismic data in the project</strong></p>
+        </figcaption>
+</figure>
+
+<h3 id="input-2">Input</h3>
+
+<figure class="img-centered">
+    <img src="/docs/plugins/wmtools/dataextenthorizon_input.jpg"
+         alt="Data Extent Horizon tool input dialog" width="90%"/> <figcaption>
+            <p><strong>Data Extent Horizon tool input dialog</strong></p>
+        </figcaption>
+</figure>
+
+<p>The tool dialog allows:</p>
+<ul>
+<li>Specifying a constant Z value for the output horizon</li>
+<li>Selecting 2D and 3D seismic data that the horizon should cover</li>
+<li>Specifying the name of the generated horizon</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" rel="noopener" href="https://groups.google.com/a/opendtect.org/g/users" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="LinkedIn" aria-label="LinkedIn">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.linkedin.com/in/waynemogg/" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/waynegm/OpendTect-Plugins" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 Wayne Mogg All Rights Reserved</small>
+        
+	
+		<p class="mt-2"><a href="/about/">About WMPlugins</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    integrity="sha512-vJqxkZ+Sugf/6WRlpcxN01qVfX/29hF6qc33eHF1va3NgoV+U+wCi+uTAsQ10sDoGyBxHLdaHvGwDlV3yVYboA==" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+    integrity="sha512-5ufNcHqOYgilGEHPfuRIQ5B/vDS1M8+UC+DESZ5CwVgGTg+b2Ol/15rYL/GiCWJ/Sx8oVo0FPFok1dPk8U9INQ=="
+    crossorigin="anonymous"></script>
+
+
+
+<script defer src='https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js'
+    integrity='sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==' crossorigin='anonymous' 
+    onload='renderMathInElement(document.body, null);'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.fc1551b8c1b40a6eaa08f3cb9c76f12ccd9aebc436cecdaf2341c890206d024a.js" integrity="sha256-/BVRuMG0Cm6qCPPLnHbxLM2a68Q2zs2vI0HIkCBtAko=" crossorigin="anonymous"></script>
+
+
+
+
+<script src='/js/juxtapose.js'></script>
+
+
+  </body>
+</html>

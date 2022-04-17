@@ -1,0 +1,272 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – howto</title>
+    <link>/categories/howto/</link>
+    <description>Recent content in howto on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/categories/howto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Using Visual Studio Code with OpendTect</title>
+      <link>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2021/06/05/using-visual-studio-code-with-opendtect/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In this post I show you how to set up and use the free &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;Visual Studio Code&lt;/a&gt; editor with OpendTect for interactive
+computation using Python Jupyter Notebooks. If you have installed the OpendTect Machine Learning Python environments you can
+create and edit Python Jupyter Notebooks using Visual Studio Code without modifying the installed environment provided VS Code is run from within
+OpendTect. The approach described in this post might assist users in strictly controlled IT settings get up and running using Jupyter Notebooks.&lt;/p&gt;
+&lt;h2 id=&#34;installing-visual-studio-code&#34;&gt;Installing Visual Studio Code&lt;/h2&gt;
+&lt;p&gt;VS Code should be available in the package repositories of all the major Linux distributions so just install it like you would
+any other application. Alternatively the &lt;a href=&#34;https://code.visualstudio.com/Download&#34;&gt;VS Code Download&lt;/a&gt; page provides a tar.gz download
+for 64 bit Linux that can be copied into a users home folder for those situations where IT settings prevent a global software install.&lt;/p&gt;
+&lt;p&gt;For Windows go to the &lt;a href=&#34;https://code.visualstudio.com/Download&#34;&gt;VS Code Download&lt;/a&gt; page and download the package of choice. There are 3 options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;User installer (software ends up in &amp;ldquo;C:\users{username}\AppData\Local\Programs\Microsoft VS Code&amp;rdquo;, recommended way)&lt;/li&gt;
+&lt;li&gt;System installer (software ends up in &amp;ldquo;C:\Program Files&amp;rdquo;, requires Administrator privileges)&lt;/li&gt;
+&lt;li&gt;.zip (you unpack the zip file anywhere even on a usb stick)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once installed, start it up (find the executable file call &amp;ldquo;code&amp;rdquo; in the application folder and run it from a console or click/double click
+on it from your file manager/explorer) and add the following extensions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python extension for Visual Studio Code&lt;/li&gt;
+&lt;li&gt;Jupyter Extension for Visual Studio Code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;selecting-visual-studio-code-as-the-opendtect-ide&#34;&gt;Selecting Visual Studio Code as the OpendTect IDE&lt;/h2&gt;
+&lt;p&gt;Open the OpendTect Python Settings dialog (Utilities|Installation|Python Settings menu)
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-02.png&#34;
+         alt=&#34;OpendTect Python Settings Dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect Python Settings Dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For the Python IDE select &amp;ldquo;Other&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Use the File Selector to locate the executable file called &amp;ldquo;code&amp;rdquo; in the VS Code application folder&lt;/li&gt;
+&lt;li&gt;Use the icon button to set the location of an icon for the application (normally in the resources/app/resources/(linux|win32) subfolder
+of the VS Code installation)&lt;/li&gt;
+&lt;li&gt;Set a tooltip message, eg &amp;ldquo;VS Code&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Press OK&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This will add an icon to the OpendTect toolbar and a new menu item to the &amp;ldquo;Utilities|User Commands&amp;rdquo; menu to start Visual Studio Code. Starting
+VS Code from within OpendTect ensures environment settings are compatible with the Python environment selected in the OpendTect Python
+Settings dialog.&lt;/p&gt;
+&lt;p&gt;
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-03.png&#34;
+         alt=&#34;OpendTect After Adding VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect After Adding VS Code&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+Click the icon or use the &amp;ldquo;Utilities|User Commands&amp;rdquo; menu to start a Visual Studio Code instance.&lt;/p&gt;
+&lt;h2 id=&#34;using-visual-studio-code&#34;&gt;Using Visual Studio Code&lt;/h2&gt;
+&lt;p&gt;With these steps completed it should be possible to start VS Code from OpendTect and open a new blank Jupyter notebook by running
+the Jupyter: Create Blank New Jupyter Notebook command from the VS Code Command Palette (Ctrl+Shift+P). This notebook will use
+the Python environment selected in the OpendTect Python Settings dialog.
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-04.png&#34;
+         alt=&#34;New Jupyter Notebook in VS Code&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;New Jupyter Notebook in VS Code&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;To find out more about using VS Code with Jupyter Notebooks check out the documentation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/python/jupyter-support&#34;&gt;Working with Jupyter Notebooks in Visual Studio Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/python/jupyter-support-py&#34;&gt;Working with the Python Interactive window&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2021/06/05/using-visual-studio-code-with-opendtect/image-01.png&#34;
+         alt=&#34;Exploring OpendTect Well Data in a VS Code Notebook&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Exploring OpendTect Well Data in a VS Code Notebook&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Python External Attribute Tips &amp; Tricks - Debugging</title>
+      <link>/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</link>
+      <pubDate>Fri, 08 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Because the Python [../plugins/ExternalAttrib] script is running in a process started by the OpendTect application most standard methods to examine the script as it runs, eg using the standard Python debugger &lt;a href=&#34;https://docs.python.org/3/library/pdb.html&#34;&gt;pdb&lt;/a&gt;, are not available.&lt;/p&gt;
+&lt;p&gt;A solution is to use the &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; Python module which allows the Python script to be debugged remotely in a web-browser.&lt;/p&gt;
+&lt;h2 id=&#34;web-pdb-installation&#34;&gt;Web-PDB Installation&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; is not included by default in most Python installations but it can be easily added using &lt;em&gt;pip&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install web-pdb&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;adding-web-pdb-to-a-script&#34;&gt;Adding Web-PDB to a Script&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_01.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;Adding &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; to a script is just a matter of importing the module as shown on line 5 and adding a call to  &lt;code&gt;web_pdb.set_trace()&lt;/code&gt; as shown on line 19. The &lt;code&gt;web_pdb.set_trace()&lt;/code&gt; call acts like a breakpoint and can be inserted as many times as required.&lt;/p&gt;
+&lt;p&gt;For simplicity it is best to disable multi-threaded processing (add a &lt;em&gt;Parallel: False&lt;/em&gt; line to the &lt;em&gt;xa.params&lt;/em&gt; object) while debugging.&lt;/p&gt;
+&lt;h2 id=&#34;debugging-with-web-pdb&#34;&gt;Debugging with Web-PDB&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/18_06_08_02.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;After adding &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; to the [../plugins/ExternalAttrib] script it will run to the first breakpoint where execution will be suspended and a web-UI opened at the default port 5555. Pointing a web browser at &lt;code&gt;http://&amp;lt;your  machine hostname or IP&amp;gt;:5555&lt;/code&gt;, eg &lt;code&gt;http://127.0.0.1:5555&lt;/code&gt;, should show an interface for debugging as above.&lt;/p&gt;
+&lt;p&gt;The buttons provide control on the script execution, hover the mouse pointer over them to see tooltips for each. More complex &lt;a href=&#34;https://docs.python.org/3/library/pdb.html&#34;&gt;pdb&lt;/a&gt; commands can be inserted in the entry at the bottom of the screen. Click the ? button for a list of useful &lt;a href=&#34;https://docs.python.org/3/library/pdb.html&#34;&gt;pdb&lt;/a&gt; commands.&lt;/p&gt;
+&lt;h2 id=&#34;web-pdb-and-multi-threaded-processing&#34;&gt;Web-PDB and Multi-threaded Processing&lt;/h2&gt;
+&lt;p&gt;It is possible to use &lt;a href=&#34;https://github.com/romanvm/python-web-pdb&#34;&gt;Web-PDB&lt;/a&gt; with a script that has multi-threaded processing enabled by replacing the initial &lt;code&gt;web_pdb.set_trace&lt;/code&gt; call with:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;web_pdb.set_trace( port=-1 )&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This will cause each Python process to select a random port between 32768 and 65536. Operating System specific commands can then be used to determine the ports opened, eg:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;On Linux: &lt;code&gt;ss -lntu&lt;/code&gt; in a console window.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;On Windows: &lt;code&gt;netstat -an&lt;/code&gt; in a command window.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A web-UI will need to be opened for each port and each process will need to be stepped through all breakpoints for attribute execution to progress.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Python External Attribute Tips &amp; Tricks - Logging</title>
+      <link>/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/06/python-external-attribute-tips-tricks-logging/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.&lt;/p&gt;
+&lt;p&gt;The global variable &lt;em&gt;xa.logH&lt;/em&gt; (assuming the extattrib module has been imported using &lt;em&gt;import extattrib as xa&lt;/em&gt;) is a &lt;a href=&#34;https://docs.python.org/3/library/logging.html&#34;&gt;Python logger object&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;an-example&#34;&gt;An Example&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_01.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;On line 18 the Python logger is modified by adjusting the severity level of messages that will appear in the log file. By default only CRITICAL, ERROR and WARNING messages will be written.&lt;/p&gt;
+&lt;p&gt;On line 22 a message is written to the logfile showing the full path to the Python interpreter executing the script. As this line is in the Compute Loop Initialisation section it is only written at each invocation of the script.&lt;/p&gt;
+&lt;p&gt;On line 32 a message is written that identifies the location, minimum and maximum of the trace being processed. As this line is in the Compute Loop a message is output for every trace processed.&lt;/p&gt;
+&lt;h2 id=&#34;the-result&#34;&gt;The Result&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/06/python-external-attribute-tips-tricks-logging/18_06_06_02.png&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: Anatomy of a Python External Attribute</title>
+      <link>/blog/2018/06/04/anatomy-of-a-python-external-attribute/</link>
+      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018/06/04/anatomy-of-a-python-external-attribute/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This article will review the structure of a simple Python [../plugins/ExternalAttrib] script,
+&lt;a href=&#34;https://github.com/waynegm/OpendTect-External-Attributes/blob/master/Python_3/DipAndAzimuth/ex_dip.py&#34;&gt;ex_dip.py&lt;/a&gt;, which
+converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and
+output. Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; and &lt;a href=&#34;http://www.numpy.org/&#34;&gt;Numpy&lt;/a&gt; is assumed.&lt;/p&gt;
+&lt;p&gt;Every Python attribute script has 5 sections.&lt;/p&gt;
+&lt;h2 id=&#34;the-imports&#34;&gt;The Imports&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_01.png&#34;
+         alt=&#34;Imports Section&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Imports Section&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is where external modules/libraries required by the script are loaded. At a minimum the script must load:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the Python sys and os modules&lt;/li&gt;
+&lt;li&gt;the Numpy module (the fundamental package for scientific computing with Python)&lt;/li&gt;
+&lt;li&gt;the external attribute module (extattrib.py)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [wmscripts] package and its location is unknown to the Python installation unless we help out. The sys.path.insert call on line 11 provides this help by extending the default search path for Python modules to include the parent folder of the folder containing the script. This reflects the folder structure of the [wmscripts] package, so if you develop scripts outside this structure then you will need to change line 11 appropriately to append the location of extattrib.py to the module search path.&lt;/p&gt;
+&lt;p&gt;Of course if your script requires other Python modules (eg SciPy, Numba) then add the appropriate import statements in this section.&lt;/p&gt;
+&lt;h2 id=&#34;the-parameters&#34;&gt;The Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_02.png&#34;
+         alt=&#34;UI Parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;UI Parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for documentation. The plugin dynamically builds the following input dialog for this script:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_06.png&#34;
+         alt=&#34;UI Appearance&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;UI Appearance&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A variety of other input elements can be specified to build more complex input dialogs. See the [../plugins/ExternalAttrib#JSON Parameter String] section of the plugin documentation for full details or look at other scripts to see what is possible.&lt;/p&gt;
+&lt;h2 id=&#34;the-compute-loop-initialisation&#34;&gt;The Compute Loop Initialisation&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_03.png&#34;
+         alt=&#34;Compute Initialisation&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Compute Initialisation&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the &amp;ldquo;while True:&amp;rdquo; loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.&lt;/p&gt;
+&lt;p&gt;This particular script shows how information stored in the [../plugins/ExternalAttrib#SeismicInfo Block] can be used to calculate some constants purely as an example. This attribute is so simple that no initialisation is actually required.&lt;/p&gt;
+&lt;h2 id=&#34;the-compute-loop&#34;&gt;The Compute Loop&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_04.png&#34;
+         alt=&#34;Compute Loop&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Compute Loop&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is where the attribute calculation takes place. The &lt;em&gt;xa.doInput()&lt;/em&gt; and &lt;em&gt;xa.doOutput()&lt;/em&gt; function calls control the input and output of seismic trace data between the script and OpendTect. Generally these should be the first and last statements within the compute loop.&lt;/p&gt;
+&lt;p&gt;Within the compute loop, some information about the current trace data such as the number of samples and the inline and crossline location are provided in the [../plugins/ExternalAttrib#TraceInfo Block]. These can be accessed using constructs like &lt;em&gt;xa.TI[&amp;rsquo;nrsamp&amp;rsquo;]&lt;/em&gt;. This information is not required for this particular script.&lt;/p&gt;
+&lt;p&gt;The global Numpy array &lt;em&gt;xa.Input&lt;/em&gt; contains the input trace data. &lt;em&gt;xa.Input[&amp;rsquo;name of input attribute&amp;rsquo;]&lt;/em&gt; returns a Numpy array with the trace data for the current compute location. The shape of this Numpy array depends on the traces stepouts required by the attribute. As this particular script uses just single trace input (inline and crossline step out of 0) the Numpy array has a shape of &lt;em&gt;(1,1,xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt;. In the more general case of a multi-trace attribute the Numpy array shape would be &lt;em&gt;(xa.SI[&amp;rsquo;nrinl&amp;rsquo;], xa.SI[&amp;rsquo;nrcrl&amp;rsquo;], xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt; and the input trace at the current location would be at the centre of the array, ie at index &lt;em&gt;[xa.SI[&amp;rsquo;nrinl&amp;rsquo;]//2, xa.SI[&amp;rsquo;nrcrl&amp;rsquo;]//2,&amp;hellip;]&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Attribute ouput must be put into the &lt;em&gt;xa.Output&lt;/em&gt; global Numpy array before the &lt;em&gt;xa.doOutput()&lt;/em&gt; function call. Each element (eg &lt;em&gt;xa.Output[&amp;rsquo;name of output attribute&amp;rsquo;]&lt;/em&gt;) of the output array must have a shape of &lt;em&gt;(1,1,xa.TI[&amp;rsquo;nrsamp&amp;rsquo;])&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-postamble&#34;&gt;The Postamble&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2018/06/04/anatomy-of-a-python-external-attribute/18_06_04_05.png&#34;
+         alt=&#34;Wrapping up&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Wrapping up&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This section is just boilerplate code that apprears in every attribute script which should never be changed.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

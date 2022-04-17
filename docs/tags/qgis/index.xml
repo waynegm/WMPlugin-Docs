@@ -1,0 +1,205 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – qgis</title>
+    <link>/tags/qgis/</link>
+    <description>Recent content in qgis on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/tags/qgis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GeopackageExport</title>
+      <link>/docs/plugins/geopackageexport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/geopackageexport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] data to a
+&lt;a href=&#34;https://www.geopackage.org/&#34;&gt;GeoPackage&lt;/a&gt; database. GeoPackage is an open, non-proprietary, platform-independent, self describing
+standards-based data format for geospatial data.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a tabbed dialog box for selecting
+the various elements to export and the destination file name. The following table shows the [opendtect] data elements supported and
+the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OpendTect Item&lt;/th&gt;
+&lt;th&gt;GeoPackage Table Name&lt;/th&gt;
+&lt;th&gt;Geometry&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Survey Box&lt;/td&gt;
+&lt;td&gt;Survey&lt;/td&gt;
+&lt;td&gt;Polygon&lt;/td&gt;
+&lt;td&gt;Single attribute, the survey name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D Line Geometry&lt;/td&gt;
+&lt;td&gt;2DLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the line name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D Line Stations&lt;/td&gt;
+&lt;td&gt;2DStations&lt;/td&gt;
+&lt;td&gt;Points&lt;/td&gt;
+&lt;td&gt;Two attributes, the line name and station number&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Random Lines&lt;/td&gt;
+&lt;td&gt;RandomLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the random line name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wells&lt;/td&gt;
+&lt;td&gt;Wells&lt;/td&gt;
+&lt;td&gt;Points&lt;/td&gt;
+&lt;td&gt;Well surface location and 3 attributes, the well name, UWID and status (not currently set by OpendTect)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Well Tracks&lt;/td&gt;
+&lt;td&gt;WellTracks&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the well name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Well Markers&amp;rsquo;, &amp;lsquo;WellMarkers&amp;rsquo;, &amp;lsquo;Points&lt;/td&gt;
+&lt;td&gt;Four attributes, well name, marker name, MD and TVDSS&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Open Polygons&lt;/td&gt;
+&lt;td&gt;PolyLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the polyline name. The z values of the polyline are not exported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Closed Polygons&lt;/td&gt;
+&lt;td&gt;Polygons&lt;/td&gt;
+&lt;td&gt;Polygon&lt;/td&gt;
+&lt;td&gt;Single attribute, the polygon name. The z values of the polygon are not exported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D and 3D Horizons&lt;/td&gt;
+&lt;td&gt;Set by the user&lt;/td&gt;
+&lt;td&gt;Point&lt;/td&gt;
+&lt;td&gt;Single attribute, the horizon z value in millisecs or metres depending on the Z domain of the survey&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;It is possible to append to an existing database. This is primarily used for exporting multiple horizons/attributes to the same GeoPackage.&lt;/li&gt;
+&lt;li&gt;Appending does not overwrite items already in the GeoPackage it will just add another copy to the respective table.&lt;/li&gt;
+&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;On Windows the folder containing the plugin DLL&amp;rsquo;s must be added to the PATH environment variable either by editing the corresponding system variable (Control Panel&amp;gt;System and Security&amp;gt;System - Advanced system settings - Environment Variables) or adding a line like &amp;ldquo;@set PATH=%HOMEPATH%.od\bin\win64\Release;%PATH%&amp;rdquo; (adjust &amp;ldquo;%HOMEPATH%.od\bin\win64\Release&amp;rdquo; to reflect your installation) to the bat script used to start OpendTect.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The GeoPackage format is supported by major GIS software packages. The following figure shows display of data exported from OpendTect using the plugin in the open source GIS package, &lt;a href=&#34;https://www.qgis.org/en/site/&#34;&gt;QGIS&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_qgis.jpg&#34;
+         alt=&#34;OpendTect data displayed in QGIS&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect data displayed in QGIS&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;The dialog box associated with the plugin has a file entry control to select the output file, a check box to allow appending to the output file instead of overwriting and 8 tabs to select the content to export:&lt;/p&gt;
+&lt;h3 id=&#34;survey-tab&#34;&gt;Survey tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_survey_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;2d-lines-tab&#34;&gt;2D Lines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;random-lines-tab&#34;&gt;Random Lines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;wells-tab&#34;&gt;Wells tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_wells_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;polylines-tab&#34;&gt;Polylines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;horizon-tab&#34;&gt;Horizon tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GeotiffExport</title>
+      <link>/docs/plugins/geotiffexport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/geotiffexport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] 3D horizon and attribute data to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geotiff Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the 3D horizon and attributes to export and the destination file name. The horizon Z values and attributes values are exported to Float32 bands in the output image. The plugin supports exporting multiple attributes to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image (eg QGIS v3.6). If multiband images prove to be a problem the option exists to run the plugin multiple times and save each attribute to a separate GeoTIFF file.&lt;/p&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
+&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geotiffexport/geotiff_qgis.jpg&#34;
+         alt=&#34;OpendTect 3D horizon data displayed in a QGIS print layout&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect 3D horizon data displayed in a QGIS print layout&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,68 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – EFDAttrib</title>
+    <link>/tags/efdattrib/</link>
+    <description>Recent content in EFDAttrib on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/tags/efdattrib/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: WMPlugins 6.6.10 Release</title>
+      <link>/blog/2022/04/15/wmplugins-6.6.10-release/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Announcing the release of version 6.6.10 of the WMPlugins a suite of opensource plugins that extend the opensource seismic interpretation
+system &lt;a href=&#34;https://dgbes.com/index.php/software#free&#34;&gt;OpendTect&lt;/a&gt;. This release is built against OpendTect 6.6.7.&lt;/p&gt;
+&lt;p&gt;The release includes the following changes:&lt;/p&gt;
+&lt;h2 id=&#34;avopolarattrib&#34;&gt;AVOPolarAttrib&lt;/h2&gt;
+&lt;p&gt;Nans and Infs generated during the calculation of the attributes are converted to OpendTect Undefined, fixing a crash.&lt;/p&gt;
+&lt;h2 id=&#34;efdattrib&#34;&gt;EFDAttrib&lt;/h2&gt;
+&lt;p&gt;Two new attributes have been added that use &lt;a href=&#34;https://arxiv.org/abs/1912.00414&#34;&gt;Empirical Fourier Decomposition (Zhou etal(2019)&lt;/a&gt;. The
+two attributes generate the mode decomposition and a spectral decomposition from the mode decomposition. These provide a signal analysis
+akin to Empirical Mode Decomposition. A subsequent post will look at these new attributes in detail and compare the new spectral
+decomposition option with the existing WMPlugin tools such as Recursive spectral decomposition and Spectral decomposition by local attribute.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
+         alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;external-attributes&#34;&gt;External attributes&lt;/h2&gt;
+&lt;p&gt;This release fixes a crash when loading an attribute set with either a non-existent python interpreter or attribute script and now
+reports syntax errors from the script when building the UI via a UI message box. Previously these errors were recorded in the OpendTect
+log file but the user did not get any direct feedback that an issue was encountered.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
+         alt=&#34;Improved error reporting in the External Attribute plugin&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Improved error reporting in the External Attribute plugin&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Also fixed various issues with the included wmpy scripts to make them compatible with the versions of Python modules installed by the OpendTect
+installation manager.&lt;/p&gt;
+&lt;h2 id=&#34;mistie-analysis&#34;&gt;Mistie Analysis&lt;/h2&gt;
+&lt;p&gt;Fixed a crash when estimating misties for depth surveys.&lt;/p&gt;
+&lt;h2 id=&#34;wmodpy---opendtect-python-bindings&#34;&gt;wmodpy - OpendTect Python Bindings&lt;/h2&gt;
+&lt;p&gt;A decision was made to discontinue development of these within WMPlugins in favour of moving the code
+into the dGB managed OpendTect open source code repository system on Github. The new repository will be
+called &amp;ldquo;odpybind&amp;rdquo;.&lt;/p&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>

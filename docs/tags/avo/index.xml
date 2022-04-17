@@ -1,0 +1,315 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – avo</title>
+    <link>/tags/avo/</link>
+    <description>Recent content in avo on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/tags/avo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: AVOAttrib</title>
+      <link>/docs/plugins/avoattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/avoattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes based on different
+parameterizations of reflection intercept and gradient.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The intercept-gradient crossplot is widely used for amplitude-variation-with-offset (AVO) analysis in hydrocarbon exploration.
+The intercept is the zero offset or normal incidence reflection amplitude/coefficient of an event while the gradient is the change
+in reflection amplitude/coefficient with offset or incidence angle. Some authors refer to intercept as A or P and gradient as B or
+G. Modelling studies show that changes in subsurface rock properties such as lithology, porosity and pore fluid content result in
+systematic changes in intercept-gradient space. The following figure, adapted from the very informative paper on AVO by
+&lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.3467825&#34; title=&#34;Interpretation of AVO anomalies. Douglas J. Foster, Robert G. Keys, and F. David Lane. GEOPHYSICS 2010 75:5, 75A3-75A13&#34;&gt;Foster etal (2010)&lt;/a&gt;,
+illustrates the ideal intercept-gradient crossplot response for a clastic sequence to changes in porosity and pore fluid.
+The Fluid Line or Background Trend is where reflections from shales and some wet sands that have little contrast in Vp/Vs plot.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_ideal_crossplot.jpg&#34;
+         alt=&#34;Ideal AVO crossplot for a clastic sequence&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Ideal AVO crossplot for a clastic sequence&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Another popular classification of AVO effects on the intercept-gradient crossplot is the 3 class AVO scheme of &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.1442696&#34; title=&#34;Amplitude‐versus‐offset variations in gas sands. Steven R. Rutherford and Robert H. Williams GEOPHYSICS 1989 54:6, 680-688&#34;&gt;Rutherford and Williams (1989)&lt;/a&gt; based on acoustic impedance contrasts with the addition of a 4th class for high porosity gas sands introduced by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.1437626&#34; title=&#34;Principles of AVO crossplotting. John P. Castagna and Herbert W. Swan. The Leading Edge 1997 16:4, 337-344&#34;&gt;Castagna and Swan (1997)&lt;/a&gt;. The position of these 4 AVO classes on the intercept-gradient crossplot is shown in the following figure.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_classes.jpg&#34;
+         alt=&#34;AVO classes&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;AVO classes&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This plugin calculates 6 attributes which are essentially just coordinate transformations of the intercept and gradient that aim to highlight changes of a particular rock property based on the expected behaviour of clastic reservoir sequences.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ATTRIBUTE&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Fluid Factor&#34; src=&#34;AVOAttrib_fluidfactor_crossplot.jpg&#34; title=&#34;Fluid Factor Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Fluid Factor&lt;/h4&gt; Fluid Factor is a reprojection of intercept/gradient coordinates that highlights deviation from the Fluid Line. As the name implies this attribute highlights changes related to fluid compressibility. The Fluid Factor was introduced by &lt;a href=&#34;http://gp.eage.org/publication/publicationdetails/?publication=32676&#34; title=&#34;Weighted stacking for rock property estimation and detection of gas. G. C. Smith and P. M. Gidlow. Geophysical Prospecting 1987, Vol. 35, No. 9, pp. 993 - 1014&#34;&gt;Smith and Gidlow (1987)&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Lithology Factor&#34; src=&#34;AVOAttrib_lithfactor_crossplot.jpg&#34; title=&#34;Lithology Factor Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Lithology Factor&lt;/h4&gt; Lithology Factor is the companion coordinate reprojection to Fluid Factor. It highlights changes parallel to the Fluid Line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Porosity Factor&#34; src=&#34;AVOAttrib_porofactor_crossplot.jpg&#34; title=&#34;Porosity Factor Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Porosity Factor&lt;/h4&gt; Porosity Factor is just Lithology Factor with the values above the fluid line reversed so the attribute magnitude always increases in the same sense as the effect of increasing porosity, i.e. the attribute magnitude increases to the upper left below the Fluid Line and to the lower right above the Fluid Line.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Crossplot Angle&#34; src=&#34;AVOAttrib_angle_crossplot.jpg&#34; title=&#34;Crossplot Angle Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Crossplot Angle&lt;/h4&gt; Crossplot Angle is the angle between an intercept-gradient point and the Fluid Line. It runs from 0 to 180 below the Fluid Line measured counter-clockwise from the upper left projection of the Fluid Line. It runs from 0 to -180 above the Fluid Line measured counter-clockwise from the lower right projection of the Fluid Line. The Crossplot Angle and Deviation can be interpreted as the polar coordinates of a data point in the intercept-gradient crossplot space.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Crossplot Deviation&#34; src=&#34;AVOAttrib_deviation_crossplot.jpg&#34; title=&#34;Crossplot Deviation Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Crossplot Deviation&lt;/h4&gt;&lt;br/&gt; Crossplot Deviation is the distance from the crossplot origin. This attribute is most useful as a transparency mask to remove data close to the centre of the crossplot.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Crossplot Class&#34; src=&#34;AVOAttrib_class_crossplot.jpg&#34; title=&#34;AVO Class Crossplot&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;AVO Class&lt;/h4&gt;&lt;br/&gt; AVO Class classifies intercept-gradient points according to the 4 class AVO scheme of Rutherford and Williams (1989) and Castagna and Swan (1997). Points below the Fluid Line have a positive class number and those above have a negative class number.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;These attributes have 4 required parameters and 4 extra parameters that may be required depending on the attribute being calculated:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Intercept Volume&lt;/td&gt;
+&lt;td&gt;The attribute volume to use as the zero offset or normal incidence reflection amplitude coefficient. If no intercept volume is available a near angle or offset stack can be used as an alternative.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gradient Volume&lt;/td&gt;
+&lt;td&gt;The attribute volume to use as the change in reflection amplitude/coefficient with offset at normal incidence. If no gradient volume is available, the difference between amplitudes on far and near angle or offset stacks can be used as an alternative.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;The attribute to calculate. There is a choice of Fluid Factor, Lithology Factor, Porosity Factor, Crossplot Angle, Crossplot Deviation or AVO Class.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crossplot Slope&lt;/td&gt;
+&lt;td&gt;The slope of the fluid line interpreted on the intercept-gradient crossplot. This can be read from the properties dialog of the crossplot tool.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Intercept Standard Deviation (Optional)&lt;/td&gt;
+&lt;td&gt;Standard deviation of the intercept volume. Only required for the Crossplot Angle and Crossplot Deviation attributes. This can be read from the 1D histogram tool in the crossplot table.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gradient Standard Deviation (Optional)&lt;/td&gt;
+&lt;td&gt;Standard deviation of the gradient volume. Only required for the Crossplot Angle and Crossplot Deviation attributes. This can be read from the 1D histogram tool in the crossplot table.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Correlation Coefficient (Optional)&lt;/td&gt;
+&lt;td&gt;Correlation coefficient between the intercept and gradient volumes. Only required for the Crossplot Deviation attribute. This can be read from the properties dialog of the crossplot tool.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Class 2 Intercept Offset&lt;/td&gt;
+&lt;td&gt;Half width in intercept coordinates of the Class 2 region on the AVO Class crossplot. Only required for the AVO Class attribute.&amp;rsquo;]]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avoattrib/AVOAttrib_input_parameters.jpg&#34;
+         alt=&#34;AVO Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;AVO Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AVO Intercept and Gradient</title>
+      <link>/docs/externalattributes/avo_ig/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/externalattributes/avo_ig/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;These &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts estimate AVO intercept and gradient based on Shuey&amp;rsquo;s 2 term approximation
+to the Zoeppritz equation. Scripts are provided for 3, 4 and 5 angle stacks.&lt;/p&gt;
+&lt;h2 id=&#34;intercept-and-gradient-from-angle-stacks&#34;&gt;Intercept and Gradient from Angle Stacks&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_3_to_AVOIG.py&lt;/strong&gt;
+&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_4_to_AVOIG.py&lt;/strong&gt;
+&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_5_to_AVOIG.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Takes as input angle stacks and the corresponding angles and fits a least squares line to the \(amplitude\) and \(sin^2(angle)\) at
+each sample point. Output includes the intercept, gradient and the correlation coefficient of the line fit.&lt;/p&gt;
+&lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/externalattributes/avo_ig/ex_AVOIG_4_input.jpg&#34;
+         alt=&#34;ex_angle_stacks_4_to_AVOIG.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_angle_stacks_4_to_AVOIG.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For each input volume the corresponding incident angle must be provided.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AVOPolarAttrib</title>
+      <link>/docs/plugins/avopolarattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/avopolarattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes derived from AVO Polarization
+in the AVO Intercept-Gradient crossplot as described by
+&lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1581037&#34; title=&#34;AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003&#34;&gt;Mahob and Castagna (2003)&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The intercept-gradient crossplot is widely used for amplitude-variation-with-offset (AVO) analysis in hydrocarbon exploration.
+The intercept is the zero offset or normal incidence reflection amplitude/coefficient of an event while the gradient is the
+change in reflection amplitude/coefficient with offset or incidence angle. Some authors refer to intercept as A or P and gradient
+as B or G. Traditional methods of AVO interpretation focus on individual sample points in isolation essentially treating them as
+reflection coefficients. &lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.1487253&#34; title=&#34;The AVO hodogram: Using polarization to identify anomalies. Tim Keho, Skip Lemanski, Robert Ripple, and Bahal Raja Tambunan The Leading Edge 2001 20:11, 1214-1224&#34;&gt;Keho etal (2001)&lt;/a&gt; observed that this approach ignores the seismic wavelet. Convolving a seismic reflection coefficient with a typical seismic wavelet produces a series of points spread across all 4 quadrants of the AVO crossplot. Further distortions are introduced by residual time shifts across offsets and NMO stretch. &lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.1487253&#34; title=&#34;The AVO hodogram: Using polarization to identify anomalies. Tim Keho, Skip Lemanski, Robert Ripple, and Bahal Raja Tambunan The Leading Edge 2001 20:11, 1214-1224&#34;&gt;Keho etal (2001)&lt;/a&gt; proposed analysing the AVO crossplot for small time windows of 0.5-1 times the wavelet wavelength as hodograms using the polarization angle as a key measure. &lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1581037&#34; title=&#34;AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003&#34;&gt;Mahob and Castagna (2003)&lt;/a&gt;
+subsequently extended the analysis with a number of other measures to describe the hodogram.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avopolarattrib/AVOStrengthAttrib_hodogram_example.png&#34;
+         alt=&#34;Example AVO hodogram crossplot for a 36 millisec TWT window&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example AVO hodogram crossplot for a 36 millisec TWT window&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This plugin calculates the 6 attributes (Background Polarization Angle, Event Polarization Angle, Polarization Angle Difference, Strength, Polarization Product and Quality) defined by &lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1581037&#34; title=&#34;AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003&#34;&gt;Mahob and Castagna (2003)&lt;/a&gt;. The parameters are estimated by eigendecomposition of the covariance matrix for the intercept-gradient crossplot.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;EXAMPLE&lt;/th&gt;
+&lt;th&gt;ATTRIBUTE&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Background Polarization Angle&#34; src=&#34;AVOPolarAttrib_bgangle.jpg&#34; title=&#34;Background Polarization Angle&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Background Polarization Angle&lt;/h4&gt; Polarization Angle for all AVO crossplot points over a user specified time/depth window and volume of traces. The polarization angle is the orientation of the largest eigenvector relative to the positive intercept axis and varies from -90 to 90 degrees.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Event Polarization Angle&#34; src=&#34;AVOPolarAttrib_angle.jpg&#34; title=&#34;Event Polarization Angle&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Event Polarization Angle&lt;/h4&gt; Polarization Angle for AVO crossplot points in the user specified event time/depth window. Recommend using 0.5-1 times the wavelength. The polarization angle is the orientation of the largest eigenvector relative to the positive intercept axis and varies from -90 to 90 degrees.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Polarization Angle Difference&#34; src=&#34;AVOPolarAttrib_anglediff.jpg&#34; title=&#34;Polarization Angle Difference&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Polarization Angle Difference&lt;/h4&gt; The difference between the event and background polarization angles.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Strength&#34; src=&#34;AVOPolarAttrib_strength.jpg&#34; title=&#34;AVO Strength&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Strength&lt;/h4&gt;The Mahob and Castagna measure of the distance of the hodogram points from the origin within the event time/depth window.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Polarization Product&#34; src=&#34;AVOPolarAttrib_product.jpg&#34; title=&#34;Polarization Product&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Polarization Product&lt;/h4&gt; The product of the Strength and Polarization Angle Difference attributes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Quality&#34; src=&#34;AVOPolarAttrib_quality.jpg&#34; title=&#34;Quality&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;&lt;h4 class=&#34;text-center&#34;&gt;Quality&lt;/h4&gt; This is the ratio of the eigenvalue difference to the eigenvalue sum. It is a measure of the linearity of the points in the intercept-gradient crossplot. It ranges from 0 to 1 with higher values indicating the analysis points have a more linear hodogram and more reliable results.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;These attributes have 3 required parameters and 3 extra parameters that may be required depending on the attribute being calculated:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Intercept&lt;/td&gt;
+&lt;td&gt;The attribute volume to use as the zero offset or normal incidence reflection amplitude coefficient. If no intercept volume is available a near angle or offset stack can be used as an alternative.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gradient&lt;/td&gt;
+&lt;td&gt;The attribute volume to use as the change in reflection amplitude/coefficient with offset at normal incidence. If no gradient volume is available, the difference between amplitudes on far and near angle or offset stacks can be used as an alternative.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;The attribute to calculate. There is a choice of Background Polarization Angle, Event Polarization Angle, Polarization Angle Difference, Strength, Polarization Product or Quality.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Background time/depth gate (Optional)&lt;/td&gt;
+&lt;td&gt;The time/depth gate used to estimate the Background Polarization Angle. Only required for the Background Polarization Angle, Polarization Angle Difference and Polarization Product attributes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stepout (Optional)&lt;/td&gt;
+&lt;td&gt;The extent of the trace volume used to estimate the Background Polarization Angle. Only required for the Background Polarization Angle, Polarization Angle Difference and Polarization Product attributes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Event time/depth gate (Optional)&lt;/td&gt;
+&lt;td&gt;The time/depth gate used to estimate the Event Polarization Angle. Required for the Event Polarization, Polarization Angle Difference, Polarization Product and  Quality attributes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/avopolarattrib/AVOPolarAttrib_input_parameters.jpg&#34;
+         alt=&#34;AVO Polarization Attribute Plugin input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;AVO Polarization Attribute Plugin input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

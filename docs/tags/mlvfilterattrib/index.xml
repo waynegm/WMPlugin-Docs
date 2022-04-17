@@ -1,0 +1,100 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – MLVFilterAttrib</title>
+    <link>/tags/mlvfilterattrib/</link>
+    <description>Recent content in MLVFilterAttrib on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/tags/mlvfilterattrib/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: MLVFilterAttrib</title>
+      <link>/docs/plugins/mlvfilter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/mlvfilter/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect]
+applies a structure preserving Mean of Least Variance filter.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This attribute is an implementation of a mean of least variance filter
+&lt;a href=&#34;http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1008684&#34; title=&#34;Value-and-criterion filters: a new filter structure based on morphological opening and closing. Mark A. Schulze and John A. Pearce. Proc. SPIE 1902, Nonlinear Image Processing IV, 106 (May 21, 1993)&#34;&gt;Schulze &amp;amp; Pearce (1993)&lt;/a&gt; where the analysis elements are all the possible planes through the sample points in the analysis block. This algorithm may be similar to that proposed by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/1.3627375&#34; title=&#34;Structure‐preserving smoothing for 3D seismic attributes. Saleh Al‐Dossary and Yuchun Eugene Wang. SEG Technical Program Expanded Abstracts 2011. January 2011, 1004-1008&#34;&gt;Al-Dossary &amp;amp; Wang (2011)&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The sample variance for all samples on each analysis element is calculated and the output statistic (average, mean or element index)
+is output for the element with the least variance.&lt;/p&gt;
+&lt;p&gt;The following figure shows the relationship between the geometry of the analysis elements and the element index.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_elements.jpg&#34;
+         alt=&#34;MLV Filter analysis elements&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLV Filter analysis elements&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;MLVFilterAttrib_input.jpg&#34; data-label=&#34;Input&#34; alt=&#34;Input&#34; /&gt;
+    &lt;img src=&#34;MLVFilterAttrib_MLV3_Mean.jpg&#34; data-label=&#34;MLV Size 3 Average - 1 pass&#34; alt=&#34;MLV Size 3 Average - 1 pass&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/br&gt;&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_MLV3_Elements.jpg&#34;
+         alt=&#34;MLV 3 elements&#34; width=&#34;100%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLV 3 elements&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 2 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Filter size&lt;/td&gt;
+&lt;td&gt;Specifies a cube of samples centred  at the analysis location. Increasing the size will increase the degree of smoothing at the risk of smearing structural features. As the examples show it may be better to apply multiple passes of a small size filter than a single pass of a larger filter to reduce the risk of artifacts in the output. OpendTect makes it really easy to cascade multiple filter passes.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output statistic&lt;/td&gt;
+&lt;td&gt;What the filter will output. The options are average, median or the element index. The element index is included for curiosity and quality control. Generally the default &lt;em&gt;Average&lt;/em&gt; provides the most pleasing output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mlvfilter/MLVFilterAttrib_par1.jpg&#34;
+         alt=&#34;MLF Filter input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;MLF Filter input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

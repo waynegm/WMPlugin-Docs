@@ -1,0 +1,80 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – FAQ</title>
+    <link>/docs/faq/</link>
+    <description>Recent content in FAQ on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/faq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Frequently Asked Questions</title>
+      <link>/docs/faq/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/faq/faq/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;faq&#34;&gt;FAQ&lt;/h1&gt;
+&lt;p&gt;Can&amp;rsquo;t find an answer here - then submit an issue on &lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/issues&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;geopackage-export-plugin-isnt-loading&#34;&gt;Geopackage Export plugin isn&amp;rsquo;t loading&lt;/h2&gt;
+&lt;p&gt;The GeopackageExport plugin  requires access to external files (DLL&amp;rsquo;s on Windows and lib*.so on Linux). These should have been included in the binary package for the plugins.&lt;/p&gt;
+&lt;p&gt;On Windows the folder containing the plugin and support DLL&amp;rsquo;s must be added to the PATH environment variable. Do this by either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Editing/Adding the PATH environment variable for the System or User (Control Panel&amp;gt;System and Security&amp;gt;System - Advanced system settings - Environment Variables)&lt;/li&gt;
+&lt;li&gt;Adding a line like &amp;ldquo;@set PATH=%HOMEPATH%.od\bin\win64\Release;%PATH%&amp;rdquo; (adjust &amp;ldquo;%HOMEPATH%.od\bin\win64\Release&amp;rdquo; to reflect your installation) to the bat script used to start OpendTect&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;plugins-not-loading&#34;&gt;Plugins not loading&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Try manually loading the plugin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check the OpendTect log file for error messages and see if there is already a solution outlined elsewhere in this page.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;per-user-installation-and-multiple-opendtect-versions&#34;&gt;Per-user Installation and Multiple OpendTect versions&lt;/h2&gt;
+&lt;p&gt;The OpendTect-6.4-plugins won&amp;rsquo;t work in OpendTect 6.2 and the OpendTect-6.2-plugins won&amp;rsquo;t work in OpendTect 6.4. Here is a way to use the plugins with mutliple versions of OpendTect.&lt;/p&gt;
+&lt;h3 id=&#34;use-the-od_user_plugin_dir-environment-variable&#34;&gt;Use the OD_USER_PLUGIN_DIR environment variable&lt;/h3&gt;
+&lt;h4 id=&#34;for-windows&#34;&gt;For Windows&lt;/h4&gt;
+&lt;p&gt;1.Create &lt;strong&gt;ODPlugins\6.4.0&lt;/strong&gt; and &lt;strong&gt;ODPlugins\6.2.0&lt;/strong&gt; folders in the &lt;strong&gt;C:\Users%username%&lt;/strong&gt; folder&lt;/p&gt;
+&lt;p&gt;2.Install the OpendTect-6.2-plugins in the &lt;strong&gt;6.2.0&lt;/strong&gt; folder and the OpendTect-6.4-plugins in the &lt;strong&gt;6.4.0&lt;/strong&gt; folder as per the [installation] instructions.&lt;/p&gt;
+&lt;p&gt;3.Create a &amp;ldquo;bat&amp;rdquo; file to start each version of OpendTect that sets the &lt;strong&gt;OD_USER_PLUGIN_DIR&lt;/strong&gt; environment variable to the appropriate folder before starting OpendTect. Here is what odt_6_4.bat might look like:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;@set OD_USER_PLUGIN_DIR=%HOMEPATH%\ODPlugins\6.4.0
+start &amp;#34;&amp;#34; &amp;#34;C:\Program Files\OpendTect\6.4.0\bin\win64\Release\od_start_dtect.exe&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;for-linux&#34;&gt;For Linux&lt;/h4&gt;
+&lt;p&gt;1.Create &lt;strong&gt;ODPlugins\6.4.0&lt;/strong&gt; and &lt;strong&gt;ODPlugins\6.2.0&lt;/strong&gt; folders in the users home directory&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;	mkdir ~/ODPlugins
+	mkdir ~/ODPlugins/6.4.0 
+	mkdir ~/ODPlugins/6.2.0 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;2.Install the OpendTect-6.4-plugins in the users &lt;strong&gt;6.4.0&lt;/strong&gt; folder and the OpendTect-6.2-plugins in the &lt;strong&gt;6.2.0&lt;/strong&gt; folder as per the [installation] instructions.&lt;/p&gt;
+&lt;p&gt;3.Create executable shell scripts to start each version of OpendTect that sets the &lt;strong&gt;OD_USER_PLUGIN_DIR&lt;/strong&gt; to the appropriate folder before starting OpendTect. Here is what odt_6_4.csh might look like:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;	#!/bin/csh -f
+	setenv OD_USER_PLUGIN_DIR &amp;#34;$HOME/ODPlugins/6.4.0&amp;#34;
+	/path to OpendTect 6.4/start_dtect
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;libstdcso6-version-glibcxx_34-not-found&#34;&gt;libstdc++.so.6: version &amp;lsquo;GLIBCXX_3.4.??&amp;rsquo; not found&lt;/h2&gt;
+&lt;p&gt;This happens when the plugin is built with a gcc version different to the version used to build OpendTect. Solutions are:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;(Easy and seems to work ok but could break something) Rename the libstdc++.so.6 file in the OpendTect installation bin/lux64 folder to say old_libstdc++.so.6 and restart OpendTect.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Hard) Install the same version of gcc that OpendTect was built with and rebuild the plugin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;(Hardest) Build OpendTect from source using your installed gcc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

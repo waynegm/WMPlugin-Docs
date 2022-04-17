@@ -1,0 +1,341 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WMPlugins – Mistie</title>
+    <link>/tags/mistie/</link>
+    <description>Recent content in Mistie on WMPlugins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 15 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/tags/mistie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Mistie</title>
+      <link>/docs/plugins/mistie/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/plugins/mistie/</guid>
+      <description>
+        
+        
+        
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_plugin.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [opendtect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.&lt;/p&gt;
+&lt;p&gt;In an ideal world we would be given 2D seismic data that has consistent Z, phase and amplitude scales. In the real world this doesn&amp;rsquo;t always happen and 2D seismic interpretation projects accumulate inconsistencies as more data is added. The concept implemented by this plugin is the interpreter builds/maintains the correction table as they work through the data. The virtual corrected seismic from the Mistie Application attribute can be interpreted on the fly or the interpreter can generate a new adjusted dataset and interpret that.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin provides components to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Estimate misties from seismic data or horizon interpretation&lt;/li&gt;
+&lt;li&gt;Analyse the misties and estimate corrections to minimize the misties in a least squares sense&lt;/li&gt;
+&lt;li&gt;Edit/Maintain a set of mistie corrections&lt;/li&gt;
+&lt;li&gt;Attribute to apply the corrections to seismic data and tools to apply Z corrections to horizon interpretation.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are two alternative workflows to build a mistie correction file:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Estimate the misties from the data and compute a mistie correction file in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog&lt;/li&gt;
+&lt;li&gt;Manually build the mistie correction file in the &lt;a href=&#34;#mistie-correction-editor&#34;&gt;Mistie Correction Editor&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mistie-analysis&#34;&gt;&lt;strong&gt;Mistie Analysis&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Analysis&amp;rdquo; item to the Analysis main menu. Selecting the item opens the Mistie Analysis dialog:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_analysis.jpg&#34;
+         alt=&#34;Mistie Analysis&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Analysis&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Actions associated with the toolbar buttons are:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ICON&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;New&#34; src=&#34;new.png&#34; title=&#34;New&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Open the Mistie Estimation dialog to estimate misties from the seismic data. Existing contents of the mistie table are erased.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Open&#34; src=&#34;open.png&#34; title=&#34;Open&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Load mistie estimates from a previously saved file. Existing contents of the mistie table are erased.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Save&#34; src=&#34;save.png&#34; title=&#34;Save&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Save the current mistie estimates. If the current misties were loaded from a file then that will be overwritten, otherwise user will be asked to provide a new file name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;SaveAs&#34; src=&#34;saveas.png&#34; title=&#34;SaveAs&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Prompts for a file and saves the current mistie estimates.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Merge&#34; src=&#34;plus.png&#34; title=&#34;Merge&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Prompts for another mistie file and merges the results with the mistie set currently active in the tool optionally keeping or replacing common items.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Filter&#34; src=&#34;minus.png&#34; title=&#34;Filter&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Opens a dialog to filter the misties listed in the table, used for correction calculation and displayed in the mistie report.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Calculate Corrections&#34; src=&#34;attributes.png&#34; title=&#34;Calculate Corrections&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Open the Correction Calculation dialog.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Mistie Report&#34; src=&#34;xplot.png&#34; title=&#34;Mistie Report&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Opens a web browser and displays an interactive dashboard report for the current misties and correction set active in the tool.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h3 id=&#34;mistie-estimation&#34;&gt;&lt;strong&gt;Mistie Estimation&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;img src=&#34;new.png&#34; alt=&#34;New&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens a dialog box where the user can specify whether misties should be estimated from the seismic data or from horizon interpretation.&lt;/p&gt;
+&lt;p&gt;In the case of estimation from the seismic data the dialog looks like:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_estimation_seismic.jpg&#34;
+         alt=&#34;Mistie Estimation from Seismic&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Estimation from Seismic&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The user can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select the data type (attribute) and which lines to include in the analysis&lt;/li&gt;
+&lt;li&gt;Include and select a 3D seismic volume to include in the analysis&lt;/li&gt;
+&lt;li&gt;Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie&lt;/li&gt;
+&lt;li&gt;Limit the maximum time-shift or mistie to consider&lt;/li&gt;
+&lt;li&gt;Specify a Z window for the cross correlation of traces at line interections&lt;/li&gt;
+&lt;li&gt;Indicate if only time corrections should be estimated (default is to simultaneously estimate Z, phase rotation and amplitude corrections)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The default estimation of Z phase rotation and amplitude misties is based on the method described by &lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1443654&#34; title=&#34;Correcting amplitude, time, and phase mis‐ties in seismic data. Thomas N. Bishop and Alan G. Nunns, GEOPHYSICS 1994 59:6, 946-953&#34;&gt;Bishop and Nunns (1994)&lt;/a&gt; using cross correlation of the amplitude envelope of the traces. This is the preferred method for seismic data with a reasonable bandwidth. For narrow bandwidth data (eg site survey data) the time corrections only estimation method which uses cross correlation of the raw seismic traces may generate better results.&lt;/p&gt;
+&lt;p&gt;In the case of estimation from horizon interpretation the dialog looks like:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_estimation_horizon.jpg&#34;
+         alt=&#34;Mistie Estimation from Horizon Interpretation&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Estimation from Horizon Interpretation&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The user can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select a 2D horizon and set of lines to use&lt;/li&gt;
+&lt;li&gt;Select a 3D horizon to use&lt;/li&gt;
+&lt;li&gt;Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The Apply button will initiate the estimation of the misties, when complete results are displayed in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog. Clicking the &lt;img src=&#34;images/xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; icon will generate a [#Mistie Report] with histograms and scatterplot of the mistie estimates  for review.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-filter&#34;&gt;&lt;strong&gt;Mistie Filter&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;img src=&#34;minus.png&#34; alt=&#34;Filter&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog that allows filtering of
+the misties displayed in the list, used for correction calculation and included in the mistie report:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_filter.jpg&#34;
+         alt=&#34;Mistie filtering&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie filtering&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Activate the checkbox next to the filter to activate it. At this moment only filtering by the tie quality (correlation coefficient) is supported.
+The tie quality can vary from 0.0 (no tie) to 1.0 (perfect tie). A cut-off of 0.5-0.6 should filter unreliable mistie estimates.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-correction-calculation&#34;&gt;&lt;strong&gt;Mistie Correction Calculation&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;img src=&#34;attributes.png&#34; alt=&#34;Calculate Corrections&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog to
+compute mistie corrections that minimize the root mean square (RMS) mistie after correction:&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_correction.jpg&#34;
+         alt=&#34;Mistie correction calculation&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie correction calculation&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The user can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Optionally select one or more line(s) to use as a reference. Reference lines will have Z, phase and amplitude corrections constrained to be 0, 0, 1 respectively and corrections will be computed only for  the non-reference lines. Selecting no lines will distribute corrections across all lines.&lt;/li&gt;
+&lt;li&gt;Control the maximum number of iterations used to calculate the corrections - the default value should be adequate in most circumstances.&lt;/li&gt;
+&lt;li&gt;Control the convergence criteria that stops the iteration used to calulate the corrections - iterations stop if the change in the RMS mistie (after applying corrections) between successive iterations is less than the threshhold. Thresholds exist for the Z, phase and amplitude corrections. The default values should be adquate in most circumstances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The calculated corrections will be displayed in a new table dialog:&lt;/p&gt;
+&lt;p&gt;{{ figure(&amp;lsquo;mistie_correction_viewer.jpg&amp;rsquo;, &amp;lsquo;Mistie correction viewer&amp;rsquo;) }}&lt;/p&gt;
+&lt;p&gt;The toolbar buttons can be used to save the corrrections to a disk file.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-report&#34;&gt;&lt;strong&gt;Mistie Report&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;img src=&#34;xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog generates and displays in the system web
+browser a graphical, html format dashboard of the mistie anaysis and correction calculation results. This includes tabulated data,
+histograms and a 3D scatterplot. Here is an example of a &lt;a href=&#34;mistie_report_example.html&#34;&gt;mistie report&lt;/a&gt;. The html file displayed in
+the browser can be saved for later display suing the browser&amp;rsquo;s save page functionality.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-correction-editor&#34;&gt;&lt;strong&gt;Mistie Correction Editor&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Corrections&amp;rdquo; item to the Survey-Manage main menu. Selecting the item opens the Mistie Correction Editor.
+This tool can be used to manually create mistie correction files or modify files generated by the
+&lt;a href=&#34;#mistie-correction-calculation&#34;&gt;Mistie Correction Calculation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_editor.jpg&#34;
+         alt=&#34;Mistie correction editor&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie correction editor&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The editor has toolbar buttons to:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ICON&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;New&#34; src=&#34;new.png&#34; title=&#34;New&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Create a mistie correction set with all the  2D lines in the project (with default corrections that make no change to the  data). Existing contents of the mistie table are erased.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Open&#34; src=&#34;open.png&#34; title=&#34;Open&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Load mistie corrections from a previously saved file. Existing contents of the mistie table are erased.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Save&#34; src=&#34;save.png&#34; title=&#34;Save&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Save the current mistie corrections. If the current corrections were loaded from a file then that will be overwritten, otherwise the user will be asked to provide a new file name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;SaveAs&#34; src=&#34;saveas.png&#34; title=&#34;SaveAs&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Prompts for a file and saves the current mistie corrections.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img class=&#34;img-responsive&#34; alt=&#34;Merge&#34; src=&#34;plus.png&#34; title=&#34;Merge Corrections&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Merge another mistie correction set file with the current set, optionally keeping or replacing the existing corrections where there is duplicate line/dataset names.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;Within the editor it is possible to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add new lines/datasets and associated corrections&lt;/li&gt;
+&lt;li&gt;Edit existing corrections&lt;/li&gt;
+&lt;li&gt;RightMouseButton click on a row brings up a menu to insert or delete selected row(s)&lt;/li&gt;
+&lt;li&gt;Limited clipboard copy and paste is available&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can include corrections for a particular 3D seismic volume by using a line/dataset name of the form &amp;ldquo;3D_XXXX&amp;rdquo; where the &amp;ldquo;XXXX&amp;rdquo; is the
+volume name, eg note the &amp;ldquo;3D_pstm&amp;rdquo; in the above figure. Multiple unique &amp;ldquo;3D_XXXX&amp;rdquo; entries are allowed to specify corrections for different
+3D volumes in the project.&lt;/p&gt;
+&lt;p&gt;If a line doesn&amp;rsquo;t need a correction it can be omitted from the set and default (no change) corrections will be assumed when the Mistie
+Application attribute is applied. A message (which can be safely ignored) is added to the log file when this occurs.&lt;/p&gt;
+&lt;p&gt;The name in the line/dataset column must exactly match the project line name.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-application-attribute&#34;&gt;&lt;strong&gt;Mistie Application Attribute&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Application&amp;rdquo; attribute to the list of [opendtect] attributes.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistieapplication_input.jpg&#34;
+         alt=&#34;Mistie Application attribute input parameters&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Application attribute input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The attribute parameters include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The input seismic volume to be corrected&lt;/li&gt;
+&lt;li&gt;A file with the mistie correction set to apply&lt;/li&gt;
+&lt;li&gt;Which corrections to apply&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When the attribute is displayed the shift, phase rotation and amplitude scalar for the line is read from the correction file and applied.&lt;/p&gt;
+&lt;h3 id=&#34;mistie-correction-of-horizon-interpretation&#34;&gt;&lt;strong&gt;Mistie Correction of Horizon Interpretation&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;The plugin adds an &amp;ldquo;Apply Mistie Corrections&amp;rdquo; item to the &amp;ldquo;Processing | Create Horizon Output&amp;rdquo; main menu that opens a dialog box to apply mistie corrections to 2D and 3D horizon interpretation.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_horizon_2D_apply.jpg&#34;
+         alt=&#34;Mistie Application to 2D Horizon&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Application to 2D Horizon&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/docs/plugins/mistie/mistie_horizon_3D_apply.jpg&#34;
+         alt=&#34;Mistie Application to 3D Horizon&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Mistie Application to 3D Horizon&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;general-notes&#34;&gt;General Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The default file extension for saved mistie estimates is &amp;ldquo;mistie&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;The default file extension for saved mistie corrections is &amp;ldquo;miscor&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;The default file location for all files is the &lt;strong&gt;Misc&lt;/strong&gt; folder in the OpendTect survey/project folder&lt;/li&gt;
+&lt;li&gt;All files are in a simple text format which can also be modified using a text editor&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: WMPlugins 6.6.10 Release</title>
+      <link>/blog/2022/04/15/wmplugins-6.6.10-release/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/04/15/wmplugins-6.6.10-release/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Announcing the release of version 6.6.10 of the WMPlugins a suite of opensource plugins that extend the opensource seismic interpretation
+system &lt;a href=&#34;https://dgbes.com/index.php/software#free&#34;&gt;OpendTect&lt;/a&gt;. This release is built against OpendTect 6.6.7.&lt;/p&gt;
+&lt;p&gt;The release includes the following changes:&lt;/p&gt;
+&lt;h2 id=&#34;avopolarattrib&#34;&gt;AVOPolarAttrib&lt;/h2&gt;
+&lt;p&gt;Nans and Infs generated during the calculation of the attributes are converted to OpendTect Undefined, fixing a crash.&lt;/p&gt;
+&lt;h2 id=&#34;efdattrib&#34;&gt;EFDAttrib&lt;/h2&gt;
+&lt;p&gt;Two new attributes have been added that use &lt;a href=&#34;https://arxiv.org/abs/1912.00414&#34;&gt;Empirical Fourier Decomposition (Zhou etal(2019)&lt;/a&gt;. The
+two attributes generate the mode decomposition and a spectral decomposition from the mode decomposition. These provide a signal analysis
+akin to Empirical Mode Decomposition. A subsequent post will look at these new attributes in detail and compare the new spectral
+decomposition option with the existing WMPlugin tools such as Recursive spectral decomposition and Spectral decomposition by local attribute.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-01.png&#34;
+         alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;external-attributes&#34;&gt;External attributes&lt;/h2&gt;
+&lt;p&gt;This release fixes a crash when loading an attribute set with either a non-existent python interpreter or attribute script and now
+reports syntax errors from the script when building the UI via a UI message box. Previously these errors were recorded in the OpendTect
+log file but the user did not get any direct feedback that an issue was encountered.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;/blog/2022/04/15/wmplugins-6.6.10-release/image-03.png&#34;
+         alt=&#34;Improved error reporting in the External Attribute plugin&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Improved error reporting in the External Attribute plugin&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Also fixed various issues with the included wmpy scripts to make them compatible with the versions of Python modules installed by the OpendTect
+installation manager.&lt;/p&gt;
+&lt;h2 id=&#34;mistie-analysis&#34;&gt;Mistie Analysis&lt;/h2&gt;
+&lt;p&gt;Fixed a crash when estimating misties for depth surveys.&lt;/p&gt;
+&lt;h2 id=&#34;wmodpy---opendtect-python-bindings&#34;&gt;wmodpy - OpendTect Python Bindings&lt;/h2&gt;
+&lt;p&gt;A decision was made to discontinue development of these within WMPlugins in favour of moving the code
+into the dGB managed OpendTect open source code repository system on Github. The new repository will be
+called &amp;ldquo;odpybind&amp;rdquo;.&lt;/p&gt;
+      </description>
+    </item>
+    
+  </channel>
+</rss>
