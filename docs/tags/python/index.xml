@@ -489,7 +489,7 @@ packages. Any additional dependencies will usually be described in a README.md f
 scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that
 implements the attribute calculation.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-g&lt;/code&gt; the application should write out a  [#JSON Parameter String] to stdout describing the attribute parameters and exit.&lt;/li&gt;
+&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-g&lt;/code&gt; the application should write out a  &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt; to stdout describing the attribute parameters and exit.&lt;/li&gt;
 &lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-c json-parameter-string&lt;/code&gt; the application
 &lt;ul&gt;
 &lt;li&gt;should read and parse the contents of &lt;code&gt;json-parameter-string&lt;/code&gt; to get the attribute parameters&lt;/li&gt;

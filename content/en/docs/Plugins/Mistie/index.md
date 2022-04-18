@@ -73,7 +73,9 @@ The user can:
 - Select a 3D horizon to use
 - Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie
 
-The Apply button will initiate the estimation of the misties, when complete results are displayed in the [Mistie Analysis](#mistie-analysis) dialog. Clicking the ![Mistie Report](images/xplot.png) icon will generate a [#Mistie Report] with histograms and scatterplot of the mistie estimates  for review.
+The Apply button will initiate the estimation of the misties, when complete results are displayed in the [Mistie Analysis](#mistie-analysis) dialog.
+Clicking the ![Mistie Report](images/xplot.png) icon will generate a [Mistie Report](#mistie-report) with histograms and scatterplot of the mistie
+estimates  for review.
 
 ### **Mistie Filter**
 The ![Filter](minus.png) toolbar item in the [Mistie Analysis](#mistie-analysis) dialog opens the following dialog that allows filtering of

@@ -260,7 +260,7 @@ The following describes how the plugin works. Most of the details are handled by
 scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that
 implements the attribute calculation.
 
-- When invoked with a commandline argument of `-g` the application should write out a  [#JSON Parameter String] to stdout describing the attribute parameters and exit.
+- When invoked with a commandline argument of `-g` the application should write out a  [JSON parameter string](#json-parameter-string) to stdout describing the attribute parameters and exit.
 - When invoked with a commandline argument of `-c json-parameter-string` the application
 	- should read and parse the contents of `json-parameter-string` to get the attribute parameters
 	- read a 40 byte block of binary data from stdin called the SeismicInfo block (described below)

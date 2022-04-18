@@ -139,7 +139,9 @@
 &lt;li&gt;Select a 3D horizon to use&lt;/li&gt;
 &lt;li&gt;Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The Apply button will initiate the estimation of the misties, when complete results are displayed in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog. Clicking the &lt;img src=&#34;images/xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; icon will generate a [#Mistie Report] with histograms and scatterplot of the mistie estimates  for review.&lt;/p&gt;
+&lt;p&gt;The Apply button will initiate the estimation of the misties, when complete results are displayed in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog.
+Clicking the &lt;img src=&#34;images/xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; icon will generate a &lt;a href=&#34;#mistie-report&#34;&gt;Mistie Report&lt;/a&gt; with histograms and scatterplot of the mistie
+estimates  for review.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-filter&#34;&gt;&lt;strong&gt;Mistie Filter&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The &lt;img src=&#34;minus.png&#34; alt=&#34;Filter&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog that allows filtering of
 the misties displayed in the list, used for correction calculation and included in the mistie report:&lt;/p&gt;
