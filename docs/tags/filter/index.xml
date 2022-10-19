@@ -194,70 +194,6 @@ is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: GradientAttrib</title>
-      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</guid>
-      <description>
-        
-        
-        &lt;p&gt;This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.&lt;/p&gt;
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This plugin calculates the inline, crossline or time/depth gradient using operators optimised for rotation invariance, ie equal response in all directions, proposed  by &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon (2009)&lt;/a&gt; and &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli(2004)&lt;/a&gt;. These provide more accurate alternatives to the Prewitt filter option of the OpendTect Convolve attribute for computing gradients.&lt;/p&gt;
-&lt;p&gt;The attribute offers a choice of Kroon&amp;rsquo;s 3x3x3, Farid and Simoncelli&amp;rsquo;s 5x5x5 or Farid and Simoncelli&amp;rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.&lt;/p&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/gradient_attrib.jpg&#34;
-         alt=&#34;Accuracy of the gradient attribute operators&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Accuracy of the gradient attribute operators&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
-&lt;p&gt;This attribute has 3 parameters:&lt;/p&gt;
-
-
-
-
-
-&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;NAME&lt;/th&gt;
-&lt;th&gt;DESCRIPTION&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Input Volume&lt;/td&gt;
-&lt;td&gt;The input attribute volume.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Output Gradient&lt;/td&gt;
-&lt;td&gt;What to calculate - choice of Inline, Crossline or Z gradient.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Operator&lt;/td&gt;
-&lt;td&gt;What operator to use - choice of Kroon&#39;s 3x3x3, Farid&#39;s 5x5x5 or Farid&#39;s 7x7x7.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
- &lt;/div&gt;
-
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/GradientAttrib_input.jpg&#34;
-         alt=&#34;Gradient attribute input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Gradient attribute input parameter dialog&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Spatial Filter - Rectangular</title>
       <link>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/spatialfilterrectangular/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -359,6 +295,70 @@ a 1D bandreject spatial filter along the crosslines (stepout 9,0) with an inline
 &lt;/tbody&gt;
 &lt;/table&gt;
  &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GradientAttrib</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin calculates the inline, crossline or time/depth gradient using operators optimised for rotation invariance, ie equal response in all directions, proposed  by &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon (2009)&lt;/a&gt; and &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli(2004)&lt;/a&gt;. These provide more accurate alternatives to the Prewitt filter option of the OpendTect Convolve attribute for computing gradients.&lt;/p&gt;
+&lt;p&gt;The attribute offers a choice of Kroon&amp;rsquo;s 3x3x3, Farid and Simoncelli&amp;rsquo;s 5x5x5 or Farid and Simoncelli&amp;rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/gradient_attrib.jpg&#34;
+         alt=&#34;Accuracy of the gradient attribute operators&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Accuracy of the gradient attribute operators&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;This attribute has 3 parameters:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Volume&lt;/td&gt;
+&lt;td&gt;The input attribute volume.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Gradient&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of Inline, Crossline or Z gradient.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Operator&lt;/td&gt;
+&lt;td&gt;What operator to use - choice of Kroon&#39;s 3x3x3, Farid&#39;s 5x5x5 or Farid&#39;s 7x7x7.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/GradientAttrib_input.jpg&#34;
+         alt=&#34;Gradient attribute input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Gradient attribute input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 
       </description>

@@ -1,6 +1,6 @@
 ---
 title: External(Python) Attributes
-weight: 3
+weight: 4
 description: seismic attributes in Python
 categories: ["docs"]
 tags: ["ExternalAttrib", "python"]

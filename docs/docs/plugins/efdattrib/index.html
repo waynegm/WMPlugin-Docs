@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.104.3" />
+<meta name="robots" content="index, follow">
+
+
+<link rel="shortcut icon" href="/WMPlugin-Docs/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/WMPlugin-Docs/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/android-192x192.png" sizes="192x192">
+
+<title>EFDAttrib | WMPlugins</title>
+<meta name="description" content="spectral (time-frequency) decomposition using empirical fourier decomposition">
+<meta property="og:title" content="EFDAttrib" />
+<meta property="og:description" content="spectral (time-frequency) decomposition using empirical fourier decomposition" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/" /><meta property="article:section" content="docs" />
+
+<meta property="og:site_name" content="WMPlugins" />
+
+<meta itemprop="name" content="EFDAttrib">
+<meta itemprop="description" content="spectral (time-frequency) decomposition using empirical fourier decomposition">
+
+<meta itemprop="wordCount" content="226">
+<meta itemprop="keywords" content="time-frequency&#34;,spectral-decomposition," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="EFDAttrib"/>
+<meta name="twitter:description" content="spectral (time-frequency) decomposition using empirical fourier decomposition"/>
+
+
+
+
+<link rel="preload" href="/WMPlugin-Docs/scss/main.min.89300008cc31a5e13d36bfdb093b10fd4fcc4d3c8ff708f3f9128af3884f69d3.css" as="style">
+<link href="/WMPlugin-Docs/scss/main.min.89300008cc31a5e13d36bfdb093b10fd4fcc4d3c8ff708f3f9128af3884f69d3.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+<script
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="/css/juxtapose.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-62607269-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/WMPlugin-Docs/">
+		<span class="navbar-logo"><svg width="30" height="29.990032" id="svg2" inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)" inkscape:export-filename="test.png" inkscape:export-xdpi="100" inkscape:export-ydpi="100" sodipodi:docname="logo.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><defs id="defs4"><clipPath clipPathUnits="userSpaceOnUse" id="clipPath3861"><rect style="fill:none;stroke:maroon;stroke-width:.313602;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" id="rect3863" width="77.660332" height="77.853149" x="310.03735" y="224.89983" rx=".50646973" ry=".50646973"/></clipPath></defs><sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" inkscape:pageopacity="1" inkscape:pageshadow="2" inkscape:zoom="5.7415178" inkscape:cx="14.543193" inkscape:cy="45.893788" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="1542" inkscape:window-height="836" inkscape:window-x="884" inkscape:window-y="151" inkscape:window-maximized="0" inkscape:pagecheckerboard="0" fit-margin-top="0" fit-margin-left="0" fit-margin-right="0" fit-margin-bottom="0" showborder="true"/><g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-309.40455,-224.50644)"><rect style="fill:#fff;stroke:none;stroke-width:1.08" id="rect308" width="30" height="30" x="309.40454" y="224.50644"/><g id="g106" transform="matrix(0.38121346,0,0,0.38121346,191.45537,138.92156)"><text style="font-style:normal;font-weight:400;line-height:0%;font-family:bitstream vera sans;letter-spacing:0;word-spacing:0;fill:#000;fill-opacity:1;stroke:none" x="313.37061" y="291.67529" id="text3050"><tspan sodipodi:role="line" id="tspan3052" x="313.37061" y="291.67529" style="font-size:11px;line-height:1.25"> </tspan></text><path style="fill:maroon;stroke:maroon;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m387.4512 242.23695s0-.12316-5.54206-.12316-24.01557 2.33998-24.75451 25.98608c-.73894 23.6461 17.48826 25.3703 21.79875 25.24714 4.31049-.12316 8.74413.0 8.74413.0l-.12316 4.92627s-.98525 1.10841-8.37465.98526c-7.38941-.12316-26.47871-4.80311-26.60187-30.54288-.12316-25.73977 23.52295-32.63655 29.065-32.39023s5.91152.36947 5.91152.36947z" id="path3853" inkscape:connector-curvature="0" sodipodi:nodetypes="czzzcczzzcc"/><path style="fill:maroon;stroke:maroon;stroke-width:.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m362.943 266.00621c.224-12.51095 9.42012-17.08677 16.62616-17.11879 7.20604-.032 8.00519 2.70944 8.00519 2.70944l-.24631 7.26625s-3.31403-4.8874-9.1136-4.92627c-5.79957-.0389-10.90531 5.75542-10.8378 12.43884.0675 6.68342 4.37668 13.20715 9.85255 13.54724s10.34516-5.4189 10.34516-5.4189l-.12315 8.12835s-2.99852 2.97549-9.48307 2.95576c-6.48455-.0197-15.24913-7.07097-15.02513-19.58192z" id="path3855" inkscape:connector-curvature="0" sodipodi:nodetypes="zzcczzzcczz"/><path sodipodi:type="arc" style="fill:none;stroke:none" id="path3065" sodipodi:cx="377.86176" sodipodi:cy="266.76852" sodipodi:rx="2.8738046" sodipodi:ry="4.4413342" d="m380.73556 266.76852a2.8738046 4.4413342.0 01-2.87041 4.44134 2.8738046 4.4413342.0 01-2.87719-4.43084 2.8738046 4.4413342.0 012.86361-4.4518 2.8738046 4.4413342.0 012.88396 4.42032" sodipodi:start="0" sodipodi:end="6.2784611" sodipodi:open="true" sodipodi:arc-type="arc"/><path style="fill:maroon;stroke:maroon;stroke-width:.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m343.23792 268.22303c-.0259-6.55971 2.48565-13.87236 4.43365-18.2272 1.94799-4.35485 5.78836-10.8378 10.83779-15.76407 5.04943-4.92627 11.45358-9.9757 21.79875-9.60623 10.34516.36947 7.26624.36947 7.26624.36947l-.12315 4.31049s.87575-.27087-6.89678-.24631c-7.77253.0246-17.48827 5.17258-22.29138 11.20726-4.80311 6.03468-10.93423 17.70247-10.71464 26.72502.21959 9.02254.98526 17.73457 6.03469 24.75451 6.81828 9.47906 10.71464 11.33042 10.71464 11.33042s-6.76189-.17021-7.26626-.12316c-3.33696-2.9087-7.50492-8.85484-9.48307-13.05461-1.97815-4.19977-4.28454-15.11588-4.31048-21.67559z" id="path3083" inkscape:connector-curvature="0" sodipodi:nodetypes="zzzscczzzscczz"/><path style="fill:none;stroke:#000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m336.32222 244.2135 40.92994 21.24874h-.17417v0" id="path3069" inkscape:connector-curvature="0"/><path style="fill:none;stroke:#000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m320.29858 259.54046 56.08273 7.83765v0" id="path3071" inkscape:connector-curvature="0"/><path style="fill:none;stroke:#000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="m339.80562 274.34491 36.92403-5.74761" id="path3073" inkscape:connector-curvature="0"/><path style="fill:maroon;stroke:#000;stroke-width:.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m336.67056 244.56184-4.70259.34834-13.75943-6.44429 5.39927-1.56753-1.04502-5.2251 13.75943 8.36016z" id="path3075" inkscape:connector-curvature="0"/><path style="fill:maroon;stroke:#000;stroke-width:.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m322.56279 280.44086h11.32105l6.9668-6.09595-5.57344-2.61255-14.97862.34834 4.87676 3.83174z" id="path3077" inkscape:connector-curvature="0"/><path style="fill:maroon;stroke:#000;stroke-width:.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m309.98559 262.06519 6.03468-.49263 4.67996-2.09366-2.83261-3.81786-8.2515-3.32523z" id="path3081" inkscape:connector-curvature="0"/></g></g></svg></span><span class="font-weight-bold">WMPlugins</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/WMPlugin-Docs/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/WMPlugin-Docs/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/WMPlugin-Docs/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/WMPlugin-Docs/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			
+			<li><a class="btn btn-sm btn-secondary mr-4 nav-link" href="https://ko-fi.com/N4N6CFI7R" target="blank" >
+			    Support WMPlugins Development <i class="fas fa-arrow-alt-circle-right ml-2"></i></a>
+			</li>
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"><input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.5dc4215770cffca13f87dd9045069cbc.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.5dc4215770cffca13f87dd9045069cbc.json"
+  data-offline-search-base-href="/"
+  data-offline-search-max-results="10"
+>
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-wmplugin-docsdocs-li">
+  <a href="/WMPlugin-Docs/docs/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-wmplugin-docsdocs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-wmplugin-docsdocsgettingstarted-li">
+  <a href="/WMPlugin-Docs/docs/gettingstarted/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-wmplugin-docsdocsgettingstarted"><span class="">Getting Started</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsgettingstartedinstallation-li">
+  <a href="/WMPlugin-Docs/docs/gettingstarted/installation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsgettingstartedinstallation"><span class="">Installation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsgettingstartedbuilding-from-source-li">
+  <a href="/WMPlugin-Docs/docs/gettingstarted/building-from-source/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsgettingstartedbuilding-from-source"><span class="">Building from Source</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-wmplugin-docsdocsplugins-li">
+  <a href="/WMPlugin-Docs/docs/plugins/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-wmplugin-docsdocsplugins"><span class="">Plugins</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsavoattrib-li">
+  <a href="/WMPlugin-Docs/docs/plugins/avoattrib/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsavoattrib"><span class="">AVOAttrib</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsavopolarattrib-li">
+  <a href="/WMPlugin-Docs/docs/plugins/avopolarattrib/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsavopolarattrib"><span class="">AVOPolarAttrib</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsefdattrib-li">
+  <a href="/WMPlugin-Docs/docs/plugins/efdattrib/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsefdattrib"><span class="td-sidebar-nav-active-item">EFDAttrib</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsexternalattrib-li">
+  <a href="/WMPlugin-Docs/docs/plugins/externalattrib/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsexternalattrib"><span class="">External(Python) Attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsgeopackagedisplay-li">
+  <a href="/WMPlugin-Docs/docs/plugins/geopackagedisplay/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsgeopackagedisplay"><span class="">GeopackageDisplay</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsgeopackageexport-li">
+  <a href="/WMPlugin-Docs/docs/plugins/geopackageexport/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsgeopackageexport"><span class="">GeopackageExport</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsgeotiffexport-li">
+  <a href="/WMPlugin-Docs/docs/plugins/geotiffexport/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsgeotiffexport"><span class="">GeotiffExport</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsgradientattrib-li">
+  <a href="/WMPlugin-Docs/docs/plugins/gradientattrib/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsgradientattrib"><span class="">GradientAttrib</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginslocalattrib-li">
+  <a href="/WMPlugin-Docs/docs/plugins/localattrib/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginslocalattrib"><span class="">LocalAttrib</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsgrid2d-3d-li">
+  <a href="/WMPlugin-Docs/docs/plugins/grid2d-3d/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsgrid2d-3d"><span class="">Grid 2D-3D Horizon</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsmistie-li">
+  <a href="/WMPlugin-Docs/docs/plugins/mistie/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsmistie"><span class="">Mistie</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsmlvfilter-li">
+  <a href="/WMPlugin-Docs/docs/plugins/mlvfilter/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsmlvfilter"><span class="">MLVFilterAttrib</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginsrspecattrib-li">
+  <a href="/WMPlugin-Docs/docs/plugins/rspecattrib/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginsrspecattrib"><span class="">RSpecAttrib</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocspluginswmtools-li">
+  <a href="/WMPlugin-Docs/docs/plugins/wmtools/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocspluginswmtools"><span class="">WMTools</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-wmplugin-docsdocsexternalattributes-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-wmplugin-docsdocsexternalattributes"><span class="">External Attributes</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesaddnoise-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/addnoise/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesaddnoise"><span class="">Add Noise</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesavo_ig-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/avo_ig/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesavo_ig"><span class="">AVO Intercept and Gradient</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesdipazimuth-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/dipazimuth/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesdipazimuth"><span class="">Dip and Azimuth</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributeslpasmooth-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/lpasmooth/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributeslpasmooth"><span class="">LPA Smoothing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributespylops-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/pylops/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributespylops"><span class="">PyLops Attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesspatialfiltercircular-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/spatialfiltercircular/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesspatialfiltercircular"><span class="">Spatial Filter - Circular</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesspatialfilterrectangular-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/spatialfilterrectangular/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesspatialfilterrectangular"><span class="">Spatial Filter - Rectangular</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesvectorfilter-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/vectorfilter/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesvectorfilter"><span class="">Vector Filter</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributeszdelayest-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/zdelayest/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributeszdelayest"><span class="">Time Delay Estimation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributeszcblock-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/zcblock/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributeszcblock"><span class="">ZC Block</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-wmplugin-docsdocsfaq-li">
+  <a href="/WMPlugin-Docs/docs/faq/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-wmplugin-docsdocsfaq"><span class="">FAQ</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsfaqfaq-li">
+  <a href="/WMPlugin-Docs/docs/faq/faq/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsfaqfaq"><span class="">Frequently Asked Questions</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+<a href="https://github.com/waynegm/WMPlugin-Docs/tree/master/docs/content/en/docs/Plugins/EFDAttrib/index.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+  <a href="https://github.com/waynegm/WMPlugin-Docs/edit/master/docs/content/en/docs/Plugins/EFDAttrib/index.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/waynegm/WMPlugin-Docs/new/master/docs/content/en/docs/Plugins/EFDAttrib/index.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+  <a href="https://github.com/waynegm/WMPlugin-Docs/issues/new?title=EFDAttrib" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+  <a href="https://github.com/waynegm/OpendTect-Plugins/issues/new" class="td-page-meta--project-issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+  <a id="print" href="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
+
+</div>
+
+            
+
+
+<div class="td-toc"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#input-parameters">Input Parameters</a>
+      <ul>
+        <li><a href="#efd-modes">EFD Modes</a></li>
+        <li><a href="#efd-spectral-decomposition">EFD Spectral Decomposition</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+
+
+
+            
+
+	
+		
+			
+				
+			
+			
+
+
+
+  
+  
+    <div class="taxonomy taxonomy-terms-cloud taxo-tags">
+      
+        <h5 class="taxonomy-title">Tag Cloud</h5>
+      
+      <ul class="taxonomy-terms">
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/attribute/" data-taxonomy-term="attribute"><span class="taxonomy-label">attribute</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/avo/" data-taxonomy-term="avo"><span class="taxonomy-label">avo</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/avoattrib/" data-taxonomy-term="avoattrib"><span class="taxonomy-label">AVOAttrib</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/avopolarattrib/" data-taxonomy-term="avopolarattrib"><span class="taxonomy-label">AVOPolarAttrib</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/convex-hull/" data-taxonomy-term="convex-hull"><span class="taxonomy-label">convex-hull</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/data-extent-horizon/" data-taxonomy-term="data-extent-horizon"><span class="taxonomy-label">data-extent-horizon</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/dipaz/" data-taxonomy-term="dipaz"><span class="taxonomy-label">dipaz</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/efdattrib/" data-taxonomy-term="efdattrib"><span class="taxonomy-label">EFDAttrib</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/externalattrib/" data-taxonomy-term="externalattrib"><span class="taxonomy-label">ExternalAttrib</span><span class="taxonomy-count">16</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/filter/" data-taxonomy-term="filter"><span class="taxonomy-label">filter</span><span class="taxonomy-count">7</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/geopackage/" data-taxonomy-term="geopackage"><span class="taxonomy-label">Geopackage</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/geotif/" data-taxonomy-term="geotif"><span class="taxonomy-label">geotif</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/gradientattrib/" data-taxonomy-term="gradientattrib"><span class="taxonomy-label">GradientAttrib</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/gridding/" data-taxonomy-term="gridding"><span class="taxonomy-label">gridding</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/inversion/" data-taxonomy-term="inversion"><span class="taxonomy-label">inversion</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/jupyter/" data-taxonomy-term="jupyter"><span class="taxonomy-label">Jupyter</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/mistie/" data-taxonomy-term="mistie"><span class="taxonomy-label">Mistie</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/mlvfilterattrib/" data-taxonomy-term="mlvfilterattrib"><span class="taxonomy-label">MLVFilterAttrib</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/modelling/" data-taxonomy-term="modelling"><span class="taxonomy-label">modelling</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/polyline/" data-taxonomy-term="polyline"><span class="taxonomy-label">polyline</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/pylops/" data-taxonomy-term="pylops"><span class="taxonomy-label">pylops</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/python/" data-taxonomy-term="python"><span class="taxonomy-label">python</span><span class="taxonomy-count">8</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/qgis/" data-taxonomy-term="qgis"><span class="taxonomy-label">qgis</span><span class="taxonomy-count">2</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/spectral-decomposition/" data-taxonomy-term="spectral-decomposition"><span class="taxonomy-label">spectral-decomposition</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/time-frequency/" data-taxonomy-term="time-frequency"><span class="taxonomy-label">time-frequency&#34;</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/vscode/" data-taxonomy-term="vscode"><span class="taxonomy-label">VSCode</span><span class="taxonomy-count">1</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/wmtools/" data-taxonomy-term="wmtools"><span class="taxonomy-label">WMTools</span><span class="taxonomy-count">1</span></a></li>
+        
+      </ul>
+    </div>
+  
+
+		
+			
+				
+			
+			
+
+
+
+  
+  
+    <div class="taxonomy taxonomy-terms-cloud taxo-categories">
+      
+        <h5 class="taxonomy-title">Categories</h5>
+      
+      <ul class="taxonomy-terms">
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/article/" data-taxonomy-term="article"><span class="taxonomy-label">article</span><span class="taxonomy-count">3</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">docs</span><span class="taxonomy-count">24</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/howto/" data-taxonomy-term="howto"><span class="taxonomy-label">howto</span><span class="taxonomy-count">4</span></a></li>
+        
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/release/" data-taxonomy-term="release"><span class="taxonomy-label">release</span><span class="taxonomy-count">2</span></a></li>
+        
+      </ul>
+    </div>
+  
+
+		
+	
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="https://waynegm.github.io/WMPlugin-Docs/docs/">Documentation</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/">Plugins</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">
+    <a href="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/">EFDAttrib</a>
+  </li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>EFDAttrib</h1>
+	<div class="lead">spectral (time-frequency) decomposition using empirical fourier decomposition</div>
+	<header class="article-meta">
+		
+
+  
+    
+      
+
+
+<div class="taxonomy taxonomy-terms-article taxo-tags">
+  <h5 class="taxonomy-title">Tags:</h5>
+  <ul class="taxonomy-terms">
+    
+      <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/time-frequency/" data-taxonomy-term="time-frequency"><span class="taxonomy-label">time-frequency&#34;</span></a></li>
+    
+      <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/spectral-decomposition/" data-taxonomy-term="spectral-decomposition"><span class="taxonomy-label">spectral-decomposition</span></a></li>
+    
+  </ul>
+</div>
+
+    
+      
+
+
+<div class="taxonomy taxonomy-terms-article taxo-categories">
+  <h5 class="taxonomy-title">Categories:</h5>
+  <ul class="taxonomy-terms">
+    
+      <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">docs</span></a></li>
+    
+  </ul>
+</div>
+
+    
+  
+
+		
+	</header>    
+	<p>This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+(time-frequency) decomposition using empirical fourier decomposition.</p>
+<h2 id="description">Description</h2>
+<p>This plugin can be used as an alternative to the
+<a href="http://opendtect.org/rel/doc/User/base/appendix_spectral-decomposition.htm" target="_blank">OpendTect FFT spectral decomposition attribute</a>.</p>
+<p>It does spectral decomposition using <a href="https://arxiv.org/abs/1912.00414">Empirical Fourier Decomposition (Zhou etal(2019)</a>.
+The plugin provides 2 new attributes that generate the mode decomposition and a spectral
+decomposition from the mode decomposition. These provide a signal analysis akin to
+Empirical Mode Decomposition. These attributes can work quite well for a simple mixture of frequency chirps but appear to be
+less useful for typical seismic data.</p>
+
+<figure class="img-centered">
+    <img src="/WMPlugin-Docs/docs/plugins/efdattrib/image-01.png"
+         alt="Empirical Fourier Mode/Spectral Decomposition" width="90%"/> <figcaption>
+            <p><strong>Empirical Fourier Mode/Spectral Decomposition</strong></p>
+        </figcaption>
+</figure>
+
+<h2 id="input-parameters">Input Parameters</h2>
+<h3 id="efd-modes">EFD Modes</h3>
+<p>This attribute has 3 parameters:
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Data</td>
+<td>The attribute volume to be analysed.</td>
+</tr>
+<tr>
+<td>Number of Modes</td>
+<td>The number of modes expected.</td>
+</tr>
+<tr>
+<td>Output Mode</td>
+<td>The mode to output.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+</p>
+
+<figure class="img-centered">
+    <img src="/WMPlugin-Docs/docs/plugins/efdattrib/image-02.png"
+         alt="EFD Modes input parameter dialog" width="90%"/> <figcaption>
+            <p><strong>EFD Modes input parameter dialog</strong></p>
+        </figcaption>
+</figure>
+
+<p>The &ldquo;Display EFD Modes panel&rdquo; button will generate the attribute for a trace in the input
+data volume.</p>
+<h3 id="efd-spectral-decomposition">EFD Spectral Decomposition</h3>
+<p>This attribute has 4 parameters:
+
+
+
+
+
+<div class="container"> <table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>NAME</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Data</td>
+<td>The attribute volume to be analysed.</td>
+</tr>
+<tr>
+<td>Number of Modes</td>
+<td>The number of modes expected.</td>
+</tr>
+<tr>
+<td>Output Frequency (Hz)</td>
+<td>The frequency to output.</td>
+</tr>
+<tr>
+<td>Output Frequency Step (Hz)</td>
+<td>The frequency step for output.</td>
+</tr>
+</tbody>
+</table>
+ </div>
+</p>
+
+<figure class="img-centered">
+    <img src="/WMPlugin-Docs/docs/plugins/efdattrib/image-03.png"
+         alt="EFD Spectral Decomposition input parameter dialog" width="90%"/> <figcaption>
+            <p><strong>EFD Spectral Decomposition input parameter dialog</strong></p>
+        </figcaption>
+</figure>
+
+<p>The &ldquo;Display Time/Frequency panel&rdquo; button will generate the attribute for a trace in the input
+data volume.</p>
+
+	
+		<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<div class="d-print-none">
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-yes">Yes</button>
+<button class="btn btn-primary mb-4 feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/waynegm/OpendTect-Plugins/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/waynegm/OpendTect-Plugins/issues/new">tell us how we can improve</a>.
+</p>
+</div>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+
+		<br />
+	
+	
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" rel="noopener" href="https://groups.google.com/a/opendtect.org/g/users" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="LinkedIn" aria-label="LinkedIn">
+    <a class="text-white" target="_blank" rel="noopener" href="https://www.linkedin.com/in/waynemogg/" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/waynegm/OpendTect-Plugins" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2022 Wayne Mogg All Rights Reserved</small>
+        
+	
+		<p class="mt-2"><a href="/WMPlugin-Docs/about/">About WMPlugins</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+<script src='/js/tabpane-persist.js'></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    integrity="sha512-vJqxkZ+Sugf/6WRlpcxN01qVfX/29hF6qc33eHF1va3NgoV+U+wCi+uTAsQ10sDoGyBxHLdaHvGwDlV3yVYboA==" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"
+    integrity="sha512-5ufNcHqOYgilGEHPfuRIQ5B/vDS1M8+UC+DESZ5CwVgGTg+b2Ol/15rYL/GiCWJ/Sx8oVo0FPFok1dPk8U9INQ=="
+    crossorigin="anonymous"></script>
+
+
+
+<script defer src='https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js'
+    integrity='sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==' crossorigin='anonymous' 
+    onload='renderMathInElement(document.body, null);'></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/WMPlugin-Docs/js/main.min.91798a335c881f1b6b805085ba4aa22d1dbd2b0b18d105d05189fa104ddae350.js" integrity="sha256-kXmKM1yIHxtrgFCFukqiLR29KwsY0QXQUYn6EE3a41A=" crossorigin="anonymous"></script>
+
+
+
+
+<script src='/js/juxtapose.js'></script>
+
+
+  </body>
+</html>

@@ -1,7 +1,7 @@
 ---
 title: Grid 2D-3D Horizon
 description: creates a 3D horizon/grid from 2D and 3D horizon interpretation
-weight: 8
+weight: 9
 categories: ["docs"]
 tags: ["gridding"]
 ---

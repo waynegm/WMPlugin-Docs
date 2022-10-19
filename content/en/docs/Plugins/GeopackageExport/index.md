@@ -1,7 +1,7 @@
 ---
 title: GeopackageExport
 description: export OpendTect data to a GeoPackage database
-weight: 5
+weight: 6
 categories: ["docs"]
 tags: ["Geopackage", "qgis"]
 ---

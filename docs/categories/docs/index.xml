@@ -661,6 +661,124 @@ on a 3x3x3 cube and vector filtered. The outer samples are only used in the grad
     </item>
     
     <item>
+      <title>Docs: EFDAttrib</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+(time-frequency) decomposition using empirical fourier decomposition.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin can be used as an alternative to the
+&lt;a href=&#34;http://opendtect.org/rel/doc/User/base/appendix_spectral-decomposition.htm&#34; target=&#34;_blank&#34;&gt;OpendTect FFT spectral decomposition attribute&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It does spectral decomposition using &lt;a href=&#34;https://arxiv.org/abs/1912.00414&#34;&gt;Empirical Fourier Decomposition (Zhou etal(2019)&lt;/a&gt;.
+The plugin provides 2 new attributes that generate the mode decomposition and a spectral
+decomposition from the mode decomposition. These provide a signal analysis akin to
+Empirical Mode Decomposition. These attributes can work quite well for a simple mixture of frequency chirps but appear to be
+less useful for typical seismic data.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-01.png&#34;
+         alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;h3 id=&#34;efd-modes&#34;&gt;EFD Modes&lt;/h3&gt;
+&lt;p&gt;This attribute has 3 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Data&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Number of Modes&lt;/td&gt;
+&lt;td&gt;The number of modes expected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Mode&lt;/td&gt;
+&lt;td&gt;The mode to output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-02.png&#34;
+         alt=&#34;EFD Modes input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;EFD Modes input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The &amp;ldquo;Display EFD Modes panel&amp;rdquo; button will generate the attribute for a trace in the input
+data volume.&lt;/p&gt;
+&lt;h3 id=&#34;efd-spectral-decomposition&#34;&gt;EFD Spectral Decomposition&lt;/h3&gt;
+&lt;p&gt;This attribute has 4 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Data&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Number of Modes&lt;/td&gt;
+&lt;td&gt;The number of modes expected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Frequency (Hz)&lt;/td&gt;
+&lt;td&gt;The frequency to output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Frequency Step (Hz)&lt;/td&gt;
+&lt;td&gt;The frequency step for output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-03.png&#34;
+         alt=&#34;EFD Spectral Decomposition input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;EFD Spectral Decomposition input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The &amp;ldquo;Display Time/Frequency panel&amp;rdquo; button will generate the attribute for a trace in the input
+data volume.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: External(Python) Attributes</title>
       <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/externalattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1290,43 +1408,6 @@ implements the attribute calculation.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: GeopackageDisplay</title>
-      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</guid>
-      <description>
-        
-        
-        &lt;p&gt;This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.&lt;/p&gt;
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Display&amp;rdquo; item to the &amp;ldquo;Add&amp;rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.&lt;/p&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackagedisplay/geopackage_display_menu.jpg&#34;
-         alt=&#34;Geopackage Display menu item&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Geopackage Display menu item&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
-&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackagedisplay/geopackage_display_example.jpg&#34;
-         alt=&#34;GIS data draped on an OpendTect 3D horizon&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;GIS data draped on an OpendTect 3D horizon&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: LPA Smoothing</title>
       <link>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/lpasmooth/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1401,152 +1482,36 @@ the input with relatively minor smearing of steep dips and fault cuts. Increasin
     </item>
     
     <item>
-      <title>Docs: GeopackageExport</title>
-      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</link>
+      <title>Docs: GeopackageDisplay</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</guid>
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] data to a
-&lt;a href=&#34;https://www.geopackage.org/&#34;&gt;GeoPackage&lt;/a&gt; database. GeoPackage is an open, non-proprietary, platform-independent, self describing
-standards-based data format for geospatial data.&lt;/p&gt;
+        &lt;p&gt;This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a tabbed dialog box for selecting
-the various elements to export and the destination file name. The following table shows the [opendtect] data elements supported and
-the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
-
-
-
-
-
-&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;OpendTect Item&lt;/th&gt;
-&lt;th&gt;GeoPackage Table Name&lt;/th&gt;
-&lt;th&gt;Geometry&lt;/th&gt;
-&lt;th&gt;Notes&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Survey Box&lt;/td&gt;
-&lt;td&gt;Survey&lt;/td&gt;
-&lt;td&gt;Polygon&lt;/td&gt;
-&lt;td&gt;Single attribute, the survey name&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2D Line Geometry&lt;/td&gt;
-&lt;td&gt;2DLines&lt;/td&gt;
-&lt;td&gt;LineString&lt;/td&gt;
-&lt;td&gt;Single attribute, the line name&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2D Line Stations&lt;/td&gt;
-&lt;td&gt;2DStations&lt;/td&gt;
-&lt;td&gt;Points&lt;/td&gt;
-&lt;td&gt;Two attributes, the line name and station number&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Random Lines&lt;/td&gt;
-&lt;td&gt;RandomLines&lt;/td&gt;
-&lt;td&gt;LineString&lt;/td&gt;
-&lt;td&gt;Single attribute, the random line name&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Wells&lt;/td&gt;
-&lt;td&gt;Wells&lt;/td&gt;
-&lt;td&gt;Points&lt;/td&gt;
-&lt;td&gt;Well surface location and 3 attributes, the well name, UWID and status (not currently set by OpendTect)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Well Tracks&lt;/td&gt;
-&lt;td&gt;WellTracks&lt;/td&gt;
-&lt;td&gt;LineString&lt;/td&gt;
-&lt;td&gt;Single attribute, the well name&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Well Markers&amp;rsquo;, &amp;lsquo;WellMarkers&amp;rsquo;, &amp;lsquo;Points&lt;/td&gt;
-&lt;td&gt;Four attributes, well name, marker name, MD and TVDSS&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Open Polygons&lt;/td&gt;
-&lt;td&gt;PolyLines&lt;/td&gt;
-&lt;td&gt;LineString&lt;/td&gt;
-&lt;td&gt;Single attribute, the polyline name. The z values of the polyline are not exported&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Closed Polygons&lt;/td&gt;
-&lt;td&gt;Polygons&lt;/td&gt;
-&lt;td&gt;Polygon&lt;/td&gt;
-&lt;td&gt;Single attribute, the polygon name. The z values of the polygon are not exported&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2D and 3D Horizons&lt;/td&gt;
-&lt;td&gt;Set by the user&lt;/td&gt;
-&lt;td&gt;Point&lt;/td&gt;
-&lt;td&gt;Single attribute, the horizon z value in millisecs or metres depending on the Z domain of the survey&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
- &lt;/div&gt;
-
-&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;It is possible to append to an existing database. This is primarily used for exporting multiple horizons/attributes to the same GeoPackage.&lt;/li&gt;
-&lt;li&gt;Appending does not overwrite items already in the GeoPackage it will just add another copy to the respective table.&lt;/li&gt;
-&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;On Windows the folder containing the plugin DLL&amp;rsquo;s must be added to the PATH environment variable either by editing the corresponding system variable (Control Panel&amp;gt;System and Security&amp;gt;System - Advanced system settings - Environment Variables) or adding a line like &amp;ldquo;@set PATH=%HOMEPATH%.od\bin\win64\Release;%PATH%&amp;rdquo; (adjust &amp;ldquo;%HOMEPATH%.od\bin\win64\Release&amp;rdquo; to reflect your installation) to the bat script used to start OpendTect.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;The GeoPackage format is supported by major GIS software packages. The following figure shows display of data exported from OpendTect using the plugin in the open source GIS package, &lt;a href=&#34;https://www.qgis.org/en/site/&#34;&gt;QGIS&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Display&amp;rdquo; item to the &amp;ldquo;Add&amp;rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_qgis.jpg&#34;
-         alt=&#34;OpendTect data displayed in QGIS&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;OpendTect data displayed in QGIS&lt;/strong&gt;&lt;/p&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackagedisplay/geopackage_display_menu.jpg&#34;
+         alt=&#34;Geopackage Display menu item&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Geopackage Display menu item&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
-&lt;p&gt;The dialog box associated with the plugin has a file entry control to select the output file, a check box to allow appending to the output file instead of overwriting and 8 tabs to select the content to export:&lt;/p&gt;
-&lt;h3 id=&#34;survey-tab&#34;&gt;Survey tab&lt;/h3&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
+&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_survey_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;2d-lines-tab&#34;&gt;2D Lines tab&lt;/h3&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;random-lines-tab&#34;&gt;Random Lines tab&lt;/h3&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;wells-tab&#34;&gt;Wells tab&lt;/h3&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_wells_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;polylines-tab&#34;&gt;Polylines tab&lt;/h3&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;horizon-tab&#34;&gt;Horizon tab&lt;/h3&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackagedisplay/geopackage_display_example.jpg&#34;
+         alt=&#34;GIS data draped on an OpendTect 3D horizon&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;GIS data draped on an OpendTect 3D horizon&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
@@ -1726,34 +1691,152 @@ can be created from well log data using the &amp;ldquo;Create Log Cube&amp;rdquo
     </item>
     
     <item>
-      <title>Docs: GeotiffExport</title>
-      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</link>
+      <title>Docs: GeopackageExport</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</guid>
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] 3D horizon and attribute data to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] data to a
+&lt;a href=&#34;https://www.geopackage.org/&#34;&gt;GeoPackage&lt;/a&gt; database. GeoPackage is an open, non-proprietary, platform-independent, self describing
+standards-based data format for geospatial data.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;The plugin adds a &amp;ldquo;Geotiff Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the 3D horizon and attributes to export and the destination file name. The horizon Z values and attributes values are exported to Float32 bands in the output image. The plugin supports exporting multiple attributes to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image (eg QGIS v3.6). If multiband images prove to be a problem the option exists to run the plugin multiple times and save each attribute to a separate GeoTIFF file.&lt;/p&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a tabbed dialog box for selecting
+the various elements to export and the destination file name. The following table shows the [opendtect] data elements supported and
+the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;OpendTect Item&lt;/th&gt;
+&lt;th&gt;GeoPackage Table Name&lt;/th&gt;
+&lt;th&gt;Geometry&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Survey Box&lt;/td&gt;
+&lt;td&gt;Survey&lt;/td&gt;
+&lt;td&gt;Polygon&lt;/td&gt;
+&lt;td&gt;Single attribute, the survey name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D Line Geometry&lt;/td&gt;
+&lt;td&gt;2DLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the line name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D Line Stations&lt;/td&gt;
+&lt;td&gt;2DStations&lt;/td&gt;
+&lt;td&gt;Points&lt;/td&gt;
+&lt;td&gt;Two attributes, the line name and station number&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Random Lines&lt;/td&gt;
+&lt;td&gt;RandomLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the random line name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wells&lt;/td&gt;
+&lt;td&gt;Wells&lt;/td&gt;
+&lt;td&gt;Points&lt;/td&gt;
+&lt;td&gt;Well surface location and 3 attributes, the well name, UWID and status (not currently set by OpendTect)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Well Tracks&lt;/td&gt;
+&lt;td&gt;WellTracks&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the well name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Well Markers&amp;rsquo;, &amp;lsquo;WellMarkers&amp;rsquo;, &amp;lsquo;Points&lt;/td&gt;
+&lt;td&gt;Four attributes, well name, marker name, MD and TVDSS&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Open Polygons&lt;/td&gt;
+&lt;td&gt;PolyLines&lt;/td&gt;
+&lt;td&gt;LineString&lt;/td&gt;
+&lt;td&gt;Single attribute, the polyline name. The z values of the polyline are not exported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Closed Polygons&lt;/td&gt;
+&lt;td&gt;Polygons&lt;/td&gt;
+&lt;td&gt;Polygon&lt;/td&gt;
+&lt;td&gt;Single attribute, the polygon name. The z values of the polygon are not exported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2D and 3D Horizons&lt;/td&gt;
+&lt;td&gt;Set by the user&lt;/td&gt;
+&lt;td&gt;Point&lt;/td&gt;
+&lt;td&gt;Single attribute, the horizon z value in millisecs or metres depending on the Z domain of the survey&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
 &lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
 &lt;ul&gt;
+&lt;li&gt;It is possible to append to an existing database. This is primarily used for exporting multiple horizons/attributes to the same GeoPackage.&lt;/li&gt;
+&lt;li&gt;Appending does not overwrite items already in the GeoPackage it will just add another copy to the respective table.&lt;/li&gt;
 &lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
-&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;On Windows the folder containing the plugin DLL&amp;rsquo;s must be added to the PATH environment variable either by editing the corresponding system variable (Control Panel&amp;gt;System and Security&amp;gt;System - Advanced system settings - Environment Variables) or adding a line like &amp;ldquo;@set PATH=%HOMEPATH%.od\bin\win64\Release;%PATH%&amp;rdquo; (adjust &amp;ldquo;%HOMEPATH%.od\bin\win64\Release&amp;rdquo; to reflect your installation) to the bat script used to start OpendTect.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The GeoPackage format is supported by major GIS software packages. The following figure shows display of data exported from OpendTect using the plugin in the open source GIS package, &lt;a href=&#34;https://www.qgis.org/en/site/&#34;&gt;QGIS&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_qgis.jpg&#34;
-         alt=&#34;OpendTect 3D horizon data displayed in a QGIS print layout&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;OpendTect 3D horizon data displayed in a QGIS print layout&lt;/strong&gt;&lt;/p&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_qgis.jpg&#34;
+         alt=&#34;OpendTect data displayed in QGIS&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect data displayed in QGIS&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;p&gt;The dialog box associated with the plugin has a file entry control to select the output file, a check box to allow appending to the output file instead of overwriting and 8 tabs to select the content to export:&lt;/p&gt;
+&lt;h3 id=&#34;survey-tab&#34;&gt;Survey tab&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_survey_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;2d-lines-tab&#34;&gt;2D Lines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_2dlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;random-lines-tab&#34;&gt;Random Lines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_randomlines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;wells-tab&#34;&gt;Wells tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_wells_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;polylines-tab&#34;&gt;Polylines tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_polylines_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;horizon-tab&#34;&gt;Horizon tab&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/geopackage_horizon_tab.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 
@@ -1867,63 +1950,34 @@ is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: GradientAttrib</title>
-      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</link>
+      <title>Docs: GeotiffExport</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</guid>
       <description>
         
         
-        &lt;p&gt;This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.&lt;/p&gt;
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] 3D horizon and attribute data to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This plugin calculates the inline, crossline or time/depth gradient using operators optimised for rotation invariance, ie equal response in all directions, proposed  by &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon (2009)&lt;/a&gt; and &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli(2004)&lt;/a&gt;. These provide more accurate alternatives to the Prewitt filter option of the OpendTect Convolve attribute for computing gradients.&lt;/p&gt;
-&lt;p&gt;The attribute offers a choice of Kroon&amp;rsquo;s 3x3x3, Farid and Simoncelli&amp;rsquo;s 5x5x5 or Farid and Simoncelli&amp;rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.&lt;/p&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geotiff Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the 3D horizon and attributes to export and the destination file name. The horizon Z values and attributes values are exported to Float32 bands in the output image. The plugin supports exporting multiple attributes to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image (eg QGIS v3.6). If multiband images prove to be a problem the option exists to run the plugin multiple times and save each attribute to a separate GeoTIFF file.&lt;/p&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
+&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/gradient_attrib.jpg&#34;
-         alt=&#34;Accuracy of the gradient attribute operators&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Accuracy of the gradient attribute operators&lt;/strong&gt;&lt;/p&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_qgis.jpg&#34;
+         alt=&#34;OpendTect 3D horizon data displayed in a QGIS print layout&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;OpendTect 3D horizon data displayed in a QGIS print layout&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
-&lt;p&gt;This attribute has 3 parameters:&lt;/p&gt;
-
-
-
-
-
-&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;NAME&lt;/th&gt;
-&lt;th&gt;DESCRIPTION&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Input Volume&lt;/td&gt;
-&lt;td&gt;The input attribute volume.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Output Gradient&lt;/td&gt;
-&lt;td&gt;What to calculate - choice of Inline, Crossline or Z gradient.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Operator&lt;/td&gt;
-&lt;td&gt;What operator to use - choice of Kroon&#39;s 3x3x3, Farid&#39;s 5x5x5 or Farid&#39;s 7x7x7.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
- &lt;/div&gt;
-
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/GradientAttrib_input.jpg&#34;
-         alt=&#34;Gradient attribute input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Gradient attribute input parameter dialog&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 
@@ -2038,137 +2092,62 @@ a 1D bandreject spatial filter along the crosslines (stepout 9,0) with an inline
     </item>
     
     <item>
-      <title>Docs: Grid 2D-3D Horizon</title>
-      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</link>
+      <title>Docs: GradientAttrib</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</guid>
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [opendtect] survey/project.&lt;/p&gt;
+        &lt;p&gt;This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;The plugin adds a &amp;ldquo;Grid 2D-3D Horizon&amp;hellip;&amp;rdquo; item to the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; menu which opens a dialog box for:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Selecting 2D and 3D seismic interpretation and contour poly-lines to grid&lt;/li&gt;
-&lt;li&gt;Specifying the output horizon name, extent and inline /crossline interval&lt;/li&gt;
-&lt;li&gt;Specifying a cropping polygon&lt;/li&gt;
-&lt;li&gt;Specifying a set of fault polygon constraints&lt;/li&gt;
-&lt;li&gt;Selecting the interpolation algorithm to use&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In the current release the plugin includes 4 gridding/interolation algorithms:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Local Thin Plate Splines (LTPS)&lt;/li&gt;
-&lt;li&gt;Multilevel B-Splines (MBA)&lt;/li&gt;
-&lt;li&gt;Inverse distance squared weighted averages (IDW)&lt;/li&gt;
-&lt;li&gt;Nearest neighbour (NRN)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The LTPS and IDW methods can apply fault constraints (heave polygons) to ensure the input data used to interpolate a grid node is from the same side of any faults.&lt;/p&gt;
+&lt;p&gt;This plugin calculates the inline, crossline or time/depth gradient using operators optimised for rotation invariance, ie equal response in all directions, proposed  by &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon (2009)&lt;/a&gt; and &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli(2004)&lt;/a&gt;. These provide more accurate alternatives to the Prewitt filter option of the OpendTect Convolve attribute for computing gradients.&lt;/p&gt;
+&lt;p&gt;The attribute offers a choice of Kroon&amp;rsquo;s 3x3x3, Farid and Simoncelli&amp;rsquo;s 5x5x5 or Farid and Simoncelli&amp;rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/gradient_attrib.jpg&#34;
+         alt=&#34;Accuracy of the gradient attribute operators&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Accuracy of the gradient attribute operators&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid2d-3d_data_input.jpg&#34;
-         alt=&#34;Grid 2D-3D horizon plugin input data selection dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input data selection dialog&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;p&gt;This attribute has 3 parameters:&lt;/p&gt;
 
 
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid2d-3d_grid_input.jpg&#34;
-         alt=&#34;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Grid Extent: Four options available:
-&lt;ul&gt;
-&lt;li&gt;Range - explicitly set the Inl/Crl range and steps for the output surface&lt;/li&gt;
-&lt;li&gt;Bounding Box - set the output horizon extent from the extent of the input data, adjusted to snap to the specified Inl/Crl steps&lt;/li&gt;
-&lt;li&gt;Convex Hull - sets the gridding scope to the convex hull of the input data, adjusted to snap to the specified Inl/Crl steps&lt;/li&gt;
-&lt;li&gt;Horizon - set the output horizon extent to match an existing horizon in the survey/project&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Cropping Polygon - select a polygon to crop the grid output&lt;/li&gt;
-&lt;li&gt;Fault Polygons - select  polygons to use as fault constraints during gridding. Suggest fault naming scheme that prefixes the polygons with &amp;ldquo;f_horizon name&amp;rdquo; to make them easy to select&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;algorithms&#34;&gt;Algorithms&lt;/h2&gt;
-&lt;h3 id=&#34;local-thin-plate-spline&#34;&gt;Local Thin Plate Spline&lt;/h3&gt;
-&lt;p&gt;This is a multi-stage algorithm with the following steps:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Interpolate the data to the corners of the surrounding grid nodes (ie nearest neighbour)&lt;/li&gt;
-&lt;li&gt;Fit a Multilevel B-Spline (MBA) surface (no fault constraints applied) and compute residuals from the input&lt;/li&gt;
-&lt;li&gt;Grid the MBA residuals using a radial basis function algorithm using a thin plate spline basis. The points used in the basis fit are determined using distance and azimuth from the grid point. The data around each grid point is sorted based on distance and binned into one of eight azimuth sectors. Only the nearest points in each sector are used in the interpolation. No interpolation is done if there are less than 5 sectors with data. Fault constraints are used in this stage. The residuals are added to the MBA stage output to produce the final surface.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Controls are the maximum search radius and the maximum points used from each sector. This algorithm can use fault constraints.&lt;/p&gt;
 
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_ltps_ex.jpg&#34;
-         alt=&#34;Example of Local Thin Plate Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Example of Local Thin Plate Spline gridding&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
 
-&lt;h3 id=&#34;multilevel-b-spline&#34;&gt;Multilevel B-Spline&lt;/h3&gt;
-&lt;p&gt;This is the adaptive Multi-level B-Spline algorithm published by &lt;a href=&#34;https://ieeexplore.ieee.org/document/620490&#34; title=&#34;Scattered Data Interpolation with Multilevel B-Splines. Seungyong Lee, George Wolberg, and Sung Yong Shin,  IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS, VOL. 3, NO. 3, JULY–SEPTEMBER 1997&#34;&gt;Lee, Wolberg and Shin (1997)&lt;/a&gt; as implemented by &lt;a href=&#34;https://github.com/ddemidov/mba&#34;&gt;Denis Demidov&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This method does not use fault contraints.&lt;/p&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_mba_ex.jpg&#34;
-         alt=&#34;Example of Multilevel B-Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Example of Multilevel B-Spline gridding&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;inverse-distance-weighted&#34;&gt;Inverse Distance Weighted&lt;/h3&gt;
-&lt;p&gt;This is basic Inverse Distance Squared Weighted gridding. By tweaking the parameters it is possible to control the input data used for each grid point. Options are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;No distance or point count limit (global)&lt;/li&gt;
-&lt;li&gt;Use all points within a specified distance&lt;/li&gt;
-&lt;li&gt;Use nearest number of points&lt;/li&gt;
-&lt;li&gt;Limit by both the distance and the nearest number of points&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The method can use fault constraints but will be very slow unless appropriate distance and point count limits are set.&lt;/p&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_ex.jpg&#34;
-         alt=&#34;Example of IDW gridding&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Example of IDW gridding&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Volume&lt;/td&gt;
+&lt;td&gt;The input attribute volume.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Gradient&lt;/td&gt;
+&lt;td&gt;What to calculate - choice of Inline, Crossline or Z gradient.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Operator&lt;/td&gt;
+&lt;td&gt;What operator to use - choice of Kroon&#39;s 3x3x3, Farid&#39;s 5x5x5 or Farid&#39;s 7x7x7.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
 
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_radius_ex.jpg&#34;
-         alt=&#34;Example of IDW gridding using only a distance limit&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a distance limit&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_points_ex.jpg&#34;
-         alt=&#34;Example of IDW gridding using only a point count limit&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a point count limit&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_both_ex.jpg&#34;
-         alt=&#34;Example of IDW gridding using both distance and point count limits&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using both distance and point count limits&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;nearest-neighbour&#34;&gt;Nearest Neighbour&lt;/h3&gt;
-&lt;p&gt;This uses a simple weighted average method to assign grid values to the 4 nodes around each input data point.&lt;/p&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_nrn_ex.jpg&#34;
-         alt=&#34;Example of Nearest Neighbour gridding&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Example of Nearest Neighbour gridding&lt;/strong&gt;&lt;/p&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/gradientattrib/GradientAttrib_input.jpg&#34;
+         alt=&#34;Gradient attribute input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Gradient attribute input parameter dialog&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
@@ -2391,6 +2370,145 @@ The script requires the Numba Python package.
 &lt;/tbody&gt;
 &lt;/table&gt;
  &lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Grid 2D-3D Horizon</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [opendtect] survey/project.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Grid 2D-3D Horizon&amp;hellip;&amp;rdquo; item to the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; menu which opens a dialog box for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Selecting 2D and 3D seismic interpretation and contour poly-lines to grid&lt;/li&gt;
+&lt;li&gt;Specifying the output horizon name, extent and inline /crossline interval&lt;/li&gt;
+&lt;li&gt;Specifying a cropping polygon&lt;/li&gt;
+&lt;li&gt;Specifying a set of fault polygon constraints&lt;/li&gt;
+&lt;li&gt;Selecting the interpolation algorithm to use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the current release the plugin includes 4 gridding/interolation algorithms:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Local Thin Plate Splines (LTPS)&lt;/li&gt;
+&lt;li&gt;Multilevel B-Splines (MBA)&lt;/li&gt;
+&lt;li&gt;Inverse distance squared weighted averages (IDW)&lt;/li&gt;
+&lt;li&gt;Nearest neighbour (NRN)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The LTPS and IDW methods can apply fault constraints (heave polygons) to ensure the input data used to interpolate a grid node is from the same side of any faults.&lt;/p&gt;
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid2d-3d_data_input.jpg&#34;
+         alt=&#34;Grid 2D-3D horizon plugin input data selection dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input data selection dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid2d-3d_grid_input.jpg&#34;
+         alt=&#34;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Grid 2D-3D horizon plugin input dialog, showing Bounding Box grid extent and continuous curvature interpolation settings&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Grid Extent: Four options available:
+&lt;ul&gt;
+&lt;li&gt;Range - explicitly set the Inl/Crl range and steps for the output surface&lt;/li&gt;
+&lt;li&gt;Bounding Box - set the output horizon extent from the extent of the input data, adjusted to snap to the specified Inl/Crl steps&lt;/li&gt;
+&lt;li&gt;Convex Hull - sets the gridding scope to the convex hull of the input data, adjusted to snap to the specified Inl/Crl steps&lt;/li&gt;
+&lt;li&gt;Horizon - set the output horizon extent to match an existing horizon in the survey/project&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Cropping Polygon - select a polygon to crop the grid output&lt;/li&gt;
+&lt;li&gt;Fault Polygons - select  polygons to use as fault constraints during gridding. Suggest fault naming scheme that prefixes the polygons with &amp;ldquo;f_horizon name&amp;rdquo; to make them easy to select&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;algorithms&#34;&gt;Algorithms&lt;/h2&gt;
+&lt;h3 id=&#34;local-thin-plate-spline&#34;&gt;Local Thin Plate Spline&lt;/h3&gt;
+&lt;p&gt;This is a multi-stage algorithm with the following steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interpolate the data to the corners of the surrounding grid nodes (ie nearest neighbour)&lt;/li&gt;
+&lt;li&gt;Fit a Multilevel B-Spline (MBA) surface (no fault constraints applied) and compute residuals from the input&lt;/li&gt;
+&lt;li&gt;Grid the MBA residuals using a radial basis function algorithm using a thin plate spline basis. The points used in the basis fit are determined using distance and azimuth from the grid point. The data around each grid point is sorted based on distance and binned into one of eight azimuth sectors. Only the nearest points in each sector are used in the interpolation. No interpolation is done if there are less than 5 sectors with data. Fault constraints are used in this stage. The residuals are added to the MBA stage output to produce the final surface.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Controls are the maximum search radius and the maximum points used from each sector. This algorithm can use fault constraints.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_ltps_ex.jpg&#34;
+         alt=&#34;Example of Local Thin Plate Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Local Thin Plate Spline gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;multilevel-b-spline&#34;&gt;Multilevel B-Spline&lt;/h3&gt;
+&lt;p&gt;This is the adaptive Multi-level B-Spline algorithm published by &lt;a href=&#34;https://ieeexplore.ieee.org/document/620490&#34; title=&#34;Scattered Data Interpolation with Multilevel B-Splines. Seungyong Lee, George Wolberg, and Sung Yong Shin,  IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS, VOL. 3, NO. 3, JULY–SEPTEMBER 1997&#34;&gt;Lee, Wolberg and Shin (1997)&lt;/a&gt; as implemented by &lt;a href=&#34;https://github.com/ddemidov/mba&#34;&gt;Denis Demidov&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This method does not use fault contraints.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_mba_ex.jpg&#34;
+         alt=&#34;Example of Multilevel B-Spline gridding&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Multilevel B-Spline gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;inverse-distance-weighted&#34;&gt;Inverse Distance Weighted&lt;/h3&gt;
+&lt;p&gt;This is basic Inverse Distance Squared Weighted gridding. By tweaking the parameters it is possible to control the input data used for each grid point. Options are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No distance or point count limit (global)&lt;/li&gt;
+&lt;li&gt;Use all points within a specified distance&lt;/li&gt;
+&lt;li&gt;Use nearest number of points&lt;/li&gt;
+&lt;li&gt;Limit by both the distance and the nearest number of points&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The method can use fault constraints but will be very slow unless appropriate distance and point count limits are set.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_radius_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using only a distance limit&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a distance limit&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_points_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using only a point count limit&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using only a point count limit&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_idw_both_ex.jpg&#34;
+         alt=&#34;Example of IDW gridding using both distance and point count limits&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of IDW gridding using both distance and point count limits&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;nearest-neighbour&#34;&gt;Nearest Neighbour&lt;/h3&gt;
+&lt;p&gt;This uses a simple weighted average method to assign grid values to the 4 nodes around each input data point.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_nrn_ex.jpg&#34;
+         alt=&#34;Example of Nearest Neighbour gridding&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Example of Nearest Neighbour gridding&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
 
 
       </description>

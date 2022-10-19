@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.97.3" />
+<meta name="generator" content="Hugo 0.104.3" />
 <meta name="robots" content="index, follow">
 
 
@@ -23,7 +23,7 @@
 The potential to offload calculations to the graphics processing unit (GPU) on modern graphics cards is a trending topic. I was curious if …">
 <meta property="og:title" content="GPU vs CPU Benchmarks for OpendTect Attribute Plugins" />
 <meta property="og:description" content="Summary The potential to offload calculations to the graphics processing unit (GPU) on modern graphics cards is a trending topic. I was curious if this could also apply to seismic attribute calculation in OpendTect, so I implemented AVO polarization angle estimation as described by Mahob and Castagna (2003) using 3 different approaches:
- using loops for all the linear algebra and OpendTect&rsquo;s multi dimensional arrays (ArrayNDImpl) which I refer to as the Normal method; using the Eigen linear algebra C&#43;&#43; template library (the Eigen method) and using the ArrayFire linear algebra library for GPU&rsquo;s (the ArrayFire method)." />
+using loops for all the linear algebra and OpendTect&rsquo;s multi dimensional arrays (ArrayNDImpl) which I refer to as the Normal method; using the Eigen linear algebra C&#43;&#43; template library (the Eigen method) and using the ArrayFire linear algebra library for GPU&rsquo;s (the ArrayFire method)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2019-01-07T00:00:00+00:00" />
@@ -31,13 +31,13 @@ The potential to offload calculations to the graphics processing unit (GPU) on m
 
 <meta itemprop="name" content="GPU vs CPU Benchmarks for OpendTect Attribute Plugins">
 <meta itemprop="description" content="Summary The potential to offload calculations to the graphics processing unit (GPU) on modern graphics cards is a trending topic. I was curious if this could also apply to seismic attribute calculation in OpendTect, so I implemented AVO polarization angle estimation as described by Mahob and Castagna (2003) using 3 different approaches:
- using loops for all the linear algebra and OpendTect&rsquo;s multi dimensional arrays (ArrayNDImpl) which I refer to as the Normal method; using the Eigen linear algebra C&#43;&#43; template library (the Eigen method) and using the ArrayFire linear algebra library for GPU&rsquo;s (the ArrayFire method)."><meta itemprop="datePublished" content="2019-01-07T00:00:00+00:00" />
+using loops for all the linear algebra and OpendTect&rsquo;s multi dimensional arrays (ArrayNDImpl) which I refer to as the Normal method; using the Eigen linear algebra C&#43;&#43; template library (the Eigen method) and using the ArrayFire linear algebra library for GPU&rsquo;s (the ArrayFire method)."><meta itemprop="datePublished" content="2019-01-07T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-04-17T22:38:58+10:00" />
 <meta itemprop="wordCount" content="776">
 <meta itemprop="keywords" content="AVOPolarAttrib," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="GPU vs CPU Benchmarks for OpendTect Attribute Plugins"/>
 <meta name="twitter:description" content="Summary The potential to offload calculations to the graphics processing unit (GPU) on modern graphics cards is a trending topic. I was curious if this could also apply to seismic attribute calculation in OpendTect, so I implemented AVO polarization angle estimation as described by Mahob and Castagna (2003) using 3 different approaches:
- using loops for all the linear algebra and OpendTect&rsquo;s multi dimensional arrays (ArrayNDImpl) which I refer to as the Normal method; using the Eigen linear algebra C&#43;&#43; template library (the Eigen method) and using the ArrayFire linear algebra library for GPU&rsquo;s (the ArrayFire method)."/>
+using loops for all the linear algebra and OpendTect&rsquo;s multi dimensional arrays (ArrayNDImpl) which I refer to as the Normal method; using the Eigen linear algebra C&#43;&#43; template library (the Eigen method) and using the ArrayFire linear algebra library for GPU&rsquo;s (the ArrayFire method)."/>
 
 
 
@@ -55,7 +55,7 @@ The potential to offload calculations to the graphics processing unit (GPU) on m
   crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="/WMPlugin-Docs/css/juxtapose.css"/>
+<link rel="stylesheet" href="/css/juxtapose.css"/>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -142,7 +142,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.25aa1fe89126464dbe9d725d7614ad19.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.5dc4215770cffca13f87dd9045069cbc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -164,7 +164,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.25aa1fe89126464dbe9d725d7614ad19.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.5dc4215770cffca13f87dd9045069cbc.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -185,7 +185,7 @@ if (!doNotTrack) {
   <a href="/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsblog20210626seismic-modelling-and-inversion-using-pylops-based-python-external-attributes"><span class="">Seismic Modelling and Inversion using PyLops based Python External Attributes</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsblog20210605using-visual-studio-code-with-opendtect-li">
   <a href="/WMPlugin-Docs/blog/2021/06/05/using-visual-studio-code-with-opendtect/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsblog20210605using-visual-studio-code-with-opendtect"><span class="">Using Visual Studio Code with OpendTect</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-wmplugin-docsblog20190107gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsblog20190107gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins-li">
   <a href="/WMPlugin-Docs/blog/2019/01/07/gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsblog20190107gpu-vs-cpu-benchmarks-for-opendtect-attribute-plugins"><span class="td-sidebar-nav-active-item">GPU vs CPU Benchmarks for OpendTect Attribute Plugins</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsblog20180608python-external-attribute-tips-tricks-debugging-li">
   <a href="/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsblog20180608python-external-attribute-tips-tricks-debugging"><span class="">Python External Attribute Tips &amp; Tricks - Debugging</span></a>
@@ -299,9 +299,9 @@ if (!doNotTrack) {
         
           <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/qgis/" data-taxonomy-term="qgis"><span class="taxonomy-label">qgis</span><span class="taxonomy-count">2</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/spectral-decomposition/" data-taxonomy-term="spectral-decomposition"><span class="taxonomy-label">spectral-decomposition</span><span class="taxonomy-count">2</span></a></li>
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/spectral-decomposition/" data-taxonomy-term="spectral-decomposition"><span class="taxonomy-label">spectral-decomposition</span><span class="taxonomy-count">3</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/time-frequency/" data-taxonomy-term="time-frequency"><span class="taxonomy-label">time-frequency</span><span class="taxonomy-count">2</span></a></li>
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/time-frequency/" data-taxonomy-term="time-frequency"><span class="taxonomy-label">time-frequency&#34;</span><span class="taxonomy-count">3</span></a></li>
         
           <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/tags/vscode/" data-taxonomy-term="vscode"><span class="taxonomy-label">VSCode</span><span class="taxonomy-count">1</span></a></li>
         
@@ -329,7 +329,7 @@ if (!doNotTrack) {
         
           <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/article/" data-taxonomy-term="article"><span class="taxonomy-label">article</span><span class="taxonomy-count">3</span></a></li>
         
-          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">docs</span><span class="taxonomy-count">23</span></a></li>
+          <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/docs/" data-taxonomy-term="docs"><span class="taxonomy-label">docs</span><span class="taxonomy-count">24</span></a></li>
         
           <li><a class="taxonomy-term" href="https://waynegm.github.io/WMPlugin-Docs/categories/howto/" data-taxonomy-term="howto"><span class="taxonomy-label">howto</span><span class="taxonomy-count">4</span></a></li>
         
@@ -598,7 +598,7 @@ if (!doNotTrack) {
 
 
 
-<script src='/WMPlugin-Docs/js/tabpane-persist.js'></script>
+<script src='/js/tabpane-persist.js'></script>
 
 
 
@@ -632,12 +632,12 @@ if (!doNotTrack) {
 
 
 
-<script src="/WMPlugin-Docs/js/main.min.42193e94c144a53fc86f5be701ff2d0833936ce47504213b8207eb5546a1bcf1.js" integrity="sha256-Qhk&#43;lMFEpT/Ib1vnAf8tCDOTbOR1BCE7ggfrVUahvPE=" crossorigin="anonymous"></script>
+<script src="/WMPlugin-Docs/js/main.min.91798a335c881f1b6b805085ba4aa22d1dbd2b0b18d105d05189fa104ddae350.js" integrity="sha256-kXmKM1yIHxtrgFCFukqiLR29KwsY0QXQUYn6EE3a41A=" crossorigin="anonymous"></script>
 
 
 
 
-<script src='/WMPlugin-Docs/js/juxtapose.js'></script>
+<script src='/js/juxtapose.js'></script>
 
 
   </body>

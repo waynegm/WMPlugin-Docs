@@ -1,7 +1,7 @@
 ---
 title: GeopackageDisplay
 description: display lines and polylines in a Geopackage database on an OpendTect 3D horizon
-weight: 4
+weight: 5
 categories: ["docs"]
 tags: ["Geopackage"]
 ---

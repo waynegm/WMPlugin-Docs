@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WMPlugins – time-frequency</title>
+    <title>WMPlugins – time-frequency&#34;</title>
     <link>https://waynegm.github.io/WMPlugin-Docs/tags/time-frequency/</link>
-    <description>Recent content in time-frequency on WMPlugins</description>
+    <description>Recent content in time-frequency&#34; on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/tags/time-frequency/index.xml" rel="self" type="application/rss+xml" />
@@ -12,6 +12,124 @@
         
       
     
+    
+    <item>
+      <title>Docs: EFDAttrib</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+(time-frequency) decomposition using empirical fourier decomposition.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin can be used as an alternative to the
+&lt;a href=&#34;http://opendtect.org/rel/doc/User/base/appendix_spectral-decomposition.htm&#34; target=&#34;_blank&#34;&gt;OpendTect FFT spectral decomposition attribute&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It does spectral decomposition using &lt;a href=&#34;https://arxiv.org/abs/1912.00414&#34;&gt;Empirical Fourier Decomposition (Zhou etal(2019)&lt;/a&gt;.
+The plugin provides 2 new attributes that generate the mode decomposition and a spectral
+decomposition from the mode decomposition. These provide a signal analysis akin to
+Empirical Mode Decomposition. These attributes can work quite well for a simple mixture of frequency chirps but appear to be
+less useful for typical seismic data.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-01.png&#34;
+         alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;h3 id=&#34;efd-modes&#34;&gt;EFD Modes&lt;/h3&gt;
+&lt;p&gt;This attribute has 3 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Data&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Number of Modes&lt;/td&gt;
+&lt;td&gt;The number of modes expected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Mode&lt;/td&gt;
+&lt;td&gt;The mode to output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-02.png&#34;
+         alt=&#34;EFD Modes input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;EFD Modes input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The &amp;ldquo;Display EFD Modes panel&amp;rdquo; button will generate the attribute for a trace in the input
+data volume.&lt;/p&gt;
+&lt;h3 id=&#34;efd-spectral-decomposition&#34;&gt;EFD Spectral Decomposition&lt;/h3&gt;
+&lt;p&gt;This attribute has 4 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Data&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Number of Modes&lt;/td&gt;
+&lt;td&gt;The number of modes expected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Frequency (Hz)&lt;/td&gt;
+&lt;td&gt;The frequency to output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Frequency Step (Hz)&lt;/td&gt;
+&lt;td&gt;The frequency step for output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-03.png&#34;
+         alt=&#34;EFD Spectral Decomposition input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;EFD Spectral Decomposition input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The &amp;ldquo;Display Time/Frequency panel&amp;rdquo; button will generate the attribute for a trace in the input
+data volume.&lt;/p&gt;
+
+      </description>
+    </item>
     
     <item>
       <title>Docs: LocalAttrib</title>

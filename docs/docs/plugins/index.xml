@@ -280,6 +280,124 @@ subsequently extended the analysis with a number of other measures to describe t
     </item>
     
     <item>
+      <title>Docs: EFDAttrib</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+(time-frequency) decomposition using empirical fourier decomposition.&lt;/p&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;This plugin can be used as an alternative to the
+&lt;a href=&#34;http://opendtect.org/rel/doc/User/base/appendix_spectral-decomposition.htm&#34; target=&#34;_blank&#34;&gt;OpendTect FFT spectral decomposition attribute&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It does spectral decomposition using &lt;a href=&#34;https://arxiv.org/abs/1912.00414&#34;&gt;Empirical Fourier Decomposition (Zhou etal(2019)&lt;/a&gt;.
+The plugin provides 2 new attributes that generate the mode decomposition and a spectral
+decomposition from the mode decomposition. These provide a signal analysis akin to
+Empirical Mode Decomposition. These attributes can work quite well for a simple mixture of frequency chirps but appear to be
+less useful for typical seismic data.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-01.png&#34;
+         alt=&#34;Empirical Fourier Mode/Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Empirical Fourier Mode/Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
+&lt;h3 id=&#34;efd-modes&#34;&gt;EFD Modes&lt;/h3&gt;
+&lt;p&gt;This attribute has 3 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Data&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Number of Modes&lt;/td&gt;
+&lt;td&gt;The number of modes expected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Mode&lt;/td&gt;
+&lt;td&gt;The mode to output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-02.png&#34;
+         alt=&#34;EFD Modes input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;EFD Modes input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The &amp;ldquo;Display EFD Modes panel&amp;rdquo; button will generate the attribute for a trace in the input
+data volume.&lt;/p&gt;
+&lt;h3 id=&#34;efd-spectral-decomposition&#34;&gt;EFD Spectral Decomposition&lt;/h3&gt;
+&lt;p&gt;This attribute has 4 parameters:
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Data&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Number of Modes&lt;/td&gt;
+&lt;td&gt;The number of modes expected.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Frequency (Hz)&lt;/td&gt;
+&lt;td&gt;The frequency to output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output Frequency Step (Hz)&lt;/td&gt;
+&lt;td&gt;The frequency step for output.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/efdattrib/image-03.png&#34;
+         alt=&#34;EFD Spectral Decomposition input parameter dialog&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;EFD Spectral Decomposition input parameter dialog&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The &amp;ldquo;Display Time/Frequency panel&amp;rdquo; button will generate the attribute for a trace in the input
+data volume.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: External(Python) Attributes</title>
       <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/externalattrib/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1198,6 +1316,85 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: LocalAttrib</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This plugin for the open source seismic interpretation platform [opendtect] Version 6.0 or later is a collection of &amp;ldquo;Local Attributes&amp;rdquo; based on the work of [Fomel (2007) and others](&lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.2437573%22Local&#34;&gt;https://library.seg.org/doi/abs/10.1190/1.2437573&amp;quot;Local&lt;/a&gt; seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3&amp;quot;) for the &lt;a href=&#34;http://www.ahay.org/&#34; target=&#34;_blank&#34;&gt;Madagascar&lt;/a&gt; package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.&lt;/p&gt;
+&lt;h2 id=&#34;spectral-time-frequency-decomposition-by-local-attributes&#34;&gt;Spectral (Time-frequency) Decomposition by Local Attributes&lt;/h2&gt;
+&lt;p&gt;Formerly called the LTFAttrib, this is an implementation of the method of local time-frequency analysis as described by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/geo2010-0185.1&#34; title=&#34;Time-frequency analysis of seismic data using local attributes. Guochang Liu, Sergey Fomel, and Xiaohong Chen. GEOPHYSICS 2011 76:6, P23-P34&#34;&gt;Liu, G etal (2011)&lt;/a&gt;. This decomposition uses least-squares inversion with shaping regularization to estimate the time-varying Fourier coefficients. Its principal advantages over the STFT (short time fourier transform) is it much quicker if only a few frequencies are required and it is generally more accurate for short window lengths.&lt;/p&gt;
+&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
+&lt;p&gt;&lt;div class=&#34;juxtapose&#34;&gt;
+
+    &lt;img src=&#34;LTFAttrib_sd.jpg&#34; data-label=&#34;FFT Spectral Decomposition (30Hz &amp;#43;/-28ms window)&#34; alt=&#34;FFT Spectral Decomposition (30Hz &amp;#43;/-28ms window)&#34; /&gt;
+    &lt;img src=&#34;LTFAttrib_1.jpg&#34; data-label=&#34;Local time-frequency attribute (30Hz 7 sample smoothing radius)&#34; alt=&#34;Local time-frequency attribute (30Hz 7 sample smoothing radius)&#34; /&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;br/&gt;
+The output of the LTF attribute (ltf30) is visually identical and also highly correlated to the OpendTect FFT spectral decomposition (sdfreq30) as shown in the following crossplot of the two attributes.&lt;/p&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/localattrib/LTFAttrib_2.jpg&#34;
+         alt=&#34;Crossplot of LTFAttrib vs FFT Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;Crossplot of LTFAttrib vs FFT Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
+&lt;p&gt;This attribute has 4 parameters:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;NAME&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Input Volume&lt;/td&gt;
+&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Time Gate&lt;/td&gt;
+&lt;td&gt;Where the attribute is calulated. The time gate does not have to be symmetric. The time gate length is used as the smoothing radius for shaping regularization.The value from the gate centre is output - useful for analysing a zone offset from an horizon. Recommend setting the gate length equal to or less than the FFT window length you would used for the standard OpendTect FFT spectral decomposition.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Frequency&lt;/td&gt;
+&lt;td&gt;The frequency component(s) to estimate.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Iterations&lt;/td&gt;
+&lt;td&gt;The number of inversion iterations.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/localattrib/LTFAttrib_input_parameters.jpg&#34;
+         alt=&#34;LTF Attributes input parameters&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;LTF Attributes input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Grid 2D-3D Horizon</title>
       <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1329,85 +1526,6 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/grid_nrn_ex.jpg&#34;
          alt=&#34;Example of Nearest Neighbour gridding&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Example of Nearest Neighbour gridding&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: LocalAttrib</title>
-      <link>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</guid>
-      <description>
-        
-        
-        &lt;p&gt;This plugin for the open source seismic interpretation platform [opendtect] Version 6.0 or later is a collection of &amp;ldquo;Local Attributes&amp;rdquo; based on the work of [Fomel (2007) and others](&lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.2437573%22Local&#34;&gt;https://library.seg.org/doi/abs/10.1190/1.2437573&amp;quot;Local&lt;/a&gt; seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3&amp;quot;) for the &lt;a href=&#34;http://www.ahay.org/&#34; target=&#34;_blank&#34;&gt;Madagascar&lt;/a&gt; package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.&lt;/p&gt;
-&lt;h2 id=&#34;spectral-time-frequency-decomposition-by-local-attributes&#34;&gt;Spectral (Time-frequency) Decomposition by Local Attributes&lt;/h2&gt;
-&lt;p&gt;Formerly called the LTFAttrib, this is an implementation of the method of local time-frequency analysis as described by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/geo2010-0185.1&#34; title=&#34;Time-frequency analysis of seismic data using local attributes. Guochang Liu, Sergey Fomel, and Xiaohong Chen. GEOPHYSICS 2011 76:6, P23-P34&#34;&gt;Liu, G etal (2011)&lt;/a&gt;. This decomposition uses least-squares inversion with shaping regularization to estimate the time-varying Fourier coefficients. Its principal advantages over the STFT (short time fourier transform) is it much quicker if only a few frequencies are required and it is generally more accurate for short window lengths.&lt;/p&gt;
-&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
-&lt;p&gt;&lt;div class=&#34;juxtapose&#34;&gt;
-
-    &lt;img src=&#34;LTFAttrib_sd.jpg&#34; data-label=&#34;FFT Spectral Decomposition (30Hz &amp;#43;/-28ms window)&#34; alt=&#34;FFT Spectral Decomposition (30Hz &amp;#43;/-28ms window)&#34; /&gt;
-    &lt;img src=&#34;LTFAttrib_1.jpg&#34; data-label=&#34;Local time-frequency attribute (30Hz 7 sample smoothing radius)&#34; alt=&#34;Local time-frequency attribute (30Hz 7 sample smoothing radius)&#34; /&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;br/&gt;
-The output of the LTF attribute (ltf30) is visually identical and also highly correlated to the OpendTect FFT spectral decomposition (sdfreq30) as shown in the following crossplot of the two attributes.&lt;/p&gt;
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/localattrib/LTFAttrib_2.jpg&#34;
-         alt=&#34;Crossplot of LTFAttrib vs FFT Spectral Decomposition&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;Crossplot of LTFAttrib vs FFT Spectral Decomposition&lt;/strong&gt;&lt;/p&gt;
-        &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
-&lt;p&gt;This attribute has 4 parameters:&lt;/p&gt;
-
-
-
-
-
-&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;NAME&lt;/th&gt;
-&lt;th&gt;DESCRIPTION&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Input Volume&lt;/td&gt;
-&lt;td&gt;The attribute volume to be analysed.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Time Gate&lt;/td&gt;
-&lt;td&gt;Where the attribute is calulated. The time gate does not have to be symmetric. The time gate length is used as the smoothing radius for shaping regularization.The value from the gate centre is output - useful for analysing a zone offset from an horizon. Recommend setting the gate length equal to or less than the FFT window length you would used for the standard OpendTect FFT spectral decomposition.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Frequency&lt;/td&gt;
-&lt;td&gt;The frequency component(s) to estimate.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Iterations&lt;/td&gt;
-&lt;td&gt;The number of inversion iterations.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
- &lt;/div&gt;
-
-
-&lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/localattrib/LTFAttrib_input_parameters.jpg&#34;
-         alt=&#34;LTF Attributes input parameters&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;LTF Attributes input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 

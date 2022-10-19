@@ -1,7 +1,7 @@
 ---
 title: GeotiffExport
 description: export OpendTect 3D horizon and attribute data to a GeoTIFF image
-weight: 6
+weight: 7
 categories: ["docs"]
 tags: ["Geopackage", "qgis", "geotif"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: GradientAttrib
 description: calculate inline, crossline and time/depth gradients
-weight: 7
+weight: 8
 categories: ["docs"]
 tags: ["GradientAttrib", "filter"]
 ---

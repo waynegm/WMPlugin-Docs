@@ -26,8 +26,7 @@
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/dipazimuth/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
-    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/externalattrib/</loc>
-    <lastmod>2022-04-19T09:34:14+10:00</lastmod>
+    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/efdattrib/</loc>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
@@ -35,13 +34,13 @@
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
-    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</loc>
-    <lastmod>2022-04-17T22:38:58+10:00</lastmod>
+    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/externalattrib/</loc>
+    <lastmod>2022-04-19T09:34:14+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/lpasmooth/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
-    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</loc>
+    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/pylops/</loc>
@@ -50,25 +49,28 @@
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/faq/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
-    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</loc>
+    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackageexport/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/spatialfiltercircular/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
-    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</loc>
+    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/spatialfilterrectangular/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
-    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</loc>
+    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/gradientattrib/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/localattrib/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/vectorfilter/</loc>
+    <lastmod>2022-04-17T22:38:58+10:00</lastmod>
+  </url><url>
+    <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/grid2d-3d/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/mistie/</loc>
@@ -228,7 +230,7 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/</loc>
-    <lastmod>2022-04-17T22:38:58+10:00</lastmod>
+    <lastmod>2022-05-01T13:03:22+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/wmtools/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
