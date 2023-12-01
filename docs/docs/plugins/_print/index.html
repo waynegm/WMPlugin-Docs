@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.111.3">
+<meta name="generator" content="Hugo 0.120.1">
 <link rel="canonical" type="text/html" href="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/">
 <link rel="alternate" type="application/rss&#43;xml" href="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -25,7 +25,8 @@
 <meta property="og:title" content="Plugins" />
 <meta property="og:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/" /><meta property="og:site_name" content="WMPlugins" />
+<meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/docs/plugins/" />
+
 <meta itemprop="name" content="Plugins">
 <meta itemprop="description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Plugins"/>
@@ -134,7 +135,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.5dc4215770cffca13f87dd9045069cbc.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.aadc7e3cae89ab1f419c02d544792729.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -1347,6 +1348,7 @@ implements the attribute calculation.</p>
 	<h1 id="pg-5897b286a95bf0d62a8700d66e3bbe55">5 - GeopackageDisplay</h1>
     <div class="lead">display lines and polylines in a Geopackage database on an OpendTect 3D horizon</div>
 	<p>This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.</p>
+<p><strong>Not available in version &gt;= 7.0</strong></p>
 <h2 id="description">Description</h2>
 <p>The plugin adds a &ldquo;Geopackage Display&rdquo; item to the &ldquo;Add&rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.</p>
 
@@ -1544,9 +1546,9 @@ the corresponding tables created in the exported GeoPackage database.</p>
     
 	<h1 id="pg-2f7fde7a98164b2b8657e1e0735e1508">7 - GeotiffExport</h1>
     <div class="lead">export OpendTect 3D horizon and attribute data to a GeoTIFF image</div>
-	<p>This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] 3D horizon and attribute data to a  <a href="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</a> image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.</p>
+	<p>This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] either 3D horizon/attribute data or Z slices (as of 7.0.3) to a  <a href="https://en.wikipedia.org/wiki/GeoTIFF">GeoTIFF</a> image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.</p>
 <h2 id="description">Description</h2>
-<p>The plugin adds a &ldquo;Geotiff Export&rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the 3D horizon and attributes to export and the destination file name. The horizon Z values and attributes values are exported to Float32 bands in the output image. The plugin supports exporting multiple attributes to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image (eg QGIS v3.6). If multiband images prove to be a problem the option exists to run the plugin multiple times and save each attribute to a separate GeoTIFF file.</p>
+<p>The plugin adds a &ldquo;Geotiff Export&rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the destination file name and either a 3D horizon/attributes or Z slice to export. The data is exported to Float32 bands in the output image. The plugin supports exporting multiple horizons/attributes or Z slices to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image. If multiband images prove to be a problem the option exists to run the plugin multiple times and save each image to a separate GeoTIFF file.</p>
 <h3 id="notes">Notes</h3>
 <ul>
 <li>The plugin requires the survey to have a projection based CRS defined.</li>
@@ -1563,7 +1565,12 @@ the corresponding tables created in the exported GeoPackage database.</p>
 <h2 id="input-parameters">Input Parameters</h2>
 
 <figure class="img-centered">
-    <img src="/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_input.jpg" width="90%"/> 
+    <img src="/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_horizon_input.jpg" width="90%"/> 
+</figure>
+
+
+<figure class="img-centered">
+    <img src="/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_zslice_input.jpg" width="90%"/> 
 </figure>
 
 

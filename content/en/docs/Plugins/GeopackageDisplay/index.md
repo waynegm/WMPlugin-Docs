@@ -8,6 +8,8 @@ tags: ["Geopackage"]
 
 This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.
 
+**Not available in version >= 7.0**
+
 ## Description
 
 The plugin adds a "Geopackage Display" item to the "Add" context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.

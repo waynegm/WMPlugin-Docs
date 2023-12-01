@@ -12,7 +12,8 @@ These instructions are for Linux.
 
 1. Download the source for the plugins for the appropriate version of OpendTect from Github
 
-    - [Latest OpendTect v6.6](https://github.com/waynegm/OpendTect-Plugins/archive/master.zip)
+    - [Latest OpendTect v7.0](https://github.com/waynegm/OpendTect-Plugins/archive/master.zip)
+    - [OpendTect v6.6](https://github.com/waynegm/OpendTect-Plugins/archive/6.6.zip)
     - [OpendTect v6.4](https://github.com/waynegm/OpendTect-Plugins/archive/6.4.zip)
     - [OpendTect v5](https://github.com/waynegm/OpendTect-Plugins/archive/v5-stable.zip)
     - [OpendTect v4](https://github.com/waynegm/OpendTect-4-plugins/archive/master.zip)
@@ -39,7 +40,8 @@ These instructions are for Linux.
 These instructions are for Windows.
 
 1. Download the source for the plugins for the appropriate version of OpendTect from Github
-    - [Latest OpendTect v6.6](https://github.com/waynegm/OpendTect-Plugins/archive/master.zip)
+    - [Latest OpendTect v7.0](https://github.com/waynegm/OpendTect-Plugins/archive/master.zip)
+    - [Latest OpendTect v6.6](https://github.com/waynegm/OpendTect-Plugins/archive/6.6.zip)
     - [OpendTect v6.4](https://github.com/waynegm/OpendTect-Plugins/archive/6.4.zip)
     - [OpendTect v5](https://github.com/waynegm/OpendTect-Plugins/archive/v5-stable.zip)
     - [OpendTect v4](https://github.com/waynegm/OpendTect-4-plugins/archive/master.zip)

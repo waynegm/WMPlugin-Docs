@@ -4,6 +4,7 @@
     <link>https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/</link>
     <description>Recent content in Getting Started on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     
 	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/index.xml" rel="self" type="application/rss+xml" />
     
@@ -113,7 +114,8 @@ should work with all OpendTect 6.4 releases but won&amp;rsquo;t work with OpendT
 &lt;li&gt;
 &lt;p&gt;Download the source for the plugins for the appropriate version of OpendTect from Github&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/master.zip&#34;&gt;Latest OpendTect v6.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/master.zip&#34;&gt;Latest OpendTect v7.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/6.6.zip&#34;&gt;OpendTect v6.6&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/6.4.zip&#34;&gt;OpendTect v6.4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/v5-stable.zip&#34;&gt;OpendTect v5&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-4-plugins/archive/master.zip&#34;&gt;OpendTect v4&lt;/a&gt;&lt;/li&gt;
@@ -149,7 +151,8 @@ should work with all OpendTect 6.4 releases but won&amp;rsquo;t work with OpendT
 &lt;li&gt;
 &lt;p&gt;Download the source for the plugins for the appropriate version of OpendTect from Github&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/master.zip&#34;&gt;Latest OpendTect v6.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/master.zip&#34;&gt;Latest OpendTect v7.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/6.6.zip&#34;&gt;Latest OpendTect v6.6&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/6.4.zip&#34;&gt;OpendTect v6.4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/v5-stable.zip&#34;&gt;OpendTect v5&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-4-plugins/archive/master.zip&#34;&gt;OpendTect v4&lt;/a&gt;&lt;/li&gt;

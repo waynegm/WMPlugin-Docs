@@ -4,6 +4,7 @@
     <link>https://waynegm.github.io/WMPlugin-Docs/docs/</link>
     <description>Recent content in Documentation on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     
 	  <atom:link href="https://waynegm.github.io/WMPlugin-Docs/docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -467,7 +468,8 @@ subsequently extended the analysis with a number of other measures to describe t
 &lt;li&gt;
 &lt;p&gt;Download the source for the plugins for the appropriate version of OpendTect from Github&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/master.zip&#34;&gt;Latest OpendTect v6.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/master.zip&#34;&gt;Latest OpendTect v7.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/6.6.zip&#34;&gt;OpendTect v6.6&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/6.4.zip&#34;&gt;OpendTect v6.4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/v5-stable.zip&#34;&gt;OpendTect v5&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-4-plugins/archive/master.zip&#34;&gt;OpendTect v4&lt;/a&gt;&lt;/li&gt;
@@ -503,7 +505,8 @@ subsequently extended the analysis with a number of other measures to describe t
 &lt;li&gt;
 &lt;p&gt;Download the source for the plugins for the appropriate version of OpendTect from Github&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/master.zip&#34;&gt;Latest OpendTect v6.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/master.zip&#34;&gt;Latest OpendTect v7.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/6.6.zip&#34;&gt;Latest OpendTect v6.6&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/6.4.zip&#34;&gt;OpendTect v6.4&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/archive/v5-stable.zip&#34;&gt;OpendTect v5&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/waynegm/OpendTect-4-plugins/archive/master.zip&#34;&gt;OpendTect v4&lt;/a&gt;&lt;/li&gt;
@@ -1657,6 +1660,7 @@ the input with relatively minor smearing of steep dips and fault cuts. Increasin
         
         
         &lt;p&gt;This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Not available in version &amp;gt;= 7.0&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Display&amp;rdquo; item to the &amp;ldquo;Add&amp;rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.&lt;/p&gt;
 
@@ -2124,9 +2128,9 @@ is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] 3D horizon and attribute data to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] either 3D horizon/attribute data or Z slices (as of 7.0.3) to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;The plugin adds a &amp;ldquo;Geotiff Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the 3D horizon and attributes to export and the destination file name. The horizon Z values and attributes values are exported to Float32 bands in the output image. The plugin supports exporting multiple attributes to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image (eg QGIS v3.6). If multiband images prove to be a problem the option exists to run the plugin multiple times and save each attribute to a separate GeoTIFF file.&lt;/p&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Geotiff Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the destination file name and either a 3D horizon/attributes or Z slice to export. The data is exported to Float32 bands in the output image. The plugin supports exporting multiple horizons/attributes or Z slices to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image. If multiband images prove to be a problem the option exists to run the plugin multiple times and save each image to a separate GeoTIFF file.&lt;/p&gt;
 &lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
@@ -2143,7 +2147,12 @@ is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_input.jpg&#34; width=&#34;90%&#34;/&gt; 
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_horizon_input.jpg&#34; width=&#34;90%&#34;/&gt; 
+&lt;/figure&gt;
+
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geotiffexport/geotiff_zslice_input.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
 
