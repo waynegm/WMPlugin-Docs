@@ -5,8 +5,8 @@ weight: 3
 categories: ["docs"]
 tags: [time-frequency", "spectral-decomposition"]
 ---
-
-This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+{{% refs %}}
+This attribute plugin for the open source seismic interpretation platform [OpendTect] Version 6.0.0 or later performs spectral
 (time-frequency) decomposition using empirical fourier decomposition.
 
 ## Description

@@ -5,9 +5,9 @@ weight: 2
 categories: ["docs"]
 tags: ["AVOPolarAttrib", "avo"]
 ---
+{{% refs %}}
 
-
-This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes derived from AVO Polarization
+This attribute plugin for the open source seismic interpretation platform [OpendTect] calculates 6 attributes derived from AVO Polarization
 in the AVO Intercept-Gradient crossplot as described by
 [Mahob and Castagna (2003)](https://library.seg.org/doi/10.1190/1.1581037 "AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003").
 

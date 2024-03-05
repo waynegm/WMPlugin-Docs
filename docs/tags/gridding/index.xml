@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WMPlugins – gridding</title>
+    <title>WMPlugins – Gridding</title>
     <link>https://waynegm.github.io/WMPlugin-Docs/tags/gridding/</link>
-    <description>Recent content in gridding on WMPlugins</description>
+    <description>Recent content in Gridding on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [opendtect] survey/project.&lt;/p&gt;
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; survey/project.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Grid 2D-3D Horizon&amp;hellip;&amp;rdquo; item to the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; menu which opens a dialog box for:&lt;/p&gt;
 &lt;ul&gt;

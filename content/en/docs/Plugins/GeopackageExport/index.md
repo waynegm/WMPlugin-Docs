@@ -5,15 +5,15 @@ weight: 6
 categories: ["docs"]
 tags: ["Geopackage", "qgis"]
 ---
-
-This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] data to a
+{{% refs %}}
+This plugin, for the open source seismic interpretation platform [OpendTect] Version 6.4.0 or later, exports [OpendTect] data to a
 [GeoPackage](https://www.geopackage.org/) database. GeoPackage is an open, non-proprietary, platform-independent, self describing
 standards-based data format for geospatial data.
 
 ## Description
 
 The plugin adds a "Geopackage Export" item to the Survey-Export main menu. Selecting the item opens a tabbed dialog box for selecting
-the various elements to export and the destination file name. The following table shows the [opendtect] data elements supported and
+the various elements to export and the destination file name. The following table shows the [OpendTect] data elements supported and
 the corresponding tables created in the exported GeoPackage database.
 
 {{<table "table table-striped table-bordered">}}

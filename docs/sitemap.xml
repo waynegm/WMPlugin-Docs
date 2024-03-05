@@ -18,7 +18,7 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/building-from-source/</loc>
-    <lastmod>2022-04-17T22:38:58+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/gettingstarted/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
@@ -42,7 +42,7 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geopackagedisplay/</loc>
-    <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/pylops/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
@@ -57,7 +57,7 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/plugins/geotiffexport/</loc>
-    <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/spatialfilterrectangular/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
@@ -99,7 +99,7 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/categories/</loc>
-    <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/efdattrib/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
@@ -117,7 +117,7 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/</loc>
-    <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/blog/2022/04/15/wmplugins-6.6.10-release/</loc>
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
@@ -189,7 +189,7 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/categories/docs/</loc>
-    <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/filter/</loc>
     <lastmod>2022-10-19T15:19:13+10:00</lastmod>
@@ -198,10 +198,10 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/geopackage/</loc>
-    <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/geotif/</loc>
-    <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/gradientattrib/</loc>
     <lastmod>2022-10-19T15:19:13+10:00</lastmod>
@@ -219,13 +219,16 @@
     <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/qgis/</loc>
-    <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+    <lastmod>2023-12-02T09:02:45+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/search/</loc>
     <lastmod>2022-04-16T11:21:50+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/spectral-decomposition/</loc>
     <lastmod>2022-10-19T15:19:13+10:00</lastmod>
+  </url><url>
+    <loc>https://waynegm.github.io/WMPlugin-Docs/tags/time-frequency/</loc>
+    <lastmod>2022-04-17T22:38:58+10:00</lastmod>
   </url><url>
     <loc>https://waynegm.github.io/WMPlugin-Docs/tags/time-frequency/</loc>
     <lastmod>2022-10-19T15:19:13+10:00</lastmod>

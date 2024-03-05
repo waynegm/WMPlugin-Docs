@@ -5,8 +5,8 @@ weight: 11
 categories: ["docs"]
 tags: ["MLVFilterAttrib", "filter"]
 ---
-
-This attribute plugin for the open source seismic interpretation platform [opendtect]
+{{% refs %}}
+This attribute plugin for the open source seismic interpretation platform [OpendTect]
 applies a structure preserving Mean of Least Variance filter.
 
 ## Description

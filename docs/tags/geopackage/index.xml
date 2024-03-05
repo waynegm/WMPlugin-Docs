@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;p&gt;This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.&lt;/p&gt;
+        &lt;p&gt;This plugin displays lines and polylines from a Geopackage database file over an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; 3D horizon.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Not available in version &amp;gt;= 7.0&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Display&amp;rdquo; item to the &amp;ldquo;Add&amp;rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.&lt;/p&gt;
@@ -61,12 +61,12 @@
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] data to a
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later, exports &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; data to a
 &lt;a href=&#34;https://www.geopackage.org/&#34;&gt;GeoPackage&lt;/a&gt; database. GeoPackage is an open, non-proprietary, platform-independent, self describing
 standards-based data format for geospatial data.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a tabbed dialog box for selecting
-the various elements to export and the destination file name. The following table shows the [opendtect] data elements supported and
+the various elements to export and the destination file name. The following table shows the &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; data elements supported and
 the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 
 
@@ -214,13 +214,13 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] either 3D horizon/attribute data or Z slices (as of 7.0.3) to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later, exports &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; either 3D horizon/attribute data or Z slices (as of 7.0.3) to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Geotiff Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the destination file name and either a 3D horizon/attributes or Z slice to export. The data is exported to Float32 bands in the output image. The plugin supports exporting multiple horizons/attributes or Z slices to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image. If multiband images prove to be a problem the option exists to run the plugin multiple times and save each image to a separate GeoTIFF file.&lt;/p&gt;
 &lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
-&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
+&lt;li&gt;This plugin is actually part of the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/&#34;&gt;GeopackageExport&lt;/a&gt; plugin - see notes there as well&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;

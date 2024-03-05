@@ -5,8 +5,8 @@ weight: 8
 categories: ["docs"]
 tags: ["time-frequency", "spectral-decomposition"]
 ---
-
-This plugin for the open source seismic interpretation platform [opendtect] Version 6.0 or later is a collection of "Local Attributes" based on the work of [Fomel (2007) and others](https://library.seg.org/doi/abs/10.1190/1.2437573"Local seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3") for the <a href="http://www.ahay.org/" target="_blank">Madagascar</a> package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.
+{{% refs %}}
+This plugin for the open source seismic interpretation platform [OpendTect] Version 6.0 or later is a collection of "Local Attributes" based on the work of [Fomel (2007) and others](https://library.seg.org/doi/abs/10.1190/1.2437573"Local seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3") for the <a href="http://www.ahay.org/" target="_blank">Madagascar</a> package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.
 
 ## Spectral (Time-frequency) Decomposition by Local Attributes
 

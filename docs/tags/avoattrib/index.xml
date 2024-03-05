@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes based on different
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; calculates 6 attributes based on different
 parameterizations of reflection intercept and gradient.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The intercept-gradient crossplot is widely used for amplitude-variation-with-offset (AVO) analysis in hydrocarbon exploration.

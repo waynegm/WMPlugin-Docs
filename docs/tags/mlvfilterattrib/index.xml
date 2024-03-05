@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect]
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt;
 applies a structure preserving Mean of Least Variance filter.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;This attribute is an implementation of a mean of least variance filter

@@ -5,8 +5,8 @@ weight: 5
 categories: ["docs"]
 tags: ["Geopackage"]
 ---
-
-This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.
+{{% refs %}}
+This plugin displays lines and polylines from a Geopackage database file over an [OpendTect] 3D horizon.
 
 **Not available in version >= 7.0**
 

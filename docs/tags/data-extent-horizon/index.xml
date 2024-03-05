@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WMPlugins – data-extent-horizon</title>
+    <title>WMPlugins – Data-Extent-Horizon</title>
     <link>https://waynegm.github.io/WMPlugin-Docs/tags/data-extent-horizon/</link>
-    <description>Recent content in data-extent-horizon on WMPlugins</description>
+    <description>Recent content in Data-Extent-Horizon on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
@@ -23,10 +23,10 @@
       <description>
         
         
-        &lt;p&gt;This plugin provides various tools to enhance the open source seismic interpretation platform [opendtect] Version 6.4.0 or later.&lt;/p&gt;
+        &lt;p&gt;This plugin provides various tools to enhance the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later.&lt;/p&gt;
 &lt;h2 id=&#34;convex-hull-polygon&#34;&gt;Convex Hull Polygon&lt;/h2&gt;
 &lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;p&gt;Generate a convex hull polygon covering either the extent of 2D/3D seismic coverage or 2D/3D horizon interpretation. The user has full control over the 2D and 3D data included. The polygon can be used as is or after editing as a clipping polygon in the  [grid2d-3d]  plugin. To edit the polygon in the 3D scene a 3D horizon of suitable extent must be displayed eg such as a DataExtentHorizon.&lt;/p&gt;
+&lt;p&gt;Generate a convex hull polygon covering either the extent of 2D/3D seismic coverage or 2D/3D horizon interpretation. The user has full control over the 2D and 3D data included. The polygon can be used as is or after editing as a clipping polygon in the  &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/&#34;&gt;Grid 2D-3D Horizon&lt;/a&gt;  plugin. To edit the polygon in the 3D scene a 3D horizon of suitable extent must be displayed eg such as a DataExtentHorizon.&lt;/p&gt;
 &lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -53,7 +53,7 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;constant-z-polyline&#34;&gt;Constant Z Polyline&lt;/h2&gt;
 &lt;h3 id=&#34;description-1&#34;&gt;Description&lt;/h3&gt;
-&lt;p&gt;This tool allows a series of points to be digitized in the 3D scene that can subsequently be used as additional surface control in the Grid 2D3D plugin.&lt;/p&gt;
+&lt;p&gt;This tool allows a series of points to be digitized in the 3D scene that can subsequently be used as additional surface control in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/&#34;&gt;Grid 2D-3D Horizon&lt;/a&gt; plugin.&lt;/p&gt;
 &lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu. After adding a contour polyline remember to use the Right-Click | Save menu to commit the item.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -96,7 +96,7 @@
 
 &lt;h2 id=&#34;data-extent-horizon&#34;&gt;Data Extent Horizon&lt;/h2&gt;
 &lt;h3 id=&#34;description-3&#34;&gt;Description&lt;/h3&gt;
-&lt;p&gt;Generate a constant Z value 3D horizon which covers the extent of 2D and 3D seismic data in an [opendtect] survey/project. The user has full control over the 2D and 3D data included.  With the horizon displayed it is possible to draw fault polygons and grid clipping polygons that extend beyond the 3D survey definition. These can then be used in the [grid2d-3d] plugin to produce structure maps that extend across both 2D and 3D seismic interpretation in an [opendtect] survey/project.&lt;/p&gt;
+&lt;p&gt;Generate a constant Z value 3D horizon which covers the extent of 2D and 3D seismic data in an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; survey/project. The user has full control over the 2D and 3D data included.  With the horizon displayed it is possible to draw fault polygons and grid clipping polygons that extend beyond the 3D survey definition. These can then be used in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/&#34;&gt;Grid 2D-3D Horizon&lt;/a&gt; plugin to produce structure maps that extend across both 2D and 3D seismic interpretation in an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; survey/project.&lt;/p&gt;
 &lt;p&gt;The tool is accessed either from the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; main menu item or from the New submenu of the 3D Horizon tree context menu.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;

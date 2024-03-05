@@ -5,12 +5,11 @@ description: seismic attributes in Python
 categories: ["docs"]
 tags: ["ExternalAttrib", "python"]
 ---
-
-This attribute plugin for the open source seismic interpretation platform [opendtect] allows attributes to be developed in Python.
+{{% refs %}}
+This attribute plugin for the open source seismic interpretation platform [OpendTect] allows attributes to be developed in Python.
 
 ## Description
-With this plugin it is possible to calculate single and multitrace attributes using a Python script. The plugin supports multi-trace
-multi-attribute input and multi-attribute output as well as parallel execution.
+With this plugin it is possible to calculate single and multitrace attributes using a Python script. The plugin supports multi-trace multi-attribute input and multi-attribute output as well as parallel execution.
 
 **NOTE:** *Releases prior to 6.0.2 allowed multi-trace multi-attribute input only if all the attributes were in the same multi-attribute volume.
 In releases from 6.0.2 onward this limitation has been removed.*
@@ -18,14 +17,13 @@ In releases from 6.0.2 onward this limitation has been removed.*
 Instead of doing the attribute calculation within OpendTect this plugin starts up a Python interpreter and runs a user specified Python script.
 Trace data is read/written to/from the Python script using stdin/stdout pipes. As described below the Python script must import the *extattrib.py*
 module that handles the stdin/stdout data IO and presents the trace data as a numpy array. The script must implement a *doCompute* method and
-define a Python dictionary describing the User Interface. Details are described below. Tips and Tricks to assist can be found in various [../articles].
-There are also the [wmscripts] for everything from dip estimation to filtering described in the [../external_attributes] section of this documentation
-which are distributed with the WMPlugins suite and can be found in the bin/python/wmpy folder of the OpendTect installation.
+define a Python dictionary describing the User Interface. Details are described below. Tips and Tricks to assist can be found in various [Blog Posts]({{< relref "blog" >}}) .
+When WMPlugins is installed a number of Python attribute scripts for everything from dip estimation to filtering are installed into the bin/python/wmpy folder of the OpendTect installation. These are described in the [External Attributes]({{< relref "ExternalAttributes" >}}) section of this documentation.
 
 
 ## Input Parameters
 
-This attribute has 3 required parameters and optional parameters determined by the [JSON parameter string](#json-parameter-string) provided by the Python attribute script:
+This attribute has 3 required parameters and optional parameters determined by the [Parameters Dictionary](#parameters-dictionary) provided by the Python attribute script:
 
 {{<table "table table-striped table-bordered">}}
 | NAME | DESCRIPTION |
@@ -44,7 +42,7 @@ The ![reload](reload.png) button beside the External File entry will force reloa
 This can be useful if you are editing a script, save it and want to verify the changes.
 
 The ![help](contexthelp.png) button beside the External File entry will open the system web browser with the url specified by the Help entry in
-the attribute scripts [JSON parameter string](#json-parameter-string). The button is not displayed if this entry is absent.
+the attribute scripts [Parameters Dictionary](#parameters-dictionary). The button is not displayed if this entry is absent.
 
 ## Python Script Structure
 Every Python attribute script has 5 sections. As an example consider the [ex_dip.py](https://github.com/waynegm/OpendTect-Plugins/blob/master/bin/python/wmpy/DipAndAzimuth/ex_dip.py)
@@ -60,35 +58,39 @@ This is where external modules/libraries required by the script are loaded. At a
 -  the Numpy module (the fundamental package for scientific computing with Python)
 -  the external attribute module (extattrib.py)
 
-Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [wmscripts] package and its location
-is unknown to the Python installation unless we help out. The sys.path.insert call on line 11 provides this help by extending the default search
-path for Python modules to include the parent folder of the folder containing the script. This reflects the folder structure of the [wmscripts]
-package, so if you develop scripts outside this structure then you will need to change line 11 appropriately to append the location of extattrib.py
-to the module search path.
+Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [External Attributes] package and it will be installed into the bin/python/wmpy of the OpendTect software installation if WMPlugins is installed from the OpendTect Installation Manager. As of 7.0.5 this plugin will run the external attribute scripts in an environment where the OpendTect bin/python folder is on the PYTHONPATH. Also, if either of the environment variables OD_APPL_PLUGIN_DIR and OD_USER_PLUGIN_DIR are defined then any existing bin/python folder in those locations will also be added to the PYTHONPATH of the scripts environment. In 7.0.4 and earlier the user must ensure the location of the extattrib module is explicitly set. In the figure above a sys.path.insert call on line 11 ensures the default search path for Python modules includes the parent folder of the folder containing the script. This reflects the folder structure of the WMPlugins package. Use an appropriate set of arguments for your specific installation.
 
 Of course if your script requires other Python modules (eg SciPy, Numba) then add the appropriate import statements in this section.
 
 ### The Parameters
 {{< figure src="18_06_04_02.png" width="90%" class="img-centered" >}}
 
-The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by
-the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for
-documentation. The plugin dynamically builds the following input dialog for this script:
+The xa.params global dictionary describes the input parameters for the script. This is used by
+the plugin to build a user interface that is shown in the OpendTect Attribute Decription Editor. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for
+documentation. The plugin dynamically builds the following user interface for this script:
 
 {{< figure src="18_06_04_06.png" width="90%" class="img-centered" >}}
 
-A variety of other input elements can be specified to build more complex input dialogs. See [JSON parameter string](#json-parameter-string)
+A variety of other input elements can be specified to build more complex UI's. See [Parameters Dictionary](#parameters-dictionary)
 for full details or look at other scripts to see what is possible.
 
 ### The Compute Loop Initialisation
 {{< figure src="18_06_04_03.png" width="90%" class="img-centered" >}}
 
-The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the
-"while True:" loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section
-will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.
+The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the "while True:" loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.
 
-This particular script shows how information stored in the [SeismicInfo Block](#seismicinfo-block) can be used to calculate some
-constants purely as an example. This attribute is so simple that no initialisation is actually required.
+This particular script shows how information stored in the [SeismicInfo Block](#seismicinfo-block) can be used to calculate some constants purely as an example. This attribute is so simple that no initialisation is actually required.
+
+Also, as on 7.0.5, some additional metadata is available within this function from the xa.params dictionary:
+
+{{<table "table table-striped table-bordered">}}
+| KEYWORD                   | TYPE         | CONTENT                                     |
+|---------------------------|--------------|--------------------------------------------|
+| <b>Survey</b>             | string       | The current survey name |
+| <b>SurveyDiskLocation</b> | string       | The full path to the survey/project folder |
+| <b>InputNames</b>         | list[string] | The input data set names |
+{{</table>}}
+
 
 ### The Compute Loop
 {{< figure src="18_06_04_04.png" width="90%" class="img-centered" >}}
@@ -115,85 +117,102 @@ Attribute ouput must be put into the *xa.Output* global Numpy array before the *
 
 This section is just boilerplate code that appears in every attribute script which should never be changed.
 
-## JSON Parameter String
-The Python script can specify a set of parameters as a JSON object string. As of Release 6.6.8 the format of the JSON object string has
-changed to better support more flexible UI's. In particular the restriction on no whitespace in the keys and values in the JSON string
-have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) should continue to work. The following keywords are supported:
+## Parameters Dictionary
+The Python script can specify a set of parameters as a Python dictionary. As of Release 6.6.8 the format of the Parameters dictionary string has changed to better support more flexible UI's. In particular the restriction on no whitespace in the keys and values in the dictionary keys has been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) should continue to work. The following keywords are supported:
 
+### Inputs Keyword
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | Input (depreciated) |
+| KEYWORD | Inputs |
 |--------------|---------------------|
-| <b>TYPE</b> | String' |
-| <b>DESCRIPTION</b> | Specifies a label to appear beside the input attribute selection UI element. Superceded by the "Inputs" keyword but is supported for backward compatibility. |
-| <b>EXAMPLE</b> | ```Input: Input Data``` |
-{{</table>}}
-
-{{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | Inputs |
-|--------------|---------------------|
-| <b>TYPE</b> |Array of Strings |
+| <b>TYPE</b> | List of Strings |
 | <b>DESCRIPTION</b> | Each string is used as a label for an input attribute selection UI element. Currently limited to a maximum of 6 attribute inputs. |
 | <b>EXAMPLE</b> | ```Inputs: [Input 1,Input 2,Input 3]```|
 {{</table>}}
 
+### Output Keyword (optional)
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | Output (optional) |
+| KEYWORD | Output (optional) |
 |--------------|---------------------|
-| <b>TYPE</b> | Array of Strings |
+| <b>TYPE</b> | List of Strings |
 | <b>DESCRIPTION</b> | Each string specifies the name of an output attribute. If this keyword is not supplied a single output attribute is assumed. |
 | <b>EXAMPLE</b> | ```Output: [Out 1,Out 2,Out 3]```|
 {{</table>}}
 
+### ZSampMargin Keyword (optional)
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | ZSampMargin (optional) |
+| KEYWORD | ZSampMargin (optional) |
 |--------------|---------------------|
-| <b>TYPE</b> | Object with a 'Value' (array of 2 numbers)  and optional 'Hidden' (boolean) and 'Symmetric' (boolean) parameters. |
+| <b>TYPE</b> | Dictionary with a 'Value' (array of 2 numbers)  and optional 'Hidden' (boolean) and 'Symmetric' (boolean) keys. |
 | <b>DESCRIPTION</b> | The \'Value\' parameter is an array of 2 numbers specifying the desired minimum number of samples before and after the calculation point required for the calculation respectively. If not supplied only a single value will be provided when the attribute is computed on a timeslice or horizon. The optional 'Hidden' parameter is a boolean which if set to true makes the ZSampMargin parameter read only.</br>The optional \'Symmetric\' parameter is a boolean which if true causes only a single entry to be displayed in the UI.</br>The optional \'Minimum\' parameter is an array of 2 numbers specifying a minimum required window size |
 | <b>EXAMPLE</b> | ```ZSampMargin: {Value: [-2,2]}``` </br>```ZSampMargin: {Value: [-2,2], Symmetric: True}```|
 {{</table>}}
 
+### StepOut Keyword (optional)
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | StepOut (optional) |
+| KEYWORD | StepOut (optional) |
 |--------------|---------------------|
-| <b>TYPE</b> | Object with a 'Value' (array of 2 numbers)  and optional 'Hidden' (boolean) parameters. |
+| <b>TYPE</b> | Dictionary with a 'Value' (array of 2 numbers)  and optional 'Hidden' (boolean) keys. |
 | <b>DESCRIPTION</b> | The 'Value' parameter is an array of 2 numbers specifying the inline and crossline stepout defining the block of traces to be used around the current calculation position. If not supplied only a single trace is provided. The optional 'Hidden' parameter is a boolean which if set to true makes the StepOut parameter read only. The optional 'Minimum' parameter is an array of 2 numbers specifying a minimum required stepout. |
 | <b>EXAMPLE</b> | ```StepOut: {Value: [2,2]}```</br>```StepOut: {Value: [2,2], Hidden: True}``` |
 {{</table>}}
 
+### UI Name String (optional)
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | UI Name String (Introduced in release 6.4.8 - optional) |
+| KEYWORD | UI Name String (Introduced in release 6.4.8 - optional) |
 |--------------|---------------------|
-| <b>TYPE</b> | Object with a 'Type' (string)  and 'Value' (string or number depending on the 'Type' key) parameters. |
-| <b>DESCRIPTION</b> | In this new entry the main key is the name that will appear in the UI. Note that this can now contain whitespace. The \'Type\' parameter describes the input field type. Currently Number, Select and File are supported. Number is for a numeric input box, equivalent to the legacy Par_0 to Par_5 entries but with the advantage that the number and order in the UI is more flexible. Select displays a combo-box, equivalent to the legacy Select entry but with the advantage that there is no restriction on the number and order in the UI. File is a file selection UI.</br>The \'Value\' sets the default value displayed in the UI. For Number types it is a number, for the Select and File types it is a string.For the File type the Value determines the location where the file selection dialog opens and if a \'*\' is present the file filter. |
-| <b>EXAMPLE</b> | ```A File UI Field: {Type: File, Value: Seismics/*.wvlt}``` </br>```A Number UI Field: {Type: Number, Value: 20}```</br>```A Select UI Field: {Type: Select, Options: [option 1,option 2,option 3],Value: option 2}``` |
+| <b>TYPE</b> | Dictionary with a 'Type' (string)  and 'Value' (string or number depending on the 'Type' key) keys. |
+| <b>DESCRIPTION</b> | In this new entry the main key is the name that will appear in the UI. Note that this can now contain whitespace. The \'Type\' parameter describes the input field type. Number, Text (as of 7.0.5), Select and File are supported. Number is for a numeric input box, equivalent to the legacy Par_0 to Par_5 entries but with the advantage that the number and order in the UI is more flexible. Text is for a text input box, Select displays a combo-box, equivalent to the legacy Select entry but with the advantage that there is no restriction on the number and order in the UI. File is a file selection UI.</br>The \'Value\' key item sets the default value displayed in the UI. For Number types it is a number, for Text types it is a string, for the Select and File types it is a string. For the File type the Value determines the location where the file selection dialog opens and if a \'*\' is present the file filter. The File type has a Mode key (as of 7.05) which can be either FileIn, FileOut or Dir which determines what can be selected. For FileIn only exisiting files can be selected. For FileOut new file names can be entered, if an existing file is selected the user is asked to confirm overwrite. For Dir only folders are selectable.|
+| <b>EXAMPLE</b> | ```A File UI Field: {Type: File, Mode: FileIn, Value: Seismics/*.wvlt}``` </br>```A Number UI Field: {Type: Number, Value: 20}```</br>```A String UI Field: {Type: Text, Value: Some text}```</br>```A Select UI Field: {Type: Select, Options: [option 1,option 2,option 3],Value: option 2}``` |
 {{</table>}}
 
+### Help Keyword (optional)
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | Help (optional) |
+| KEYWORD | Help (optional) |
 |--------------|---------------------|
 | <b>TYPE</b> | String |
 | <b>DESCRIPTION</b> | URL pointing to documentation for the external attribute.</br> Causes an icon help button to be displayed in the UI. |
 | <b>EXAMPLE</b> | ```Help: http://waynegm.github.io/OpendTect-Plugin-Docs/External-Attributes/LPA-Attributes/``` |
 {{</table>}}
 
+### Parallel Keyword (optional)
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | Parallel (optional) |
+| KEYWORD | Parallel (optional) |
 |--------------|---------------------|
 | <b>TYPE</b> | Boolean |
 | <b>DESCRIPTION</b> | Default is True which allows parallel execution. If set to False then calculations only use a single thread. |
 | <b>EXAMPLE</b> | ```Parallel: False``` |
 {{</table>}}
 
+### MinSamplesPerThread Keyword (optional)
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | Select (Legacy optional) |
+| KEYWORD | MinSamplesPerThread (optional) |
+|--------------|---------------------|
+| <b>TYPE</b> | Integer |
+| <b>DESCRIPTION</b> | Parallel execution for attributes splits the input along the Z axis and does the calculation for each chunk in a separate thread. The number of threads used depends on this setting, the trace length of the input data and the number of cores in the hardware. The default minimum number of samples is 40. |
+| <b>EXAMPLE</b> | ```MinSamplesPerThread: 30``` |
+{{</table>}}
+
+### Input Keyword (deprecated)
+{{<table "table table-striped table-bordered">}}
+| KEYWORD | Input (depreciated) |
+|--------------|---------------------|
+| <b>TYPE</b> | String' |
+| <b>DESCRIPTION</b> | Specifies a label to appear beside the input attribute selection UI element. Superceded by the "Inputs" keyword but is supported for backward compatibility. |
+| <b>EXAMPLE</b> | ```Input: Input Data``` |
+{{</table>}}
+
+### Select Keyword (deprecated)
+{{<table "table table-striped table-bordered">}}
+| KEYWORD | Select (Legacy optional) |
 |--------------|---------------------|
 | <b>TYPE</b> | Object with a 'Name' (string), 'Values' (array of strings) and 'Select' (number) parameters. |
 | <b>DESCRIPTION</b> | Displays a list box labeled 'Name' with options specified in 'Values' and default selection being item number 'Select'. |
 | <b>EXAMPLE</b> | ```Select: {Name: Type, Values: [None, Median, Average], Selection: 0}``` |
 {{</table>}}
 
+### Par_? Keywords (deprecated)
 {{<table "table table-striped table-bordered">}}
-| JSON KEYWORD | Par_0, Par_1, Par_2, Par_3, Par_4, Par_5 (Legacy all optional) |
+| KEYWORD | Par_0, Par_1, Par_2, Par_3, Par_4, Par_5 (Legacy all optional) |
 |--------------|---------------------|
 | <b>TYPE</b> | Object with a 'Name' (string) and 'Value' (number) parameter. |
 | <b>DESCRIPTION</b> | Displays an entry box labeled 'Name' with default value 'Value'. |
@@ -210,7 +229,7 @@ Here is an example parameter string:
 	'Near Angle (deg)' : {'Type': 'Number', 'Value' : 6.0},
 	'Mid Angle (deg)' : {'Type': 'Number', 'Value' : 20.0},
 	'Far Angle (deg)' : {'Type': 'Number', 'Value' : 40.0},
-	'Wavelet' : {'Type': 'File','Value': 'Seismics/*.wvlt'},
+	'Wavelet' : {'Type': 'File','Mode': 'FileIn','Value': 'Seismics/*.wvlt'},
 	'Method' : { 'Type': 'Select', 'Options': ['akirich', 'fatti'], 'Value': 'fatti'},
 	'Help'  : 'https://gist.github.com/waynegm/84f323ec4aab3961c23d'
 }
@@ -248,8 +267,7 @@ Attribute sets created by release 5.0.10 and 6.0.0pre7-1 and later that use thes
 This can happen if the Python file has Windows/DOS linebreaks. Use the dos2unix command on the Python file and all should be ok.
 
 ### Setting up a Python/Numpy/Scipy environment
-The Python environments provided by the OpendTect Installation Manager, specifically the MKL and Cuda environments, will work with this plugin although some scripts may require installation of additional
-packages. Any additional dependencies will usually be described in a README.md file next to the script, in the comments/description at the top of the script file or in the documentation.
+All the Python environments provided by the OpendTect Installation Manager will work with this plugin although some scripts may require installation of additional packages. Any additional dependencies will usually be described in a README.md file next to the script, in the comments/description at the top of the script file or in the documentation.
 
 Alternatively you can install your own Python/Numpy/Scipy development stack for Python 3 from scratch. Continuum Analytics provide free Python installers for Linux and Windows in [Anaconda](http://continuum.io/downloads#all). There is also a smaller DIY option called [Miniconda](http://conda.pydata.org/miniconda.html) which allows you to select just the packages you need.
 
@@ -257,12 +275,11 @@ In general you require Python 3 (>=3.7) and compatible Numpy and Scipy. Numba is
 
 ## How it Works
 The following describes how the plugin works. Most of the details are handled by the extattrib.py module included in the plugin distribution. Python
-scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that
-implements the attribute calculation.
+scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that implements the attribute calculation.
 
-- When invoked with a commandline argument of `-g` the application should write out a  [JSON parameter string](#json-parameter-string) to stdout describing the attribute parameters and exit.
-- When invoked with a commandline argument of `-c json-parameter-string` the application
-	- should read and parse the contents of `json-parameter-string` to get the attribute parameters
+- When invoked with a commandline argument of `-g` the application should write out a  [Parameters Dictionary](#parameters-dictionary) to stdout as a JSON object describing the attribute parameters and exit. The JSON object is URL encoded.
+- When invoked with a commandline argument of `-c json-object-string` the application
+	- should read and parse the contents of `json-object-string` back into the params Python dictionary
 	- read a 40 byte block of binary data from stdin called the SeismicInfo block (described below)
 	- start an endless loop that:
 		- reads a 16 byte block of binary data from stdin called the TraceInfo block (described below)

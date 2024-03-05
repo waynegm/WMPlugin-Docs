@@ -29,7 +29,7 @@
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_plugin.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
-&lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [opendtect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.&lt;/p&gt;
+&lt;p&gt;This plugin, for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.&lt;/p&gt;
 &lt;p&gt;In an ideal world we would be given 2D seismic data that has consistent Z, phase and amplitude scales. In the real world this doesn&amp;rsquo;t always happen and 2D seismic interpretation projects accumulate inconsistencies as more data is added. The concept implemented by this plugin is the interpreter builds/maintains the correction table as they work through the data. The virtual corrected seismic from the Mistie Application attribute can be interpreted on the fly or the interpreter can generate a new adjusted dataset and interpret that.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin provides components to:&lt;/p&gt;
@@ -41,8 +41,8 @@
 &lt;/ol&gt;
 &lt;p&gt;There are two alternative workflows to build a mistie correction file:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Estimate the misties from the data and compute a mistie correction file in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog&lt;/li&gt;
-&lt;li&gt;Manually build the mistie correction file in the &lt;a href=&#34;#mistie-correction-editor&#34;&gt;Mistie Correction Editor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Estimate the misties from the data and compute a mistie correction file in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog&lt;/li&gt;
+&lt;li&gt;Manually build the mistie correction file in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-correction-editor&#34;&gt;Mistie Correction Editor&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;mistie-analysis&#34;&gt;&lt;strong&gt;Mistie Analysis&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Mistie Analysis&amp;rdquo; item to the Analysis main menu. Selecting the item opens the Mistie Analysis dialog:&lt;/p&gt;
@@ -105,7 +105,7 @@
  &lt;/div&gt;
 
 &lt;h3 id=&#34;mistie-estimation&#34;&gt;&lt;strong&gt;Mistie Estimation&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The &lt;img src=&#34;new.png&#34; alt=&#34;New&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens a dialog box where the user can specify whether misties should be estimated from the seismic data or from horizon interpretation.&lt;/p&gt;
+&lt;p&gt;The &lt;img alt=&#34;New&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/new.png&#34;&gt; toolbar item in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens a dialog box where the user can specify whether misties should be estimated from the seismic data or from horizon interpretation.&lt;/p&gt;
 &lt;p&gt;In the case of estimation from the seismic data the dialog looks like:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -140,11 +140,11 @@
 &lt;li&gt;Select a 3D horizon to use&lt;/li&gt;
 &lt;li&gt;Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The Apply button will initiate the estimation of the misties, when complete results are displayed in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog.
-Clicking the &lt;img src=&#34;images/xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; icon will generate a &lt;a href=&#34;#mistie-report&#34;&gt;Mistie Report&lt;/a&gt; with histograms and scatterplot of the mistie
+&lt;p&gt;The Apply button will initiate the estimation of the misties, when complete results are displayed in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog.
+Clicking the &lt;img alt=&#34;Mistie Report&#34; src=&#34;images/xplot.png&#34;&gt; icon will generate a &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-report&#34;&gt;Mistie Report&lt;/a&gt; with histograms and scatterplot of the mistie
 estimates  for review.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-filter&#34;&gt;&lt;strong&gt;Mistie Filter&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The &lt;img src=&#34;minus.png&#34; alt=&#34;Filter&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog that allows filtering of
+&lt;p&gt;The &lt;img alt=&#34;Filter&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/minus.png&#34;&gt; toolbar item in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog that allows filtering of
 the misties displayed in the list, used for correction calculation and included in the mistie report:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -157,7 +157,7 @@ the misties displayed in the list, used for correction calculation and included 
 &lt;p&gt;Activate the checkbox next to the filter to activate it. At this moment only filtering by the tie quality (correlation coefficient) is supported.
 The tie quality can vary from 0.0 (no tie) to 1.0 (perfect tie). A cut-off of 0.5-0.6 should filter unreliable mistie estimates.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-correction-calculation&#34;&gt;&lt;strong&gt;Mistie Correction Calculation&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The &lt;img src=&#34;attributes.png&#34; alt=&#34;Calculate Corrections&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog to
+&lt;p&gt;The &lt;img alt=&#34;Calculate Corrections&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/attributes.png&#34;&gt; toolbar item in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog to
 compute mistie corrections that minimize the root mean square (RMS) mistie after correction:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -177,14 +177,14 @@ compute mistie corrections that minimize the root mean square (RMS) mistie after
 &lt;p&gt;{{ figure(&amp;lsquo;mistie_correction_viewer.jpg&amp;rsquo;, &amp;lsquo;Mistie correction viewer&amp;rsquo;) }}&lt;/p&gt;
 &lt;p&gt;The toolbar buttons can be used to save the corrrections to a disk file.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-report&#34;&gt;&lt;strong&gt;Mistie Report&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The &lt;img src=&#34;xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog generates and displays in the system web
+&lt;p&gt;The &lt;img alt=&#34;Mistie Report&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/xplot.png&#34;&gt; toolbar item in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog generates and displays in the system web
 browser a graphical, html format dashboard of the mistie anaysis and correction calculation results. This includes tabulated data,
-histograms and a 3D scatterplot. Here is an example of a &lt;a href=&#34;mistie_report_example.html&#34;&gt;mistie report&lt;/a&gt;. The html file displayed in
+histograms and a 3D scatterplot. Here is an example of a &lt;a&gt;mistie report&lt;/a&gt;. The html file displayed in
 the browser can be saved for later display suing the browser&amp;rsquo;s save page functionality.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-correction-editor&#34;&gt;&lt;strong&gt;Mistie Correction Editor&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Mistie Corrections&amp;rdquo; item to the Survey-Manage main menu. Selecting the item opens the Mistie Correction Editor.
 This tool can be used to manually create mistie correction files or modify files generated by the
-&lt;a href=&#34;#mistie-correction-calculation&#34;&gt;Mistie Correction Calculation&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-correction-calculation&#34;&gt;Mistie Correction Calculation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_editor.jpg&#34;
@@ -245,7 +245,7 @@ volume name, eg note the &amp;ldquo;3D_pstm&amp;rdquo; in the above figure. Mult
 Application attribute is applied. A message (which can be safely ignored) is added to the log file when this occurs.&lt;/p&gt;
 &lt;p&gt;The name in the line/dataset column must exactly match the project line name.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-application-attribute&#34;&gt;&lt;strong&gt;Mistie Application Attribute&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Application&amp;rdquo; attribute to the list of [opendtect] attributes.&lt;/p&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Application&amp;rdquo; attribute to the list of &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; attributes.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistieapplication_input.jpg&#34;

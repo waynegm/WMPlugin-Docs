@@ -5,10 +5,10 @@ weight: 9
 categories: ["docs"]
 tags: ["Mistie"]
 ---
-
+{{% refs %}}
 {{< figure src="mistie_plugin.jpg" width="90%" class="img-centered" >}}
 
-This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [opendtect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.
+This plugin, for the open source seismic interpretation platform [OpendTect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [OpendTect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.
 
 In an ideal world we would be given 2D seismic data that has consistent Z, phase and amplitude scales. In the real world this doesn't always happen and 2D seismic interpretation projects accumulate inconsistencies as more data is added. The concept implemented by this plugin is the interpreter builds/maintains the correction table as they work through the data. The virtual corrected seismic from the Mistie Application attribute can be interpreted on the fly or the interpreter can generate a new adjusted dataset and interpret that.
 
@@ -146,7 +146,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
 The name in the line/dataset column must exactly match the project line name.
 
 ### **Mistie Application Attribute**
-The plugin adds a "Mistie Application" attribute to the list of [opendtect] attributes.
+The plugin adds a "Mistie Application" attribute to the list of [OpendTect] attributes.
 
 {{< figure src="mistieapplication_input.jpg" class="img-centered" caption="**Mistie Application attribute input parameters**" >}}
 

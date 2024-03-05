@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes based on different
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; calculates 6 attributes based on different
 parameterizations of reflection intercept and gradient.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The intercept-gradient crossplot is widely used for amplitude-variation-with-offset (AVO) analysis in hydrocarbon exploration.
@@ -165,7 +165,7 @@ The Fluid Line or Background Trend is where reflections from shales and some wet
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes derived from AVO Polarization
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; calculates 6 attributes derived from AVO Polarization
 in the AVO Intercept-Gradient crossplot as described by
 &lt;a href=&#34;https://library.seg.org/doi/10.1190/1.1581037&#34; title=&#34;AVO polarization and hodograms: AVO strength and polarization product. Patrice Nsoga Mahob and John P. Castagna, GEOPHYSICS, VOL. 68, NO. 3, MAY-JUNE 2003&#34;&gt;Mahob and Castagna (2003)&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
@@ -289,7 +289,7 @@ subsequently extended the analysis with a number of other measures to describe t
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.0.0 or later performs spectral
 (time-frequency) decomposition using empirical fourier decomposition.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;This plugin can be used as an alternative to the
@@ -407,20 +407,18 @@ data volume.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] allows attributes to be developed in Python.&lt;/p&gt;
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; allows attributes to be developed in Python.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;With this plugin it is possible to calculate single and multitrace attributes using a Python script. The plugin supports multi-trace
-multi-attribute input and multi-attribute output as well as parallel execution.&lt;/p&gt;
+&lt;p&gt;With this plugin it is possible to calculate single and multitrace attributes using a Python script. The plugin supports multi-trace multi-attribute input and multi-attribute output as well as parallel execution.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; &lt;em&gt;Releases prior to 6.0.2 allowed multi-trace multi-attribute input only if all the attributes were in the same multi-attribute volume.
 In releases from 6.0.2 onward this limitation has been removed.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Instead of doing the attribute calculation within OpendTect this plugin starts up a Python interpreter and runs a user specified Python script.
 Trace data is read/written to/from the Python script using stdin/stdout pipes. As described below the Python script must import the &lt;em&gt;extattrib.py&lt;/em&gt;
 module that handles the stdin/stdout data IO and presents the trace data as a numpy array. The script must implement a &lt;em&gt;doCompute&lt;/em&gt; method and
-define a Python dictionary describing the User Interface. Details are described below. Tips and Tricks to assist can be found in various [../articles].
-There are also the [wmscripts] for everything from dip estimation to filtering described in the [../external_attributes] section of this documentation
-which are distributed with the WMPlugins suite and can be found in the bin/python/wmpy folder of the OpendTect installation.&lt;/p&gt;
+define a Python dictionary describing the User Interface. Details are described below. Tips and Tricks to assist can be found in various &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/blog/&#34;&gt;Blog Posts&lt;/a&gt; .
+When WMPlugins is installed a number of Python attribute scripts for everything from dip estimation to filtering are installed into the bin/python/wmpy folder of the OpendTect installation. These are described in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/&#34;&gt;External Attributes&lt;/a&gt; section of this documentation.&lt;/p&gt;
 &lt;h2 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h2&gt;
-&lt;p&gt;This attribute has 3 required parameters and optional parameters determined by the &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt; provided by the Python attribute script:&lt;/p&gt;
+&lt;p&gt;This attribute has 3 required parameters and optional parameters determined by the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/#parameters-dictionary&#34;&gt;Parameters Dictionary&lt;/a&gt; provided by the Python attribute script:&lt;/p&gt;
 
 
 
@@ -454,13 +452,13 @@ which are distributed with the WMPlugins suite and can be found in the bin/pytho
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;The &lt;img src=&#34;reload.png&#34; alt=&#34;reset&#34;&gt; button beside the Interpreter entry will force an update of the Interpreter field to the current OpendTect Python
+&lt;p&gt;The &lt;img alt=&#34;reset&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/reload.png&#34;&gt; button beside the Interpreter entry will force an update of the Interpreter field to the current OpendTect Python
 setting. This can be useful if you use the Python Settings dialog to change the default interpreter and want to apply the change within
 the attribute definition.&lt;/p&gt;
-&lt;p&gt;The &lt;img src=&#34;reload.png&#34; alt=&#34;reload&#34;&gt; button beside the External File entry will force reloading the attribute script and rebuild the user interface.
+&lt;p&gt;The &lt;img alt=&#34;reload&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/reload.png&#34;&gt; button beside the External File entry will force reloading the attribute script and rebuild the user interface.
 This can be useful if you are editing a script, save it and want to verify the changes.&lt;/p&gt;
-&lt;p&gt;The &lt;img src=&#34;contexthelp.png&#34; alt=&#34;help&#34;&gt; button beside the External File entry will open the system web browser with the url specified by the Help entry in
-the attribute scripts &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt;. The button is not displayed if this entry is absent.&lt;/p&gt;
+&lt;p&gt;The &lt;img alt=&#34;help&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/contexthelp.png&#34;&gt; button beside the External File entry will open the system web browser with the url specified by the Help entry in
+the attribute scripts &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/#parameters-dictionary&#34;&gt;Parameters Dictionary&lt;/a&gt;. The button is not displayed if this entry is absent.&lt;/p&gt;
 &lt;h2 id=&#34;python-script-structure&#34;&gt;Python Script Structure&lt;/h2&gt;
 &lt;p&gt;Every Python attribute script has 5 sections. As an example consider the &lt;a href=&#34;https://github.com/waynegm/OpendTect-Plugins/blob/master/bin/python/wmpy/DipAndAzimuth/ex_dip.py&#34;&gt;ex_dip.py&lt;/a&gt;
 script which converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and output.
@@ -477,11 +475,7 @@ Some basic understanding of &lt;a href=&#34;https://www.python.org/&#34;&gt;Pyth
 &lt;li&gt;the Numpy module (the fundamental package for scientific computing with Python)&lt;/li&gt;
 &lt;li&gt;the external attribute module (extattrib.py)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [wmscripts] package and its location
-is unknown to the Python installation unless we help out. The sys.path.insert call on line 11 provides this help by extending the default search
-path for Python modules to include the parent folder of the folder containing the script. This reflects the folder structure of the [wmscripts]
-package, so if you develop scripts outside this structure then you will need to change line 11 appropriately to append the location of extattrib.py
-to the module search path.&lt;/p&gt;
+&lt;p&gt;Generally sys, os and Numpy will be part of the Python installation. The extattrib module is part of the [External Attributes] package and it will be installed into the bin/python/wmpy of the OpendTect software installation if WMPlugins is installed from the OpendTect Installation Manager. As of 7.0.5 this plugin will run the external attribute scripts in an environment where the OpendTect bin/python folder is on the PYTHONPATH. Also, if either of the environment variables OD_APPL_PLUGIN_DIR and OD_USER_PLUGIN_DIR are defined then any existing bin/python folder in those locations will also be added to the PYTHONPATH of the scripts environment. In 7.0.4 and earlier the user must ensure the location of the extattrib module is explicitly set. In the figure above a sys.path.insert call on line 11 ensures the default search path for Python modules includes the parent folder of the folder containing the script. This reflects the folder structure of the WMPlugins package. Use an appropriate set of arguments for your specific installation.&lt;/p&gt;
 &lt;p&gt;Of course if your script requires other Python modules (eg SciPy, Numba) then add the appropriate import statements in this section.&lt;/p&gt;
 &lt;h3 id=&#34;the-parameters&#34;&gt;The Parameters&lt;/h3&gt;
 
@@ -489,15 +483,15 @@ to the module search path.&lt;/p&gt;
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_02.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
-&lt;p&gt;The xa.params global variable must be assigned a JSON object string describing the input parameters for the script. This JSON string is used by
-the plugin to build an input dialog box. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for
-documentation. The plugin dynamically builds the following input dialog for this script:&lt;/p&gt;
+&lt;p&gt;The xa.params global dictionary describes the input parameters for the script. This is used by
+the plugin to build a user interface that is shown in the OpendTect Attribute Decription Editor. This attribute is very simple specifying just 2 input volumes and 2 output volumes and a url for
+documentation. The plugin dynamically builds the following user interface for this script:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_06.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
-&lt;p&gt;A variety of other input elements can be specified to build more complex input dialogs. See &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt;
+&lt;p&gt;A variety of other input elements can be specified to build more complex UI&amp;rsquo;s. See &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/#parameters-dictionary&#34;&gt;Parameters Dictionary&lt;/a&gt;
 for full details or look at other scripts to see what is possible.&lt;/p&gt;
 &lt;h3 id=&#34;the-compute-loop-initialisation&#34;&gt;The Compute Loop Initialisation&lt;/h3&gt;
 
@@ -505,11 +499,42 @@ for full details or look at other scripts to see what is possible.&lt;/p&gt;
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/18_06_04_03.png&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
-&lt;p&gt;The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the
-&amp;ldquo;while True:&amp;rdquo; loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section
-will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.&lt;/p&gt;
-&lt;p&gt;This particular script shows how information stored in the &lt;a href=&#34;#seismicinfo-block&#34;&gt;SeismicInfo Block&lt;/a&gt; can be used to calculate some
-constants purely as an example. This attribute is so simple that no initialisation is actually required.&lt;/p&gt;
+&lt;p&gt;The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the &amp;ldquo;while True:&amp;rdquo; loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.&lt;/p&gt;
+&lt;p&gt;This particular script shows how information stored in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/#seismicinfo-block&#34;&gt;SeismicInfo Block&lt;/a&gt; can be used to calculate some constants purely as an example. This attribute is so simple that no initialisation is actually required.&lt;/p&gt;
+&lt;p&gt;Also, as on 7.0.5, some additional metadata is available within this function from the xa.params dictionary:&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
+&lt;th&gt;TYPE&lt;/th&gt;
+&lt;th&gt;CONTENT&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;Survey&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The current survey name&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;SurveyDiskLocation&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;The full path to the survey/project folder&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;InputNames&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;list[string]&lt;/td&gt;
+&lt;td&gt;The input data set names&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
 &lt;h3 id=&#34;the-compute-loop&#34;&gt;The Compute Loop&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -519,7 +544,7 @@ constants purely as an example. This attribute is so simple that no initialisati
 &lt;p&gt;This is where the attribute calculation takes place. The &lt;em&gt;xa.doInput()&lt;/em&gt; and &lt;em&gt;xa.doOutput()&lt;/em&gt; function calls control the input and output
 of seismic trace data between the script and OpendTect. Generally these should be the first and last statements within the compute loop.&lt;/p&gt;
 &lt;p&gt;Within the compute loop, some information about the current trace data such as the number of samples and the inline and crossline
-location are provided in the &lt;a href=&#34;#traceinfo-block&#34;&gt;TraceInfo Block&lt;/a&gt;. These can be accessed using constructs like &lt;em&gt;xa.TI[&amp;rsquo;nrsamp&amp;rsquo;]&lt;/em&gt;.
+location are provided in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/#traceinfo-block&#34;&gt;TraceInfo Block&lt;/a&gt;. These can be accessed using constructs like &lt;em&gt;xa.TI[&amp;rsquo;nrsamp&amp;rsquo;]&lt;/em&gt;.
 This information is not required for this particular script.&lt;/p&gt;
 &lt;p&gt;The global Numpy array &lt;em&gt;xa.Input&lt;/em&gt; contains the input trace data. &lt;em&gt;xa.Input[&amp;rsquo;name of input attribute&amp;rsquo;]&lt;/em&gt; returns a Numpy array with the
 trace data for the current compute location. The shape of this Numpy array depends on the traces stepouts required by the attribute.
@@ -536,10 +561,9 @@ array, ie at index &lt;em&gt;[xa.SI[&amp;rsquo;nrinl&amp;rsquo;]//2, xa.SI[&amp;
 &lt;/figure&gt;
 
 &lt;p&gt;This section is just boilerplate code that appears in every attribute script which should never be changed.&lt;/p&gt;
-&lt;h2 id=&#34;json-parameter-string&#34;&gt;JSON Parameter String&lt;/h2&gt;
-&lt;p&gt;The Python script can specify a set of parameters as a JSON object string. As of Release 6.6.8 the format of the JSON object string has
-changed to better support more flexible UI&amp;rsquo;s. In particular the restriction on no whitespace in the keys and values in the JSON string
-have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) should continue to work. The following keywords are supported:&lt;/p&gt;
+&lt;h2 id=&#34;parameters-dictionary&#34;&gt;Parameters Dictionary&lt;/h2&gt;
+&lt;p&gt;The Python script can specify a set of parameters as a Python dictionary. As of Release 6.6.8 the format of the Parameters dictionary string has changed to better support more flexible UI&amp;rsquo;s. In particular the restriction on no whitespace in the keys and values in the dictionary keys has been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) should continue to work. The following keywords are supported:&lt;/p&gt;
+&lt;h3 id=&#34;inputs-keyword&#34;&gt;Inputs Keyword&lt;/h3&gt;
 
 
 
@@ -548,43 +572,14 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
-&lt;th&gt;Input (depreciated)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;String&#39;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Specifies a label to appear beside the input attribute selection UI element. Superceded by the &amp;ldquo;Inputs&amp;rdquo; keyword but is supported for backward compatibility.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;Input: Input Data&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
- &lt;/div&gt;
-
-
-
-
-
-
-&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;Inputs&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Array of Strings&lt;/td&gt;
+&lt;td&gt;List of Strings&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
@@ -598,6 +593,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;/table&gt;
  &lt;/div&gt;
 
+&lt;h3 id=&#34;output-keyword-optional&#34;&gt;Output Keyword (optional)&lt;/h3&gt;
 
 
 
@@ -606,14 +602,14 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;Output (optional)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Array of Strings&lt;/td&gt;
+&lt;td&gt;List of Strings&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
@@ -627,6 +623,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;/table&gt;
  &lt;/div&gt;
 
+&lt;h3 id=&#34;zsampmargin-keyword-optional&#34;&gt;ZSampMargin Keyword (optional)&lt;/h3&gt;
 
 
 
@@ -635,14 +632,14 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;ZSampMargin (optional)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Object with a &amp;lsquo;Value&amp;rsquo; (array of 2 numbers)  and optional &amp;lsquo;Hidden&amp;rsquo; (boolean) and &amp;lsquo;Symmetric&amp;rsquo; (boolean) parameters.&lt;/td&gt;
+&lt;td&gt;Dictionary with a &amp;lsquo;Value&amp;rsquo; (array of 2 numbers)  and optional &amp;lsquo;Hidden&amp;rsquo; (boolean) and &amp;lsquo;Symmetric&amp;rsquo; (boolean) keys.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
@@ -656,6 +653,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;/table&gt;
  &lt;/div&gt;
 
+&lt;h3 id=&#34;stepout-keyword-optional&#34;&gt;StepOut Keyword (optional)&lt;/h3&gt;
 
 
 
@@ -664,14 +662,14 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;StepOut (optional)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Object with a &amp;lsquo;Value&amp;rsquo; (array of 2 numbers)  and optional &amp;lsquo;Hidden&amp;rsquo; (boolean) parameters.&lt;/td&gt;
+&lt;td&gt;Dictionary with a &amp;lsquo;Value&amp;rsquo; (array of 2 numbers)  and optional &amp;lsquo;Hidden&amp;rsquo; (boolean) keys.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
@@ -685,6 +683,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;/table&gt;
  &lt;/div&gt;
 
+&lt;h3 id=&#34;ui-name-string-optional&#34;&gt;UI Name String (optional)&lt;/h3&gt;
 
 
 
@@ -693,27 +692,28 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;UI Name String (Introduced in release 6.4.8 - optional)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;Object with a &amp;lsquo;Type&amp;rsquo; (string)  and &amp;lsquo;Value&amp;rsquo; (string or number depending on the &amp;lsquo;Type&amp;rsquo; key) parameters.&lt;/td&gt;
+&lt;td&gt;Dictionary with a &amp;lsquo;Type&amp;rsquo; (string)  and &amp;lsquo;Value&amp;rsquo; (string or number depending on the &amp;lsquo;Type&amp;rsquo; key) keys.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;In this new entry the main key is the name that will appear in the UI. Note that this can now contain whitespace. The &#39;Type&#39; parameter describes the input field type. Currently Number, Select and File are supported. Number is for a numeric input box, equivalent to the legacy Par_0 to Par_5 entries but with the advantage that the number and order in the UI is more flexible. Select displays a combo-box, equivalent to the legacy Select entry but with the advantage that there is no restriction on the number and order in the UI. File is a file selection UI.&lt;/br&gt;The &#39;Value&#39; sets the default value displayed in the UI. For Number types it is a number, for the Select and File types it is a string.For the File type the Value determines the location where the file selection dialog opens and if a &#39;*&#39; is present the file filter.&lt;/td&gt;
+&lt;td&gt;In this new entry the main key is the name that will appear in the UI. Note that this can now contain whitespace. The &#39;Type&#39; parameter describes the input field type. Number, Text (as of 7.0.5), Select and File are supported. Number is for a numeric input box, equivalent to the legacy Par_0 to Par_5 entries but with the advantage that the number and order in the UI is more flexible. Text is for a text input box, Select displays a combo-box, equivalent to the legacy Select entry but with the advantage that there is no restriction on the number and order in the UI. File is a file selection UI.&lt;/br&gt;The &#39;Value&#39; key item sets the default value displayed in the UI. For Number types it is a number, for Text types it is a string, for the Select and File types it is a string. For the File type the Value determines the location where the file selection dialog opens and if a &#39;*&#39; is present the file filter. The File type has a Mode key (as of 7.05) which can be either FileIn, FileOut or Dir which determines what can be selected. For FileIn only exisiting files can be selected. For FileOut new file names can be entered, if an existing file is selected the user is asked to confirm overwrite. For Dir only folders are selectable.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;A File UI Field: {Type: File, Value: Seismics/*.wvlt}&lt;/code&gt; &lt;/br&gt;&lt;code&gt;A Number UI Field: {Type: Number, Value: 20}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;A Select UI Field: {Type: Select, Options: [option 1,option 2,option 3],Value: option 2}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;A File UI Field: {Type: File, Mode: FileIn, Value: Seismics/*.wvlt}&lt;/code&gt; &lt;/br&gt;&lt;code&gt;A Number UI Field: {Type: Number, Value: 20}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;A String UI Field: {Type: Text, Value: Some text}&lt;/code&gt;&lt;/br&gt;&lt;code&gt;A Select UI Field: {Type: Select, Options: [option 1,option 2,option 3],Value: option 2}&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
  &lt;/div&gt;
 
+&lt;h3 id=&#34;help-keyword-optional&#34;&gt;Help Keyword (optional)&lt;/h3&gt;
 
 
 
@@ -722,7 +722,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;Help (optional)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -743,6 +743,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;/table&gt;
  &lt;/div&gt;
 
+&lt;h3 id=&#34;parallel-keyword-optional&#34;&gt;Parallel Keyword (optional)&lt;/h3&gt;
 
 
 
@@ -751,7 +752,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;Parallel (optional)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -772,6 +773,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;/table&gt;
  &lt;/div&gt;
 
+&lt;h3 id=&#34;minsamplesperthread-keyword-optional&#34;&gt;MinSamplesPerThread Keyword (optional)&lt;/h3&gt;
 
 
 
@@ -780,7 +782,67 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
+&lt;th&gt;MinSamplesPerThread (optional)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Parallel execution for attributes splits the input along the Z axis and does the calculation for each chunk in a separate thread. The number of threads used depends on this setting, the trace length of the input data and the number of cores in the hardware. The default minimum number of samples is 40.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;MinSamplesPerThread: 30&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h3 id=&#34;input-keyword-deprecated&#34;&gt;Input Keyword (deprecated)&lt;/h3&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
+&lt;th&gt;Input (depreciated)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;TYPE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;String&#39;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;DESCRIPTION&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;Specifies a label to appear beside the input attribute selection UI element. Superceded by the &amp;ldquo;Inputs&amp;rdquo; keyword but is supported for backward compatibility.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;EXAMPLE&lt;/b&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Input: Input Data&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h3 id=&#34;select-keyword-deprecated&#34;&gt;Select Keyword (deprecated)&lt;/h3&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;Select (Legacy optional)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -801,6 +863,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;/table&gt;
  &lt;/div&gt;
 
+&lt;h3 id=&#34;par_-keywords-deprecated&#34;&gt;Par_? Keywords (deprecated)&lt;/h3&gt;
 
 
 
@@ -809,7 +872,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 &lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;JSON KEYWORD&lt;/th&gt;
+&lt;th&gt;KEYWORD&lt;/th&gt;
 &lt;th&gt;Par_0, Par_1, Par_2, Par_3, Par_4, Par_5 (Legacy all optional)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -839,7 +902,7 @@ have been removed. Scripts using the Legacy format (Select and Par_0 to Par_5) s
 	&amp;#39;Near Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 6.0},
 	&amp;#39;Mid Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 20.0},
 	&amp;#39;Far Angle (deg)&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;Number&amp;#39;, &amp;#39;Value&amp;#39; : 40.0},
-	&amp;#39;Wavelet&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;File&amp;#39;,&amp;#39;Value&amp;#39;: &amp;#39;Seismics/*.wvlt&amp;#39;},
+	&amp;#39;Wavelet&amp;#39; : {&amp;#39;Type&amp;#39;: &amp;#39;File&amp;#39;,&amp;#39;Mode&amp;#39;: &amp;#39;FileIn&amp;#39;,&amp;#39;Value&amp;#39;: &amp;#39;Seismics/*.wvlt&amp;#39;},
 	&amp;#39;Method&amp;#39; : { &amp;#39;Type&amp;#39;: &amp;#39;Select&amp;#39;, &amp;#39;Options&amp;#39;: [&amp;#39;akirich&amp;#39;, &amp;#39;fatti&amp;#39;], &amp;#39;Value&amp;#39;: &amp;#39;fatti&amp;#39;},
 	&amp;#39;Help&amp;#39;  : &amp;#39;https://gist.github.com/waynegm/84f323ec4aab3961c23d&amp;#39;
 }
@@ -864,19 +927,17 @@ start &amp;#34;&amp;#34; &amp;#34;C:\Program Files\OpendTect_6\6.0.0\bin\win64\R
 &lt;h3 id=&#34;opendtect-linux-hangs-after-selecting-a-python-external-attribute-in-the-attribute-description-editor&#34;&gt;OpendTect (Linux) hangs after selecting a Python external attribute in the Attribute Description Editor&lt;/h3&gt;
 &lt;p&gt;This can happen if the Python file has Windows/DOS linebreaks. Use the dos2unix command on the Python file and all should be ok.&lt;/p&gt;
 &lt;h3 id=&#34;setting-up-a-pythonnumpyscipy-environment&#34;&gt;Setting up a Python/Numpy/Scipy environment&lt;/h3&gt;
-&lt;p&gt;The Python environments provided by the OpendTect Installation Manager, specifically the MKL and Cuda environments, will work with this plugin although some scripts may require installation of additional
-packages. Any additional dependencies will usually be described in a README.md file next to the script, in the comments/description at the top of the script file or in the documentation.&lt;/p&gt;
+&lt;p&gt;All the Python environments provided by the OpendTect Installation Manager will work with this plugin although some scripts may require installation of additional packages. Any additional dependencies will usually be described in a README.md file next to the script, in the comments/description at the top of the script file or in the documentation.&lt;/p&gt;
 &lt;p&gt;Alternatively you can install your own Python/Numpy/Scipy development stack for Python 3 from scratch. Continuum Analytics provide free Python installers for Linux and Windows in &lt;a href=&#34;http://continuum.io/downloads#all&#34;&gt;Anaconda&lt;/a&gt;. There is also a smaller DIY option called &lt;a href=&#34;http://conda.pydata.org/miniconda.html&#34;&gt;Miniconda&lt;/a&gt; which allows you to select just the packages you need.&lt;/p&gt;
 &lt;p&gt;In general you require Python 3 (&amp;gt;=3.7) and compatible Numpy and Scipy. Numba is also highly recommended and required by some of the supplied scripts.&lt;/p&gt;
 &lt;h2 id=&#34;how-it-works&#34;&gt;How it Works&lt;/h2&gt;
 &lt;p&gt;The following describes how the plugin works. Most of the details are handled by the extattrib.py module included in the plugin distribution. Python
-scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that
-implements the attribute calculation.&lt;/p&gt;
+scripts need to import this module, provide a description of the User Interface in the xa.params Python dictionary and a doCompute function that implements the attribute calculation.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-g&lt;/code&gt; the application should write out a  &lt;a href=&#34;#json-parameter-string&#34;&gt;JSON parameter string&lt;/a&gt; to stdout describing the attribute parameters and exit.&lt;/li&gt;
-&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-c json-parameter-string&lt;/code&gt; the application
+&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-g&lt;/code&gt; the application should write out a  &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/#parameters-dictionary&#34;&gt;Parameters Dictionary&lt;/a&gt; to stdout as a JSON object describing the attribute parameters and exit. The JSON object is URL encoded.&lt;/li&gt;
+&lt;li&gt;When invoked with a commandline argument of &lt;code&gt;-c json-object-string&lt;/code&gt; the application
 &lt;ul&gt;
-&lt;li&gt;should read and parse the contents of &lt;code&gt;json-parameter-string&lt;/code&gt; to get the attribute parameters&lt;/li&gt;
+&lt;li&gt;should read and parse the contents of &lt;code&gt;json-object-string&lt;/code&gt; back into the params Python dictionary&lt;/li&gt;
 &lt;li&gt;read a 40 byte block of binary data from stdin called the SeismicInfo block (described below)&lt;/li&gt;
 &lt;li&gt;start an endless loop that:
 &lt;ul&gt;
@@ -1036,7 +1097,7 @@ implements the attribute calculation.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This plugin displays lines and polylines from a Geopackage database file over an [opendtect] 3D horizon.&lt;/p&gt;
+        &lt;p&gt;This plugin displays lines and polylines from a Geopackage database file over an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; 3D horizon.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Not available in version &amp;gt;= 7.0&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Display&amp;rdquo; item to the &amp;ldquo;Add&amp;rdquo; context menu of 3D Horizons in the scene tree. Selecting the item opens a dialog box for selecting the Geopackage file, the layer to display and the line color and width. Multiple layers can be displayed.&lt;/p&gt;
@@ -1074,12 +1135,12 @@ implements the attribute calculation.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] data to a
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later, exports &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; data to a
 &lt;a href=&#34;https://www.geopackage.org/&#34;&gt;GeoPackage&lt;/a&gt; database. GeoPackage is an open, non-proprietary, platform-independent, self describing
 standards-based data format for geospatial data.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Geopackage Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a tabbed dialog box for selecting
-the various elements to export and the destination file name. The following table shows the [opendtect] data elements supported and
+the various elements to export and the destination file name. The following table shows the &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; data elements supported and
 the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
 
 
@@ -1227,13 +1288,13 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] either 3D horizon/attribute data or Z slices (as of 7.0.3) to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later, exports &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; either 3D horizon/attribute data or Z slices (as of 7.0.3) to a  &lt;a href=&#34;https://en.wikipedia.org/wiki/GeoTIFF&#34;&gt;GeoTIFF&lt;/a&gt; image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Geotiff Export&amp;rdquo; item to the Survey-Export main menu. Selecting the item opens a dialog box for selecting the destination file name and either a 3D horizon/attributes or Z slice to export. The data is exported to Float32 bands in the output image. The plugin supports exporting multiple horizons/attributes or Z slices to a single GeoTIFF file, however some GIS packages may not have the flexibility to display individual bands from a Float32 multiband image. If multiband images prove to be a problem the option exists to run the plugin multiple times and save each image to a separate GeoTIFF file.&lt;/p&gt;
 &lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;The plugin requires the survey to have a projection based CRS defined.&lt;/li&gt;
-&lt;li&gt;This plugin is actually part of the [geopackageexport] plugin - see notes there as well&lt;/li&gt;
+&lt;li&gt;This plugin is actually part of the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/geopackageexport/&#34;&gt;GeopackageExport&lt;/a&gt; plugin - see notes there as well&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -1267,7 +1328,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.&lt;/p&gt;
+        &lt;p&gt;This attibute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.0.0 or later calculates inline, crossline and time/depth gradients.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;This plugin calculates the inline, crossline or time/depth gradient using operators optimised for rotation invariance, ie equal response in all directions, proposed  by &lt;a href=&#34;http://www.k-zone.nl/Kroon_DerivativePaper.pdf&#34; title=&#34;NUMERICAL OPTIMIZATION OF KERNEL BASED IMAGE DERIVATIVES. Dirk-Jan Kroon, University of Twente, Enschede&#34;&gt;Kroon (2009)&lt;/a&gt; and &lt;a href=&#34;http://www.cns.nyu.edu/pub/lcv/farid03-reprint.pdf&#34; title=&#34;Differentiation of Discrete Multidimensional Signals. Hany Farid and Eero P. Simoncelli, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 13, NO. 4, APRIL 2004&#34;&gt;Farid and Simoncelli(2004)&lt;/a&gt;. These provide more accurate alternatives to the Prewitt filter option of the OpendTect Convolve attribute for computing gradients.&lt;/p&gt;
 &lt;p&gt;The attribute offers a choice of Kroon&amp;rsquo;s 3x3x3, Farid and Simoncelli&amp;rsquo;s 5x5x5 or Farid and Simoncelli&amp;rsquo;s 7x7x7 operator. The following figures demonstrate the relative accuracy of these operators and the OpendTect Prewitt filter on a simple periodic signal (top left) with event dip angle shown top right. Gradients calculated using each operator are used to compute the event dip angle and the absolute dip angle error. The superior accuracy of the operators provided by this attribute is clear.&lt;/p&gt;
@@ -1331,7 +1392,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This plugin for the open source seismic interpretation platform [opendtect] Version 6.0 or later is a collection of &amp;ldquo;Local Attributes&amp;rdquo; based on the work of [Fomel (2007) and others](&lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.2437573%22Local&#34;&gt;https://library.seg.org/doi/abs/10.1190/1.2437573&amp;quot;Local&lt;/a&gt; seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3&amp;quot;) for the &lt;a href=&#34;http://www.ahay.org/&#34; target=&#34;_blank&#34;&gt;Madagascar&lt;/a&gt; package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.&lt;/p&gt;
+        &lt;p&gt;This plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.0 or later is a collection of &amp;ldquo;Local Attributes&amp;rdquo; based on the work of [Fomel (2007) and others](&lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.2437573%22Local&#34;&gt;https://library.seg.org/doi/abs/10.1190/1.2437573&#34;Local&lt;/a&gt; seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3&amp;quot;) for the &lt;a href=&#34;http://www.ahay.org/&#34; target=&#34;_blank&#34;&gt;Madagascar&lt;/a&gt; package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.&lt;/p&gt;
 &lt;h2 id=&#34;spectral-time-frequency-decomposition-by-local-attributes&#34;&gt;Spectral (Time-frequency) Decomposition by Local Attributes&lt;/h2&gt;
 &lt;p&gt;Formerly called the LTFAttrib, this is an implementation of the method of local time-frequency analysis as described by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/geo2010-0185.1&#34; title=&#34;Time-frequency analysis of seismic data using local attributes. Guochang Liu, Sergey Fomel, and Xiaohong Chen. GEOPHYSICS 2011 76:6, P23-P34&#34;&gt;Liu, G etal (2011)&lt;/a&gt;. This decomposition uses least-squares inversion with shaping regularization to estimate the time-varying Fourier coefficients. Its principal advantages over the STFT (short time fourier transform) is it much quicker if only a few frequencies are required and it is generally more accurate for short window lengths.&lt;/p&gt;
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
@@ -1410,7 +1471,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
       <description>
         
         
-        &lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [opendtect] survey/project.&lt;/p&gt;
+        &lt;p&gt;This plugin, for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; survey/project.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Grid 2D-3D Horizon&amp;hellip;&amp;rdquo; item to the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; menu which opens a dialog box for:&lt;/p&gt;
 &lt;ul&gt;
@@ -1554,7 +1615,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_plugin.jpg&#34; width=&#34;90%&#34;/&gt; 
 &lt;/figure&gt;
 
-&lt;p&gt;This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an [opendtect] survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.&lt;/p&gt;
+&lt;p&gt;This plugin, for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later, allows creation and editing of a file with Z shift, phase rotations and amplitude scaling corrections for 2D and 3D seismic in an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; survey/project. The plugin also includes an attribute (Mistie Application) that will apply the corrections.&lt;/p&gt;
 &lt;p&gt;In an ideal world we would be given 2D seismic data that has consistent Z, phase and amplitude scales. In the real world this doesn&amp;rsquo;t always happen and 2D seismic interpretation projects accumulate inconsistencies as more data is added. The concept implemented by this plugin is the interpreter builds/maintains the correction table as they work through the data. The virtual corrected seismic from the Mistie Application attribute can be interpreted on the fly or the interpreter can generate a new adjusted dataset and interpret that.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;The plugin provides components to:&lt;/p&gt;
@@ -1566,8 +1627,8 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
 &lt;/ol&gt;
 &lt;p&gt;There are two alternative workflows to build a mistie correction file:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Estimate the misties from the data and compute a mistie correction file in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog&lt;/li&gt;
-&lt;li&gt;Manually build the mistie correction file in the &lt;a href=&#34;#mistie-correction-editor&#34;&gt;Mistie Correction Editor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Estimate the misties from the data and compute a mistie correction file in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog&lt;/li&gt;
+&lt;li&gt;Manually build the mistie correction file in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-correction-editor&#34;&gt;Mistie Correction Editor&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;mistie-analysis&#34;&gt;&lt;strong&gt;Mistie Analysis&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Mistie Analysis&amp;rdquo; item to the Analysis main menu. Selecting the item opens the Mistie Analysis dialog:&lt;/p&gt;
@@ -1630,7 +1691,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
  &lt;/div&gt;
 
 &lt;h3 id=&#34;mistie-estimation&#34;&gt;&lt;strong&gt;Mistie Estimation&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The &lt;img src=&#34;new.png&#34; alt=&#34;New&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens a dialog box where the user can specify whether misties should be estimated from the seismic data or from horizon interpretation.&lt;/p&gt;
+&lt;p&gt;The &lt;img alt=&#34;New&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/new.png&#34;&gt; toolbar item in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens a dialog box where the user can specify whether misties should be estimated from the seismic data or from horizon interpretation.&lt;/p&gt;
 &lt;p&gt;In the case of estimation from the seismic data the dialog looks like:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -1665,11 +1726,11 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
 &lt;li&gt;Select a 3D horizon to use&lt;/li&gt;
 &lt;li&gt;Specify the trace interval along 2D lines to estimate the 2D to 3D misties, the average mistie is assigned to the 2D to 3D tie&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The Apply button will initiate the estimation of the misties, when complete results are displayed in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog.
-Clicking the &lt;img src=&#34;images/xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; icon will generate a &lt;a href=&#34;#mistie-report&#34;&gt;Mistie Report&lt;/a&gt; with histograms and scatterplot of the mistie
+&lt;p&gt;The Apply button will initiate the estimation of the misties, when complete results are displayed in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog.
+Clicking the &lt;img alt=&#34;Mistie Report&#34; src=&#34;images/xplot.png&#34;&gt; icon will generate a &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-report&#34;&gt;Mistie Report&lt;/a&gt; with histograms and scatterplot of the mistie
 estimates  for review.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-filter&#34;&gt;&lt;strong&gt;Mistie Filter&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The &lt;img src=&#34;minus.png&#34; alt=&#34;Filter&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog that allows filtering of
+&lt;p&gt;The &lt;img alt=&#34;Filter&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/minus.png&#34;&gt; toolbar item in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog that allows filtering of
 the misties displayed in the list, used for correction calculation and included in the mistie report:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -1682,7 +1743,7 @@ the misties displayed in the list, used for correction calculation and included 
 &lt;p&gt;Activate the checkbox next to the filter to activate it. At this moment only filtering by the tie quality (correlation coefficient) is supported.
 The tie quality can vary from 0.0 (no tie) to 1.0 (perfect tie). A cut-off of 0.5-0.6 should filter unreliable mistie estimates.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-correction-calculation&#34;&gt;&lt;strong&gt;Mistie Correction Calculation&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The &lt;img src=&#34;attributes.png&#34; alt=&#34;Calculate Corrections&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog to
+&lt;p&gt;The &lt;img alt=&#34;Calculate Corrections&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/attributes.png&#34;&gt; toolbar item in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog opens the following dialog to
 compute mistie corrections that minimize the root mean square (RMS) mistie after correction:&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -1702,14 +1763,14 @@ compute mistie corrections that minimize the root mean square (RMS) mistie after
 &lt;p&gt;{{ figure(&amp;lsquo;mistie_correction_viewer.jpg&amp;rsquo;, &amp;lsquo;Mistie correction viewer&amp;rsquo;) }}&lt;/p&gt;
 &lt;p&gt;The toolbar buttons can be used to save the corrrections to a disk file.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-report&#34;&gt;&lt;strong&gt;Mistie Report&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The &lt;img src=&#34;xplot.png&#34; alt=&#34;Mistie Report&#34;&gt; toolbar item in the &lt;a href=&#34;#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog generates and displays in the system web
+&lt;p&gt;The &lt;img alt=&#34;Mistie Report&#34; src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/xplot.png&#34;&gt; toolbar item in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-analysis&#34;&gt;Mistie Analysis&lt;/a&gt; dialog generates and displays in the system web
 browser a graphical, html format dashboard of the mistie anaysis and correction calculation results. This includes tabulated data,
-histograms and a 3D scatterplot. Here is an example of a &lt;a href=&#34;mistie_report_example.html&#34;&gt;mistie report&lt;/a&gt;. The html file displayed in
+histograms and a 3D scatterplot. Here is an example of a &lt;a&gt;mistie report&lt;/a&gt;. The html file displayed in
 the browser can be saved for later display suing the browser&amp;rsquo;s save page functionality.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-correction-editor&#34;&gt;&lt;strong&gt;Mistie Correction Editor&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;The plugin adds a &amp;ldquo;Mistie Corrections&amp;rdquo; item to the Survey-Manage main menu. Selecting the item opens the Mistie Correction Editor.
 This tool can be used to manually create mistie correction files or modify files generated by the
-&lt;a href=&#34;#mistie-correction-calculation&#34;&gt;Mistie Correction Calculation&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/#mistie-correction-calculation&#34;&gt;Mistie Correction Calculation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistie_editor.jpg&#34;
@@ -1770,7 +1831,7 @@ volume name, eg note the &amp;ldquo;3D_pstm&amp;rdquo; in the above figure. Mult
 Application attribute is applied. A message (which can be safely ignored) is added to the log file when this occurs.&lt;/p&gt;
 &lt;p&gt;The name in the line/dataset column must exactly match the project line name.&lt;/p&gt;
 &lt;h3 id=&#34;mistie-application-attribute&#34;&gt;&lt;strong&gt;Mistie Application Attribute&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Application&amp;rdquo; attribute to the list of [opendtect] attributes.&lt;/p&gt;
+&lt;p&gt;The plugin adds a &amp;ldquo;Mistie Application&amp;rdquo; attribute to the list of &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; attributes.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
     &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/mistie/mistieapplication_input.jpg&#34;
@@ -1824,7 +1885,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect]
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt;
 applies a structure preserving Mean of Least Variance filter.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;This attribute is an implementation of a mean of least variance filter
@@ -1907,7 +1968,7 @@ is output for the element with the least variance.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.0.0 or later performs spectral
 (time-frequency) decomposition using a recursive filter.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;This plugin can be used as an alternative to the
@@ -1922,7 +1983,7 @@ shorter windows.&lt;/p&gt;
 &lt;p&gt;As of release 6.4.8 the plugin has been extended to optionally include time-frequency reassignment. In normal spectral decomposition a
 window/gate is slid along the trace and the amplitude of each frequency component is assigned to the middle of the gate. This blurs/smooths
 the decomposition along both the time and frequency axis. While shortening the gate can improve the apparent time resolution, it has the
-side effect of increased blurring/smoothing,i.e. lower resolution, in frequency. Reassignment uses information in the phase spectrum to
+side effect of increased blurring/smoothing, i.e. lower resolution, in frequency. Reassignment uses information in the phase spectrum to
 relocate spectral energy to its origin in the time gate and on the frequency axis. This produces significantly sharper time-frequency spectra.
 However reassignment becomes ambiguous when more than one signal component is present and they are close or overlap in time or frequency.
 To perform the reassignment the decomposition must be done for a range of frequencies so execution time will be slower than without reassignment.&lt;/p&gt;
@@ -1946,7 +2007,7 @@ The output of the RSpec attribute (rfreq30) is visually identical and also highl
 resolution of the reassigned decomposition is obvious.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;spectral_decomp_inline.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/rspecattrib/spectral_decomp_inline.jpg&#34;
          alt=&#34;Comparison of various decompositions on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Comparison of various decompositions on an inline&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -1957,7 +2018,7 @@ decompositions relative to the OpendTect spectral decomposition attribute. The r
 appearance due to its sharpness in time and frequency but the significance of the variations is unknown.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;spectral_decomp_slice.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/rspecattrib/spectral_decomp_slice.jpg&#34;
          alt=&#34;Comparison of various decompositions on an horizon slice&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Comparison of various decompositions on an horizon slice&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -2023,10 +2084,10 @@ appearance due to its sharpness in time and frequency but the significance of th
       <description>
         
         
-        &lt;p&gt;This plugin provides various tools to enhance the open source seismic interpretation platform [opendtect] Version 6.4.0 or later.&lt;/p&gt;
+        &lt;p&gt;This plugin provides various tools to enhance the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.4.0 or later.&lt;/p&gt;
 &lt;h2 id=&#34;convex-hull-polygon&#34;&gt;Convex Hull Polygon&lt;/h2&gt;
 &lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
-&lt;p&gt;Generate a convex hull polygon covering either the extent of 2D/3D seismic coverage or 2D/3D horizon interpretation. The user has full control over the 2D and 3D data included. The polygon can be used as is or after editing as a clipping polygon in the  [grid2d-3d]  plugin. To edit the polygon in the 3D scene a 3D horizon of suitable extent must be displayed eg such as a DataExtentHorizon.&lt;/p&gt;
+&lt;p&gt;Generate a convex hull polygon covering either the extent of 2D/3D seismic coverage or 2D/3D horizon interpretation. The user has full control over the 2D and 3D data included. The polygon can be used as is or after editing as a clipping polygon in the  &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/&#34;&gt;Grid 2D-3D Horizon&lt;/a&gt;  plugin. To edit the polygon in the 3D scene a 3D horizon of suitable extent must be displayed eg such as a DataExtentHorizon.&lt;/p&gt;
 &lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -2053,7 +2114,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 &lt;/ul&gt;
 &lt;h2 id=&#34;constant-z-polyline&#34;&gt;Constant Z Polyline&lt;/h2&gt;
 &lt;h3 id=&#34;description-1&#34;&gt;Description&lt;/h3&gt;
-&lt;p&gt;This tool allows a series of points to be digitized in the 3D scene that can subsequently be used as additional surface control in the Grid 2D3D plugin.&lt;/p&gt;
+&lt;p&gt;This tool allows a series of points to be digitized in the 3D scene that can subsequently be used as additional surface control in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/&#34;&gt;Grid 2D-3D Horizon&lt;/a&gt; plugin.&lt;/p&gt;
 &lt;p&gt;The tool is accessed from the Tools submenu of the Polygon tree context menu. After adding a contour polyline remember to use the Right-Click | Save menu to commit the item.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
@@ -2096,7 +2157,7 @@ appearance due to its sharpness in time and frequency but the significance of th
 
 &lt;h2 id=&#34;data-extent-horizon&#34;&gt;Data Extent Horizon&lt;/h2&gt;
 &lt;h3 id=&#34;description-3&#34;&gt;Description&lt;/h3&gt;
-&lt;p&gt;Generate a constant Z value 3D horizon which covers the extent of 2D and 3D seismic data in an [opendtect] survey/project. The user has full control over the 2D and 3D data included.  With the horizon displayed it is possible to draw fault polygons and grid clipping polygons that extend beyond the 3D survey definition. These can then be used in the [grid2d-3d] plugin to produce structure maps that extend across both 2D and 3D seismic interpretation in an [opendtect] survey/project.&lt;/p&gt;
+&lt;p&gt;Generate a constant Z value 3D horizon which covers the extent of 2D and 3D seismic data in an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; survey/project. The user has full control over the 2D and 3D data included.  With the horizon displayed it is possible to draw fault polygons and grid clipping polygons that extend beyond the 3D survey definition. These can then be used in the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/grid2d-3d/&#34;&gt;Grid 2D-3D Horizon&lt;/a&gt; plugin to produce structure maps that extend across both 2D and 3D seismic interpretation in an &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; survey/project.&lt;/p&gt;
 &lt;p&gt;The tool is accessed either from the &amp;ldquo;Processing|Create Horizon Output&amp;rdquo; main menu item or from the New submenu of the 3D Horizon tree context menu.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;

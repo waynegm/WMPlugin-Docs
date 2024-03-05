@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WMPlugins – spectral-decomposition</title>
+    <title>WMPlugins – Spectral-Decomposition</title>
     <link>https://waynegm.github.io/WMPlugin-Docs/tags/spectral-decomposition/</link>
-    <description>Recent content in spectral-decomposition on WMPlugins</description>
+    <description>Recent content in Spectral-Decomposition on WMPlugins</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
@@ -23,7 +23,7 @@
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.0.0 or later performs spectral
 (time-frequency) decomposition using empirical fourier decomposition.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;This plugin can be used as an alternative to the
@@ -141,7 +141,7 @@ data volume.&lt;/p&gt;
       <description>
         
         
-        &lt;p&gt;This plugin for the open source seismic interpretation platform [opendtect] Version 6.0 or later is a collection of &amp;ldquo;Local Attributes&amp;rdquo; based on the work of [Fomel (2007) and others](&lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.2437573%22Local&#34;&gt;https://library.seg.org/doi/abs/10.1190/1.2437573&amp;quot;Local&lt;/a&gt; seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3&amp;quot;) for the &lt;a href=&#34;http://www.ahay.org/&#34; target=&#34;_blank&#34;&gt;Madagascar&lt;/a&gt; package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.&lt;/p&gt;
+        &lt;p&gt;This plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.0 or later is a collection of &amp;ldquo;Local Attributes&amp;rdquo; based on the work of [Fomel (2007) and others](&lt;a href=&#34;https://library.seg.org/doi/abs/10.1190/1.2437573%22Local&#34;&gt;https://library.seg.org/doi/abs/10.1190/1.2437573&#34;Local&lt;/a&gt; seismic attributes. Sergey Fomel. GEOPHYSICS 2007 72:3&amp;quot;) for the &lt;a href=&#34;http://www.ahay.org/&#34; target=&#34;_blank&#34;&gt;Madagascar&lt;/a&gt; package. At this point only spectral (time-frequency) decomposition using local attributes (previously called the LTFAttrib) is implemented. The predecessor to this plugin (LTFAttrib, now obsolete) had a hard dependency on the Madagascar libraries and was consequently only available for Linux. This dependency has been removed and the plugin is now available for both Linux and Windows.&lt;/p&gt;
 &lt;h2 id=&#34;spectral-time-frequency-decomposition-by-local-attributes&#34;&gt;Spectral (Time-frequency) Decomposition by Local Attributes&lt;/h2&gt;
 &lt;p&gt;Formerly called the LTFAttrib, this is an implementation of the method of local time-frequency analysis as described by &lt;a href=&#34;http://library.seg.org/doi/abs/10.1190/geo2010-0185.1&#34; title=&#34;Time-frequency analysis of seismic data using local attributes. Guochang Liu, Sergey Fomel, and Xiaohong Chen. GEOPHYSICS 2011 76:6, P23-P34&#34;&gt;Liu, G etal (2011)&lt;/a&gt;. This decomposition uses least-squares inversion with shaping regularization to estimate the time-varying Fourier coefficients. Its principal advantages over the STFT (short time fourier transform) is it much quicker if only a few frequencies are required and it is generally more accurate for short window lengths.&lt;/p&gt;
 &lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
@@ -220,7 +220,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
       <description>
         
         
-        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+        &lt;p&gt;This attribute plugin for the open source seismic interpretation platform &lt;a href=&#34;https://www.dgbes.com/software/opendtect&#34;&gt;OpendTect&lt;/a&gt; Version 6.0.0 or later performs spectral
 (time-frequency) decomposition using a recursive filter.&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;This plugin can be used as an alternative to the
@@ -235,7 +235,7 @@ shorter windows.&lt;/p&gt;
 &lt;p&gt;As of release 6.4.8 the plugin has been extended to optionally include time-frequency reassignment. In normal spectral decomposition a
 window/gate is slid along the trace and the amplitude of each frequency component is assigned to the middle of the gate. This blurs/smooths
 the decomposition along both the time and frequency axis. While shortening the gate can improve the apparent time resolution, it has the
-side effect of increased blurring/smoothing,i.e. lower resolution, in frequency. Reassignment uses information in the phase spectrum to
+side effect of increased blurring/smoothing, i.e. lower resolution, in frequency. Reassignment uses information in the phase spectrum to
 relocate spectral energy to its origin in the time gate and on the frequency axis. This produces significantly sharper time-frequency spectra.
 However reassignment becomes ambiguous when more than one signal component is present and they are close or overlap in time or frequency.
 To perform the reassignment the decomposition must be done for a range of frequencies so execution time will be slower than without reassignment.&lt;/p&gt;
@@ -259,7 +259,7 @@ The output of the RSpec attribute (rfreq30) is visually identical and also highl
 resolution of the reassigned decomposition is obvious.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;spectral_decomp_inline.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/rspecattrib/spectral_decomp_inline.jpg&#34;
          alt=&#34;Comparison of various decompositions on an inline&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Comparison of various decompositions on an inline&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -270,7 +270,7 @@ decompositions relative to the OpendTect spectral decomposition attribute. The r
 appearance due to its sharpness in time and frequency but the significance of the variations is unknown.&lt;/p&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;spectral_decomp_slice.jpg&#34;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/rspecattrib/spectral_decomp_slice.jpg&#34;
          alt=&#34;Comparison of various decompositions on an horizon slice&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
             &lt;p&gt;&lt;strong&gt;Comparison of various decompositions on an horizon slice&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;

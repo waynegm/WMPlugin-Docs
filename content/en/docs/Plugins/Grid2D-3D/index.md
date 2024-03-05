@@ -5,8 +5,8 @@ weight: 9
 categories: ["docs"]
 tags: ["gridding"]
 ---
-
-This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [opendtect] survey/project.
+{{% refs %}}
+This plugin, for the open source seismic interpretation platform [OpendTect] Version 6.4.0 or later, creates a 3D horizon/grid from the 2D and 3D horizon interpretation in an [OpendTect] survey/project.
 
 ## Description
 

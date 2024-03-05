@@ -5,12 +5,12 @@ weight: 13
 categories: ["docs"]
 tags: ["WMTools", "convex-hull", "polyline", "data-extent-horizon"]
 ---
-
-This plugin provides various tools to enhance the open source seismic interpretation platform [opendtect] Version 6.4.0 or later.
+{{% refs %}}
+This plugin provides various tools to enhance the open source seismic interpretation platform [OpendTect] Version 6.4.0 or later.
 
 ## Convex Hull Polygon
 ### Description
-Generate a convex hull polygon covering either the extent of 2D/3D seismic coverage or 2D/3D horizon interpretation. The user has full control over the 2D and 3D data included. The polygon can be used as is or after editing as a clipping polygon in the  [grid2d-3d]  plugin. To edit the polygon in the 3D scene a 3D horizon of suitable extent must be displayed eg such as a DataExtentHorizon.
+Generate a convex hull polygon covering either the extent of 2D/3D seismic coverage or 2D/3D horizon interpretation. The user has full control over the 2D and 3D data included. The polygon can be used as is or after editing as a clipping polygon in the  [Grid 2D-3D Horizon]({{< relref "Grid2D-3D" >}})  plugin. To edit the polygon in the 3D scene a 3D horizon of suitable extent must be displayed eg such as a DataExtentHorizon.
 
 The tool is accessed from the Tools submenu of the Polygon tree context menu.
 
@@ -29,7 +29,7 @@ The tool dialog allows:
 
 ## Constant Z Polyline
 ### Description
-This tool allows a series of points to be digitized in the 3D scene that can subsequently be used as additional surface control in the Grid 2D3D plugin.
+This tool allows a series of points to be digitized in the 3D scene that can subsequently be used as additional surface control in the [Grid 2D-3D Horizon]({{< relref "Grid2D-3D" >}}) plugin.
 
 The tool is accessed from the Tools submenu of the Polygon tree context menu. After adding a contour polyline remember to use the Right-Click | Save menu to commit the item.
 
@@ -56,7 +56,7 @@ The UI specifies a poly-line name prefix to which the fault surface names will b
 
 ## Data Extent Horizon
 ### Description
-Generate a constant Z value 3D horizon which covers the extent of 2D and 3D seismic data in an [opendtect] survey/project. The user has full control over the 2D and 3D data included.  With the horizon displayed it is possible to draw fault polygons and grid clipping polygons that extend beyond the 3D survey definition. These can then be used in the [grid2d-3d] plugin to produce structure maps that extend across both 2D and 3D seismic interpretation in an [opendtect] survey/project.
+Generate a constant Z value 3D horizon which covers the extent of 2D and 3D seismic data in an [OpendTect] survey/project. The user has full control over the 2D and 3D data included.  With the horizon displayed it is possible to draw fault polygons and grid clipping polygons that extend beyond the 3D survey definition. These can then be used in the [Grid 2D-3D Horizon]({{< relref "Grid2D-3D" >}}) plugin to produce structure maps that extend across both 2D and 3D seismic interpretation in an [OpendTect] survey/project.
 
 The tool is accessed either from the "Processing|Create Horizon Output" main menu item or from the New submenu of the 3D Horizon tree context menu.
 

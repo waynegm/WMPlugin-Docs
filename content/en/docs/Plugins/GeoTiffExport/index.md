@@ -5,9 +5,9 @@ weight: 7
 categories: ["docs"]
 tags: ["Geopackage", "qgis", "geotif"]
 ---
+{{% refs %}}
 
-
-This plugin, for the open source seismic interpretation platform [opendtect] Version 6.4.0 or later, exports [opendtect] either 3D horizon/attribute data or Z slices (as of 7.0.3) to a  [GeoTIFF](https://en.wikipedia.org/wiki/GeoTIFF) image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.
+This plugin, for the open source seismic interpretation platform [OpendTect] Version 6.4.0 or later, exports [OpendTect] either 3D horizon/attribute data or Z slices (as of 7.0.3) to a  [GeoTIFF](https://en.wikipedia.org/wiki/GeoTIFF) image. GeoTIFF is a public domain metadata standard which allows georeferencing information to be embedded within a TIFF image file. GeoTIFF image files are widely supported by GIS software.
 
 ## Description
 
@@ -15,7 +15,7 @@ The plugin adds a "Geotiff Export" item to the Survey-Export main menu. Selectin
 
 ### Notes
 -  The plugin requires the survey to have a projection based CRS defined.
--  This plugin is actually part of the [geopackageexport] plugin - see notes there as well
+-  This plugin is actually part of the [GeopackageExport]({{< relref "GeopackageExport" >}}) plugin - see notes there as well
 
 {{< figure src="geotiff_qgis.jpg" width="90%" class="img-centered" caption="**OpendTect 3D horizon data displayed in a QGIS print layout**" >}}
 

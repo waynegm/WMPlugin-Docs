@@ -5,8 +5,8 @@ weight: 12
 categories: ["docs"]
 tags: [time-frequency", "spectral-decomposition"]
 ---
-
-This attribute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later performs spectral
+{{% refs %}}
+This attribute plugin for the open source seismic interpretation platform [OpendTect] Version 6.0.0 or later performs spectral
 (time-frequency) decomposition using a recursive filter.
 
 ## Description
@@ -26,7 +26,7 @@ shorter windows.
 As of release 6.4.8 the plugin has been extended to optionally include time-frequency reassignment. In normal spectral decomposition a
 window/gate is slid along the trace and the amplitude of each frequency component is assigned to the middle of the gate. This blurs/smooths
 the decomposition along both the time and frequency axis. While shortening the gate can improve the apparent time resolution, it has the
-side effect of increased blurring/smoothing,i.e. lower resolution, in frequency. Reassignment uses information in the phase spectrum to
+side effect of increased blurring/smoothing, i.e. lower resolution, in frequency. Reassignment uses information in the phase spectrum to
 relocate spectral energy to its origin in the time gate and on the frequency axis. This produces significantly sharper time-frequency spectra.
 However reassignment becomes ambiguous when more than one signal component is present and they are close or overlap in time or frequency.
 To perform the reassignment the decomposition must be done for a range of frequencies so execution time will be slower than without reassignment.

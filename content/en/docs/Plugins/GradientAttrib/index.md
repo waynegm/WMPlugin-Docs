@@ -5,8 +5,8 @@ weight: 8
 categories: ["docs"]
 tags: ["GradientAttrib", "filter"]
 ---
-
-This attibute plugin for the open source seismic interpretation platform [opendtect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.
+{{% refs %}}
+This attibute plugin for the open source seismic interpretation platform [OpendTect] Version 6.0.0 or later calculates inline, crossline and time/depth gradients.
 
 ## Description
 

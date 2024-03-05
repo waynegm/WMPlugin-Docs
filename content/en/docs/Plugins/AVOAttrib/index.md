@@ -5,8 +5,8 @@ weight: 1
 categories: ["docs"]
 tags: ["AVOAttrib", "avo"]
 ---
-
-This attribute plugin for the open source seismic interpretation platform [opendtect] calculates 6 attributes based on different
+{{% refs %}}
+This attribute plugin for the open source seismic interpretation platform [OpendTect] calculates 6 attributes based on different
 parameterizations of reflection intercept and gradient.
 
 ## Description
