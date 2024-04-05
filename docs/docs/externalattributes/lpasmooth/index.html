@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.123.7">
+<meta name="generator" content="Hugo 0.124.1">
 <meta name="robots" content="index, follow">
 
 
@@ -25,8 +25,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/lpasmooth/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-04-17T22:38:58+10:00" />
-
+<meta property="article:modified_time" content="2022-04-17T22:38:58+10:00" /><meta property="og:site_name" content="WMPlugins" />
 <meta itemprop="name" content="LPA Smoothing">
 <meta itemprop="description" content="structure preserving spatial filter by local polynomial approximation">
 <meta itemprop="dateModified" content="2022-04-17T22:38:58+10:00" />
@@ -137,7 +136,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -159,7 +158,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -219,8 +218,8 @@ if (!doNotTrack) {
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesaddnoise-li">
   <a href="/WMPlugin-Docs/docs/externalattributes/addnoise/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesaddnoise"><span class="">Add Noise</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesavo_ig-li">
-  <a href="/WMPlugin-Docs/docs/externalattributes/avo_ig/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesavo_ig"><span class="">AVO Intercept and Gradient</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesavo-li">
+  <a href="/WMPlugin-Docs/docs/externalattributes/avo/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesavo"><span class="">AVO</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributesdipazimuth-li">
   <a href="/WMPlugin-Docs/docs/externalattributes/dipazimuth/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-wmplugin-docsdocsexternalattributesdipazimuth"><span class="">Dip and Azimuth</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-wmplugin-docsdocsexternalattributeslpasmooth-li">
@@ -450,7 +449,7 @@ if (!doNotTrack) {
 	</header>    
 	<p><strong>Script: ex_lpa_smooth.py</strong></p>
 <h2 id="description">Description</h2>
-<p>This Python <a href="../../plugins/externalattrib">External Attribute</a> script can be used to filter noise while preserving steep dips. A region of
+<p>This Python <a href="/WMPlugin-Docs/docs/plugins/externalattrib/">External Attribute</a> script can be used to filter noise while preserving steep dips. A region of
 data around each sample location is approximated by a second order 3D polynomial using gaussian weighted least squares.</p>
 <p>The approximation has the following form:</p>
 <p>$$ r_0+ r_1 * x + r_2 * y + r_3 * z + r_4 * x^2 + r_5 * y^2 + r_6 * z^2 +r_7 * x * y + r_8 * x * z + r_9 * y * z $$</p>

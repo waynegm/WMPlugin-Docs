@@ -9,7 +9,7 @@ tags: ["ExternalAttrib", "filter"]
 __Script: ex_vector_filter_dip.py__
 
 ## Description
-This [External Attribute](../../plugins/externalattrib) script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
+This [External Attribute]({{<relref "/externalattrib" >}}) script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
 The script offers a choice of mean vector, L1 vector median and L2 vector median filters.
 
 Initially the inline and crossline dip data are converted to a normal vector to the local orientation: \\(\[x_i, y_i, z_i\]\\).

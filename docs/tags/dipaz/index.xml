@@ -24,7 +24,7 @@
         
         
         &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;These Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.&lt;/p&gt;
+&lt;p&gt;These Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.&lt;/p&gt;
 &lt;p&gt;All scripts will estimate at least the following attributes:&lt;/p&gt;
 
 

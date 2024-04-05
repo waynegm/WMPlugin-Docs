@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.123.7">
+<meta name="generator" content="Hugo 0.124.1">
 <meta name="robots" content="index, follow">
 
 
@@ -19,23 +19,22 @@
 <link rel="icon" type="image/png" href="/WMPlugin-Docs/favicons/android-192x192.png" sizes="192x192">
 
 <title>First Release of Python Bindings to OpendTect | WMPlugins</title>
-<meta name="description" content="The 6.6.8 release of the wmPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike
+<meta name="description" content="The 6.6.8 release of the WMPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike
 OpendTect&rsquo;s …">
 <meta property="og:title" content="First Release of Python Bindings to OpendTect" />
-<meta property="og:description" content="The 6.6.8 release of the wmPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike
+<meta property="og:description" content="The 6.6.8 release of the WMPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike
 OpendTect&rsquo;s existing odpy module, wmodpy is a direct binding to the OpendTect C&#43;&#43; code." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2021-06-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-04-17T22:38:58+10:00" />
-
+<meta property="article:modified_time" content="2022-04-17T22:38:58+10:00" /><meta property="og:site_name" content="WMPlugins" />
 <meta itemprop="name" content="First Release of Python Bindings to OpendTect">
-<meta itemprop="description" content="The 6.6.8 release of the wmPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike
+<meta itemprop="description" content="The 6.6.8 release of the WMPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike
 OpendTect&rsquo;s existing odpy module, wmodpy is a direct binding to the OpendTect C&#43;&#43; code."><meta itemprop="datePublished" content="2021-06-29T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-04-17T22:38:58+10:00" />
 <meta itemprop="wordCount" content="749">
 <meta itemprop="keywords" content="python," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="First Release of Python Bindings to OpendTect"/>
-<meta name="twitter:description" content="The 6.6.8 release of the wmPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike
+<meta name="twitter:description" content="The 6.6.8 release of the WMPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike
 OpendTect&rsquo;s existing odpy module, wmodpy is a direct binding to the OpendTect C&#43;&#43; code."/>
 
 
@@ -141,7 +140,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -163,7 +162,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -386,14 +385,14 @@ if (!doNotTrack) {
 
 		
 	</header>
-	<p>The 6.6.8 release of the wmPlugins includes a Python module, <strong>wmodpy</strong>, to access OpendTect survey and well information. Unlike
+	<p>The 6.6.8 release of the <a href="https://waynegm.github.io/WMPlugin-Docs/">WMPlugins</a> includes a Python module, <strong>wmodpy</strong>, to access OpendTect survey and well information. Unlike
 OpendTect&rsquo;s existing <strong>odpy</strong> module, <strong>wmodpy</strong> is a direct binding to the OpendTect C++ code.</p>
 <p>The <strong>odpy</strong> module, by comparison, uses a command line application to interact with the OpendTect data structures and transfers
 data to Python as an ascii data stream. This incurs the overhead of starting this application and the writing and reading of an
 ascii data stream on every request. The <strong>wmodpy</strong> module, however, as a direct binding to the OpendTect C++ code allows Python
 to directly read from the in-memory representation of the data. Data access with the <strong>wmodpy</strong> module should be much faster.</p>
 <h2 id="accessing-the-wmodpy-module">Accessing the wmodpy Module</h2>
-<p>Installing my <strong>wmPlugins</strong> using the OpendTect installation manager will install the <strong>wmodpy</strong> Python module into the <em>bin/win64/Release</em>
+<p>Installing my <strong>WMPlugins</strong> using the OpendTect installation manager will install the <strong>wmodpy</strong> Python module into the <em>bin/win64/Release</em>
 or <em>bin/lux64/Release</em> subfolder of the OpendTect software. You also need a Python environment with at least Numpy but additional
 output options exist if the environment also has Pandas. The OpendTect machine learning Python environments already include Numpy
 and Pandas. For map display you may want to add a module like Folium to your working environment.</p>

@@ -9,7 +9,7 @@ tags: ["ExternalAttrib", "filter"]
 __Script: Miscellaneous/ex_zc_block.py__
 
 ## Description
-This Python [External Attribute](../../plugins/externalattrib) script blocks a seismic trace between zero crossings. The block amplitude is
+This Python [External Attribute]({{<relref "/externalattrib" >}}) script blocks a seismic trace between zero crossings. The block amplitude is
 determined by the min/max of the interval blocked.
 
 The script requires the Numba Python package.

@@ -8,7 +8,7 @@ tags: ["ExternalAttrib", "modelling"]
 __Script: Miscellaneous/ex_add_noise.py__
 
 ## Description
-This Python [External Attribute](../../plugins/externalattrib/) script adds gaussian distributed noise to an input signal.
+This Python [External Attribute]({{<relref "/externalattrib" >}}) script adds gaussian distributed noise to an input signal.
 
 ## Examples
 This example shows an input signal with different levels of added noise.

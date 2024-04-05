@@ -24,7 +24,7 @@
       <description>
         
         
-        &lt;p&gt;Announcing the release of version 6.6.10 of the WMPlugins a suite of opensource plugins that extend the opensource seismic interpretation
+        &lt;p&gt;Announcing the release of version 6.6.10 of the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/&#34;&gt;WMPlugins&lt;/a&gt; a suite of opensource plugins that extend the opensource seismic interpretation
 system &lt;a href=&#34;https://dgbes.com/index.php/software#free&#34;&gt;OpendTect&lt;/a&gt;. This release is built against OpendTect 6.6.7.&lt;/p&gt;
 &lt;p&gt;The release includes the following changes:&lt;/p&gt;
 &lt;h2 id=&#34;avopolarattrib&#34;&gt;AVOPolarAttrib&lt;/h2&gt;

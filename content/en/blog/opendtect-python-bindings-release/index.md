@@ -5,7 +5,7 @@ categories = ["release", "article"]
 date = "2021-06-29"
 banner = "/blog/opendtect-python-bindings-release/image-01.png"
 +++
-The 6.6.8 release of the wmPlugins includes a Python module, **wmodpy**, to access OpendTect survey and well information. Unlike
+The 6.6.8 release of the [WMPlugins](https://waynegm.github.io/WMPlugin-Docs/) includes a Python module, **wmodpy**, to access OpendTect survey and well information. Unlike
 OpendTect's existing **odpy** module, **wmodpy** is a direct binding to the OpendTect C++ code.
 <!--more-->
 The **odpy** module, by comparison, uses a command line application to interact with the OpendTect data structures and transfers
@@ -14,7 +14,7 @@ ascii data stream on every request. The **wmodpy** module, however, as a direct 
 to directly read from the in-memory representation of the data. Data access with the **wmodpy** module should be much faster.
 
 ## Accessing the wmodpy Module
-Installing my **wmPlugins** using the OpendTect installation manager will install the **wmodpy** Python module into the *bin/win64/Release*
+Installing my **WMPlugins** using the OpendTect installation manager will install the **wmodpy** Python module into the *bin/win64/Release*
 or *bin/lux64/Release* subfolder of the OpendTect software. You also need a Python environment with at least Numpy but additional
 output options exist if the environment also has Pandas. The OpendTect machine learning Python environments already include Numpy
 and Pandas. For map display you may want to add a module like Folium to your working environment.

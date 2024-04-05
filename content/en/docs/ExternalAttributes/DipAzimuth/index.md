@@ -7,7 +7,7 @@ tags: ["ExternalAttrib", "dipaz"]
 ---
 
 ## Description
-These Python [External Attribute](../../plugins/externalattrib) scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.
+These Python [External Attribute]({{<relref "/externalattrib" >}}) scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.
 
 All scripts will estimate at least the following attributes:
 

@@ -8,7 +8,7 @@ banner: /blog/post_2018-06-08/18_06_08_02.png
 ---
 
 ## Introduction
-Because the Python [../plugins/ExternalAttrib] script is running in a process started by the OpendTect application most standard methods to examine the script as it runs, eg using the standard Python debugger [pdb](https://docs.python.org/3/library/pdb.html), are not available.
+Because the Python [External Attribute]({{<relref "/externalattrib" >}}) script is running in a process started by the OpendTect application most standard methods to examine the script as it runs, eg using the standard Python debugger [pdb](https://docs.python.org/3/library/pdb.html), are not available.
 
 A solution is to use the [Web-PDB](https://github.com/romanvm/python-web-pdb) Python module which allows the Python script to be debugged remotely in a web-browser.
 

@@ -25,7 +25,7 @@
         
         &lt;p&gt;&lt;strong&gt;Script: ex_lpa_smooth.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to filter noise while preserving steep dips. A region of
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script can be used to filter noise while preserving steep dips. A region of
 data around each sample location is approximated by a second order 3D polynomial using gaussian weighted least squares.&lt;/p&gt;
 &lt;p&gt;The approximation has the following form:&lt;/p&gt;
 &lt;p&gt;$$ r_0+ r_1 * x + r_2 * y + r_3 * z + r_4 * x^2 + r_5 * y^2 + r_6 * z^2 +r_7 * x * y + r_8 * x * z + r_9 * y * z $$&lt;/p&gt;
@@ -99,7 +99,7 @@ the input with relatively minor smearing of steep dips and fault cuts. Increasin
         
         &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_circular.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject circularly symmetric
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject circularly symmetric
 spatial filters. The filters are applied by direct spatial convolution using the MAXFLAT operators described by
 &lt;a href=&#34;https://www.researchgate.net/publication/3384111_Explicit_formulae_for_coefficients_of_2D_circular_symmetric_MAXFLATFIR_lowhigh_pass_digital_filters&#34; title=&#34;Explicit formulae for coefficients of 2D circular symmetric MAXFLAT FIR low/high pass digital filters.  Electronics Letters Volume: 37, Issue: 24, 22 Nov 2001&#34;&gt;Khan and Ohba (2001)&lt;/a&gt;.&lt;/p&gt;
 
@@ -205,7 +205,7 @@ is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
         
         &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_rectangular.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
 symmetry. The filters are applied by direct spatial convolution of a kernel formed by cascading two 1D Hamming Window FIR filters
 computed using scipy.signal.firwin (&lt;a href=&#34;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&#34;&gt;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;By setting the stepout in one direction to 0 the filter will be applied as a 1D spatial filter in the other direction.&lt;/p&gt;
@@ -376,7 +376,7 @@ a 1D bandreject spatial filter along the crosslines (stepout 9,0) with an inline
         
         &lt;p&gt;&lt;strong&gt;Script: ex_vector_filter_dip.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
+&lt;p&gt;This &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
 The script offers a choice of mean vector, L1 vector median and L2 vector median filters.&lt;/p&gt;
 &lt;p&gt;Initially the inline and crossline dip data are converted to a normal vector to the local orientation: \([x_i, y_i, z_i]\).&lt;/p&gt;
 &lt;p&gt;The Mean Vector Filter averages each of the vector components of the orientation normal vectors in the analysis cube:
@@ -517,7 +517,7 @@ The script requires the Numba Python package.
         
         &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_zc_block.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script blocks a seismic trace between zero crossings. The block amplitude is
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script blocks a seismic trace between zero crossings. The block amplitude is
 determined by the min/max of the interval blocked.&lt;/p&gt;
 &lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;

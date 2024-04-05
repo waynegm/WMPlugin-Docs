@@ -67,11 +67,13 @@ id = "UA-62607269-1"
 
 [languages]
 [languages.en]
-title = "WMPlugins"
-description = "Documentation for my open source plugins to the OpendTect seismic interpretation system"
-languageName ="English"
+    [languages.en.params]
+
+    title = "WMPlugins"
+    description = "Documentation for my open source plugins to the OpendTect seismic interpretation system"
+    languageName ="English"
 # Weight used for sorting.
-weight = 1
+    weight = 1
 
 [markup]
   [markup.goldmark]

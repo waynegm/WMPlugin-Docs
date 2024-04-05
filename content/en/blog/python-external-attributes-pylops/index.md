@@ -5,7 +5,7 @@ categories = ["article"]
 date = "2021-06-26"
 banner = "/blog/python-external-attributes-pylops/image-02.jpg"
 +++
-The 6.6.8 release of the wmPlugins includes a number of new Python external attribute scripts that use the
+The 6.6.8 release of the [WMPlugins](https://waynegm.github.io/WMPlugin-Docs/) includes a number of new Python external attribute scripts that use the
 [PyLops](https://pylops.readthedocs.io/en/latest/) linear operator library for seismic modelling and inversion.
 These scripts also demonstrate the use of the new user interface parameter elements introduced in the 6.6.8 release
 of the External Attribute plugin.
@@ -21,7 +21,7 @@ Assuming wmPlugins is installed using the OpendTect Installation Manager, the sc
 Using these scripts requires a Python environment with the PyLops python module and it's dependencies installed.
 The section [Installing PyLops]({{<ref "#installing-pylops">}}) describes the PyLops installation process. Note
 that a PyLops python environment includes all the modules required to run any attribute script included with the
-**wmPlugins** not just those in the PyLops folder.
+**WMPlugins** not just those in the PyLops folder.
 
 ## Post-Stack  Seismic Inversion
 {{< figure src="image-01.png"  width="90%" class="img-centered" >}}

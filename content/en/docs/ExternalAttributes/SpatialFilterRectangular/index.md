@@ -9,7 +9,7 @@ tags: ["ExternalAttrib", "filter"]
 __Script: Filtering/ex_spatial_filter_rectangular.py__
 
 ## Description
-This Python [External Attribute](../../plugins/externalattrib) script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
+This Python [External Attribute]({{<relref "/externalattrib" >}}) script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
 symmetry. The filters are applied by direct spatial convolution of a kernel formed by cascading two 1D Hamming Window FIR filters
 computed using scipy.signal.firwin (https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html).
 

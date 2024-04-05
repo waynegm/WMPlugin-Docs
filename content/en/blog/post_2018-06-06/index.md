@@ -9,7 +9,7 @@ banner: /blog/post_2018-06-06/18_06_06_02.png
 
 
 ## Introduction
-It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.
+It is possible to write information to the OpendTect logfile from inside a Python [External Attribute]({{<relref "/externalattrib" >}}) script.
 
 The global variable *xa.logH* (assuming the extattrib module has been imported using *import extattrib as xa*) is a [Python logger object](https://docs.python.org/3/library/logging.html).
 

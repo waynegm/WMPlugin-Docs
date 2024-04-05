@@ -9,7 +9,7 @@ tags: ["ExternalAttrib","attribute"]
 __Script: Miscellaneous/ex_correlation.py__
 
 ## Description
-This Python [External Attribute](../../plugins/externalattrib) script provides an alternative to the builtin OpendTect
+This Python [External Attribute]({{<relref "/externalattrib" >}}) script provides an alternative to the builtin OpendTect
 [Match Delta](http://doc.opendtect.org/6.0.0/doc/od_userdoc/Default.htm#appendix_a-attributes_and_filters/match_delta.htm%3FTocPath%3D11%2520Appendix%2520A%2520-%2520Attributes%2520and%2520Filters%7C_____13) attribute to measure time shifts between similar events in different seismic volumes. This script uses local normalised cross correlation to determine the relative Z shift between 2 data volumes. Aside from the estimate of relative Z shift the attribute can also output the correlation value. The correlation value which ranges from 0 (low correlation) to 1 (high correlation) provides a quantitative assessment of the reliability of the Z shift estimate.
 
 The script requires the Numba Python package.

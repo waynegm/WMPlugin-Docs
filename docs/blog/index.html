@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.123.7">
+<meta name="generator" content="Hugo 0.124.1">
 <link rel="alternate" type="text/html" href="https://waynegm.github.io/WMPlugin-Docs/blog/_print/">
 <link rel="alternate" type="application/rss&#43;xml" href="https://waynegm.github.io/WMPlugin-Docs/blog/index.xml">
 <meta name="robots" content="index, follow">
@@ -27,8 +27,7 @@ Files in these directories will be listed in reverse chronological order.
 <meta property="og:title" content="WMPlugins Blog" />
 <meta property="og:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/blog/" />
-
+<meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/blog/" /><meta property="og:site_name" content="WMPlugins" />
 <meta itemprop="name" content="WMPlugins Blog">
 <meta itemprop="description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="WMPlugins Blog"/>
 <meta name="twitter:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"/>
@@ -136,7 +135,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -158,7 +157,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -449,7 +448,7 @@ The release includes the following changes: …</p>
 
 
 
-						<p class="pt-0 mt-0">The 6.6.8 release of the wmPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike OpendTect&rsquo;s existing odpy module, wmodpy is a direct binding to the OpendTect C++ code.
+						<p class="pt-0 mt-0">The 6.6.8 release of the WMPlugins includes a Python module, wmodpy, to access OpendTect survey and well information. Unlike OpendTect&rsquo;s existing odpy module, wmodpy is a direct binding to the OpendTect C++ code.
 The odpy module, by comparison, …</p>
 						<p class="pt-0"><a href="/WMPlugin-Docs/blog/2021/06/29/first-release-of-python-bindings-to-opendtect/" aria-label="Read more - First Release of Python Bindings to OpendTect">Read more</a></p>
 					</div>
@@ -506,7 +505,7 @@ The odpy module, by comparison, …</p>
 
 
 
-						<p class="pt-0 mt-0">The 6.6.8 release of the wmPlugins includes a number of new Python external attribute scripts that use the PyLops linear operator library for seismic modelling and inversion. These scripts also demonstrate the use of the new user interface parameter …</p>
+						<p class="pt-0 mt-0">The 6.6.8 release of the WMPlugins includes a number of new Python external attribute scripts that use the PyLops linear operator library for seismic modelling and inversion. These scripts also demonstrate the use of the new user interface parameter …</p>
 						<p class="pt-0"><a href="/WMPlugin-Docs/blog/2021/06/26/seismic-modelling-and-inversion-using-pylops-based-python-external-attributes/" aria-label="Read more - Seismic Modelling and Inversion using PyLops based Python External Attributes">Read more</a></p>
 					</div>
 				</li>
@@ -672,8 +671,8 @@ The odpy module, by comparison, …</p>
 
 
 
-						<p class="pt-0 mt-0">Introduction Because the Python [../plugins/ExternalAttrib] script is running in a process started by the OpendTect application most standard methods to examine the script as it runs, eg using the standard Python debugger pdb, are not available.
-A …</p>
+						<p class="pt-0 mt-0">Introduction Because the Python External Attribute script is running in a process started by the OpendTect application most standard methods to examine the script as it runs, eg using the standard Python debugger pdb, are not available.
+A solution is …</p>
 						<p class="pt-0"><a href="/WMPlugin-Docs/blog/2018/06/08/python-external-attribute-tips-tricks-debugging/" aria-label="Read more - Python External Attribute Tips &amp; Tricks - Debugging">Read more</a></p>
 					</div>
 				</li>
@@ -725,8 +724,8 @@ A …</p>
 
 
 
-						<p class="pt-0 mt-0">Introduction It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.
-The global variable xa.logH (assuming the extattrib module has been imported using import extattrib as xa) is a Python …</p>
+						<p class="pt-0 mt-0">Introduction It is possible to write information to the OpendTect logfile from inside a Python External Attribute script.
+The global variable xa.logH (assuming the extattrib module has been imported using import extattrib as xa) is a Python logger …</p>
 						<p class="pt-0"><a href="/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/" aria-label="Read more - Python External Attribute Tips &amp; Tricks - Logging">Read more</a></p>
 					</div>
 				</li>
@@ -778,7 +777,7 @@ The global variable xa.logH (assuming the extattrib module has been imported usi
 
 
 
-						<p class="pt-0 mt-0">Introduction This article will review the structure of a simple Python [../plugins/ExternalAttrib] script, ex_dip.py, which converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and …</p>
+						<p class="pt-0 mt-0">Introduction This article will review the structure of a simple Python External Attribute script, ex_dip.py, which converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and output. Some …</p>
 						<p class="pt-0"><a href="/WMPlugin-Docs/blog/2018/06/04/anatomy-of-a-python-external-attribute/" aria-label="Read more - Anatomy of a Python External Attribute">Read more</a></p>
 					</div>
 				</li>

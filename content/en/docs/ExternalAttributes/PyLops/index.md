@@ -19,11 +19,11 @@ of the OpendTect software folder and include:
 -  PyLops/ex_make_1d_seismic.py
 
 Using these scripts requires a Python environment with the PyLops module and it's dependencies installed. The section
-[Installing PyLops](#installing-pylops) describes the PyLops installation process.
+[Installing PyLops]({{<relref "/pylops#installing-pylops" >}}) describes the PyLops installation process.
 
 ## PyLops/ex_poststack_inversion.py
 
-This Python [External Attribute](../../plugins/externalattrib) script uses the pylops.avo.poststack.PoststackInversion operator to do
+This Python [External Attribute]({{<relref "/externalattrib" >}}) script uses the pylops.avo.poststack.PoststackInversion operator to do
 post-stack seismic inversion. The output is either the log Acoustic Impedance (AI) volume or the residual error.
 
 The inputs required are volumes of the seismic to be inverted, a background log AI model and the seismic wavelet. Note that the polarity

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.123.7">
+<meta name="generator" content="Hugo 0.124.1">
 <link rel="canonical" type="text/html" href="https://waynegm.github.io/WMPlugin-Docs/blog/">
 <link rel="alternate" type="application/rss&#43;xml" href="https://waynegm.github.io/WMPlugin-Docs/blog/index.xml">
 <meta name="robots" content="noindex, nofollow">
@@ -27,8 +27,7 @@ Files in these directories will be listed in reverse chronological order.
 <meta property="og:title" content="WMPlugins Blog" />
 <meta property="og:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/blog/" />
-
+<meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/blog/" /><meta property="og:site_name" content="WMPlugins" />
 <meta itemprop="name" content="WMPlugins Blog">
 <meta itemprop="description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="WMPlugins Blog"/>
 <meta name="twitter:description" content="Documentation for my open source plugins to the OpendTect seismic interpretation system"/>
@@ -136,7 +135,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -301,7 +300,7 @@ This is the multi-page printable view of this section.
 		<time datetime="2022-04-15" class="text-muted">Friday, April 15, 2022</time>
         
 	</div>
-	<p>Announcing the release of version 6.6.10 of the WMPlugins a suite of opensource plugins that extend the opensource seismic interpretation
+	<p>Announcing the release of version 6.6.10 of the <a href="https://waynegm.github.io/WMPlugin-Docs/">WMPlugins</a> a suite of opensource plugins that extend the opensource seismic interpretation
 system <a href="https://dgbes.com/index.php/software#free">OpendTect</a>. This release is built against OpendTect 6.6.7.</p>
 <p>The release includes the following changes:</p>
 <h2 id="avopolarattrib">AVOPolarAttrib</h2>
@@ -365,14 +364,14 @@ called &ldquo;odpybind&rdquo;.</p>
 		<time datetime="2021-06-29" class="text-muted">Tuesday, June 29, 2021</time>
         
 	</div>
-	<p>The 6.6.8 release of the wmPlugins includes a Python module, <strong>wmodpy</strong>, to access OpendTect survey and well information. Unlike
+	<p>The 6.6.8 release of the <a href="https://waynegm.github.io/WMPlugin-Docs/">WMPlugins</a> includes a Python module, <strong>wmodpy</strong>, to access OpendTect survey and well information. Unlike
 OpendTect&rsquo;s existing <strong>odpy</strong> module, <strong>wmodpy</strong> is a direct binding to the OpendTect C++ code.</p>
 <p>The <strong>odpy</strong> module, by comparison, uses a command line application to interact with the OpendTect data structures and transfers
 data to Python as an ascii data stream. This incurs the overhead of starting this application and the writing and reading of an
 ascii data stream on every request. The <strong>wmodpy</strong> module, however, as a direct binding to the OpendTect C++ code allows Python
 to directly read from the in-memory representation of the data. Data access with the <strong>wmodpy</strong> module should be much faster.</p>
 <h2 id="accessing-the-wmodpy-module">Accessing the wmodpy Module</h2>
-<p>Installing my <strong>wmPlugins</strong> using the OpendTect installation manager will install the <strong>wmodpy</strong> Python module into the <em>bin/win64/Release</em>
+<p>Installing my <strong>WMPlugins</strong> using the OpendTect installation manager will install the <strong>wmodpy</strong> Python module into the <em>bin/win64/Release</em>
 or <em>bin/lux64/Release</em> subfolder of the OpendTect software. You also need a Python environment with at least Numpy but additional
 output options exist if the environment also has Pandas. The OpendTect machine learning Python environments already include Numpy
 and Pandas. For map display you may want to add a module like Folium to your working environment.</p>
@@ -534,7 +533,7 @@ returning a Pandas Dataframe have a suffix of &ldquo;_df&rdquo;.</p>
 		<time datetime="2021-06-26" class="text-muted">Saturday, June 26, 2021</time>
         
 	</div>
-	<p>The 6.6.8 release of the wmPlugins includes a number of new Python external attribute scripts that use the
+	<p>The 6.6.8 release of the <a href="https://waynegm.github.io/WMPlugin-Docs/">WMPlugins</a> includes a number of new Python external attribute scripts that use the
 <a href="https://pylops.readthedocs.io/en/latest/">PyLops</a> linear operator library for seismic modelling and inversion.
 These scripts also demonstrate the use of the new user interface parameter elements introduced in the 6.6.8 release
 of the External Attribute plugin.</p>
@@ -550,7 +549,7 @@ of the External Attribute plugin.</p>
 <p>Using these scripts requires a Python environment with the PyLops python module and it&rsquo;s dependencies installed.
 The section <a href="#installing-pylops">Installing PyLops</a> describes the PyLops installation process. Note
 that a PyLops python environment includes all the modules required to run any attribute script included with the
-<strong>wmPlugins</strong> not just those in the PyLops folder.</p>
+<strong>WMPlugins</strong> not just those in the PyLops folder.</p>
 <h2 id="post-stack--seismic-inversion">Post-Stack  Seismic Inversion</h2>
 
 <figure class="img-centered">
@@ -906,7 +905,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
         
 	</div>
 	<h2 id="introduction">Introduction</h2>
-<p>Because the Python [../plugins/ExternalAttrib] script is running in a process started by the OpendTect application most standard methods to examine the script as it runs, eg using the standard Python debugger <a href="https://docs.python.org/3/library/pdb.html">pdb</a>, are not available.</p>
+<p>Because the Python <a href="/WMPlugin-Docs/docs/plugins/externalattrib/">External Attribute</a> script is running in a process started by the OpendTect application most standard methods to examine the script as it runs, eg using the standard Python debugger <a href="https://docs.python.org/3/library/pdb.html">pdb</a>, are not available.</p>
 <p>A solution is to use the <a href="https://github.com/romanvm/python-web-pdb">Web-PDB</a> Python module which allows the Python script to be debugged remotely in a web-browser.</p>
 <h2 id="web-pdb-installation">Web-PDB Installation</h2>
 <p><a href="https://github.com/romanvm/python-web-pdb">Web-PDB</a> is not included by default in most Python installations but it can be easily added using <em>pip</em>:</p>
@@ -968,7 +967,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
         
 	</div>
 	<h2 id="introduction">Introduction</h2>
-<p>It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.</p>
+<p>It is possible to write information to the OpendTect logfile from inside a Python <a href="/WMPlugin-Docs/docs/plugins/externalattrib/">External Attribute</a> script.</p>
 <p>The global variable <em>xa.logH</em> (assuming the extattrib module has been imported using <em>import extattrib as xa</em>) is a <a href="https://docs.python.org/3/library/logging.html">Python logger object</a>.</p>
 <h2 id="an-example">An Example</h2>
 
@@ -1013,7 +1012,7 @@ the Python environment selected in the OpendTect Python Settings dialog.
         
 	</div>
 	<h2 id="introduction">Introduction</h2>
-<p>This article will review the structure of a simple Python [../plugins/ExternalAttrib] script,
+<p>This article will review the structure of a simple Python <a href="/WMPlugin-Docs/docs/plugins/externalattrib/">External Attribute</a> script,
 <a href="https://github.com/waynegm/OpendTect-External-Attributes/blob/master/Python_3/DipAndAzimuth/ex_dip.py">ex_dip.py</a>, which
 converts inline and crossline dip to true dip and dip azimuth. It is an example of multi attribute, single trace input and
 output. Some basic understanding of <a href="https://www.python.org/">Python</a> and <a href="http://www.numpy.org/">Numpy</a> is assumed.</p>
@@ -1053,7 +1052,7 @@ output. Some basic understanding of <a href="https://www.python.org/">Python</a>
         </figcaption>
 </figure>
 
-<p>A variety of other input elements can be specified to build more complex input dialogs. See the [../plugins/ExternalAttrib#JSON Parameter String] section of the plugin documentation for full details or look at other scripts to see what is possible.</p>
+<p>A variety of other input elements can be specified to build more complex input dialogs. See the <a href="/WMPlugin-Docs/docs/plugins/externalattrib/#parameters-dictionary">Parameters Dictionary</a> section of the plugin documentation for full details or look at other scripts to see what is possible.</p>
 <h2 id="the-compute-loop-initialisation">The Compute Loop Initialisation</h2>
 
 <figure class="img-centered">
@@ -1064,7 +1063,7 @@ output. Some basic understanding of <a href="https://www.python.org/">Python</a>
 </figure>
 
 <p>The doCompute function is where the attribute calculation occurs. The function is divided into 2 parts some initialisation and the &ldquo;while True:&rdquo; loop, discussed in the next section, where the calculations actually take place. Any code in this initialisation section will be executed just once when the attribute script is run and is a good place to calculate constants for use in the Compute Loop.</p>
-<p>This particular script shows how information stored in the [../plugins/ExternalAttrib#SeismicInfo Block] can be used to calculate some constants purely as an example. This attribute is so simple that no initialisation is actually required.</p>
+<p>This particular script shows how information stored in the <a href="/WMPlugin-Docs/docs/plugins/externalattrib/#seismicinfo-block">SeismicInfo Block</a> can be used to calculate some constants purely as an example. This attribute is so simple that no initialisation is actually required.</p>
 <h2 id="the-compute-loop">The Compute Loop</h2>
 
 <figure class="img-centered">
@@ -1075,7 +1074,7 @@ output. Some basic understanding of <a href="https://www.python.org/">Python</a>
 </figure>
 
 <p>This is where the attribute calculation takes place. The <em>xa.doInput()</em> and <em>xa.doOutput()</em> function calls control the input and output of seismic trace data between the script and OpendTect. Generally these should be the first and last statements within the compute loop.</p>
-<p>Within the compute loop, some information about the current trace data such as the number of samples and the inline and crossline location are provided in the [../plugins/ExternalAttrib#TraceInfo Block]. These can be accessed using constructs like <em>xa.TI[&rsquo;nrsamp&rsquo;]</em>. This information is not required for this particular script.</p>
+<p>Within the compute loop, some information about the current trace data such as the number of samples and the inline and crossline location are provided in the <a href="/WMPlugin-Docs/docs/plugins/externalattrib/#traceinfo-block">TraceInfo Block</a>. These can be accessed using constructs like <em>xa.TI[&rsquo;nrsamp&rsquo;]</em>. This information is not required for this particular script.</p>
 <p>The global Numpy array <em>xa.Input</em> contains the input trace data. <em>xa.Input[&rsquo;name of input attribute&rsquo;]</em> returns a Numpy array with the trace data for the current compute location. The shape of this Numpy array depends on the traces stepouts required by the attribute. As this particular script uses just single trace input (inline and crossline step out of 0) the Numpy array has a shape of <em>(1,1,xa.TI[&rsquo;nrsamp&rsquo;])</em>. In the more general case of a multi-trace attribute the Numpy array shape would be <em>(xa.SI[&rsquo;nrinl&rsquo;], xa.SI[&rsquo;nrcrl&rsquo;], xa.TI[&rsquo;nrsamp&rsquo;])</em> and the input trace at the current location would be at the centre of the array, ie at index <em>[xa.SI[&rsquo;nrinl&rsquo;]//2, xa.SI[&rsquo;nrcrl&rsquo;]//2,&hellip;]</em>.</p>
 <p>Attribute ouput must be put into the <em>xa.Output</em> global Numpy array before the <em>xa.doOutput()</em> function call. Each element (eg <em>xa.Output[&rsquo;name of output attribute&rsquo;]</em>) of the output array must have a shape of <em>(1,1,xa.TI[&rsquo;nrsamp&rsquo;])</em></p>
 <h2 id="the-postamble">The Postamble</h2>

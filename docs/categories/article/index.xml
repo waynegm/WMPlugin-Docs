@@ -24,14 +24,14 @@
       <description>
         
         
-        &lt;p&gt;The 6.6.8 release of the wmPlugins includes a Python module, &lt;strong&gt;wmodpy&lt;/strong&gt;, to access OpendTect survey and well information. Unlike
+        &lt;p&gt;The 6.6.8 release of the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/&#34;&gt;WMPlugins&lt;/a&gt; includes a Python module, &lt;strong&gt;wmodpy&lt;/strong&gt;, to access OpendTect survey and well information. Unlike
 OpendTect&amp;rsquo;s existing &lt;strong&gt;odpy&lt;/strong&gt; module, &lt;strong&gt;wmodpy&lt;/strong&gt; is a direct binding to the OpendTect C++ code.&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;odpy&lt;/strong&gt; module, by comparison, uses a command line application to interact with the OpendTect data structures and transfers
 data to Python as an ascii data stream. This incurs the overhead of starting this application and the writing and reading of an
 ascii data stream on every request. The &lt;strong&gt;wmodpy&lt;/strong&gt; module, however, as a direct binding to the OpendTect C++ code allows Python
 to directly read from the in-memory representation of the data. Data access with the &lt;strong&gt;wmodpy&lt;/strong&gt; module should be much faster.&lt;/p&gt;
 &lt;h2 id=&#34;accessing-the-wmodpy-module&#34;&gt;Accessing the wmodpy Module&lt;/h2&gt;
-&lt;p&gt;Installing my &lt;strong&gt;wmPlugins&lt;/strong&gt; using the OpendTect installation manager will install the &lt;strong&gt;wmodpy&lt;/strong&gt; Python module into the &lt;em&gt;bin/win64/Release&lt;/em&gt;
+&lt;p&gt;Installing my &lt;strong&gt;WMPlugins&lt;/strong&gt; using the OpendTect installation manager will install the &lt;strong&gt;wmodpy&lt;/strong&gt; Python module into the &lt;em&gt;bin/win64/Release&lt;/em&gt;
 or &lt;em&gt;bin/lux64/Release&lt;/em&gt; subfolder of the OpendTect software. You also need a Python environment with at least Numpy but additional
 output options exist if the environment also has Pandas. The OpendTect machine learning Python environments already include Numpy
 and Pandas. For map display you may want to add a module like Folium to your working environment.&lt;/p&gt;
@@ -179,7 +179,7 @@ returning a Pandas Dataframe have a suffix of &amp;ldquo;_df&amp;rdquo;.&lt;/p&g
       <description>
         
         
-        &lt;p&gt;The 6.6.8 release of the wmPlugins includes a number of new Python external attribute scripts that use the
+        &lt;p&gt;The 6.6.8 release of the &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/&#34;&gt;WMPlugins&lt;/a&gt; includes a number of new Python external attribute scripts that use the
 &lt;a href=&#34;https://pylops.readthedocs.io/en/latest/&#34;&gt;PyLops&lt;/a&gt; linear operator library for seismic modelling and inversion.
 These scripts also demonstrate the use of the new user interface parameter elements introduced in the 6.6.8 release
 of the External Attribute plugin.&lt;/p&gt;
@@ -195,7 +195,7 @@ of the External Attribute plugin.&lt;/p&gt;
 &lt;p&gt;Using these scripts requires a Python environment with the PyLops python module and it&amp;rsquo;s dependencies installed.
 The section &lt;a href=&#34;#installing-pylops&#34;&gt;Installing PyLops&lt;/a&gt; describes the PyLops installation process. Note
 that a PyLops python environment includes all the modules required to run any attribute script included with the
-&lt;strong&gt;wmPlugins&lt;/strong&gt; not just those in the PyLops folder.&lt;/p&gt;
+&lt;strong&gt;WMPlugins&lt;/strong&gt; not just those in the PyLops folder.&lt;/p&gt;
 &lt;h2 id=&#34;post-stack--seismic-inversion&#34;&gt;Post-Stack  Seismic Inversion&lt;/h2&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;

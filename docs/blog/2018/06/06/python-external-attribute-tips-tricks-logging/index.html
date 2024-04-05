@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.123.7">
+<meta name="generator" content="Hugo 0.124.1">
 <meta name="robots" content="index, follow">
 
 
@@ -20,25 +20,24 @@
 
 <title>Python External Attribute Tips &amp; Tricks - Logging | WMPlugins</title>
 <meta name="description" content="Introduction
-It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.
-The global variable …">
+It is possible to write information to the OpendTect logfile from inside a Python External Attribute script.
+The global variable xa.logH …">
 <meta property="og:title" content="Python External Attribute Tips &amp; Tricks - Logging" />
-<meta property="og:description" content="Introduction It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.
+<meta property="og:description" content="Introduction It is possible to write information to the OpendTect logfile from inside a Python External Attribute script.
 The global variable xa.logH (assuming the extattrib module has been imported using import extattrib as xa) is a Python logger object.
 An Example On line 18 the Python logger is modified by adjusting the severity level of messages that will appear in the log file. By default only CRITICAL, ERROR and WARNING messages will be written." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://waynegm.github.io/WMPlugin-Docs/blog/2018/06/06/python-external-attribute-tips-tricks-logging/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2018-06-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-04-17T22:38:58+10:00" />
-
+<meta property="article:modified_time" content="2022-04-17T22:38:58+10:00" /><meta property="og:site_name" content="WMPlugins" />
 <meta itemprop="name" content="Python External Attribute Tips &amp; Tricks - Logging">
-<meta itemprop="description" content="Introduction It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.
+<meta itemprop="description" content="Introduction It is possible to write information to the OpendTect logfile from inside a Python External Attribute script.
 The global variable xa.logH (assuming the extattrib module has been imported using import extattrib as xa) is a Python logger object.
 An Example On line 18 the Python logger is modified by adjusting the severity level of messages that will appear in the log file. By default only CRITICAL, ERROR and WARNING messages will be written."><meta itemprop="datePublished" content="2018-06-06T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-04-17T22:38:58+10:00" />
-<meta itemprop="wordCount" content="151">
+<meta itemprop="wordCount" content="152">
 <meta itemprop="keywords" content="python,ExternalAttrib," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Python External Attribute Tips &amp; Tricks - Logging"/>
-<meta name="twitter:description" content="Introduction It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.
+<meta name="twitter:description" content="Introduction It is possible to write information to the OpendTect logfile from inside a Python External Attribute script.
 The global variable xa.logH (assuming the extattrib module has been imported using import extattrib as xa) is a Python logger object.
 An Example On line 18 the Python logger is modified by adjusting the severity level of messages that will appear in the log file. By default only CRITICAL, ERROR and WARNING messages will be written."/>
 
@@ -145,7 +144,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -167,7 +166,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.e6b23686706329014e990958f8c3371b.json"
+  data-offline-search-index-json-src="/WMPlugin-Docs/offline-search-index.9051fd93a1c6657d10c2214de60fe9f7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -390,7 +389,7 @@ if (!doNotTrack) {
 		
 	</header>
 	<h2 id="introduction">Introduction</h2>
-<p>It is possible to write information to the OpendTect logfile from inside a Python [../plugins/ExternalAttrib] script.</p>
+<p>It is possible to write information to the OpendTect logfile from inside a Python <a href="/WMPlugin-Docs/docs/plugins/externalattrib/">External Attribute</a> script.</p>
 <p>The global variable <em>xa.logH</em> (assuming the extattrib module has been imported using <em>import extattrib as xa</em>) is a <a href="https://docs.python.org/3/library/logging.html">Python logger object</a>.</p>
 <h2 id="an-example">An Example</h2>
 

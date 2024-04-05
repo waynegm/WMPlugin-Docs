@@ -9,7 +9,7 @@ tags: ["ExternalAttrib", "filter"]
 __Script: Filtering/ex_spatial_filter_circular.py__
 
 ## Description
-This Python [External Attribute](../../plugins/externalattrib) script applies lowpass, highpass, bandpass or band reject circularly symmetric
+This Python [External Attribute]({{<relref "/externalattrib" >}}) script applies lowpass, highpass, bandpass or band reject circularly symmetric
 spatial filters. The filters are applied by direct spatial convolution using the MAXFLAT operators described by
 [Khan and Ohba (2001)](https://www.researchgate.net/publication/3384111_Explicit_formulae_for_coefficients_of_2D_circular_symmetric_MAXFLATFIR_lowhigh_pass_digital_filters "Explicit formulae for coefficients of 2D circular symmetric MAXFLAT FIR low/high pass digital filters.  Electronics Letters Volume: 37, Issue: 24, 22 Nov 2001").
 

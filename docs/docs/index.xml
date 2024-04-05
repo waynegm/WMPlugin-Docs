@@ -25,7 +25,7 @@
         
         &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_add_noise.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script adds gaussian distributed noise to an input signal.&lt;/p&gt;
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script adds gaussian distributed noise to an input signal.&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 &lt;p&gt;This example shows an input signal with different levels of added noise.&lt;/p&gt;
 
@@ -297,33 +297,95 @@ should work with all OpendTect 6.4 releases but won&amp;rsquo;t work with OpendT
     </item>
     
     <item>
-      <title>Docs: AVO Intercept and Gradient</title>
-      <link>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/avo_ig/</link>
+      <title>Docs: AVO</title>
+      <link>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/avo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/avo_ig/</guid>
+      <guid>https://waynegm.github.io/WMPlugin-Docs/docs/externalattributes/avo/</guid>
       <description>
         
         
         &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;These &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts estimate AVO intercept and gradient based on Shuey&amp;rsquo;s 2 term approximation
-to the Zoeppritz equation. Scripts are provided for 3, 4 and 5 angle stacks.&lt;/p&gt;
-&lt;h2 id=&#34;intercept-and-gradient-from-angle-stacks&#34;&gt;Intercept and Gradient from Angle Stacks&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_3_to_AVOIG.py&lt;/strong&gt;
-&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_4_to_AVOIG.py&lt;/strong&gt;
-&lt;strong&gt;Script: Miscellaneous/ex_angle_stacks_5_to_AVOIG.py&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Takes as input angle stacks and the corresponding angles and fits a least squares line to the \(amplitude\) and \(sin^2(angle)\) at
-each sample point. Output includes the intercept, gradient and the correlation coefficient of the line fit.&lt;/p&gt;
+&lt;p&gt;These &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; scripts calculate various AVO related seismic
+attributes.&lt;/p&gt;
+
+
+
+
+
+&lt;div class=&#34;container&#34;&gt; &lt;table class=&#34;table table-striped table-bordered&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;SCRIPT&lt;/th&gt;
+&lt;th&gt;DESCRIPTION&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/avo/#intercept-and-gradient&#34;&gt;ex_avoig_angle3.py&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Compute intercept and gradient from 3 angle stacks.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/avo/#intercept-and-gradient&#34;&gt;ex_avoig_angle4.py&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Compute intercept and gradient from 4 angle stacks.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/avo/#intercept-and-gradient&#34;&gt;ex_avoiig_angle5.py&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Compute intercept and gradient from 5 angle stacks.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/avo/#avo-fatti-3-term&#34;&gt;ex_fatti3_angle3.py&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Compute Fatti 3 term reflectivity from 3 angle stacks.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/avo/#avo-fatti-3-term&#34;&gt;ex_fatti3_angle4.py&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Compute Fatti 3 term reflectivity from 4 angle stacks.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+ &lt;/div&gt;
+
+&lt;h2 id=&#34;intercept-and-gradient&#34;&gt;Intercept and Gradient&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: AVO/ex_avoig_angle3.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Script: AVO/ex_avoig_angle4.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Script: AVO/ex_avoig_angle5.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Takes as input angle stacks and the corresponding angles and computes the Intercept \(\left(I\right)\) and Gradient \(\left(G\right)\)
+at each sample point as per Shuey&amp;rsquo;s 2 term approximation to the Aki-Richards equation:&lt;/p&gt;
+&lt;p&gt;$$ R(\theta) = I + G \sin ^{2}(\theta). $$&lt;/p&gt;
+&lt;p&gt;Possible outputs are the intercept, gradient and the quality or coefficient of determination \(\left(0\le R^2 \le 1 \right)\) of the linear fit.&lt;/p&gt;
 &lt;h3 id=&#34;input-parameters&#34;&gt;Input Parameters&lt;/h3&gt;
 
 &lt;figure class=&#34;img-centered&#34;&gt;
-    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/avo_ig/ex_AVOIG_4_input.jpg&#34;
-         alt=&#34;ex_angle_stacks_4_to_AVOIG.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
-            &lt;p&gt;&lt;strong&gt;ex_angle_stacks_4_to_AVOIG.py input parameters&lt;/strong&gt;&lt;/p&gt;
+    &lt;img src=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/avo/ex_AVOIG_4_input.jpg&#34;
+         alt=&#34;ex_avoig_angle4.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_avoig_angle4.py input parameters&lt;/strong&gt;&lt;/p&gt;
         &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;For each input volume the corresponding incident angle must be provided.&lt;/p&gt;
+&lt;h2 id=&#34;avo-fatti-3-term&#34;&gt;AVO Fatti 3 Term&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Script: AVO/ex_fatti3_angle3.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Script: AVO/ex_fatti3_angle4.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Takes as input angle stacks and the corresponding angles and computes the P-wave reflectivity \(\left(R_{P}\right)\),
+S-wave reflectivity \(\left(R_{S}\right)\) and Density reflectivity \(\left(R_{D}\right)\) at each sample point as per Fatti&amp;rsquo;s 3 term approximation
+to the Aki-Richards equation:&lt;/p&gt;
+&lt;p&gt;$$ R(\theta)=\left(1+\tan ^{2}\theta \right)R_{P}-\left(8{\frac {\beta ^{2}}{\alpha ^{2}}}\sin ^{2}\theta\right) R_{S}-\left(\tan ^{2}\theta -4{\frac {\beta ^{2}}{\alpha ^{2}}}\sin ^{2}\theta \right)R_{D}. $$&lt;/p&gt;
+&lt;p&gt;where&lt;/p&gt;
+&lt;p&gt;$$ R_{P} = {\frac {\Delta I_{P}}{2I_{P}}} = {\frac {\rho_{i}\alpha_{i} - \rho_{i-1}\alpha_{i-1}}{\rho_{i}\alpha_{i} + \rho_{i-1}\alpha_{i-1}}} $$
+$$ R_{S} = {\frac {\Delta I_{S}}{2I_{S}}} = {\frac {\rho_{i}\beta_{i} - \rho_{i-1}\beta_{i-1}}{\rho_{i}\beta_{i} + \rho_{i-1}\beta_{i-1}}} $$
+$$ R_{D} = {\frac {\Delta \rho }{2\rho }} = {\frac {\rho_{i} - \rho_{i-1}}{\rho_{i} + \rho_{i-1}}}$$
+$$ {\frac {\alpha}{\beta}} = average V_{p} V_{s} ratio $$&lt;/p&gt;
+&lt;p&gt;and \(\alpha_{i}\) is the P-wave velocity, \(\beta_{i}\) is the S-wave velocity and \(\rho_{i}\) is the density of layer \(i\).&lt;/p&gt;
+&lt;p&gt;The script variants with 4 or more angle stack inputs also have the quality or coefficient of determination \(\left(0\le R^2 \le 1 \right)\) of the fit as a possible output.&lt;/p&gt;
+&lt;h3 id=&#34;input-parameters-1&#34;&gt;Input Parameters&lt;/h3&gt;
+
+&lt;figure class=&#34;img-centered&#34;&gt;
+    &lt;img src=&#34;ex_fatti3_4_input.jpg&#34;
+         alt=&#34;ex_fatti3_angle4.py input parameters&#34; width=&#34;90%&#34;/&gt; &lt;figcaption&gt;
+            &lt;p&gt;&lt;strong&gt;ex_fatti3_angle4.py input parameters&lt;/strong&gt;&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
 
       </description>
     </item>
@@ -546,7 +608,7 @@ subsequently extended the analysis with a number of other measures to describe t
         
         
         &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;These Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.&lt;/p&gt;
+&lt;p&gt;These Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; scripts implement various algorithms to estimate orientation, ie dip or dip azimuth.&lt;/p&gt;
 &lt;p&gt;All scripts will estimate at least the following attributes:&lt;/p&gt;
 
 
@@ -1648,7 +1710,7 @@ scripts need to import this module, provide a description of the User Interface 
         
         &lt;p&gt;&lt;strong&gt;Script: ex_lpa_smooth.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to filter noise while preserving steep dips. A region of
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script can be used to filter noise while preserving steep dips. A region of
 data around each sample location is approximated by a second order 3D polynomial using gaussian weighted least squares.&lt;/p&gt;
 &lt;p&gt;The approximation has the following form:&lt;/p&gt;
 &lt;p&gt;$$ r_0+ r_1 * x + r_2 * y + r_3 * z + r_4 * x^2 + r_5 * y^2 + r_6 * z^2 +r_7 * x * y + r_8 * x * z + r_9 * y * z $$&lt;/p&gt;
@@ -1772,7 +1834,7 @@ of the OpendTect software folder and include:&lt;/p&gt;
 &lt;p&gt;Using these scripts requires a Python environment with the PyLops module and it&amp;rsquo;s dependencies installed. The section
 &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/#installing-pylops&#34;&gt;Installing PyLops&lt;/a&gt; describes the PyLops installation process.&lt;/p&gt;
 &lt;h2 id=&#34;pylopsex_poststack_inversionpy&#34;&gt;PyLops/ex_poststack_inversion.py&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script uses the pylops.avo.poststack.PoststackInversion operator to do
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script uses the pylops.avo.poststack.PoststackInversion operator to do
 post-stack seismic inversion. The output is either the log Acoustic Impedance (AI) volume or the residual error.&lt;/p&gt;
 &lt;p&gt;The inputs required are volumes of the seismic to be inverted, a background log AI model and the seismic wavelet. Note that the polarity
 of the seismic wavelet must match the data.&lt;/p&gt;
@@ -2085,7 +2147,7 @@ the corresponding tables created in the exported GeoPackage database.&lt;/p&gt;
         
         &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_circular.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject circularly symmetric
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject circularly symmetric
 spatial filters. The filters are applied by direct spatial convolution using the MAXFLAT operators described by
 &lt;a href=&#34;https://www.researchgate.net/publication/3384111_Explicit_formulae_for_coefficients_of_2D_circular_symmetric_MAXFLATFIR_lowhigh_pass_digital_filters&#34; title=&#34;Explicit formulae for coefficients of 2D circular symmetric MAXFLAT FIR low/high pass digital filters.  Electronics Letters Volume: 37, Issue: 24, 22 Nov 2001&#34;&gt;Khan and Ohba (2001)&lt;/a&gt;.&lt;/p&gt;
 
@@ -2231,7 +2293,7 @@ is as simple as dividing it by the spatial nyquist frequency.&lt;/p&gt;
         
         &lt;p&gt;&lt;strong&gt;Script: Filtering/ex_spatial_filter_rectangular.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script applies lowpass, highpass, bandpass or band reject spatial filters with rectangular
 symmetry. The filters are applied by direct spatial convolution of a kernel formed by cascading two 1D Hamming Window FIR filters
 computed using scipy.signal.firwin (&lt;a href=&#34;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&#34;&gt;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.firwin.html)&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;By setting the stepout in one direction to 0 the filter will be applied as a 1D spatial filter in the other direction.&lt;/p&gt;
@@ -2481,7 +2543,7 @@ The output of the LTF attribute (ltf30) is visually identical and also highly co
         
         &lt;p&gt;&lt;strong&gt;Script: ex_vector_filter_dip.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
+&lt;p&gt;This &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script can be used to apply a vector filter to orientation ( inline and crossline dip) data.
 The script offers a choice of mean vector, L1 vector median and L2 vector median filters.&lt;/p&gt;
 &lt;p&gt;Initially the inline and crossline dip data are converted to a normal vector to the local orientation: \([x_i, y_i, z_i]\).&lt;/p&gt;
 &lt;p&gt;The Mean Vector Filter averages each of the vector components of the orientation normal vectors in the analysis cube:
@@ -3036,7 +3098,7 @@ Application attribute is applied. A message (which can be safely ignored) is add
         
         &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_correlation.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script provides an alternative to the builtin OpendTect
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script provides an alternative to the builtin OpendTect
 &lt;a href=&#34;http://doc.opendtect.org/6.0.0/doc/od_userdoc/Default.htm#appendix_a-attributes_and_filters/match_delta.htm%3FTocPath%3D11%2520Appendix%2520A%2520-%2520Attributes%2520and%2520Filters%7C_____13&#34;&gt;Match Delta&lt;/a&gt; attribute to measure time shifts between similar events in different seismic volumes. This script uses local normalised cross correlation to determine the relative Z shift between 2 data volumes. Aside from the estimate of relative Z shift the attribute can also output the correlation value. The correlation value which ranges from 0 (low correlation) to 1 (high correlation) provides a quantitative assessment of the reliability of the Z shift estimate.&lt;/p&gt;
 &lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
@@ -3114,7 +3176,7 @@ itself shifted up by 13 metres. The Match Delta attribute output is much noisier
         
         &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_zc_block.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script blocks a seismic trace between zero crossings. The block amplitude is
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script blocks a seismic trace between zero crossings. The block amplitude is
 determined by the min/max of the interval blocked.&lt;/p&gt;
 &lt;p&gt;The script requires the Numba Python package.&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;

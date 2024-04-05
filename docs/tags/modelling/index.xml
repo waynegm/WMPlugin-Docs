@@ -25,7 +25,7 @@
         
         &lt;p&gt;&lt;strong&gt;Script: Miscellaneous/ex_add_noise.py&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script adds gaussian distributed noise to an input signal.&lt;/p&gt;
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script adds gaussian distributed noise to an input signal.&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 &lt;p&gt;This example shows an input signal with different levels of added noise.&lt;/p&gt;
 
@@ -93,7 +93,7 @@ of the OpendTect software folder and include:&lt;/p&gt;
 &lt;p&gt;Using these scripts requires a Python environment with the PyLops module and it&amp;rsquo;s dependencies installed. The section
 &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/externalattributes/pylops/#installing-pylops&#34;&gt;Installing PyLops&lt;/a&gt; describes the PyLops installation process.&lt;/p&gt;
 &lt;h2 id=&#34;pylopsex_poststack_inversionpy&#34;&gt;PyLops/ex_poststack_inversion.py&lt;/h2&gt;
-&lt;p&gt;This Python &lt;a href=&#34;../../plugins/externalattrib&#34;&gt;External Attribute&lt;/a&gt; script uses the pylops.avo.poststack.PoststackInversion operator to do
+&lt;p&gt;This Python &lt;a href=&#34;https://waynegm.github.io/WMPlugin-Docs/WMPlugin-Docs/docs/plugins/externalattrib/&#34;&gt;External Attribute&lt;/a&gt; script uses the pylops.avo.poststack.PoststackInversion operator to do
 post-stack seismic inversion. The output is either the log Acoustic Impedance (AI) volume or the residual error.&lt;/p&gt;
 &lt;p&gt;The inputs required are volumes of the seismic to be inverted, a background log AI model and the seismic wavelet. Note that the polarity
 of the seismic wavelet must match the data.&lt;/p&gt;
